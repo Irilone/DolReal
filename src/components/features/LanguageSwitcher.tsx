@@ -1,28 +1,36 @@
-// src/components/features/LanguageSwitcher.tsx
-'use client';
-import { useRouter, usePathname } from 'next/navigation';
-import type { Locale } from '@/types/i18n';
+'use client'
 
-const locales: Locale[] = ['se', 'en', 'ar', 'fa', 'zh', 'es'];
+import { Locale } from '@/types'
+import { usePathname } from 'next/navigation'
 
-export function LanguageSwitcher() {
-  const router = useRouter();
-  const pathname = usePathname();
+const languages: Record<Locale, string> = {
+  se: 'Svenska',
+  en: 'English',
+  ar: 'العربية',
+  fa: 'فارسی',
+  zh: '中文',
+  es: 'Español',
+}
 
-  const handleLocaleChange = (newLocale: Locale) => {
-    // This is a simplified example. A real implementation would likely
-    // involve a more robust internationalization setup.
-    const newPath = `/${newLocale}${pathname}`;
-    router.push(newPath);
-  };
+export default function LanguageSwitcher({ currentLocale }: { currentLocale: Locale }) {
+  const pathname = usePathname()
 
   return (
-    <select onChange={(e) => handleLocaleChange(e.target.value as Locale)}>
-      {locales.map((locale) => (
-        <option key={locale} value={locale}>
-          {locale.toUpperCase()}
+    <select
+      value={currentLocale}
+      onChange={(e) => {
+        const newLocale = e.target.value as Locale
+        const newPath = pathname.replace(`/${currentLocale}`, `/${newLocale}`)
+        window.location.href = newPath
+      }}
+      className="px-3 py-2 rounded-md border bg-background"
+      aria-label="Välj språk"
+    >
+      {Object.entries(languages).map(([code, name]) => (
+        <option key={code} value={code}>
+          {name}
         </option>
       ))}
     </select>
-  );
+  )
 }

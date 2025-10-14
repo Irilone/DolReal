@@ -1,34 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-
-  // i18n configuration
-  i18n: {
-    locales: ['se', 'en', 'ar', 'fa', 'zh', 'es'],
-    defaultLocale: 'se',
-    localeDetection: true,
-  },
 
   // Image optimization
   images: {
-    domains: [
-      'infranodus.com',
-      'i.ytimg.com',
-      'img.youtube.com',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'infranodus.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+      },
     ],
-    formats: ['image/avif', 'image/webp'],
   },
 
   // Performance optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
-  },
-
-  // Environment variables
-  env: {
-    NEXT_PUBLIC_SITE_NAME: 'Dagar om Lagar 2025',
-    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
   },
 
   // Headers for security
@@ -55,17 +49,8 @@ const nextConfig = {
           },
         ],
       },
-    ];
+    ]
   },
+}
 
-  // Webpack configuration
-  webpack: (config) => {
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      fs: false,
-    };
-    return config;
-  },
-};
-
-module.exports = nextConfig;
+export default nextConfig
