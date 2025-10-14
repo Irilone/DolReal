@@ -1,63 +1,42 @@
-import { HTMLAttributes, forwardRef } from 'react';
-import { cn } from '@/lib/utils/cn';
+// src/components/ui/card.tsx
+'use client';
 
-export interface CardProps extends HTMLAttributes<HTMLDivElement> {}
+import { ReactNode } from 'react';
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ className, ...props }, ref) => {
-    return (
-      <div
-        ref={ref}
-        className={cn(
-          'rounded-lg border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900',
-          className
-        )}
-        {...props}
-      />
-    );
-  }
-);
+interface CardProps {
+  children: ReactNode;
+  className?: string;
+  role?: string;
+  ['aria-label']?: string;
+}
 
-Card.displayName = 'Card';
+export function Card({ children, className, role, 'aria-label': ariaLabel }: CardProps) {
+  return <div className={className} role={role} aria-label={ariaLabel}>{children}</div>;
+}
 
-export interface CardHeaderProps extends HTMLAttributes<HTMLDivElement> {}
+interface CardContentProps {
+  children: ReactNode;
+  className?: string;
+}
 
-export const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
-  ({ className, ...props }, ref) => {
-    return (
-      <div
-        ref={ref}
-        className={cn('flex flex-col space-y-1.5 p-6', className)}
-        {...props}
-      />
-    );
-  }
-);
+export function CardContent({ children, className }: CardContentProps) {
+  return <div className={className}>{children}</div>;
+}
 
-CardHeader.displayName = 'CardHeader';
+interface CardHeaderProps {
+  children: ReactNode;
+  className?: string;
+}
 
-export interface CardTitleProps extends HTMLAttributes<HTMLHeadingElement> {}
+export function CardHeader({ children, className }: CardHeaderProps) {
+  return <div className={className}>{children}</div>;
+}
 
-export const CardTitle = forwardRef<HTMLParagraphElement, CardTitleProps>(
-  ({ className, ...props }, ref) => {
-    return (
-      <h3
-        ref={ref}
-        className={cn('text-2xl font-semibold leading-none tracking-tight', className)}
-        {...props}
-      />
-    );
-  }
-);
+interface CardTitleProps {
+  children: ReactNode;
+  className?: string;
+}
 
-CardTitle.displayName = 'CardTitle';
-
-export interface CardContentProps extends HTMLAttributes<HTMLDivElement> {}
-
-export const CardContent = forwardRef<HTMLDivElement, CardContentProps>(
-  ({ className, ...props }, ref) => {
-    return <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />;
-  }
-);
-
-CardContent.displayName = 'CardContent';
+export function CardTitle({ children, className }: CardTitleProps) {
+  return <h3 className={className}>{children}</h3>;
+}

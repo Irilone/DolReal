@@ -26,3 +26,27 @@ export async function getStreamStatus(streamId: string) {
     return null
   }
 }
+
+export async function listLiveStreams(channelId: string) {
+  const response = await youtube.search.list({
+    part: ['snippet'],
+    channelId,
+    eventType: 'live',
+    type: ['video'],
+  });
+
+  return response.data.items;
+}
+
+// Verify concurrent stream policy compliance
+export async function checkConcurrentStreams(channelId: string): Promise<{
+  count: number;
+  withinLimit: boolean;
+}> {
+  const streams = await listLiveStreams(channelId);
+  const count = streams?.length || 0;
+  return {
+    count,
+    withinLimit: count <= 12, // YouTube's limit
+  };
+}
