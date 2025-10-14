@@ -22,10 +22,10 @@ async function getInitialStreams(): Promise<Stream[]> {
 }
 
 interface HomePageProps {
-  params: { locale: Locale };
+  params: { lang: Locale };
 }
 
-export default function HomePage({ params: { locale } }: HomePageProps) {
+export default function HomePage({ params: { lang } }: HomePageProps) {
   const [initialStreams, setInitialStreams] = useState<Stream[]>([]);
 
   useEffect(() => {
