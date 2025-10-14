@@ -5,25 +5,25 @@ import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { Header } from '@/components/features/Header';
 import { Footer } from '@/components/features/Footer';
 
-export default function LocaleLayout({
+export default function LangLayout({
   children,
-  params: { locale },
+  params: { lang },
 }: {
   children: React.ReactNode;
-  params: { locale: Locale };
+  params: { lang: Locale };
 }) {
-  if (!isValidLocale(locale)) {
+  if (!isValidLocale(lang)) {
     notFound();
   }
   
-  const direction = getLocaleDirection(locale);
+  const direction = getLocaleDirection(lang);
 
   return (
-    <html lang={locale} dir={direction} suppressHydrationWarning>
+    <html lang={lang} dir={direction} suppressHydrationWarning>
       <body>
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
-            <Header locale={locale} />
+            <Header locale={lang} />
             <main className="flex-grow">{children}</main>
             <Footer />
           </div>
