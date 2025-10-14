@@ -1,7 +1,10 @@
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 import type { Locale } from '@/types/i18n';
-import { isValidLocale, getLocaleDirection } from '@/lib/utils/locale';
+import { notFound } from 'next/navigation';
+import { getLocaleDirection, isValidLocale } from '@/lib/utils/locale';
+import { I18nProvider } from '@/components/providers/I18nProvider';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import { Header } from '@/components/features/Header';
+import { Footer } from '@/components/features/Footer';
 import { initI18n } from '@/i18n/config';
 
 interface LocaleLayoutProps {
@@ -20,34 +23,32 @@ export function generateStaticParams() {
   ];
 }
 
-export async function generateMetadata({
+export default function LocaleLayout({
+  children,
   params,
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const locale = params.locale as Locale;
-
-  return {
-    title: 'Dagar om Lagar 2025',
-    description: 'Ett juridiskt symposium som utforskar lagar och samhälle',
-  };
-}
-
-export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
+}: LocaleLayoutProps) {
   const locale = params.locale;
 
   if (!isValidLocale(locale)) {
     notFound();
   }
-
+  
+  initI18n(locale);
   const direction = getLocaleDirection(locale);
 
-  // Initialize i18n on server
-  initI18n(locale);
-
   return (
-    <div lang={locale} dir={direction}>
-      {children}
-    </div>
+    <html lang={locale} dir={direction} suppressHydrationWarning>
+      <body>
+        <I18nProvider locale={locale}>
+          <ThemeProvider>
+            <div className="flex min-h-screen flex-col">
+              <Header locale={locale} />
+              <main className="flex-grow">{children}</main>
+              <Footer />
+            </div>
+          </ThemeProvider>
+        </I18nProvider>
+      </body>
+    </html>
   );
 }

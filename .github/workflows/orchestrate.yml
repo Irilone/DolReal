@@ -32,30 +32,10 @@ env:
   BUN_VERSION: '1.2.23'
 
 jobs:
-  check-secrets:
-    name: Check Required Secrets
-    runs-on: ubuntu-latest
-    steps:
-      - name: Verify API Keys
-        run: |
-          if [ -z "${{ secrets.GEMINI_API_KEY }}" ]; then
-            echo "❌ GEMINI_API_KEY secret not set"
-            exit 1
-          fi
-          if [ -z "${{ secrets.OPENAI_API_KEY }}" ]; then
-            echo "❌ OPENAI_API_KEY secret not set"
-            exit 1
-          fi
-          if [ -z "${{ secrets.ANTHROPIC_API_KEY }}" ]; then
-            echo "❌ ANTHROPIC_API_KEY secret not set"
-            exit 1
-          fi
-          echo "✅ All required API keys are set"
 
   agent-1-research:
     name: 'Agent 1: Gemini Ultra (Research)'
     runs-on: ubuntu-latest
-    needs: check-secrets
     if: ${{ github.event.inputs.run_all_agents == 'true' || github.event.inputs.specific_agent == 'gemini-ultra' || github.event_name == 'push' }}
     steps:
       - uses: actions/checkout@v4
