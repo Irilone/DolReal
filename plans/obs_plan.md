@@ -1,85 +1,227 @@
-# OBS Plan – Multi-RTMP Production Workflow
+# OBS Studio Multi-RTMP Configuration Plan
 
-## Objectives
-- Drive four simultaneous YouTube Live outputs (Nodväst, Nodsyd, Nodöst, Nodmidd) with a single operator.
-- Maintain 1080p30 quality, redundant audio, and instant failover.
-- Provide automation hooks for InfraNodus-triggered scene cues.
+## Objective
+Configure OBS Studio to simultaneously stream to 4 separate YouTube Live channels using multi-RTMP plugin.
 
-## Platform & Versions
-- OBS Studio **30.2.x** (64‑bit).  
-- Multi-RTMP Plugin **0.4.0** (obs-multi-rtmp).  
-- OBS WebSocket **5.3+** (bundled).  
-- OS: Windows 11 Pro (primary) with NVIDIA RTX 4070; macOS Sonoma backup rig.
+## Software Requirements
+- **OBS Studio**: v30.0 or later
+- **Plugin**: Multiple RTMP Outputs Plugin by SoraYuki
+- **OS**: macOS (Apple Silicon M2 optimized)
+- **Encoding**: Hardware (VideoToolbox for Apple Silicon)
 
-## Scene Collection Structure
+## Plugin Installation
+
+### Method 1: Manual Installation
+```bash
+# Download latest release
+curl -L https://github.com/sorayuki/obs-multi-rtmp/releases/latest/download/obs-multi-rtmp-macos-arm64.pkg -o obs-multi-rtmp.pkg
+
+# Install plugin
+sudo installer -pkg obs-multi-rtmp.pkg -target /
 ```
-DoL-2025
- ├─ Intro (countdown + lower thirds)
- ├─ Live-Talk (PPT + camera)
- ├─ Panel (quad view)
- ├─ Break (looped ambience)
- ├─ Emergency-Slate (technical difficulties)
- └─ InfraNodus-Embed (browser source)
+
+### Method 2: OBS Plugin Manager
+1. Open OBS Studio
+2. Navigate to **Tools → Plugin Manager**
+3. Search for "Multiple RTMP Outputs"
+4. Click Install
+5. Restart OBS
+
+## Configuration Steps
+
+### 1. Setup Primary Scene
 ```
-- Each scene includes `StreamStatus` text source bound to OBS WebSocket script to display destination status.
+OBS Studio → Scenes → Add New Scene: "DoL_2025_Main"
+```
 
-## Input Configuration
-- Cameras: SDI via capture cards; set buffering off, color range full.  
-- Slides: NDI capture; enable frame rate match.  
-- Audio:  
-  - Primary: XLR mixer → USB interface (48 kHz).  
-  - Backup: ambient mic with -6 dB safety track.  
-  - Apply limiter at -1 dB; add 100 ms sync offset for camera ingest.
+Add sources:
+- **Video Capture Device**: Main camera
+- **Audio Input Capture**: Microphone
+- **Text (FreeType 2)**: Event title overlay
+- **Browser Source**: Lower-third graphics
 
-## Multi-RTMP Outputs
-1. Install plugin; confirm new dock **Multiple Output**.  
-2. Configure four targets:  
-   | Target | Server | Stream Key Env | Notes |
-   |--------|--------|----------------|-------|
-   | Nodväst | `rtmps://a.rtmp.youtube.com/live2` | `${NODVAST_STREAM_KEY}` | Active both days |
-   | Nodsyd  | same | `${NODSYD_STREAM_KEY}` | Day 1 only |
-   | Nodöst  | same | `${NODOST_STREAM_KEY}` | Day 1 only |
-   | Nodmidd | same | `${NODMIDD_STREAM_KEY}` | Day 1 only |
-3. Output settings per target:  
-   - Encoder: NVENC H.264 (preset `p5: Quality`).  
-   - Bitrate: **5.5 Mbps**, Keyframe 2 s, B-frames 2.  
-   - Audio: 160 kbps AAC.  
-   - Enable `Restart connection on reconnect`.  
-   - Latenz mode: Low-latency.  
-4. `Auto Start` unchecked to satisfy user-gesture autoplay policy; operator triggers manually.
+### 2. Configure Primary Output (Stream 1 - Nodväst)
+```
+Settings → Stream
+```
+- **Service**: YouTube / YouTube - RTMPS
+- **Server**: Primary YouTube ingest server
+- **Stream Key**: [From YouTube Studio - Nodväst channel]
 
-## Day 2 Disable Logic
-- Create Scene Collection profile `Day2`.  
-- For targets Nodsyd/Nodöst/Nodmidd set `Status = Disabled` (plugin option).  
-- Add slate scene with text “Ej aktiv idag” driven by `currentDay` env flag.  
-- Provide macro in **Advanced Scene Switcher**: reads `DAY=2` from `env.yaml`, automatically fades to slate for disabled outputs.
+### 3. Enable Multiple RTMP Outputs Plugin
+```
+Tools → Multi-RTMP Output
+```
 
-## Automation Scripts
-- `obs-scripts/stream_guard.py`: uses WebSocket to ensure only one active encoder attempts to start; stops secondary outputs if primary fails handshake.  
-- `obs-scripts/infranodus_cue.py`: listens to MCP events (port 4455) to trigger `InfraNodus-Embed` browser source refresh.
+### 4. Add Secondary Streams (Nodsyd, Nodöst, Nodmidd)
+Click "Add Target" for each stream:
 
-## Recording & Backups
-- Local recording: MKV, 1080p30, 25 Mbps. Auto-remux to MP4 post-session.  
-- Backup: OBS on macOS logs into same scene collection via cloud-synced profile (use `obs-export`). Keep plugin config in `~/Library/Application Support/obs-studio/basic/profiles/DoL-2025`.
+**Stream 2 - Nodsyd**:
+- **Name**: Nodsyd
+- **RTMP URL**: `rtmps://a.rtmps.youtube.com/live2`
+- **Stream Key**: [From YouTube Studio - Nodsyd channel]
+- **Enable**: ✓
 
-## Monitoring
-- Dock layout to include `Stats`, `Multiple Output`, `Scene Stats`, `WebSocket`.  
-- Install `obs-websocket-logger` for external Grafana dashboard (logs connection states).  
-- Operator checklist: verify green indicator for all four outputs before go-live, watch dropped frames (<0.5% threshold).
+**Stream 3 - Nodöst**:
+- **Name**: Nodöst  
+- **RTMP URL**: `rtmps://a.rtmps.youtube.com/live2`
+- **Stream Key**: [From YouTube Studio - Nodöst channel]
+- **Enable**: ✓
 
-## Performance Optimisation
-- Set Power mode to `Prefer maximum performance` (NVIDIA Control Panel).  
-- Disable preview scaling; use Studio Mode.  
-- Run `OBS Studio → Settings → Advanced → Process Priority = Above Normal`.  
-- For CPU fallback (x264), use preset `veryfast`, bitrate 4.5 Mbps.
+**Stream 4 - Nodmidd**:
+- **Name**: Nodmidd
+- **RTMP URL**: `rtmps://a.rtmps.youtube.com/live2`
+- **Stream Key**: [From YouTube Studio - Nodmidd channel]
+- **Enable**: ✓
 
-## Testing Matrix
-- T–14 d: Full rehearsal with remote endpoints; record 30 min soak test.  
-- T–2 d: Verify stream keys unchanged; update `.env`.  
-- Daily: 5-minute black frame test stream on unlisted events to confirm ingest health.
+### 5. Encoding Settings (Apple Silicon Optimized)
+```
+Settings → Output → Streaming
+```
+- **Encoder**: Apple VT H264 Hardware Encoder
+- **Rate Control**: CBR (Constant Bitrate)
+- **Bitrate**: 24000 Kbps (24Mbps per stream)
+- **Keyframe Interval**: 2 seconds
+- **Profile**: high
+- **Level**: auto
 
-## Incident Response
-- On RTMP disconnect: plugin auto-retries; operator triggers `Retry` if >10 s offline.  
-- On CPU >85%: disable local recording, reduce bitrate to 4 Mbps via Quick Actions.  
-- On audio desync: call macro `Resync` (script resets audio offset).  
-- Document incidents in shared log (`docs/logs/obs-incidents.md`).
+**Video Settings**:
+```
+Settings → Video
+```
+- **Base Resolution**: 3840x2160 (4K)
+- **Output Resolution**: 3840x2160
+- **FPS**: 30 (or 60 for high motion)
+
+**Audio Settings**:
+```
+Settings → Audio
+```
+- **Sample Rate**: 48 kHz
+- **Channels**: Stereo
+- **Bitrate**: 160 Kbps (AAC)
+
+### 6. Advanced Settings
+```
+Settings → Advanced → Video
+```
+- **Color Format**: NV12
+- **Color Space**: 709
+- **Color Range**: Partial
+
+```
+Settings → Advanced → Network
+```
+- **Bind to IP**: Automatic
+- **Enable Network Optimizations**: ✓
+- **Low Latency Mode**: ✓ (if available)
+
+## Testing Procedure
+
+### Pre-Stream Checklist
+- [ ] Test each stream independently (enable one at a time)
+- [ ] Verify audio sync on all 4 channels
+- [ ] Check encoder performance (CPU/GPU usage <70%)
+- [ ] Confirm stream keys are correct
+- [ ] Test failover to backup ingest server
+
+### Performance Monitoring
+Monitor these stats during test:
+```
+OBS → Stats Panel
+```
+- **FPS**: Should stay at 30/60 consistently
+- **Skipped Frames**: <0.1%
+- **Dropped Frames**: <0.5%
+- **CPU Usage**: <60%
+- **Output Bitrate**: ~96Mbps total (24Mbps × 4)
+
+### Troubleshooting Commands
+```bash
+# Monitor network traffic
+nettop -m tcp -t external
+
+# Check OBS logs
+tail -f ~/Library/Application\ Support/obs-studio/logs/obs-studio.log
+
+# Monitor encoding performance
+sudo powermetrics --samplers cpu_power,gpu_power -i 1000
+```
+
+## Backup Strategy
+
+### Auto-Recording
+```
+Settings → Output → Recording
+```
+- **Recording Path**: `/Volumes/External/DoL_2025_Recordings`
+- **Recording Format**: Fragmented MP4 (safe for crashes)
+- **Recording Quality**: Same as stream
+- **Encoder**: Apple VT H264 (separate from streaming)
+
+### Failover Configuration
+In Multi-RTMP plugin, add backup servers:
+- Primary: `rtmps://a.rtmps.youtube.com/live2`
+- Backup: `rtmps://b.rtmps.youtube.com/live2?backup=1`
+
+## Known Issues & Solutions
+
+### Issue: High CPU Usage on M2
+**Solution**: 
+- Use VideoToolbox hardware encoder (not x264)
+- Reduce preview resolution: Settings → Video → Output → Downscale Filter: Bilinear
+- Disable preview when not needed
+
+### Issue: Stream Disconnects Randomly
+**Causes**:
+1. Network congestion → Enable QoS on router
+2. Incorrect stream key → Verify in YouTube Studio
+3. Keyframe interval mismatch → Set to 2 seconds exactly
+
+### Issue: Audio Desync Across Streams
+**Solution**:
+- Set fixed audio offset: Advanced Audio Properties → Sync Offset → -50ms
+- Use single audio source for all streams
+- Ensure sample rate is 48kHz across all devices
+
+### Issue: Multi-RTMP Plugin Not Appearing
+**Check**:
+```bash
+# Verify plugin installation
+ls -la ~/Library/Application\ Support/obs-studio/plugins/obs-multi-rtmp/
+
+# Check OBS logs for plugin errors
+grep -i "multi-rtmp" ~/Library/Application\ Support/obs-studio/logs/obs-studio.log
+```
+
+## Performance Optimization
+
+### For Apple Silicon M2:
+```bash
+# Set OBS to high-performance mode
+defaults write com.obsproject.obs-studio NSSupportsAutomaticGraphicsSwitching -bool NO
+
+# Increase OBS process priority
+sudo renice -n -10 -p $(pgrep obs)
+```
+
+### Scene Optimization:
+- Minimize browser sources (high CPU usage)
+- Use image files instead of videos for static graphics
+- Group sources and disable when not visible
+- Limit filters (color correction, chroma key, etc.)
+
+## Stream URLs Reference
+```
+YouTube Primary Ingest: rtmps://a.rtmps.youtube.com/live2
+YouTube Backup Ingest: rtmps://b.rtmps.youtube.com/live2?backup=1
+YouTube Backup Ingest 2: rtmps://c.rtmps.youtube.com/live2?backup=1
+```
+
+## Success Criteria
+- [ ] All 4 streams start simultaneously within 5 seconds
+- [ ] Zero dropped frames in first 10 minutes
+- [ ] Audio/video sync within 50ms across all streams
+- [ ] CPU usage <60%, GPU usage <70%
+- [ ] Automatic local recording backup enabled
+- [ ] Stream health "Excellent" in YouTube Studio for all 4 channels

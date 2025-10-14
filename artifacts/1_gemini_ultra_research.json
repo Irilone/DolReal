@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "agent_id": "gemini-ultra",
+    "timestamp": "2025-10-14T00:00:00Z",
+    "execution_time_ms": 0,
+    "status": "completed"
+  },
+  "bundle_version": "2.0",
+  "project": "Dagar om Lagar 2025",
+  "dates": {
+    "day1": "2025-11-06",
+    "day2": "2025-11-07"
+  },
+  "streams": ["Nodväst", "Nodsyd", "Nodöst", "Nodmidd"],
+  "policies": {
+    "wcag": "2.2 AA",
+    "autoplay": "user-gesture-only",
+    "youtube_concurrency": "≤12 events per channel"
+  },
+  "plans": {
+    "router_plan_path": "plans/router_plan.md",
+    "obs_plan_path": "plans/obs_plan.md",
+    "yt_plan_path": "plans/yt_plan.md",
+    "infranodus_plan_path": "plans/infranodus_plan.md",
+    "site_spec_path": "plans/site_spec.md",
+    "manuals_outline_path": "plans/manuals_outline.md"
+  },
+  "manuals_required": [
+    "ASUS RT-AX86U Pro",
+    "Asuswrt-Merlin",
+    "OBS + MCP",
+    "InfraNodus + MCP",
+    "YouTube Studio",
+    "YouTube Live Streaming"
+  ],
+  "overview_table": [
+    {
+      "task": "Compile research bundle, policies, and plans",
+      "tools": ["YouTube Help Center", "Asuswrt-Merlin Wiki", "InfraNodus API docs"],
+      "risk_level": "Medium",
+      "next_agent": "gpt5-codex"
+    },
+    {
+      "task": "Design system architecture & scaffolding",
+      "tools": ["Next.js 15 docs", "Tailwind CSS guides"],
+      "risk_level": "Medium",
+      "next_agent": "gpt5-codex"
+    },
+    {
+      "task": "Implement frontend components & i18n",
+      "tools": ["React", "Tailwind", "YouTube IFrame API"],
+      "risk_level": "High",
+      "next_agent": "claude-frontend"
+    },
+    {
+      "task": "Implement backend APIs, MCP integration, docs",
+      "tools": ["Next.js API routes", "InfraNodus API", "YouTube Data API"],
+      "risk_level": "High",
+      "next_agent": "claude-backend"
+    },
+    {
+      "task": "Merge outputs, run QA, publish release",
+      "tools": ["Bun", "tsc", "Jest", "Lighthouse"],
+      "risk_level": "Medium",
+      "next_agent": "gemini-cli"
+    }
+  ],
+  "manuals_index": [
+    {
+      "title": "ASUS RT-AX86U Pro User Guide",
+      "url": "https://dlcdnets.asus.com/pub/ASUS/wireless/RT-AX86U/RT-AX86U_PRO_UM_WEB.pdf",
+      "abstract": "Official hardware manual covering networking features, QoS options, and recovery workflows for the RT-AX86U Pro router.",
+      "access_date": "2025-10-14"
+    },
+    {
+      "title": "Asuswrt-Merlin Wiki",
+      "url": "https://github.com/RMerl/asuswrt-merlin.ng/wiki",
+      "abstract": "Community-maintained documentation for Asuswrt-Merlin firmware, including custom scripts, QoS tuning, and troubleshooting.",
+      "access_date": "2025-10-14"
+    },
+    {
+      "title": "OBS Multi-RTMP Plugin Documentation",
+      "url": "https://github.com/sorayuki/obs-multi-rtmp",
+      "abstract": "Installation and configuration guide for streaming to multiple RTMP targets from OBS Studio using the Multi-RTMP plugin.",
+      "access_date": "2025-10-14"
+    },
+    {
+      "title": "InfraNodus API & Integrations",
+      "url": "https://docs.infranodus.com/integrations/api",
+      "abstract": "Reference for embedding InfraNodus graphs, API authentication, and automation workflows via MCP servers.",
+      "access_date": "2025-10-14"
+    },
+    {
+      "title": "Stream on YouTube",
+      "url": "https://support.google.com/youtube/answer/2474026?hl=en",
+      "abstract": "YouTube Studio documentation covering live control room setup, encoder settings, and scheduling live events.",
+      "access_date": "2025-10-14"
+    },
+    {
+      "title": "Live Streaming Requirements on YouTube",
+      "url": "https://support.google.com/youtube/answer/2853702?hl=en",
+      "abstract": "Policy reference covering live stream eligibility, concurrent event limits, and encoder configuration requirements.",
+      "access_date": "2025-10-14"
+    }
+  ],
+  "research_memo": [
+    {
+      "question": "Q1: What is YouTube's concurrent live event limit per channel?",
+      "answer": "YouTube Live Control Room allows up to 12 simultaneous live events per channel, covering active broadcasts and scheduled placeholders. Exceeding this threshold blocks new events, so the DoL plan keeps a maximum of four concurrent streams. There is no supported policy override; additional streams require staging on separate channels or staggering start times.",
+      "citations": [6]
+    },
+    {
+      "question": "Q2: How to configure OBS for 4 simultaneous RTMP streams?",
+      "answer": "Install the OBS Multi-RTMP plugin, define four targets pointing to YouTube's RTMPS ingest, and assign unique stream keys. Use hardware encoding (NVENC) where available, set 5–6 Mbps per stream, keyframe interval 2 seconds, and monitor dropped frames. OBS documentation recommends Above Normal process priority and disabling preview scaling to conserve CPU on multi-output rigs.",
+      "citations": [3, 7, 8]
+    },
+    {
+      "question": "Q3: InfraNodus MCP integration - is it possible?",
+      "answer": "InfraNodus exposes REST endpoints for graph embeds and supports API tokens; an MCP wrapper can broker signed URLs for modal embeds. The platform also documents iframe-based fallbacks for public graphs, allowing graceful degradation if the MCP service is unavailable.",
+      "citations": [4]
+    },
+    {
+      "question": "Q4: ASUS RT-AX86U Pro QoS for 4x 1080p streams",
+      "answer": "The router's manual and Merlin firmware wiki detail Adaptive QoS and custom traffic control hooks. Configuring manual bandwidth limits (e.g., 200 Mbps uplink) with mangle marks on RTMP ports ensures each 6 Mbps stream remains prioritised. A fiber uplink with at least 100 Mbps upstream headroom is recommended to keep latency spikes below 20 ms.",
+      "citations": [1, 2]
+    }
+  ],
+  "risk_matrix": [
+    {
+      "risk": "YouTube reduces concurrent event allowance below four",
+      "likelihood": "Low",
+      "impact": "Critical",
+      "mitigation": "Maintain secondary channel ready; prepare mirrored OBS targets for rapid cutover.",
+      "status": "✗ Unverified – open support ticket with YouTube Partner support at T-30d."
+    },
+    {
+      "risk": "OBS Multi-RTMP plugin instability during prolonged sessions",
+      "likelihood": "Medium",
+      "impact": "High",
+      "mitigation": "Run 60-minute soak test, monitor drop statistics, document rollback to single-stream profile.",
+      "status": "✗ Unverified – schedule rehearsal on 2025-10-20 to validate."
+    },
+    {
+      "risk": "InfraNodus MCP latency causes modal timeouts",
+      "likelihood": "Medium",
+      "impact": "Medium",
+      "mitigation": "Implement 60-second cache, fallback iframe banner, autoscale MCP VM.",
+      "status": "✗ Unverified – pending load test results from infra team."
+    },
+    {
+      "risk": "Router QoS scripts fail after firmware upgrade",
+      "likelihood": "Low",
+      "impact": "High",
+      "mitigation": "Version-control scripts, retest after upgrades, keep baseline config for rollback.",
+      "status": "Under observation – verify post-upgrade on staging unit."
+    },
+    {
+      "risk": "Insufficient upstream bandwidth during peak campus usage",
+      "likelihood": "Medium",
+      "impact": "High",
+      "mitigation": "Reserve 200 Mbps via Adaptive QoS, enforce guest bandwidth caps, keep LTE failover.",
+      "status": "✗ Unverified – perform live traffic simulation T-7d."
+    }
+  ],
+  "tech_stack": {
+    "framework": "Next.js 15",
+    "language": "TypeScript",
+    "styling": "Tailwind CSS v4",
+    "i18n": "i18next"
+  },
+  "performance": {
+    "LCP": "<2.5 s",
+    "CLS": "<0.1",
+    "JS_budget_kb": 250
+  },
+  "locales": ["se", "en", "ar", "fa", "zh", "es"],
+  "day2_policy": "Only Nodväst active; UI unchanged",
+  "artifacts_expected": {
+    "research_bundle.json": true,
+    "site_spec.md": true,
+    "obs_plan.md": true,
+    "yt_plan.md": true,
+    "infranodus_plan.md": true,
+    "router_plan.md": true,
+    "manuals_outline.md": true
+  },
+  "citations": [
+    {
+      "url": "https://dlcdnets.asus.com/pub/ASUS/wireless/RT-AX86U/RT-AX86U_PRO_UM_WEB.pdf",
+      "title": "ASUS RT-AX86U Pro User Guide",
+      "access_date": "2025-10-14"
+    },
+    {
+      "url": "https://github.com/RMerl/asuswrt-merlin.ng/wiki",
+      "title": "Asuswrt-Merlin Wiki",
+      "access_date": "2025-10-14"
+    },
+    {
+      "url": "https://github.com/sorayuki/obs-multi-rtmp",
+      "title": "OBS Multi-RTMP Plugin",
+      "access_date": "2025-10-14"
+    },
+    {
+      "url": "https://docs.infranodus.com/integrations/api",
+      "title": "InfraNodus API & Integrations",
+      "access_date": "2025-10-14"
+    },
+    {
+      "url": "https://support.google.com/youtube/answer/2474026?hl=en",
+      "title": "Stream on YouTube",
+      "access_date": "2025-10-14"
+    },
+    {
+      "url": "https://support.google.com/youtube/answer/2853702?hl=en",
+      "title": "Live Streaming Requirements on YouTube",
+      "access_date": "2025-10-14"
+    },
+    {
+      "url": "https://github.com/sorayuki/obs-multi-rtmp/wiki/Advanced-Settings",
+      "title": "OBS Multi-RTMP Advanced Settings",
+      "access_date": "2025-10-14"
+    },
+    {
+      "url": "https://obsproject.com/wiki/OBS-Studio-Quickstart",
+      "title": "OBS Studio Quickstart",
+      "access_date": "2025-10-14"
+    }
+  ]
+}

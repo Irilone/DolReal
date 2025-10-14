@@ -1,83 +1,120 @@
-# Router Plan – ASUS RT-AX86U Pro (Asuswrt-Merlin)
+# ASUS RT-AX86U Pro QoS Configuration Plan
 
-## Objectives
-- Guarantee stable upstream bandwidth for four 1080p30 YouTube RTMP feeds (max 24 Mbps total).
-- Prioritise OBS workstations and InfraNodus MCP traffic, while isolating guest devices.
-- Provide operational playbooks for failover and monitoring during Nov 6–7, 2025.
+## Objective
+Configure ASUS RT-AX86U Pro router (Asuswrt-Merlin firmware) to prioritize 4 concurrent 4K RTMP streams (100Mbps total) over 1000Mbps fiber connection.
 
-## Baseline Firmware & Access
-- Firmware: Asuswrt-Merlin **3004.388.6_2** or later.
-- Enable JFFS and custom scripts: *Administration → System → Persistent JFFS2 partition* (format on next boot).
-- SSH access: enable under *Administration → System*; limit to LAN; change default port to 2222.
-- Store automation scripts under `/jffs/scripts/`; set `chmod 755`.
+## Hardware & Network Context
+- **Router**: ASUS RT-AX86U Pro (WiFi 6, AX5700)
+- **Firmware**: Asuswrt-Merlin 388.x or later
+- **WAN**: 1000Mbps fiber connection
+- **RTMP Traffic**: 4 streams × 25Mbps = 100Mbps total
+- **Ports**: RTMP default port 1935
 
-## WAN & QoS Configuration
-1. **Bandwidth profiling**  
-   - Measure ISP upload off-peak (expected 250 Mbps).  
-   - Set manual bandwidth to 200 Mbps (Upload) / 500 Mbps (Download) in *Adaptive QoS → QoS → Manual* to ensure queue discipline.
-2. **Adaptive QoS rules**  
-   - Create custom category `DoL-RTMP` (TCP 1935, 443, 7443). Mark as *Highest*.  
-   - Tag OBS workstation MAC addresses (primary + backup) as *Work-From-Home* profile.
-3. **Traffic Control Script** (`/jffs/scripts/firewall-start`)  
-   ```sh
-   # Prioritise RTMP (1935) and InfraNodus MCP (8443)
-   iptables -t mangle -A PREROUTING -p tcp --dport 1935 -j MARK --set-mark 0x1
-   iptables -t mangle -A PREROUTING -p tcp --dport 8443 -j MARK --set-mark 0x2
-   tc qdisc add dev eth0 root handle 1: htb default 30
-   tc class add dev eth0 parent 1: classid 1:1 htb rate 200mbit ceil 200mbit
-   tc class add dev eth0 parent 1:1 classid 1:10 htb rate 160mbit ceil 200mbit prio 0
-   tc class add dev eth0 parent 1:1 classid 1:20 htb rate 30mbit ceil 80mbit prio 1
-   tc filter add dev eth0 parent 1: protocol ip handle 0x1 fw flowid 1:10
-   tc filter add dev eth0 parent 1: protocol ip handle 0x2 fw flowid 1:20
-   ```
-   - Reload via `service restart_firewall`.
-4. **Limit guest throughput**: *Guest Network → Bandwidth limiter* to 5 Mbps up/down.
+## Configuration Steps
 
-## LAN Topology & VLANs
-- LAN Port 1 → OBS primary PC  
-- LAN Port 2 → OBS backup PC  
-- LAN Port 3 → InfraNodus MCP host  
-- LAN Port 4 → Production switch (teams, admin)  
-- Create VLAN 20 for streaming gear via `robocfg`. Isolation prevents guest traffic from saturating LAN.
+### 1. Access Router Admin Panel
+- Navigate to `http://192.168.1.1` or router IP
+- Login with admin credentials
+- Verify Asuswrt-Merlin firmware version
 
-## Port Forwarding & Firewall
-| Service | External Port | Internal Host | Note |
-|---------|---------------|--------------|------|
-| RTMP    | 1935/TCP      | OBS primary  | Required if YouTube fallback uses RTMP ingest via custom gateways |
-| MCP TLS | 8443/TCP      | InfraNodus MCP | Optional; restrict via source IP allow list |
+### 2. Enable QoS (Quality of Service)
+```
+QoS → QoS Type → Traditional QoS
+```
+- Set **Upload Bandwidth**: 950 Mbps (95% of 1000Mbps)
+- Set **Download Bandwidth**: 950 Mbps
+- Enable **QoS** toggle
 
-- Enable `AiProtection → Malicious Sites Blocking` but whitelist `youtube.com`, `googlevideo.com`, `infranodus.com`.
+### 3. Create Custom RTMP Rule
+```
+QoS → User-defined QoS rules
+```
+Add new rule:
+- **Service Name**: RTMP Streaming
+- **Source IP**: [OBS machine IP - e.g., 192.168.1.100]
+- **Destination Port**: 1935
+- **Protocol**: TCP
+- **Priority**: Highest
+- **Transferred**: > 100000 KB (100MB threshold)
 
-## Monitoring & Alerts
-- Enable *Traffic Analyzer → Statistic*; set hourly email summary to NOC alias.  
-- Install `amtm` + `connmon` for per-interface bandwidth logs; schedule cron (`cru`) to export `/jffs/scripts/export-traffic`.  
-- Configure syslog to remote (Graylog) for audit.
+### 4. Apply Bandwidth Priority
+```
+QoS → QoS Priority
+```
+Priority order (highest to lowest):
+1. RTMP Streaming (custom rule)
+2. VOIP/Video Conferencing
+3. Web Surfing
+4. File Transfers
+5. P2P Downloads
 
-## Failover & Resilience
-- Dual-WAN: Configure USB-LTE dongle as secondary; set failover (not load balance).  
-- Keep pre-shared Wi-Fi credentials for mobile hotspot fallback (SSID `DoL-Backup`).  
-- Document manual switchover: disable WAN → enable USB; confirm NAT; alert production.
+### 5. Enable Adaptive QoS (Optional)
+```
+Adaptive QoS → Enable
+```
+- **QoS Type**: Adaptive QoS
+- **Mode**: Media Streaming
+- Prioritize streaming devices by MAC address
 
-## Event-Day Runbook
-**T–24 h**  
-- Verify firmware, QoS status, `tc` classes active.  
-- Run `iperf3` from OBS PC to confirm 190 Mbps sustained.  
-- Test MCP access via port 8443.
+## Verification Steps
 
-**Daily 07:30**  
-- Reboot router to flush state tables.  
-- Run `/jffs/scripts/health-check` to output CPU temp, load, wan status.  
-- Confirm `Traffic Analyzer` baseline <1% packet loss.
+### Test 1: Bandwidth Allocation
+```bash
+# From OBS machine, test upload while streaming
+iperf3 -c speedtest.server.com -p 5201 -t 60
+```
+Expected: Consistent 25Mbps per stream with <1% packet loss
 
-**During Streams**  
-- Monitor WAN utilisation (Adaptive QoS dashboard). Keep <75% uplink.  
-- If throughput spikes >180 Mbps for 2 min, enforce `tc class change` to cap guest VLAN.
+### Test 2: Port Monitoring
+```bash
+# Monitor RTMP port traffic
+tcpdump -i eth0 port 1935 -c 100
+```
 
-**Incident Handling**  
-- Packet loss >5%: move to backup LTE, pause YouTube ingest, notify production.  
-- MCP latency >200 ms: verify port 8443 queue (class 1:20); adjust ceiling to 40 Mbps temporarily.
+### Test 3: Router Traffic Analyzer
+- Navigate to **Traffic Analyzer** in router admin
+- Verify RTMP traffic shows in "Highest Priority" category
+- Monitor real-time bandwidth graphs during streaming
 
-## Post-Event
-- Export configs (`nvram show > /jffs/backups/$(date +%F)-nvram.txt`).  
-- Disable LTE failover, revert QoS if not needed.  
-- Review logs for anomalies; file incident report within 48 h.
+## Troubleshooting
+
+### Issue: QoS Not Affecting Gigabit WAN
+**Cause**: Traditional QoS has limited effect on 1Gbps connections
+**Solution**: 
+- Use Adaptive QoS instead
+- Enable **Bandwidth Limiter** for non-critical devices
+- Set manual upload rate to 800Mbps to force QoS engagement
+
+### Issue: RTMP Traffic Not Prioritized
+**Check**:
+1. Verify source IP matches OBS machine
+2. Confirm port 1935 is open (not blocked by firewall)
+3. Check QoS statistics page for rule hits
+
+### Issue: Stream Dropping Despite QoS
+**Actions**:
+1. Reduce other devices' bandwidth limits
+2. Enable **WMM** (WiFi Multimedia) for wireless devices
+3. Use wired connection for OBS machine
+4. Test with single stream first, then scale to 4
+
+## Critical Limitations
+
+⚠️ **QoS Effectiveness**: Research indicates traditional QoS has minimal impact on gigabit connections since 100Mbps RTMP traffic is only 10% of total bandwidth. QoS is most effective when link is congested (>70% utilization).
+
+**Recommendation**: 
+- Rely on excess bandwidth capacity rather than QoS alone
+- Implement application-level monitoring (OBS stats)
+- Use dedicated VLAN for streaming devices if possible
+
+## Related Documentation
+- [Asuswrt-Merlin QoS Guide](https://github.com/RMerl/asuswrt-merlin.ng/wiki/QOS)
+- ASUS RT-AX86U Pro User Manual (Section 4.5 - QoS)
+- RTMP Specification: Port 1935, TCP protocol
+
+## Success Criteria
+- [ ] All 4 RTMP streams maintain 25Mbps upload consistently
+- [ ] Packet loss <0.5% during 2-hour streaming window
+- [ ] No dropped frames in OBS (skipped <0.1%)
+- [ ] Router CPU usage <60% during streaming
+- [ ] Other devices maintain acceptable speeds (>100Mbps)
