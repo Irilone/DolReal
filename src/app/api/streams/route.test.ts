@@ -1,9 +1,10 @@
 // src/app/api/streams/route.test.ts
 import { GET } from './route';
+import { NextRequest } from 'next/server';
 
 describe('/api/streams', () => {
   it('returns all streams for day 1', async () => {
-    const request = new Request('http://localhost/api/streams?day=1');
+    const request = new NextRequest('http://localhost/api/streams?day=1');
     const response = await GET(request);
     const data = await response.json();
 
@@ -12,7 +13,7 @@ describe('/api/streams', () => {
   });
 
   it('returns only Nodväst for day 2', async () => {
-    const request = new Request('http://localhost/api/streams?day=2');
+    const request = new NextRequest('http://localhost/api/streams?day=2');
     const response = await GET(request);
     const data = await response.json();
 

@@ -1,22 +1,12 @@
+// src/components/providers/ThemeProvider.tsx
 'use client';
 
-import { useEffect } from 'react';
-import { useUIStore } from '@/stores/uiStore';
+import { ReactNode } from 'react';
 
 interface ThemeProviderProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const { theme } = useUIStore();
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [theme]);
-
-  return <>{children}</>;
+  return <div>{children}</div>;
 }

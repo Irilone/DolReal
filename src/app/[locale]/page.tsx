@@ -34,7 +34,7 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
 
   const activeVideoIds = initialStreams
     .filter((s) => s.active)
-    .map((s) => s.videoId);
+    .map((s) => s.youtubeId);
 
   return (
     <div className="container mx-auto px-4 py-8">

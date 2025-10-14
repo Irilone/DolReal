@@ -5,28 +5,13 @@ import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { Header } from '@/components/features/Header';
 import { Footer } from '@/components/features/Footer';
 
-interface LocaleLayoutProps {
-  children: React.ReactNode;
-  params: { locale: string };
-}
-
-export function generateStaticParams() {
-  return [
-    { locale: 'se' },
-    { locale: 'en' },
-    { locale: 'ar' },
-    { locale: 'fa' },
-    { locale: 'zh' },
-    { locale: 'es' },
-  ];
-}
-
 export default function LocaleLayout({
   children,
-  params,
-}: LocaleLayoutProps) {
-  const locale = params.locale;
-
+  params: { locale },
+}: {
+  children: React.ReactNode;
+  params: { locale: Locale };
+}) {
   if (!isValidLocale(locale)) {
     notFound();
   }

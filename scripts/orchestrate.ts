@@ -104,12 +104,12 @@ async function checkArtifactsExist(artifacts: string[]): Promise<boolean> {
   return true;
 }
 
-async function loadArtifact(filePath: string): Promise<any> {
+async function loadArtifact(filePath: string): Promise<unknown> {
   const content = await fs.readFile(filePath, 'utf-8');
   return JSON.parse(content);
 }
 
-async function saveArtifact(filePath: string, data: any): Promise<void> {
+async function saveArtifact(filePath: string, data: unknown): Promise<void> {
   await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8');
 }
 
@@ -127,7 +127,7 @@ function extractJSON(text: string): any {
   if (jsonBlockMatch) {
     try {
       return JSON.parse(jsonBlockMatch[1]);
-    } catch (e) {
+    } catch (e: unknown) {
       log(`Failed to parse JSON from code block: ${e}`);
     }
   }
@@ -137,7 +137,7 @@ function extractJSON(text: string): any {
   if (codeBlockMatch) {
     try {
       return JSON.parse(codeBlockMatch[1]);
-    } catch (e) {
+    } catch (e: unknown) {
       log(`Failed to parse JSON from generic code block: ${e}`);
     }
   }
@@ -145,7 +145,7 @@ function extractJSON(text: string): any {
   // Try to parse the entire text as JSON
   try {
     return JSON.parse(text);
-  } catch (e) {
+  } catch (e: unknown) {
     // If all else fails, return a structured error
     log(`Warning: Could not parse JSON from response. Returning raw text.`);
     return {
@@ -224,7 +224,7 @@ async function executeAgent(agent: AgentConfig): Promise<void> {
     const outputPreview = JSON.stringify(outputData).substring(0, 200);
     log(`✓ ${agent.name} completed in ${Date.now() - startTime}ms`);
     log(`  Output preview: ${outputPreview}...`);
-  } catch (error) {
+  } catch (error: unknown) {
     log(`✗ ${agent.name} failed: ${error}`);
     throw error;
   }
@@ -270,7 +270,7 @@ async function executeGemini(prompt: string, agentId: string): Promise<string> {
     throw new Error(`Gemini API error: ${JSON.stringify(data.error)}`);
   }
 
-  const text = data.candidates?.[0]?.content?.parts?.map((p: any) => p.text).join('\n') ?? '';
+  const text = data.candidates?.[0]?.content?.parts?.map((p: { text: string }) => p.text).join('\n') ?? '';
 
   if (!text) {
     throw new Error('Gemini API returned empty response');
@@ -280,7 +280,7 @@ async function executeGemini(prompt: string, agentId: string): Promise<string> {
   return text;
 }
 
-async function executeOpenAI(prompt: string, agentId: string): Promise<string> {
+async function executeOpenAI(prompt: string): Promise<string> {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) throw new Error('OPENAI_API_KEY not set');
 
@@ -329,7 +329,7 @@ async function executeOpenAI(prompt: string, agentId: string): Promise<string> {
   return text;
 }
 
-async function executeClaude(prompt: string, agentId: string): Promise<string> {
+async function executeClaude(prompt: string): Promise<string> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) throw new Error('ANTHROPIC_API_KEY not set');
 
