@@ -35,8 +35,9 @@ export const GeminiAPI = (() => {
   const initialize = async (options = {}) => {
     Utility.log.info('Initierar Gemini API-modul (Initializing Gemini API module)...');
 
-    // Get API key from options or environment
-    apiKey = options.apiKey || Utility.getEnvVar('GEMINI_API_KEY');
+    // Destructure apiKey from options, fallback to environment variable
+    const { apiKey: providedApiKey } = options;
+    apiKey = providedApiKey || Utility.getEnvVar('GEMINI_API_KEY');
 
     if (!apiKey) {
       const errorMsg = Utility.getErrorMessage('MISSING_API_KEY');
