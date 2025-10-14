@@ -39,7 +39,7 @@ NC := \033[0m # No Color
 #############################################
 
 ## all: Run complete orchestration pipeline (50-70 minutes)
-all: check-env dirs gemini-ultra gpt5-codex claude-parallel gemini-cli
+all: dirs gemini-ultra gpt5-codex claude-parallel gemini-cli
 	@echo "$(GREEN)✓ Full orchestration complete!$(NC)"
 	@echo "$(CYAN)Release artifacts:$(NC)"
 	@ls -lh $(RELEASES_DIR)/*.zip 2>/dev/null || echo "No release found"
@@ -67,17 +67,6 @@ help:
 	@echo "  make logs             - View all agent logs"
 	@echo "  make help             - Show this message"
 
-#############################################
-# Environment Check
-#############################################
-
-## check-env: Verify required environment variables
-check-env:
-	@echo "$(BLUE)Checking environment variables...$(NC)"
-	@test -n "$$GEMINI_API_KEY" || (echo "$(RED)✗ GEMINI_API_KEY not set$(NC)" && exit 1)
-	@test -n "$$OPENAI_API_KEY" || (echo "$(RED)✗ OPENAI_API_KEY not set$(NC)" && exit 1)
-	@test -n "$$ANTHROPIC_API_KEY" || (echo "$(RED)✗ ANTHROPIC_API_KEY not set$(NC)" && exit 1)
-	@echo "$(GREEN)✓ All API keys configured$(NC)"
 
 #############################################
 # Directory Setup
