@@ -1,11 +1,9 @@
 import type { Locale } from '@/types/i18n';
 import { notFound } from 'next/navigation';
 import { getLocaleDirection, isValidLocale } from '@/lib/utils/locale';
-import { I18nProvider } from '@/components/providers/I18nProvider';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { Header } from '@/components/features/Header';
 import { Footer } from '@/components/features/Footer';
-import { initI18n } from '@/i18n/config';
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -33,21 +31,18 @@ export default function LocaleLayout({
     notFound();
   }
   
-  initI18n(locale);
   const direction = getLocaleDirection(locale);
 
   return (
     <html lang={locale} dir={direction} suppressHydrationWarning>
       <body>
-        <I18nProvider locale={locale}>
-          <ThemeProvider>
-            <div className="flex min-h-screen flex-col">
-              <Header locale={locale} />
-              <main className="flex-grow">{children}</main>
-              <Footer />
-            </div>
-          </ThemeProvider>
-        </I18nProvider>
+        <ThemeProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header locale={locale} />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
