@@ -214,7 +214,7 @@ All artifacts conform to `schemas/agent-handoff-schema.json` - this defines the 
 - **scripts/orchestrate.ts**: Main orchestrator coordinating all 4 agents with parallel execution support
 - **src/app/[lang]/layout.tsx**: Localized layout with RTL support (dir attribute)
 - **src/i18n/config.ts**: i18next initialization with 6 language resources
-- **tsconfig.json**: TypeScript strict mode, path aliases (@/_ → src/_)
+- **tsconfig.json**: TypeScript strict mode, path aliases (@/_ -> src/_)
 
 ### API Routes (Backend)
 
