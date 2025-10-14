@@ -115,7 +115,7 @@ gpt5-codex: dirs $(ARTIFACT_1)
 	@echo "$(GREEN)✓ Agent 2 complete: $(ARTIFACT_2)$(NC)"
 
 ## claude-frontend: Run Agent 3a - Claude Sonnet 4.5 #1 (Frontend)
-claude-frontend: $(ARTIFACT_1) $(ARTIFACT_2)
+claude-frontend: dirs $(ARTIFACT_1) $(ARTIFACT_2)
 	@test -n "$$ANTHROPIC_API_KEY" || (echo "$(RED)✗ ANTHROPIC_API_KEY not set$(NC)" && exit 1)
 	@echo "$(MAGENTA)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
 	@echo "$(MAGENTA)  Agent 3a: Claude Sonnet 4.5 #1$(NC)"
@@ -130,7 +130,7 @@ claude-frontend: $(ARTIFACT_1) $(ARTIFACT_2)
 	@echo "$(GREEN)✓ Agent 3a complete: $(ARTIFACT_3A)$(NC)"
 
 ## claude-backend: Run Agent 3b - Claude Sonnet 4.5 #2 (Backend)
-claude-backend: $(ARTIFACT_1) $(ARTIFACT_2)
+claude-backend: dirs $(ARTIFACT_1) $(ARTIFACT_2)
 	@test -n "$$ANTHROPIC_API_KEY" || (echo "$(RED)✗ ANTHROPIC_API_KEY not set$(NC)" && exit 1)
 	@echo "$(MAGENTA)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
 	@echo "$(MAGENTA)  Agent 3b: Claude Sonnet 4.5 #2$(NC)"
@@ -145,7 +145,7 @@ claude-backend: $(ARTIFACT_1) $(ARTIFACT_2)
 	@echo "$(GREEN)✓ Agent 3b complete: $(ARTIFACT_3B)$(NC)"
 
 ## claude-parallel: Run both Claude agents in parallel
-claude-parallel: $(ARTIFACT_1) $(ARTIFACT_2)
+claude-parallel: dirs $(ARTIFACT_1) $(ARTIFACT_2)
 	@test -n "$$ANTHROPIC_API_KEY" || (echo "$(RED)✗ ANTHROPIC_API_KEY not set$(NC)" && exit 1)
 	@echo "$(MAGENTA)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
 	@echo "$(MAGENTA)  Running Claude agents in parallel...$(NC)"

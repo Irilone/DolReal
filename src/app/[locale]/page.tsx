@@ -7,35 +7,15 @@ import { StreamGrid } from '@/components/features/StreamGrid';
 import { LanguageSelector } from '@/components/features/LanguageSelector';
 import { ThemeToggle } from '@/components/features/ThemeToggle';
 import { ViewerCount } from '@/components/features/ViewerCount';
-import { useEffect, useState } from 'react';
+import { getInitialStreams } from '@/lib/streams';
 
 interface HomePageProps {
   params: { locale: Locale };
 }
 
-async function getInitialStreams(): Promise<Stream[]> {
-  try {
-    // This fetch needs to be adapted if running outside of a browser context
-    // For server-side rendering in Next.js, use an absolute URL.
-    const res = await fetch('/api/streams');
-    if (!res.ok) {
-      console.error('Failed to fetch initial streams');
-      return [];
-    }
-    return res.json();
-  } catch (error) {
-    console.error('Error fetching streams:', error);
-    return [];
-  }
-}
-
-export default function HomePage({ params: { locale } }: HomePageProps) {
+export default async function HomePage({ params: { locale } }: HomePageProps) {
   const { t } = useTranslation();
-  const [initialStreams, setInitialStreams] = useState<Stream[]>([]);
-
-  useEffect(() => {
-    getInitialStreams().then(setInitialStreams);
-  }, []);
+  const initialStreams = await getInitialStreams();
 
   const activeVideoIds = initialStreams
     .filter((s) => s.active)
@@ -56,11 +36,13 @@ export default function HomePage({ params: { locale } }: HomePageProps) {
       </div>
 
       <div className="mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div className="flex items-center gap-4">
-          <LanguageSelector currentLocale={locale} />
-          <ThemeToggle />
-        </div>
-        <ViewerCount videoIds={activeVideoIds} />
+        <nav aria-label="Website settings">
+          <div className="flex items-center gap-4">
+            <LanguageSelector currentLocale={locale} />
+            <ThemeToggle />
+          </div>
+        </nav>
+        <ViewerCount videoIds={activeVideoIds} aria-label="Live viewer count" />
       </div>
 
       <StreamGrid initialStreams={initialStreams} />

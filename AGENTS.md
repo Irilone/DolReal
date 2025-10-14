@@ -1,19 +1,25 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-The README defines a Gemini-driven delivery pipeline. Keep shared orchestration assets at the repo root: `.trunk/` for linting, `.github/workflows/` for automation, and (when added) `prompts/`, `artifacts/`, `scripts/`, and `Makefile` per the orchestration suite. The existing `october/` folder contains legacy UI prototypes (`dol.tsx`, `alt-dol.tsx`, `dol-2.tsx`) and placeholder integration directories—retain them until the new Next.js app fully replaces them. Any generated bundle such as `research_bundle.json` lives under `artifacts/`; never hand-place it in `october/`.
+Keep orchestration assets at the repository root: `.trunk/` for linting, `.github/workflows/` for CI, `Makefile` for chained runs, and `scripts/` for Gemini helpers. Next.js source lives in `src/` with components, hooks, and app routes; static assets belong in `public/`. Generated artifacts such as `research_bundle.json` must land in `artifacts/`, never in `october/`. Preserve the `october/` prototypes (`dol.tsx`, `alt-dol.tsx`, `dol-2.tsx`) until the new app fully replaces them. Store shared schema definitions under `schemas/` and long-form manuals inside `perplexity_manuals/`.
 
 ## Build, Test, and Development Commands
-Bootstrap the Node workspace with `npm install` once a `package.json` matching the README scripts is present. Core commands: `npm run gem:research` (produces `research_bundle.json` and plan docs with Gemini 2.5 Pro Ultra), `npm run gem:flash` (scaffolds the Next.js skeleton), `npm run gem:pro` (integrates and hardens outputs), and `npm run orchestrate` or `make all` to chain the entire A→B→C flow. Before running, export `GEMINI_API_KEY` and ensure prompts reference the current bundle. Use `trunk check` for linting Markdown, JSON, and TypeScript, and inspect outputs in `artifacts/` before committing.
+- `npm install`: install workspace dependencies.
+- `npm run gem:research`: call Gemini 2.5 Pro Ultra to create the research bundle and plan docs.
+- `npm run gem:flash`: scaffold or refresh the Next.js shell from the current prompts.
+- `npm run gem:pro`: integrate generated assets and apply hardening passes.
+- `npm run orchestrate` / `make all`: execute the full A→B→C pipeline.
+- `trunk check`: run Prettier, ESLint, and Markdown/JSON linters.
+- `npm test`: execute configured Node or React suites; add `NODE_OPTIONS=--test` for ad-hoc smoke runs.
 
 ## Coding Style & Naming Conventions
-TypeScript is the default for both CLI scripts (ES modules) and React code. Follow Prettier defaults (enforced via Trunk) with two-space indentation. Name components and modules in PascalCase, helper functions in camelCase, and keep bundles and prompts in kebab-case (`research_bundle.json`, `site_spec.md`). Mirror the README examples when declaring scripts (`scripts/gem.ts`) and make each prompt file self-identifying with version headers. For `.tsx` prototypes, keep `'use client';` guards and group Tailwind classes by layout → spacing → color for readability.
+Default to TypeScript ES modules with two-space indentation and Prettier formatting (enforced via Trunk). Name React components and classes in PascalCase, helpers in camelCase, and generated bundles or prompts in kebab-case (e.g., `research_bundle.json`, `site_spec.md`). Place `'use client';` at the top of interactive `.tsx` files and group Tailwind classes by layout → spacing → color for clarity.
 
 ## Testing Guidelines
-No automated suite exists yet; prioritize smoke coverage around the CLI. Add `node --test` or Vitest specs under `scripts/__tests__/` that mock the Gemini API and assert request payloads, file writes, and error handling. When the Next.js scaffolding lands, co-locate React Testing Library specs beside components to cover YouTube player state, modal focus traps, and day-two deactivation. Run `trunk check` and any new `npm test` job in CI before raising a PR.
+Favor `node --test` or Vitest specs under `scripts/__tests__/` to mock Gemini calls, assert payloads, and verify file writes. Co-locate React Testing Library specs with their components once the Next.js UI stabilizes (player state, modal focus, day-two deactivation). Run `trunk check` and `npm test` before submitting any PR, attaching logs for failing cases.
 
 ## Commit & Pull Request Guidelines
-Match the existing history with short, imperative subjects (`Add orchestrator Makefile`). Separate generated artifacts from source changes in the description, and note which prompts or bundles were regenerated. Never commit `GEMINI_API_KEY` or other secrets; use GitHub secrets for workflows. Pull requests should link planning tickets, include command outputs (`npm run orchestrate`, `trunk check`), attach screenshots for UI changes, and highlight follow-up work such as manual guide updates.
+Write short, imperative commit titles (e.g., `Add orchestrator Makefile`). Describe regenerated artifacts separately from source edits and note which prompts or bundles changed. Pull requests should link planning tickets, paste key command output (`npm run orchestrate`, `trunk check`), and include screenshots for UI adjustments. Call out follow-up tasks so the execution pipeline stays traceable.
 
 ## Security & Configuration Tips
-Store Gemini keys in `.env.local` or shell profiles ignored by Git, and reference them via CI secrets (`GEMINI_API_KEY`). Cap outbound concurrency as described in the README’s policy table and document any deviations inside the corresponding plan markdown. Treat generated manuals as reviewable artifacts—verify policy citations and redact sensitive router or streaming details before publishing.
+Never commit secrets; source `GEMINI_API_KEY` from `.env.local` or CI secrets. Keep concurrency and rate limits aligned with the README policy, documenting exceptions in the relevant plan markdown. Review generated manuals for sensitive routing or streaming details before publishing to `artifacts/`.
