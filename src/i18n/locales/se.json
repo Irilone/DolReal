@@ -1,0 +1,20 @@
+{
+  "header": {
+    "title": "Dagar om Lagar 2025",
+    "logo_alt": "DoL Logotyp"
+  },
+  "streams": {
+    "nodvast": "Nodväst",
+    "nodsyd": "Nodsyd",
+    "nodost": "Nodöst",
+    "nodmidd": "Nodmidd",
+    "inactive": "Ej aktiv idag",
+    "play": "Spela",
+    "pause": "Pausa"
+  },
+  "program": {
+    "title": "Program",
+    "day1": "Dag 1 - 6 November 2025",
+    "day2": "Dag 2 - 7 November 2025"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "header": {
+    "title": "Days of Law 2025",
+    "logo_alt": "DoL Logo"
+  },
+  "streams": {
+    "nodvast": "Node West",
+    "nodsyd": "Node South",
+    "nodost": "Node East",
+    "nodmidd": "Node Middle",
+    "inactive": "Not active today",
+    "play": "Play",
+    "pause": "Pause"
+  },
+  "program": {
+    "title": "Program",
+    "day1": "Day 1 - November 6, 2025",
+    "day2": "Day 2 - November 7, 2025"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "header": {
+    "title": "2025年法律日",
+    "logo_alt": "DoL徽标"
+  },
+  "streams": {
+    "nodvast": "西节点",
+    "nodsyd": "南节点",
+    "nodost": "东节点",
+    "nodmidd": "中节点",
+    "inactive": "今天不活跃",
+    "play": "播放",
+    "pause": "暂停"
+  },
+  "program": {
+    "title": "程序",
+    "day1": "第一天 - 2025年11月6日",
+    "day2": "第二天 - 2025年11月7日"
+  }
+}
