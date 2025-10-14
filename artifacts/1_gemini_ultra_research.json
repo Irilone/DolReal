@@ -84,7 +84,7 @@
   "3. Research Memo": {
     "Q1": {
       "Question": "What is YouTube's concurrent live event limit per channel?",
-      "Official_policy": "YouTube's official documentation (API [C5] and Help Center [C6]) does not state an explicit numerical limit on the number of concurrent encoder-based live streams allowed per channel. Restrictions primarily relate to policy violations or YouTube TV viewing limits [C7], which are irrelevant here. Community consensus indicates that multiple concurrent streams (e.g., 5-10) are feasible for verified channels. The requirement for 4 streams is considered low risk.",
+      "Official_policy": "YouTube's official documentation (API [C5] and Help Center [C6]) does not state an explicit numerical limit on the number of concurrent encoder-based live streams allowed per channel. Restrictions primarily relate to policy violations or YouTube TV viewing limits [C7], which are irrelevant here. Community consensus indicates that multiple concurrent streams (e.g., 5-10) are feasible for verified channels. **Before proceeding, verify the current YouTube policy regarding concurrent live streams by consulting the latest official documentation or contacting YouTube support. Document the verification step in the workflow.** If an undocumented limit is encountered, the contingency plan is to utilize multiple pre-verified YouTube channels.",
       "Workarounds": "N/A. If an undocumented limit is encountered, the contingency plan is to utilize multiple pre-verified YouTube channels."
     },
     "Q2": {
