@@ -2,20 +2,37 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export function ThemeToggle() {
+  const { t } = useTranslation();
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    if (darkMode) {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    setDarkMode(isDark);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem('theme', newMode ? 'dark' : 'light');
+    if (newMode) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-  }, [darkMode]);
+  };
 
   return (
-    <button onClick={() => setDarkMode(!darkMode)}>
+    <button
+      onClick={toggleTheme}
+      className="rounded-md border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+      aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+    >
       {darkMode ? '☀️' : '🌙'}
     </button>
   );
