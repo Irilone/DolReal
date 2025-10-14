@@ -1,0 +1,514 @@
+{
+  "metadata": {
+    "agent_id": "gpt5-codex",
+    "timestamp": "2025-10-14T00:30:00Z",
+    "execution_time_ms": 12500,
+    "status": "completed",
+    "next_agents": ["claude-frontend", "claude-backend"],
+    "input_artifacts": ["1_gemini_ultra_research.json"],
+    "output_artifacts": ["2_gpt5_codex_architecture.json"]
+  },
+
+  "system_architecture": {
+    "tech_stack": {
+      "framework": {
+        "name": "Next.js",
+        "version": "15.0.0",
+        "router": "App Router",
+        "rationale": "Server components, streaming SSR, built-in optimization"
+      },
+      "language": {
+        "name": "TypeScript",
+        "version": "5.3.0",
+        "mode": "strict",
+        "rationale": "Type safety, IntelliSense, refactoring support"
+      },
+      "styling": {
+        "name": "Tailwind CSS",
+        "version": "4.0.0",
+        "features": ["dark mode", "RTL support", "custom animations"],
+        "rationale": "Utility-first, small bundle, excellent DX"
+      },
+      "i18n": {
+        "name": "react-i18next",
+        "version": "14.0.0",
+        "locales": ["se", "en", "ar", "fa", "zh", "es"],
+        "rationale": "Mature ecosystem, Next.js integration, namespace support"
+      },
+      "state_management": {
+        "name": "Zustand",
+        "version": "4.5.0",
+        "rationale": "Lightweight (1KB), simple API, no boilerplate"
+      },
+      "runtime": {
+        "name": "Bun",
+        "version": "1.2.23",
+        "rationale": "7-100x faster than npm, native TypeScript, optimized for M2"
+      }
+    },
+
+    "directory_structure": {
+      "src": {
+        "app": {
+          "[locale]": {
+            "page.tsx": "Home page with stream grid",
+            "layout.tsx": "Locale-specific layout with dir attribute",
+            "stream": {
+              "[node]": {
+                "page.tsx": "Individual stream page"
+              }
+            },
+            "schedule": {
+              "page.tsx": "Event schedule page"
+            },
+            "archive": {
+              "page.tsx": "VOD archive page"
+            },
+            "about": {
+              "page.tsx": "About event page"
+            }
+          },
+          "api": {
+            "streams": {
+              "route.ts": "GET stream list with day logic"
+            },
+            "stream-health": {
+              "[streamId]": {
+                "route.ts": "GET YouTube stream health"
+              }
+            },
+            "viewer-count": {
+              "route.ts": "GET aggregate viewer count"
+            },
+            "infranodus": {
+              "analyze": {
+                "route.ts": "POST text for analysis"
+              },
+              "graph": {
+                "[contextId]": {
+                  "route.ts": "GET graph visualization data"
+                }
+              }
+            }
+          },
+          "layout.tsx": "Root layout",
+          "globals.css": "Global styles and Tailwind imports"
+        },
+        "components": {
+          "ui": {
+            "button.tsx": "Reusable button component",
+            "card.tsx": "Card container component",
+            "modal.tsx": "Modal dialog component",
+            "select.tsx": "Select dropdown component"
+          },
+          "features": {
+            "Header.tsx": "Main navigation header",
+            "Footer.tsx": "Site footer",
+            "StreamGrid.tsx": "4-stream grid layout",
+            "StreamCard.tsx": "Individual stream card",
+            "YouTubeEmbed.tsx": "YouTube iframe wrapper",
+            "LanguageSelector.tsx": "Language switcher dropdown",
+            "ThemeToggle.tsx": "Dark mode toggle",
+            "StreamHealthIndicator.tsx": "Stream status badge",
+            "ViewerCount.tsx": "Live viewer counter",
+            "InfraNodusGraph.tsx": "Knowledge graph visualization",
+            "ConceptCloud.tsx": "Tag cloud of key concepts",
+            "ScheduleTimeline.tsx": "Event schedule display",
+            "EventCountdown.tsx": "Countdown to event start"
+          },
+          "shared": {
+            "Loading.tsx": "Loading spinner",
+            "ErrorBoundary.tsx": "Error boundary wrapper",
+            "SEO.tsx": "Meta tags component"
+          }
+        },
+        "lib": {
+          "youtube": {
+            "client.ts": "YouTube Data API v3 client",
+            "types.ts": "YouTube API response types"
+          },
+          "infranodus": {
+            "client.ts": "InfraNodus REST API client",
+            "cache.ts": "Caching strategy implementation",
+            "rate-limiter.ts": "Rate limiting logic"
+          },
+          "utils": {
+            "cn.ts": "Tailwind className utility",
+            "date.ts": "Date formatting utilities",
+            "locale.ts": "Locale detection and management"
+          }
+        },
+        "hooks": {
+          "useStreamHealth.ts": "Hook for stream health monitoring",
+          "useViewerCount.ts": "Hook for viewer count polling",
+          "useLocalStorage.ts": "LocalStorage persistence hook",
+          "useMediaQuery.ts": "Responsive breakpoint hook"
+        },
+        "types": {
+          "stream.ts": "Stream domain types",
+          "i18n.ts": "Internationalization types",
+          "api.ts": "API request/response types",
+          "component.ts": "Common component prop types"
+        },
+        "i18n": {
+          "config.ts": "i18next configuration",
+          "locales": {
+            "se.json": "Swedish translations",
+            "en.json": "English translations",
+            "ar.json": "Arabic translations",
+            "fa.json": "Farsi translations",
+            "zh.json": "Chinese translations",
+            "es.json": "Spanish translations"
+          }
+        },
+        "stores": {
+          "streamStore.ts": "Zustand store for stream state",
+          "uiStore.ts": "Zustand store for UI state"
+        }
+      },
+      "public": {
+        "images": "Static images",
+        "fonts": "Custom fonts",
+        "favicon.ico": "Site favicon"
+      },
+      "docs": {
+        "api": "API documentation",
+        "components": "Component documentation"
+      },
+      "plans": "Implementation plans from Agent 1",
+      "artifacts": "Agent outputs",
+      "tests": {
+        "unit": "Jest unit tests",
+        "e2e": "Playwright E2E tests"
+      }
+    },
+
+    "component_tree": [
+      {
+        "name": "RootLayout",
+        "path": "src/app/layout.tsx",
+        "dependencies": ["Header", "Footer", "globals.css"],
+        "assigned_to": "claude-frontend",
+        "props": {
+          "children": "React.ReactNode"
+        },
+        "description": "Root layout with header, main content area, and footer"
+      },
+      {
+        "name": "LocaleLayout",
+        "path": "src/app/[locale]/layout.tsx",
+        "dependencies": ["i18n config"],
+        "assigned_to": "claude-frontend",
+        "props": {
+          "children": "React.ReactNode",
+          "params": "{ locale: Locale }"
+        },
+        "description": "Locale-specific layout with dir attribute for RTL support"
+      },
+      {
+        "name": "HomePage",
+        "path": "src/app/[locale]/page.tsx",
+        "dependencies": ["StreamGrid", "EventCountdown", "SEO"],
+        "assigned_to": "claude-frontend",
+        "props": {
+          "params": "{ locale: Locale }"
+        },
+        "description": "Main landing page with hero section and stream grid"
+      },
+      {
+        "name": "StreamPage",
+        "path": "src/app/[locale]/stream/[node]/page.tsx",
+        "dependencies": ["YouTubeEmbed", "StreamHealthIndicator", "InfraNodusGraph"],
+        "assigned_to": "claude-frontend",
+        "props": {
+          "params": "{ locale: Locale, node: string }"
+        },
+        "description": "Full-screen individual stream view"
+      },
+      {
+        "name": "Header",
+        "path": "src/components/features/Header.tsx",
+        "dependencies": ["LanguageSelector", "ThemeToggle"],
+        "assigned_to": "claude-frontend",
+        "props": {
+          "currentLocale": "Locale"
+        },
+        "description": "Site header with navigation, language switcher, and dark mode toggle"
+      },
+      {
+        "name": "StreamGrid",
+        "path": "src/components/features/StreamGrid.tsx",
+        "dependencies": ["StreamCard", "useStreamHealth"],
+        "assigned_to": "claude-frontend",
+        "props": {
+          "streams": "Stream[]"
+        },
+        "description": "Responsive grid displaying all 4 streams"
+      },
+      {
+        "name": "StreamCard",
+        "path": "src/components/features/StreamCard.tsx",
+        "dependencies": ["Card", "StreamHealthIndicator", "ViewerCount"],
+        "assigned_to": "claude-frontend",
+        "props": {
+          "stream": "Stream"
+        },
+        "description": "Individual stream card with thumbnail, title, and status"
+      },
+      {
+        "name": "YouTubeEmbed",
+        "path": "src/components/features/YouTubeEmbed.tsx",
+        "dependencies": [],
+        "assigned_to": "claude-frontend",
+        "props": {
+          "videoId": "string",
+          "title": "string",
+          "autoplay": "boolean",
+          "muted": "boolean"
+        },
+        "description": "YouTube iframe embed with responsive aspect ratio"
+      },
+      {
+        "name": "LanguageSelector",
+        "path": "src/components/features/LanguageSelector.tsx",
+        "dependencies": ["Select", "i18n"],
+        "assigned_to": "claude-frontend",
+        "props": {},
+        "description": "Dropdown for switching between 6 languages"
+      },
+      {
+        "name": "StreamHealthIndicator",
+        "path": "src/components/features/StreamHealthIndicator.tsx",
+        "dependencies": ["useStreamHealth"],
+        "assigned_to": "claude-frontend",
+        "props": {
+          "streamId": "string"
+        },
+        "description": "Color-coded badge showing stream health status"
+      },
+      {
+        "name": "ViewerCount",
+        "path": "src/components/features/ViewerCount.tsx",
+        "dependencies": ["useViewerCount"],
+        "assigned_to": "claude-frontend",
+        "props": {
+          "streamIds": "string[]"
+        },
+        "description": "Live viewer count with auto-refresh"
+      },
+      {
+        "name": "InfraNodusGraph",
+        "path": "src/components/features/InfraNodusGraph.tsx",
+        "dependencies": ["react-force-graph"],
+        "assigned_to": "claude-frontend",
+        "props": {
+          "contextId": "string"
+        },
+        "description": "Interactive knowledge graph visualization"
+      },
+      {
+        "name": "YouTubeClient",
+        "path": "src/lib/youtube/client.ts",
+        "dependencies": [],
+        "assigned_to": "claude-backend",
+        "exports": ["getStreamHealth", "getViewerCount", "getStreamList"],
+        "description": "YouTube Data API v3 client with rate limiting"
+      },
+      {
+        "name": "InfraNodusClient",
+        "path": "src/lib/infranodus/client.ts",
+        "dependencies": ["rate-limiter", "cache"],
+        "assigned_to": "claude-backend",
+        "exports": ["analyzeText", "getGraph", "getConcepts"],
+        "description": "InfraNodus REST API client with caching"
+      },
+      {
+        "name": "StreamsAPI",
+        "path": "src/app/api/streams/route.ts",
+        "dependencies": ["youtube client"],
+        "assigned_to": "claude-backend",
+        "exports": ["GET"],
+        "description": "API endpoint for retrieving stream list with day logic"
+      },
+      {
+        "name": "StreamHealthAPI",
+        "path": "src/app/api/stream-health/[streamId]/route.ts",
+        "dependencies": ["youtube client"],
+        "assigned_to": "claude-backend",
+        "exports": ["GET"],
+        "description": "API endpoint for stream health status"
+      },
+      {
+        "name": "InfraNodusAnalyzeAPI",
+        "path": "src/app/api/infranodus/analyze/route.ts",
+        "dependencies": ["infranodus client"],
+        "assigned_to": "claude-backend",
+        "exports": ["POST"],
+        "description": "API endpoint for text analysis"
+      }
+    ],
+
+    "data_flow": {
+      "stream_health_monitoring": {
+        "flow": "YouTubeDataAPI → StreamHealthAPI → useStreamHealth hook → StreamHealthIndicator component",
+        "polling_interval": "15 seconds",
+        "caching": "No caching (real-time data)"
+      },
+      "viewer_count": {
+        "flow": "YouTubeDataAPI → ViewerCountAPI → useViewerCount hook → ViewerCount component",
+        "polling_interval": "30 seconds",
+        "caching": "No caching (real-time data)"
+      },
+      "infranodus_graph": {
+        "flow": "InfraNodusAPI → InfraNodusGraphAPI → InfraNodusGraph component",
+        "polling_interval": "5 minutes",
+        "caching": "5-minute cache via unstable_cache"
+      },
+      "stream_list": {
+        "flow": "Environment variables + day logic → StreamsAPI → HomePage/StreamGrid",
+        "polling_interval": "On page load only",
+        "caching": "Static at build time, revalidated on demand"
+      }
+    }
+  },
+
+  "api_contracts": [
+    {
+      "endpoint": "/api/streams",
+      "method": "GET",
+      "description": "Get list of all streams with availability based on current day",
+      "request_schema": null,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "streams": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string", "example": "nodvast" },
+                "name": { "type": "string", "example": "Nodväst" },
+                "youtubeId": { "type": "string", "example": "dQw4w9WgXcQ" },
+                "embedUrl": { "type": "string" },
+                "active": { "type": "boolean", "description": "Whether stream is available today" },
+                "day": { "type": "number", "enum": [1, 2] }
+              },
+              "required": ["id", "name", "youtubeId", "embedUrl", "active", "day"]
+            }
+          },
+          "currentDay": { "type": "number", "enum": [1, 2] }
+        }
+      }
+    },
+    {
+      "endpoint": "/api/stream-health/[streamId]",
+      "method": "GET",
+      "description": "Get real-time health status of a specific stream",
+      "request_schema": {
+        "params": {
+          "streamId": { "type": "string", "description": "YouTube stream ID" }
+        }
+      },
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "enum": ["good", "ok", "bad", "offline"],
+            "description": "Stream health status"
+          },
+          "message": { "type": "string", "example": "Excellent stream health" },
+          "details": {
+            "type": "object",
+            "properties": {
+              "bitrate": { "type": "number", "description": "Current bitrate in Kbps" },
+              "resolution": { "type": "string", "example": "2160p" },
+              "fps": { "type": "number", "example": 30 }
+            }
+          }
+        }
+      }
+    },
+    {
+      "endpoint": "/api/viewer-count",
+      "method": "GET",
+      "description": "Get aggregate viewer count across all streams",
+      "request_schema": null,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "counts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "videoId": { "type": "string" },
+                "concurrentViewers": { "type": "number" }
+              }
+            }
+          },
+          "total": { "type": "number", "description": "Sum of all concurrent viewers" }
+        }
+      }
+    },
+    {
+      "endpoint": "/api/infranodus/analyze",
+      "method": "POST",
+      "description": "Send text to InfraNodus for discourse analysis",
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "text": { "type": "string", "minLength": 1 },
+          "contextId": { "type": "string", "description": "Graph context ID" }
+        },
+        "required": ["text", "contextId"]
+      },
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean" },
+          "contextId": { "type": "string" },
+          "statementId": { "type": "string" }
+        }
+      }
+    },
+    {
+      "endpoint": "/api/infranodus/graph/[contextId]",
+      "method": "GET",
+      "description": "Retrieve graph visualization data from InfraNodus",
+      "request_schema": {
+        "params": {
+          "contextId": { "type": "string" }
+        }
+      },
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "nodes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "label": { "type": "string" },
+                "val": { "type": "number", "description": "Node weight" }
+              }
+            }
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "source": { "type": "string" },
+                "target": { "type": "string" },
+                "value": { "type": "number", "description": "Link weight" }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+
+  "scaffolding": {
