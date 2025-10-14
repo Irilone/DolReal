@@ -1,49 +1,300 @@
 {
-  "agent": "gemini-2.5-pro-ultra",
-  "phase": "1_research_and_planning",
-  "timestamp": "2025-10-14T00:00:00Z",
-  "event": {
-    "name": "Dagar om Lagar 2025",
-    "dates": ["2025-11-06", "2025-11-07"],
-    "nodes": ["Nodväst", "Nodsyd", "Nodöst", "Nodmidd"],
-    "streams": 4
+  "metadata": {
+    "agent_id": "Gemini 2.5 Pro Ultra - Deep Research & Planning (v2.0)",
+    "timestamp": "2025-10-14T09:53:01Z",
+    "execution_time_ms": 0,
+    "status": "completed"
   },
-  
-  "overview_table": {
-    "streaming_setup": {
-      "task": "Configure 4 concurrent YouTube live streams",
-      "tools": ["OBS Studio 30.x", "Multiple RTMP Outputs Plugin", "YouTube Live Streaming API"],
-      "risks": ["YouTube 1-stream-per-channel limit", "OBS CPU overload on M2", "RTMP connection failures"],
-      "mitigation": ["Create 4 separate YouTube channels", "Use hardware encoding (VideoToolbox)", "Configure backup ingest servers"]
+  "1. Overview Table": [
+    {
+      "Task": "Network Infrastructure & QoS Setup",
+      "Tools": "ASUS RT-AX86U Pro, Asuswrt-Merlin, FlexQoS",
+      "Risk Level": "High",
+      "Next Agent": "NetworkOps_Agent"
     },
-    "network_optimization": {
-      "task": "Prioritize 100Mbps RTMP traffic over 1Gbps fiber",
-      "tools": ["ASUS RT-AX86U Pro", "Asuswrt-Merlin firmware", "QoS configuration"],
-      "risks": ["QoS ineffective on gigabit WAN", "Router CPU bottleneck", "Port 1935 blocking"],
-      "mitigation": ["Use Adaptive QoS with media streaming mode", "Monitor router performance", "Verify firewall rules"]
+    {
+      "Task": "Streaming Hardware & Software Configuration (Multi-Instance)",
+      "Tools": "OBS Studio (4x Instances), High-Spec PC (Ryzen 9/i9, RTX 3080+)",
+      "Risk Level": "Critical",
+      "Next Agent": "AV_Production_Agent"
     },
-    "knowledge_graphs": {
-      "task": "Integrate InfraNodus for discourse analysis",
-      "tools": ["InfraNodus REST API", "Next.js API routes", "React Force Graph"],
-      "risks": ["API rate limits (100 req/hour free tier)", "No MCP server available", "Real-time analysis lag"],
-      "mitigation": ["Implement caching strategy", "Use API proxy pattern", "Batch text processing"]
+    {
+      "Task": "YouTube Live Event Management",
+      "Tools": "YouTube Studio (Live Control Room)",
+      "Risk Level": "Low",
+      "Next Agent": "Platform_Manager_Agent"
     },
-    "frontend_platform": {
-      "task": "Build multi-language streaming site",
-      "tools": ["Next.js 15", "Tailwind CSS v4", "react-i18next", "Zustand"],
-      "risks": ["Performance budget exceeded", "RTL layout issues", "WCAG 2.2 AA compliance"],
-      "mitigation": ["Code splitting and lazy loading", "Test with Arabic/Farsi extensively", "Automated accessibility audits"]
+    {
+      "Task": "Web Platform Development (Next.js 15)",
+      "Tools": "Next.js 15, TypeScript, Tailwind CSS, i18next",
+      "Risk Level": "Medium",
+      "Next Agent": "Frontend_Dev_Agent"
+    },
+    {
+      "Task": "InfraNodus Integration (Visualization)",
+      "Tools": "InfraNodus (iframe embedding)",
+      "Risk Level": "Low",
+      "Next Agent": "Frontend_Dev_Agent"
+    },
+    {
+      "Task": "Accessibility (WCAG 2.2 AA) & Localization QA",
+      "Tools": "Axe DevTools, Lighthouse, RTL Testing",
+      "Risk Level": "Medium",
+      "Next Agent": "QA_Agent"
+    }
+  ],
+  "2. Manuals Index": [
+    {
+      "Title": "ASUS RT-AX86U Pro Official Support & Manuals",
+      "URL": "https://www.asus.com/in/supportonly/rt-ax86u%20pro/helpdesk_manual/",
+      "Abstract": "The official ASUS support page containing user manuals, quick start guides, and firmware updates for the RT-AX86U Pro. Includes manuals in multiple languages, such as Swedish (Version SW22539) and English (Version E23427). [C1]",
+      "Access date": "2025-10-14"
+    },
+    {
+      "Title": "Asuswrt-Merlin Documentation (Wiki)",
+      "URL": "https://www.asuswrt-merlin.net/docs",
+      "Abstract": "The official documentation portal for the Asuswrt-Merlin custom firmware, linking directly to the GitHub Wiki. This resource provides guides on installation, advanced features, and configuration options, including Adaptive QoS and script support (e.g., FlexQoS). [C2]",
+      "Access date": "2025-10-14"
+    },
+    {
+      "Title": "OBS Studio Launch Parameters (Multi-Instance)",
+      "URL": "https://obsproject.com/kb/launch-parameters",
+      "Abstract": "OBS documentation detailing command-line arguments for advanced configuration. This includes the `--multi` parameter, which is required to run multiple instances of OBS simultaneously on the same machine to stream distinct content feeds. [C3]",
+      "Access date": "2025-10-14"
+    },
+    {
+      "Title": "InfraNodus: Network Analysis and Visualization Documentation",
+      "URL": "https://infranodus.com/docs/network-analysis",
+      "Abstract": "Documentation detailing InfraNodus methodologies and features. It confirms that public graphs can be embedded on external websites via URL/iframe, which is the primary visualization integration method. [C4]",
+      "Access date": "2025-10-14"
+    },
+    {
+      "Title": "YouTube Live Streaming API Overview",
+      "URL": "https://developers.google.com/youtube/v3/live/getting-started",
+      "Abstract": "Official Google Developer documentation detailing the YouTube Live Streaming API. It covers the management of live events (broadcasts) and video streams, authorization, and the lifecycle of a broadcast. [C5]",
+      "Access date": "2025-10-14"
+    },
+    {
+      "Title": "Create a YouTube live stream with an encoder (Live Control Room)",
+      "URL": "https://support.google.com/youtube/answer/2907883?hl=en",
+      "Abstract": "The official YouTube Help guide for setting up streams via the Live Control Room. It details the manual process of creating events, obtaining Stream URLs and Keys, and monitoring stream health. [C6]",
+      "Access date": "2025-10-14"
+    }
+  ],
+  "3. Research Memo": {
+    "Q1": {
+      "Question": "What is YouTube's concurrent live event limit per channel?",
+      "Official_policy": "YouTube's official documentation (API [C5] and Help Center [C6]) does not state an explicit numerical limit on the number of concurrent encoder-based live streams allowed per channel. Restrictions primarily relate to policy violations or YouTube TV viewing limits [C7], which are irrelevant here. Community consensus indicates that multiple concurrent streams (e.g., 5-10) are feasible for verified channels. **Before proceeding, verify the current YouTube policy regarding concurrent live streams by consulting the latest official documentation or contacting YouTube support. Document the verification step in the workflow.** If an undocumented limit is encountered, the contingency plan is to utilize multiple pre-verified YouTube channels.",
+      "Workarounds": "N/A. If an undocumented limit is encountered, the contingency plan is to utilize multiple pre-verified YouTube channels."
+    },
+    "Q2": {
+      "Question": "How to configure OBS for 4 simultaneous RTMP streams?",
+      "Multi-output_plugins": "The requirement is for 4 distinct streams (Nodväst, Nodsyd, Nodöst, Nodmidd). Plugins like 'Multiple RTMP outputs' stream the *same* OBS Program output to multiple destinations. They do *not* allow streaming different scenes simultaneously [C8].",
+      "Performance_requirements": "**Revised Strategy:** The only viable solution using OBS is to run 4 separate instances of OBS Studio simultaneously on the streaming PC, using the `--multi` launch argument [C3]. Each instance manages one stream (Scene, Audio Input, Encoder, RTMP Output). This significantly increases hardware demands. A high-end CPU (e.g., Ryzen 9/Core i9) and a robust GPU (e.g., RTX 3080+) are mandatory to handle 4 separate 1080p NVENC encoding sessions simultaneously [C9]."
+    },
+    "Q3": {
+      "Question": "InfraNodus MCP integration - is it possible?",
+      "Current_MCP_server_status": "Yes. InfraNodus provides an MCP (Model Context Protocol) server, documented on GitHub [C10]. This server allows integration of InfraNodus analysis capabilities into backend LLM workflows via the InfraNodus API. It requires an API key.",
+      "Alternative_embedding_options": "For the frontend visualization requirement in Next.js, the recommended approach remains embedding the interactive graph using an iframe or a shareable URL [C4]. The MCP server is intended for data analysis, not direct visualization embedding."
+    },
+    "Q4": {
+      "Question": "ASUS RT-AX86U Pro QoS for 4x 1080p streams",
+      "Fiber_uplink_requirements": "Assuming 1080p 60fps streams, the recommended bandwidth per stream is 5 Mbps to 12 Mbps [C11]. Four streams require a total of 20 Mbps to 48 Mbps. Including a 30-40% buffer for network stability, a minimum stable uplink of ~70 Mbps is required. A 100 Mbps fiber uplink is strongly recommended.",
+      "Bandwidth_allocation_strategies": "Utilize Asuswrt-Merlin's Adaptive QoS [C12] to prioritize 'Media Streaming'. For guaranteed prioritization, install the FlexQoS script [C13]. FlexQoS allows creating specific iptables rules to assign the highest priority to the static IP address of the streaming PC."
     }
   },
-  
-  "research_memo": {
-    "critical_questions": [
+  "4. Detailed Plans (Markdown Files)": {
+    "router_plan.md": "# Router Configuration Plan (ASUS RT-AX86U Pro + Merlin)\n\n## 1. Prerequisites\n1. Firmware: Latest stable Asuswrt-Merlin installed.\n2. Uplink: Verified Fiber connection (Minimum 100 Mbps symmetrical recommended).\n3. Streaming PC: Connected via Ethernet (1Gbps or 2.5Gbps port) and assigned a Static IP (e.g., 192.168.50.10).\n\n## 2. QoS Configuration (Adaptive QoS + FlexQoS)\nObjective: Guarantee uplink bandwidth (~70 Mbps) for the streaming PC.\n\n1. Navigate to `Adaptive QoS` > `QoS`.\n2. Enable QoS and select `Adaptive QoS`.\n3. Set `Upload Bandwidth` and `Download Bandwidth` manually (e.g., 100 Mbps Up/Down). Use 95% of actual speed to manage bufferbloat.\n4. Select `Queue Discipline`: `fq_codel` or `Cake` (if available) for optimal bufferbloat management.\n5. Select `Customize` priority.\n6. Drag `Video and Audio Streaming` to the highest priority.\n\n## 3. Advanced Prioritization (FlexQoS)\n1. Install FlexQoS via AMTM (Asuswrt-Merlin Terminal Menu) over SSH (Refer to [C13]).\n2. Navigate to the FlexQoS tab in the GUI.\n3. Create a custom iptables Rule:\n    - Local IP/CIDR: [Static IP of OBS PC, e.g., 192.168.50.10]\n    - Class: Video and Audio Streaming (or highest available priority class)\n    - Apply settings and restart the QoS service.\n\n## 4. Port Forwarding\nNo port forwarding is required for outbound RTMP/RTMPS streaming.\n\n## 5. Failover Strategies (Dual-WAN)\n1. Navigate to `WAN` > `Dual WAN`.\n2. Configure the primary WAN (Fiber).\n3. Configure a secondary connection (e.g., 5G modem via USB).\n4. Set the mode to `Fail Over`.\n5. **Contingency:** If the failover connection cannot sustain ~70 Mbps upload, the A/V team must be alerted immediately to reduce the number of streams or lower the bitrate/resolution (e.g., switch to 720p30fps).",
+    "obs_plan.md": "docs/plans/obs_plan.md",
+    "yt_plan.md": "docs/plans/yt_plan.md",
+    "infranodus_plan.md": "docs/plans/infranodus_plan.md",
+    "site_spec.md": "docs/plans/site_spec.md",
+    "manuals_outline.md": "docs/plans/manuals_outline.md"
+  },
+  "5. Risk Matrix": [
+    {
+      "Risk": "Streaming PC Hardware Overload (4x OBS Instances)",
+      "Likelihood": "High",
+      "Impact": "Critical",
+      "Mitigation": "Requires high-end CPU (Ryzen 9/i9) and powerful GPU (RTX 3080+) capable of 4+ simultaneous NVENC sessions. Mandatory full-duration (8hr) stress testing. Contingency: Reduce resolution/fps or use 2 separate PCs.",
+      "Status": "High Priority Testing Needed"
+    },
+    {
+      "Risk": "Uplink Bandwidth Saturation",
+      "Likelihood": "High",
+      "Impact": "Critical",
+      "Mitigation": "Requires ~70 Mbps sustained upload. Secure 100Mbps+ fiber. Implement strict QoS (FlexQoS). Configure Dual-WAN failover with high-capacity 5G backup.",
+      "Status": "Mitigation Planned"
+    },
+    {
+      "Risk": "Operational Complexity (Managing 4 OBS Instances)",
+      "Likelihood": "Medium",
+      "Impact": "High",
+      "Mitigation": "High risk of operator error managing 4 separate applications. Detailed training and clear documentation (Manual 2) are essential. Extensive rehearsals required.",
+      "Status": "Mitigation Planned"
+    },
+    {
+      "Risk": "YouTube Concurrent Stream Policy Enforcement",
+      "Likelihood": "Low",
+      "Impact": "Critical",
+      "Mitigation": "While community verified, official policy is silent. Conduct a 4-stream test on the target channel ASAP. Contingency: Prepare 4 separate verified YouTube channels.",
+      "Status": "Unverified ✗ (Requires live test)"
+    },
+    {
+      "Risk": "RTL Language Layout & Accessibility Issues",
+      "Likelihood": "Medium",
+      "Impact": "Medium",
+      "Mitigation": "Arabic and Farsi (RTL) require careful implementation for WCAG compliance. Use Tailwind logical properties and conduct thorough QA with native speakers and accessibility tools.",
+      "Status": "Planned"
+    }
+  ],
+  "6. Final JSON Output": {
+    "metadata": {
+      "agent_id": "gemini-2.5-pro-ultra-deep-research-v2.0",
+      "timestamp": "2025-10-14T09:53:01Z",
+      "execution_time_ms": 0,
+      "status": "completed"
+    },
+    "bundle_version": "2.0",
+    "project": "Dagar om Lagar 2025",
+    "dates": {
+      "day1": "2025-11-06",
+      "day2": "2025-11-07"
+    },
+    "streams": [
+      "Nodväst",
+      "Nodsyd",
+      "Nodöst",
+      "Nodmidd"
+    ],
+    "policies": {
+      "wcag": "2.2 AA",
+      "autoplay": "user-gesture-only",
+      "youtube_concurrency": "Community verified ≤10; Officially Undefined (Blocking Issue: Unverified ✗)"
+    },
+    "blocking_issues": [
       {
-        "question": "Can YouTube support 4 concurrent streams from a single account?",
-        "answer": "NO - YouTube only allows 1 concurrent live stream per channel",
-        "solution": "Create 4 separate YouTube channels (one per node: Nodväst, Nodsyd, Nodöst, Nodmidd)",
-        "citation": "YouTube Help Center: 'You can only have one live stream at a time per channel' - https://support.google.com/youtube/answer/2853856",
-        "confidence": "HIGH",
-        "verification": "Tested and confirmed by multiple sources"
+        "issue": "YouTube Live Streaming concurrency limit is officially undefined and unverified.",
+        "impact": "Could cause complete system failure if actual concurrency is lower than expected during live event.",
+        "resolution_required": true,
+        "status": "BLOCKING"
+      }
+    ],
+    "plans": {
+      "router_plan_path": "plans/router_plan.md",
+      "obs_plan_path": "plans/obs_plan.md",
+      "yt_plan_path": "plans/yt_plan.md",
+      "infranodus_plan_path": "plans/infranodus_plan.md",
+      "site_spec_path": "plans/site_spec.md",
+      "manuals_outline_path": "plans/manuals_outline.md"
+    },
+    "manuals_required": [
+      "ASUS RT-AX86U Pro",
+      "Asuswrt-Merlin",
+      "OBS (Multi-Instance)",
+      "InfraNodus Embedding & MCP",
+      "YouTube Studio",
+      "YouTube Live Streaming API"
+    ],
+    "citations": [
+      {
+        "id": "C1",
+        "url": "https://www.asus.com/in/supportonly/rt-ax86u%20pro/helpdesk_manual/",
+        "title": "RT-AX86U Pro - Support - ASUS",
+        "access_date": "2025-10-14"
       },
       {
+        "id": "C2",
+        "url": "https://www.asuswrt-merlin.net/docs",
+        "title": "Documentation | Asuswrt-Merlin",
+        "access_date": "2025-10-14"
+      },
+      {
+        "id": "C3",
+        "url": "https://obsproject.com/kb/launch-parameters",
+        "title": "Launch Parameters - OBS Studio",
+        "access_date": "2025-10-14"
+      },
+      {
+        "id": "C4",
+        "url": "https://infranodus.com/docs/network-analysis",
+        "title": "Network Analysis and Visualization — InfraNodus.Com",
+        "access_date": "2025-10-14"
+      },
+      {
+        "id": "C5",
+        "url": "https://developers.google.com/youtube/v3/live/getting-started",
+        "title": "YouTube Live Streaming API Overview | Google for Developers",
+        "access_date": "2025-10-14"
+      },
+      {
+        "id": "C6",
+        "url": "https://support.google.com/youtube/answer/2907883?hl=en",
+        "title": "Create a YouTube live stream with an encoder - Google Help",
+        "access_date": "2025-10-14"
+      },
+      {
+        "id": "C7",
+        "url": "https://support.google.com/youtubetv/answer/13842245?hl=en",
+        "title": "Set your home network to watch without screen limits - YouTube TV Help",
+        "access_date": "2025-10-14"
+      },
+      {
+        "id": "C8",
+        "url": "https://obsproject.com/forum/threads/how-to-record-multiple-scenes-separately.155039/",
+        "title": "How to record multiple scenes separately? | OBS Forums",
+        "access_date": "2025-10-14"
+      },
+      {
+        "id": "C9",
+        "url": "https://alive-project.com/en/streamer-magazine/article/7725/",
+        "title": "OBS Requirements Guide | Streamer Magazine - Alive Project",
+        "access_date": "2025-10-14"
+      },
+      {
+        "id": "C10",
+        "url": "https://github.com/infranodus/mcp-server-infranodus",
+        "title": "The official InfraNodus MCP server - GitHub",
+        "access_date": "2025-10-14"
+      },
+      {
+        "id": "C11",
+        "url": "https://www.byteplus.com/en/topic/52128",
+        "title": "How much bandwidth is needed for 1080p 60fps streaming? - BytePlus",
+        "access_date": "2025-10-14"
+      },
+      {
+        "id": "C12",
+        "url": "https://www.asus.com/us/support/faq/1010935/",
+        "title": "[Adaptive QoS] Introduction and settings of QoS on ASUS Router | Official Support",
+        "access_date": "2025-10-14"
+      },
+      {
+        "id": "C13",
+        "url": "https://github.com/dave14305/FlexQoS",
+        "title": "FlexQoS - Flexible QoS Enhancement Script for Adaptive QoS on ASUSWRT-Merlin - GitHub",
+        "access_date": "2025-10-14"
+      }
+    ],
+    "tech_stack": {
+      "framework": "Next.js 15",
+      "language": "TypeScript",
+      "styling": "Tailwind CSS v4",
+      "i18n": "i18next"
+    },
+    "performance": {
+      "LCP": "<2.5 s",
+      "CLS": "<0.1",
+      "JS_budget_kb": 250
+    },
+    "locales": [
+      "se",
+      "en",
+      "ar",
+      "fa",
+      "zh",
+      "es"
+    ],
+    "day2_policy": "Only Nodväst active; UI unchanged, inactive streams show offline/ended status."
+  }
+}
