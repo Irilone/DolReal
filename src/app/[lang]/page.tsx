@@ -42,25 +42,20 @@ export default function HomePage({ params }: HomePageProps) {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-5xl md:text-6xl">
-          {t('event.title')}
-        </h1>
-        <p className="mt-3 max-w-md mx-auto text-base text-slate-600 dark:text-slate-400 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+        <p className="text-lg text-slate-600 dark:text-slate-400">
           {t('event.description')}
         </p>
-        <p className="mt-2 max-w-md mx-auto text-base text-slate-500 dark:text-slate-500 sm:text-lg md:mt-3 md:text-xl md:max-w-3xl">
+        <p className="mt-2 text-base text-slate-500 dark:text-slate-500">
           {t('event.dates')}
         </p>
       </div>
 
       <div className="mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <nav aria-label="Website settings">
-          <div className="flex items-center gap-4">
-            <LanguageSelector currentLocale={lang} />
-            <ThemeToggle />
-          </div>
-        </nav>
-        <ViewerCount videoIds={activeVideoIds} aria-label="Live viewer count" />
+        <div className="flex items-center gap-4">
+          <LanguageSelector currentLocale={lang} />
+          <ThemeToggle />
+        </div>
+        <ViewerCount videoIds={activeVideoIds} />
       </div>
 
       <StreamGrid initialStreams={initialStreams} />
