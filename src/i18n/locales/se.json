@@ -3,18 +3,35 @@
     "title": "Dagar om Lagar 2025",
     "logo_alt": "DoL Logotyp"
   },
+  "nav": {
+    "home": "Hem",
+    "schedule": "Schema",
+    "archive": "Arkiv",
+    "about": "Om"
+  },
   "streams": {
     "nodvast": "Nodväst",
     "nodsyd": "Nodsyd",
     "nodost": "Nodöst",
     "nodmidd": "Nodmidd",
     "inactive": "Ej aktiv idag",
+    "live": "Live",
+    "viewers": "tittare",
     "play": "Spela",
-    "pause": "Pausa"
+    "pause": "Pausa",
+    "watch": "Titta"
   },
-  "program": {
-    "title": "Program",
+  "event": {
+    "title": "Dagar om Lagar 2025",
+    "dates": "6-7 november 2025",
+    "description": "Ett juridiskt symposium som utforskar lagar och samhälle",
     "day1": "Dag 1 - 6 November 2025",
     "day2": "Dag 2 - 7 November 2025"
+  },
+  "health": {
+    "good": "Utmärkt",
+    "ok": "Bra",
+    "bad": "Dålig",
+    "offline": "Offline"
   }
 }

@@ -4,443 +4,264 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**DolReal** - "Dagar om Lagar 2025" event website. A production-ready Next.js 15 streaming platform built using a **4-agent coordinated orchestration system** with file-based async communication.
+**DolReal** - Multi-agent orchestration system that builds a Next.js 15 streaming platform for "Dagar om Lagar 2025" (Nov 6-7, 2025). Uses file-based async communication between 4 specialized AI agents (Gemini Ultra, GPT-5 Codex, 2x Claude Sonnet 4.5) to generate production-ready code in 50-70 minutes.
 
-### Event Details
-- **Name**: Dagar om Lagar 2025
-- **Dates**: November 6-7, 2025
-- **Streams**: 4 simultaneous (Nodväst, Nodsyd, Nodöst, Nodmidd)
-- **Day 2 Policy**: Only Nodväst active; UI unchanged
+**Tech Stack**: Next.js 15, TypeScript (strict), Tailwind CSS v4, react-i18next (6 languages), YouTube IFrame API, InfraNodus MCP
 
-### Technology Stack
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript (strict mode)
-- **Styling**: Tailwind CSS v4 + dark mode
-- **i18n**: react-i18next (se, en, ar, fa, zh, es - 6 languages)
-- **Package Manager**: Bun (7-100x faster than npm)
+**Key Features**: 4 concurrent YouTube streams, knowledge graph integration, WCAG 2.2 AA accessibility, RTL support (Arabic/Farsi), dark mode
 
-### Key Integrations
-- **YouTube Live**: 4 concurrent streams via IFrame API
-- **InfraNodus**: Knowledge graph (MCP + fallback iframe)
-- **ASUS RT-AX86U Pro**: QoS via Asuswrt-Merlin
-- **OBS Studio**: Multi-RTMP plugin for streaming
+## Build & Development Commands
 
-### Performance Targets
-- **LCP** (Largest Contentful Paint): <2.5s
-- **CLS** (Cumulative Layout Shift): <0.1
-- **JS Bundle Size**: <250KB
-- **Test Coverage**: >80%
-- **WCAG Compliance**: 2.2 AA
-
----
-
-## Multi-Agent Orchestration Architecture (v2.0)
-
-This project uses **file-based async communication** between 4 specialized AI agents to build the complete platform in 50-70 minutes.
-
-### Agent Pipeline
-
-```
-1. Gemini 2.5 Pro Ultra (Research & Planning)
-   ↓ writes: research_bundle.json + 6 plan files
-   ↓ runtime: ~10-15 minutes
-
-2. GPT-5 Codex (System Architecture)
-   ↓ writes: architecture.json + scaffolding
-   ↓ runtime: ~5-10 minutes
-   ↓ splits work for parallel execution
-   ├─→ 3a. Claude Sonnet 4.5 #1 (Frontend)
-   │   ↓ writes: frontend_output.json
-   │   ↓ runtime: ~15-20 minutes
-   │
-   └─→ 3b. Claude Sonnet 4.5 #2 (Backend)
-       ↓ writes: backend_output.json
-       ↓ runtime: ~15-20 minutes (parallel with 3a)
-       ↓
-       ↓ both complete
-       ↓
-4. Gemini 2.5 Pro CLI (Final Integration)
-   ↓ writes: final_build.json + release zip
-   ↓ runtime: ~5-10 minutes
-
-Total: 50-70 minutes (Claudes save 15-20 min via parallelization)
-```
-
-### Agent Responsibilities
-
-| Agent | Model | Role | Inputs | Outputs |
-|-------|-------|------|--------|---------|
-| **1. Gemini Ultra** | Gemini 2.5 Pro Ultra | Deep Research + Planning | Requirements | `1_gemini_ultra_research.json` + 6 `.md` plans |
-| **2. GPT-5 Codex** | GPT-5 Codex (High Reasoning) | System Architecture | Research bundle | `2_gpt5_codex_architecture.json` + scaffolding |
-| **3a. Claude Frontend** | Claude Sonnet 4.5 | UI Components | Architecture + research | `3a_claude_frontend_output.json` (components, i18n, styles) |
-| **3b. Claude Backend** | Claude Sonnet 4.5 | Services + Docs | Architecture + research | `3b_claude_backend_output.json` (APIs, integrations, docs) |
-| **4. Gemini CLI** | Gemini 2.5 Pro CLI | Final Integration | Both Claude outputs | `4_gemini_cli_final.json` + `releases/*.zip` |
-
-### File-Based Communication
-
-All agents communicate via JSON artifacts in `artifacts/`:
-
-```json
-{
-  "metadata": {
-    "agent_id": "gemini-ultra",
-    "timestamp": "2025-10-14T...",
-    "execution_time_ms": 12450,
-    "status": "completed",
-    "next_agent": "gpt5-codex"
-  },
-  "bundle_version": "2.0",
-  "project": "Dagar om Lagar 2025",
-  // ... agent-specific outputs
-}
-```
-
-**Schema**: `schemas/agent-handoff-schema.json` defines all interfaces.
-
-### Artifacts Generated
-
-```
-artifacts/
-├── 1_gemini_ultra_research.json      # Research bundle
-├── 2_gpt5_codex_architecture.json    # System architecture
-├── 3a_claude_frontend_output.json    # Frontend code
-├── 3b_claude_backend_output.json     # Backend code + docs
-└── 4_gemini_cli_final.json           # Final build report
-
-plans/
-├── router_plan.md                    # ASUS router QoS config
-├── obs_plan.md                       # OBS multi-RTMP setup
-├── yt_plan.md                        # YouTube event management
-├── infranodus_plan.md                # Knowledge graph integration
-├── site_spec.md                      # Web app specification
-└── manuals_outline.md                # Documentation outline
-
-releases/
-└── dol-2025-v2.0.0.zip              # Production-ready build
-```
-
----
-
-## Development Commands
-
-### Orchestration Pipeline
+### Orchestration Pipeline (Multi-Agent)
 
 ```bash
-# Run full pipeline (all 4 agents sequentially + parallel Claudes)
-make all
-# or
-bun run orchestrate
+# Full pipeline - all 4 agents sequentially (50-70 min)
+make all                  # or: bun run orchestrate
 
-# Check agent completion status
-make status
+# Individual agents
+make gemini-ultra         # Agent 1: Research & Planning (10-15 min)
+make gpt5-codex           # Agent 2: System Architecture (5-10 min)
+make claude-parallel      # Agents 3a & 3b in parallel (15-20 min)
+make gemini-cli           # Agent 4: Final Integration (5-10 min)
 
-# Clean artifacts
-make clean
+# Or run Claudes separately
+make claude-frontend      # Agent 3a: UI components
+make claude-backend       # Agent 3b: API routes + docs
+
+# Monitoring
+make status               # Check agent completion status
+make logs                 # View agent logs
+make clean                # Remove all artifacts
 ```
 
-### Individual Agent Execution
-
+**Interactive Mode** (recommended for development):
 ```bash
-make gemini-ultra     # Agent 1: Research (10-15 min)
-make gpt5-codex       # Agent 2: Architecture (5-10 min)
-make claude-frontend  # Agent 3a: Frontend (15-20 min)
-make claude-backend   # Agent 3b: Backend (15-20 min)
-make claude-parallel  # Both Claudes in parallel (15-20 min)
-make gemini-cli       # Agent 4: Integration (5-10 min)
+./scripts/interactive-orchestrate.sh    # Step-by-step execution with approval gates
 ```
 
 ### Package Management (Bun)
 
 ```bash
-# Install dependencies
-bun install
-
-# Add package
-bun add <package>
-
-# Remove package
-bun remove <package>
-
-# Run scripts
-bun run <script>
-bun dev               # Start dev server
-bun run build         # Production build
-bun test              # Run tests
-bun run lint          # Lint code
+bun install               # Install dependencies (7-100x faster than npm)
+bun add <package>         # Add dependency
+bun remove <package>      # Remove dependency
 ```
 
-### Linting and Formatting
+### Next.js Development
 
 ```bash
-# Run Trunk linter
-trunk check
-trunk check --all
-
-# Auto-fix issues
-trunk fmt
-
-# Enabled linters: markdownlint, prettier, trufflehog, git-diff-check
+bun dev                   # Start dev server (http://localhost:3000)
+bun run build             # Production build
+bun start                 # Start production server
+bun run lint              # Run Next.js linting
 ```
 
-### Environment Setup
+### Testing
 
 ```bash
-# Required API keys
-export GEMINI_API_KEY="your-gemini-key"
-export OPENAI_API_KEY="your-openai-key"
-export ANTHROPIC_API_KEY="your-anthropic-key"
-
-# Application keys (for final build)
-export NEXT_PUBLIC_YOUTUBE_API_KEY="your-youtube-key"
-export INFRANODUS_API_KEY="your-infranodus-key"
-export NODVAST_YOUTUBE_ID="stream-id-1"
-export NODSYD_YOUTUBE_ID="stream-id-2"
-export NODOST_YOUTUBE_ID="stream-id-3"
-export NODMIDD_YOUTUBE_ID="stream-id-4"
+bun test                  # Run all tests (Jest)
+bun test <file>           # Run specific test file
+bun run test:coverage     # Generate coverage report (target: >80%)
 ```
 
----
+### Linting & Formatting
 
-## Project Structure
+```bash
+trunk check               # Run all linters (markdownlint, prettier, trufflehog)
+trunk check --all         # Check all files
+trunk fmt                 # Auto-fix formatting issues
+```
+
+### TypeScript
+
+```bash
+bun run typecheck         # Check TypeScript errors (tsc --noEmit)
+```
+
+## Architecture
+
+### Multi-Agent Communication Flow
+
+```
+1. Gemini Ultra → artifacts/1_gemini_ultra_research.json + plans/*.md
+2. GPT-5 Codex → artifacts/2_gpt5_codex_architecture.json
+3a. Claude Frontend → artifacts/3a_claude_frontend_output.json
+3b. Claude Backend → artifacts/3b_claude_backend_output.json (parallel with 3a)
+4. Gemini CLI → artifacts/4_gemini_cli_final.json + releases/*.zip
+```
+
+All artifacts conform to `schemas/agent-handoff-schema.json` - this defines the communication protocol between agents.
+
+### Agent Responsibilities
+
+| Agent | Outputs | Purpose |
+|-------|---------|---------|
+| **Gemini Ultra** | Research bundle + 6 plan files | Deep research, policy verification (WCAG, YouTube), manual gathering |
+| **GPT-5 Codex** | Architecture + scaffolding | System design, component tree, API contracts, core config files |
+| **Claude Frontend** | Components + i18n + styles | React/Next.js UI, Tailwind, accessibility, YouTube integration |
+| **Claude Backend** | API routes + integrations + docs | Next.js API routes, YouTube client, InfraNodus MCP, 3 manuals |
+| **Gemini CLI** | Final build + release | Merge outputs, run build/tests, performance audits, create release |
+
+### Project Structure
 
 ```
 /
-├── artifacts/              # Agent communication artifacts (JSON)
-├── plans/                  # Research plans (Markdown)
-├── releases/               # Production builds (ZIP)
-├── prompts/                # Agent prompt files
-│   ├── 1_gemini_ultra_research.md
-│   ├── 2_gpt5_codex_architecture.md
-│   ├── 3a_claude_frontend.md
-│   ├── 3b_claude_backend.md
-│   └── 4_gemini_cli_final.md
-├── schemas/                # JSON schemas
-│   └── agent-handoff-schema.json
-├── scripts/                # Orchestration scripts
-│   ├── gem.ts             # Gemini API wrapper
-│   ├── anthropic.ts       # Claude API wrapper
-│   └── openai.ts          # GPT-5 Codex wrapper
-├── src/                    # Next.js application source
-│   ├── app/               # App Router pages + API routes
-│   ├── components/        # React components
-│   ├── lib/               # Utilities (YouTube, InfraNodus, MCP)
+├── artifacts/              # Agent JSON handoff artifacts (gitignored)
+├── plans/                  # Research plans (router, OBS, YouTube, site spec)
+├── prompts/                # Agent prompt files (detailed instructions)
+├── schemas/                # JSON schema for agent communication
+├── scripts/                # Orchestration scripts (gem.ts, anthropic.ts, openai.ts)
+├── src/                    # Next.js application
+│   ├── app/               # App Router (pages + API routes)
+│   ├── components/        # React components (features/, ui/, shared/)
+│   ├── lib/               # Utilities (YouTube, InfraNodus, MCP clients)
 │   ├── hooks/             # Custom React hooks
 │   ├── types/             # TypeScript types
-│   └── i18n/              # Internationalization
-│       └── locales/       # se, en, ar, fa, zh, es
-├── docs/                   # Documentation
-│   └── manuals/           # 3 comprehensive manuals
-├── public/                 # Static assets
-├── october/                # Legacy prototypes (deprecated)
-├── .trunk/                 # Trunk linter config
-├── Makefile                # Orchestration commands
-├── package.json            # Dependencies + scripts
-├── tsconfig.json           # TypeScript config
-├── next.config.js          # Next.js config
-├── tailwind.config.js      # Tailwind CSS config
-├── CLAUDE.md               # This file
-├── AGENTS.md               # Repository guidelines
-├── ASUSWRT-MERLIN-DOCS.md  # Router documentation
-└── README.md               # See october/README.md for v2.0 details
+│   └── i18n/              # i18next config + locales/ (se, en, ar, fa, zh, es)
+├── docs/manuals/          # Generated documentation (3 comprehensive guides)
+├── october/               # LEGACY: deprecated prototypes - DO NOT MODIFY
+├── Makefile               # Orchestration commands
+└── package.json           # Dependencies + npm scripts
 ```
 
----
+### Key Files
 
-## Core Architecture
+- **Makefile:55**: `make all` pipeline definition
+- **package.json:7-24**: npm scripts including orchestration commands
+- **schemas/agent-handoff-schema.json**: Contract for agent communication
+- **prompts/*.md**: Detailed instructions for each agent (critical for understanding agent behavior)
 
-### Component Hierarchy
+### API Routes (Backend)
 
-```typescript
-// Frontend (Agent 3a responsibility)
-src/components/
-├── features/
-│   ├── Header.tsx           // Logo, nav, language switcher, dark mode
-│   ├── StreamCarousel.tsx   // 4 YouTube streams, day 2 logic
-│   ├── GraphNavModal.tsx    // InfraNodus embed modal
-│   ├── ProgramSection.tsx   // Event schedule
-│   └── LanguageSwitcher.tsx // 6-language dropdown
-├── ui/                       // shadcn/ui base components
-└── shared/                   // Reusable components
 ```
-
-### API Routes
-
-```typescript
-// Backend (Agent 3b responsibility)
 src/app/api/
-├── streams/
-│   └── route.ts             // GET /api/streams?day=1|2
-├── graph/
-│   └── route.ts             // GET /api/graph?nodeId=string
-└── health/
-    └── route.ts             // GET /api/health
+├── streams/route.ts       # GET /api/streams?day=1|2 (YouTube stream info)
+├── graph/route.ts         # GET /api/graph?nodeId=string (InfraNodus)
+└── health/route.ts        # GET /api/health (system status)
 ```
 
-### Third-Party Integrations
+### Component Architecture (Frontend)
 
-```typescript
-// Backend (Agent 3b responsibility)
-src/lib/
-├── youtube/
-│   └── client.ts            // YouTube Data API v3 client
-├── infranodus/
-│   └── client.ts            // InfraNodus MCP + fallback
-└── mcp/
-    └── client.ts            // Generic MCP client
+```
+src/components/
+├── features/              # Main UI components
+│   ├── Header.tsx           # Logo, nav, language switcher, dark mode
+│   ├── StreamCarousel.tsx   # 4 YouTube players (day 2 logic: only Nodväst active)
+│   ├── GraphNavModal.tsx    # InfraNodus modal embed
+│   ├── ProgramSection.tsx   # Event schedule
+│   └── LanguageSwitcher.tsx # 6-language dropdown
+├── ui/                    # Base UI components (shadcn/ui)
+└── shared/                # Reusable components
 ```
 
----
+## Environment Variables
 
-## Key Features
+Create `.env.local` (gitignored):
 
-### Internationalization (i18n)
+```bash
+# Agent API keys (required for orchestration)
+GEMINI_API_KEY=...
+OPENAI_API_KEY=...
+ANTHROPIC_API_KEY=...
 
-- **6 languages**: Swedish, English, Arabic, Farsi, Chinese, Spanish
-- **RTL support**: Automatic for Arabic/Farsi
-- **Implementation**: react-i18next with JSON translation files
-- **Routing**: `/[locale]/` pattern in Next.js App Router
+# Application keys (required for final build)
+NEXT_PUBLIC_YOUTUBE_API_KEY=...
+INFRANODUS_API_KEY=...
+NODVAST_YOUTUBE_ID=...      # Stream 1
+NODSYD_YOUTUBE_ID=...       # Stream 2
+NODOST_YOUTUBE_ID=...       # Stream 3
+NODMIDD_YOUTUBE_ID=...      # Stream 4
+```
 
-### Accessibility (WCAG 2.2 AA)
-
-- ARIA labels on all interactive elements
-- Keyboard navigation (Tab, Enter, Space, Arrow keys)
-- Focus management (visible focus indicators)
-- Color contrast ratios ≥4.5:1 (text), ≥3:1 (UI)
-- Screen reader support
-- Semantic HTML landmarks
-
-### YouTube Integration
-
-- **IFrame API**: Full player control
-- **Policy**: Only one active player at a time
-- **No autoplay**: User gesture required (WCAG + policy compliance)
-- **Day 2 logic**: Disable 3 streams, show "Ej aktiv idag"
-- **Keyboard controls**: Space (play/pause), Arrows (switch streams)
-
-### InfraNodus Integration
-
-- **Primary**: MCP server (if available)
-- **Fallback**: iframe embed
-- **Modal display**: Focus trap, Escape to close
-- **4 graph nodes**: Nodväst, Nodsyd, Nodöst, Nodmidd
-
-### Router Configuration (ASUS RT-AX86U Pro)
-
-- **Firmware**: Asuswrt-Merlin
-- **QoS**: Prioritize RTMP (port 1935) traffic
-- **Bandwidth**: Reserve 80 Mbps upload for streaming
-- **Failover**: Automatic WAN failover if configured
-- **Docs**: See `ASUSWRT-MERLIN-DOCS.md`
-
----
+Verify keys: `make check-env`
 
 ## Development Workflow
 
-### 1. Initial Setup
+### First-Time Setup
 
 ```bash
-# Clone repository
-git clone <repo-url>
-cd DolReal
-
-# Install Bun
+# 1. Install Bun
 curl -fsSL https://bun.sh/install | bash
 
-# Install dependencies
+# 2. Clone & install dependencies
+git clone <repo>
+cd DolReal
 bun install
 
-# Set environment variables
-cp .env.example .env
-# Edit .env with your API keys
+# 3. Set environment variables
+cp .env.example .env.local
+# Edit .env.local with your API keys
+
+# 4. Run orchestration (generates full app)
+make all     # or ./scripts/interactive-orchestrate.sh for step-by-step
+
+# 5. Start dev server
+bun dev
 ```
 
-### 2. Run Orchestration
+### Day-to-Day Development
 
 ```bash
-# Full pipeline (50-70 minutes)
-make all
-
-# Monitor progress
-make status
-```
-
-### 3. Development
-
-```bash
-# Start dev server (after orchestration completes)
+# Start dev server
 bun dev
 
-# Open http://localhost:3000
-```
+# Make changes to src/
 
-### 4. Testing
-
-```bash
-# Run all tests
+# Run tests
 bun test
 
-# Run specific test
-bun test src/app/api/streams/route.test.ts
+# Lint & format
+trunk check
 
-# Coverage report
-bun test --coverage
+# Type check
+bun run typecheck
+
+# Build
+bun run build
 ```
 
-### 5. Build
+### Re-running Orchestration
+
+If you need to regenerate specific parts:
 
 ```bash
-# Production build
-bun run build
+# Clean artifacts
+make clean
 
-# Start production server
-bun start
+# Re-run specific agent
+make claude-frontend     # Only regenerate frontend
+make claude-backend      # Only regenerate backend
+
+# Or re-run full pipeline
+make all
 ```
 
----
+## Policies & Requirements
 
-## Agent Prompts
+### Accessibility (WCAG 2.2 AA - Mandatory)
+- ARIA labels on all interactive elements
+- Keyboard navigation (Tab, Enter, Space, Arrow keys)
+- Focus indicators (visible outlines)
+- Color contrast: ≥4.5:1 (text), ≥3:1 (UI)
+- RTL support for Arabic/Farsi
+- Screen reader compatibility
 
-Each agent has a detailed prompt file in `prompts/`:
+### Performance Targets
+- **LCP** (Largest Contentful Paint): <2.5s
+- **CLS** (Cumulative Layout Shift): <0.1
+- **JS Bundle**: <250KB
+- **Test Coverage**: >80%
 
-### 1. Gemini Ultra Research (`prompts/1_gemini_ultra_research.md`)
-- Deep research with cited sources
-- Policy verification (WCAG, YouTube, etc.)
-- Manual gathering (6 required manuals)
-- Generate research bundle + 6 plan files
-- Output: `artifacts/1_gemini_ultra_research.json`
+### YouTube Integration Policy
+- **No autoplay**: User gesture required (WCAG + policy compliance)
+- **Single active player**: Only one stream plays at a time
+- **Concurrency limit**: ≤12 events per channel (DoL uses 4)
+- **Day 2 behavior**: Only Nodväst active, others disabled (UI unchanged)
 
-### 2. GPT-5 Codex Architecture (`prompts/2_gpt5_codex_architecture.md`)
-- System architecture design
-- Component tree with task allocation
-- API contracts between frontend/backend
-- Core scaffolding (package.json, tsconfig, etc.)
-- Output: `artifacts/2_gpt5_codex_architecture.json`
-
-### 3a. Claude Frontend (`prompts/3a_claude_frontend.md`)
-- React/Next.js components
-- Tailwind CSS styling + dark mode
-- i18n integration (6 languages + RTL)
-- YouTube IFrame API integration
-- WCAG 2.2 AA accessibility
-- Output: `artifacts/3a_claude_frontend_output.json`
-
-### 3b. Claude Backend (`prompts/3b_claude_backend.md`)
-- Next.js API routes
-- YouTube API client
-- InfraNodus + MCP integration
-- Testing setup (Jest)
-- 3 comprehensive manuals
-- Output: `artifacts/3b_claude_backend_output.json`
-
-### 4. Gemini CLI Final (`prompts/4_gemini_cli_final.md`)
-- Merge frontend + backend outputs
-- Resolve conflicts
-- Run build + tests
-- Performance + accessibility audits
-- Generate release artifacts
-- Output: `artifacts/4_gemini_cli_final.json` + `releases/*.zip`
-
----
+### Internationalization
+- **Languages**: Swedish (default), English, Arabic, Farsi, Chinese, Spanish
+- **Routing**: `/[locale]/` pattern in App Router
+- **RTL**: Automatic for ar/fa via CSS
 
 ## Troubleshooting
 
@@ -458,118 +279,62 @@ make clean
 make all
 ```
 
+### Build Errors
+
+```bash
+# Type check for errors
+bun run typecheck
+
+# Clean node_modules and reinstall
+rm -rf node_modules bun.lock
+bun install
+
+# Clean Next.js cache
+rm -rf .next
+bun run build
+```
+
 ### Missing Environment Variables
 
 ```bash
 # Verify all keys set
 make check-env
+
+# Check .env.local exists
+ls -la .env.local
 ```
-
-### Build Failures
-
-```bash
-# Check TypeScript errors
-tsc --noEmit
-
-# Check for missing dependencies
-bun install
-
-# Clean node_modules and reinstall
-rm -rf node_modules bun.lockb
-bun install
-```
-
-### Performance Issues
-
-```bash
-# Analyze bundle size
-bun run build --analyze
-
-# Check Lighthouse score
-npx lighthouse http://localhost:3000
-```
-
----
-
-## Documentation
-
-After orchestration completes, find comprehensive guides in `docs/manuals/`:
-
-1. **Integrated System Guide** - Router + OBS + YouTube setup
-2. **Node Operator Quick Start** - Event day operations
-3. **DoL 2025 Webapp Guide (SE)** - User guide in Swedish
-
----
-
-## Why This Architecture?
-
-### Multi-Agent Benefits
-- **Specialization**: Each agent optimized for specific task
-- **Parallelization**: Claude agents work simultaneously (saves 15-20 min)
-- **File-based**: No complex message queues, just JSON handoffs
-- **Traceable**: Every artifact has metadata (timestamp, execution time)
-- **Re-runnable**: Agents can be executed independently
-- **Debuggable**: Human review possible between stages
-
-### Model Selection Rationale
-- **Gemini 2.5 Pro Ultra**: Best for deep research + manual gathering
-- **GPT-5 Codex**: Strongest code architecture + system design
-- **Claude Sonnet 4.5**: Excellent balance of speed + code quality (2x instances)
-- **Gemini CLI**: Fast final integration + build orchestration
-
-### Async Communication Benefits
-- ✅ Clear handoff contracts (JSON schema)
-- ✅ No network latency between agents
-- ✅ Independent testing of each stage
-- ✅ Artifact inspection for debugging
-- ✅ Human intervention possible at any stage
-
----
 
 ## Important Notes
 
 ### Legacy Code
 - `/october/` contains deprecated prototypes (dol.tsx, alt-dol.tsx, dol-2.tsx)
-- Retained for reference until new Next.js app fully replaces them
-- Do NOT modify `/october/` - work in `/src/` instead
+- **DO NOT MODIFY** `/october/` - work in `/src/` instead
+- Retained only for reference until full migration complete
 
-### Policies & Compliance
-- **WCAG 2.2 AA**: Mandatory for all UI components
-- **YouTube Concurrency**: ≤12 events per channel (DoL uses 4)
-- **Autoplay**: User-gesture-only (WCAG + UX requirement)
-- **Performance**: LCP <2.5s, CLS <0.1, JS <250KB
+### Schema Validation
+All artifacts **must** conform to `schemas/agent-handoff-schema.json`. Validate with:
+```bash
+make validate-schema
+```
 
-### Security
-- **Never commit API keys** - use `.env.local` (gitignored)
-- **CI secrets**: Store in GitHub Secrets
-- **Router credentials**: Redact from documentation before publishing
-- **Stream keys**: Rotate after event
+### Agent Boundaries
+- **Frontend (Claude #1)**: Components, styles, i18n, accessibility
+- **Backend (Claude #2)**: API routes, integrations, tests, documentation
+- **Do not mix** frontend and backend responsibilities in single agent
 
----
+### Interactive Orchestration Script
+`./scripts/interactive-orchestrate.sh` provides step-by-step execution with:
+- Approval gates between agents
+- Artifact inspection
+- Human intervention points
+- Rollback capability
 
-## Contributing
-
-When working on this codebase:
-
-1. **Read documentation first**: README.md, CLAUDE.md (this file), AGENTS.md
-2. **Follow agent boundaries**: Don't mix frontend/backend responsibilities
-3. **Validate JSON schemas**: All artifacts must match `schemas/agent-handoff-schema.json`
-4. **Run linters**: `trunk check` before committing
-5. **Test thoroughly**: Coverage >80% required
-6. **Document changes**: Update relevant CLAUDE.md sections
-
----
-
-## License
-
-MIT
-
----
+Recommended for development over `make all`.
 
 ## Additional Resources
 
-- **Main README**: `october/README.md` (full orchestration suite details)
-- **Agent Guidelines**: `AGENTS.md` (repository conventions)
-- **Router Docs**: `ASUSWRT-MERLIN-DOCS.md` (networking setup)
-- **Prompts**: `prompts/` directory (agent instructions)
-- **Schema**: `schemas/agent-handoff-schema.json` (communication protocol)
+- **Full orchestration details**: `october/README.md`
+- **Agent guidelines**: `AGENTS.md`
+- **Router configuration**: `ASUSWRT-MERLIN-DOCS.md`
+- **Quick start**: `QUICKSTART.md`
+- **Implementation summary**: `IMPLEMENTATION_SUMMARY.md`

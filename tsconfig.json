@@ -39,6 +39,8 @@
     "node_modules",
     ".next",
     "out",
-    "dist"
+    "dist",
+    "october",
+    "tests"
   ]
 }

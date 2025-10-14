@@ -1,20 +1,37 @@
 {
   "header": {
-    "title": "Días de Ley 2025",
-    "logo_alt": "Logo de DoL"
+    "title": "Días sobre Leyes 2025",
+    "logo_alt": "Logo DoL"
+  },
+  "nav": {
+    "home": "Inicio",
+    "schedule": "Horario",
+    "archive": "Archivo",
+    "about": "Acerca de"
   },
   "streams": {
-    "nodvast": "Nodo Oeste",
+    "nodvast": "Nodo Noroeste",
     "nodsyd": "Nodo Sur",
     "nodost": "Nodo Este",
-    "nodmidd": "Nodo Medio",
+    "nodmidd": "Nodo Central",
     "inactive": "No activo hoy",
+    "live": "En vivo",
+    "viewers": "espectadores",
     "play": "Reproducir",
-    "pause": "Pausa"
+    "pause": "Pausar",
+    "watch": "Ver"
   },
-  "program": {
-    "title": "Programa",
+  "event": {
+    "title": "Días sobre Leyes 2025",
+    "dates": "6-7 de noviembre de 2025",
+    "description": "Un simposio legal explorando leyes y sociedad",
     "day1": "Día 1 - 6 de noviembre de 2025",
     "day2": "Día 2 - 7 de noviembre de 2025"
+  },
+  "health": {
+    "good": "Excelente",
+    "ok": "Bueno",
+    "bad": "Pobre",
+    "offline": "Desconectado"
   }
 }

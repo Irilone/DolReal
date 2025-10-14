@@ -1,20 +1,37 @@
 {
   "header": {
     "title": "2025年法律日",
-    "logo_alt": "DoL徽标"
+    "logo_alt": "DoL 标志"
+  },
+  "nav": {
+    "home": "首页",
+    "schedule": "日程",
+    "archive": "档案",
+    "about": "关于"
   },
   "streams": {
-    "nodvast": "西节点",
-    "nodsyd": "南节点",
-    "nodost": "东节点",
-    "nodmidd": "中节点",
+    "nodvast": "西北节点",
+    "nodsyd": "南方节点",
+    "nodost": "东方节点",
+    "nodmidd": "中央节点",
     "inactive": "今天不活跃",
+    "live": "直播",
+    "viewers": "观众",
     "play": "播放",
-    "pause": "暂停"
+    "pause": "暂停",
+    "watch": "观看"
   },
-  "program": {
-    "title": "程序",
-    "day1": "第一天 - 2025年11月6日",
-    "day2": "第二天 - 2025年11月7日"
+  "event": {
+    "title": "2025年法律日",
+    "dates": "2025年11月6-7日",
+    "description": "探索法律与社会的法律研讨会",
+    "day1": "第1天 - 2025年11月6日",
+    "day2": "第2天 - 2025年11月7日"
+  },
+  "health": {
+    "good": "优秀",
+    "ok": "良好",
+    "bad": "较差",
+    "offline": "离线"
   }
 }
