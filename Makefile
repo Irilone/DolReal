@@ -100,7 +100,7 @@ gemini-ultra: dirs
 	@echo "$(GREEN)✓ Agent 1 complete: $(ARTIFACT_1)$(NC)"
 
 ## gpt5-codex: Run Agent 2 - GPT-5 Codex (System Architecture)
-gpt5-codex: $(ARTIFACT_1)
+gpt5-codex: dirs $(ARTIFACT_1)
 	@test -n "$$OPENAI_API_KEY" || (echo "$(RED)✗ OPENAI_API_KEY not set$(NC)" && exit 1)
 	@echo "$(MAGENTA)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
 	@echo "$(MAGENTA)  Agent 2: GPT-5 Codex$(NC)"
