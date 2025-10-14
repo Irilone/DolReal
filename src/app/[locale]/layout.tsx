@@ -1,15 +1,6 @@
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import type { Locale } from '@/types/i18n';
-import { isValidLocale, getLocaleDirection } from '@/lib/utils/locale';
-import { initI18n } from '@/i18n/config';
+import { Locale } from '@/types'
 
-interface LocaleLayoutProps {
-  children: React.ReactNode;
-  params: { locale: string };
-}
-
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return [
     { locale: 'se' },
     { locale: 'en' },
@@ -17,37 +8,22 @@ export function generateStaticParams() {
     { locale: 'fa' },
     { locale: 'zh' },
     { locale: 'es' },
-  ];
+  ]
 }
 
-export async function generateMetadata({
+export default async function LocaleLayout({
+  children,
   params,
 }: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const locale = params.locale as Locale;
-
-  return {
-    title: 'Dagar om Lagar 2025',
-    description: 'Ett juridiskt symposium som utforskar lagar och samhälle',
-  };
-}
-
-export default function LocaleLayout({ children, params }: LocaleLayoutProps) {
-  const locale = params.locale;
-
-  if (!isValidLocale(locale)) {
-    notFound();
-  }
-
-  const direction = getLocaleDirection(locale);
-
-  // Initialize i18n on server
-  initI18n(locale);
-
+  children: React.ReactNode
+  params: Promise<{ locale: Locale }>
+}) {
+  const { locale } = await params
+  const dir = locale === 'ar' || locale === 'fa' ? 'rtl' : 'ltr'
+  
   return (
-    <div lang={locale} dir={direction}>
+    <div dir={dir} lang={locale}>
       {children}
     </div>
-  );
+  )
 }
