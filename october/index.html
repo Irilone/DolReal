@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DolReal - Swedish Health Bus Schedule System med Gemini API Integration">
+    <title>DolReal - Swedish Health Bus Schedule System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DolReal - Swedish Health Bus Schedule System</h1>
+            <p class="subtitle">Med Gemini API Integration för alla fyra agenter</p>
+        </header>
+
+        <main>
+            <!-- API Configuration Section -->
+            <section class="config-section">
+                <h2>API-Konfiguration</h2>
+                <div class="form-group">
+                    <label for="gemini-api-key">Gemini API-nyckel:</label>
+                    <input 
+                        type="password" 
+                        id="gemini-api-key" 
+                        placeholder="AIza..." 
+                        aria-label="Gemini API-nyckel">
+                    <button id="save-api-key" class="btn btn-primary">Spara API-nyckel</button>
+                    <button id="test-connection" class="btn btn-secondary">Testa anslutning</button>
+                </div>
+                <p class="help-text">
+                    API-nyckeln lagras säkert i localStorage. Se dokumentationen för instruktioner om hur man får en API-nyckel.
+                </p>
+            </section>
+
+            <!-- Validation Section -->
+            <section class="validation-section">
+                <h2>Systemvalidering</h2>
+                <div class="validation-controls">
+                    <button id="validate-gemini" class="btn btn-secondary">Validera Gemini API</button>
+                    <button id="validate-env" class="btn btn-secondary">Validera miljö</button>
+                    <button id="validate-browser" class="btn btn-secondary">Validera webbläsare</button>
+                    <button id="validate-all" class="btn btn-primary">Validera allt</button>
+                </div>
+                <div id="validation-results" class="validation-results"></div>
+            </section>
+
+            <!-- Agent Test Section -->
+            <section class="agent-section">
+                <h2>Testgenerering</h2>
+                <div class="form-group">
+                    <label for="test-prompt">Testprompt:</label>
+                    <textarea 
+                        id="test-prompt" 
+                        rows="4" 
+                        placeholder="Skriv en testprompt för Gemini API..."
+                        aria-label="Testprompt"></textarea>
+                    <button id="generate-content" class="btn btn-primary">Generera innehåll</button>
+                </div>
+                <div id="generation-results" class="generation-results"></div>
+            </section>
+
+            <!-- Status Section -->
+            <section class="status-section">
+                <h2>Systemstatus</h2>
+                <div id="system-status" class="system-status">
+                    <p>Laddar status...</p>
+                </div>
+            </section>
+
+            <!-- Documentation Section -->
+            <section class="docs-section">
+                <h2>Dokumentation</h2>
+                <div class="docs-content">
+                    <h3>Kom igång</h3>
+                    <ol>
+                        <li>Skaffa en Gemini API-nyckel från <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Google AI Studio</a></li>
+                        <li>Ange din API-nyckel i fältet ovan</li>
+                        <li>Klicka på "Spara API-nyckel" för att lagra den lokalt</li>
+                        <li>Testa anslutningen med "Testa anslutning"-knappen</li>
+                        <li>Kör systemvalidering för att säkerställa att allt fungerar</li>
+                    </ol>
+
+                    <h3>Felsökning</h3>
+                    <ul>
+                        <li><strong>API-nyckeln fungerar inte:</strong> Kontrollera att nyckeln är korrekt kopierad och har rätt format (börjar med "AIza")</li>
+                        <li><strong>Nätverksfel:</strong> Kontrollera din internetanslutning och att webbplatsen använder HTTPS</li>
+                        <li><strong>Webbläsarkompatibilitet:</strong> Använd en modern webbläsare med stöd för ES6-moduler och Fetch API</li>
+                    </ul>
+
+                    <h3>Säkerhet</h3>
+                    <p>
+                        API-nyckeln lagras lokalt i din webbläsare och skickas aldrig till någon annan server än Google Gemini API. 
+                        För produktionsmiljöer, använd ett säkert backend-system för att hantera API-nycklar.
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Notification Area -->
+        <div id="notification-area" class="notification-area" role="region" aria-live="polite"></div>
+
+        <footer>
+            <p>&copy; 2025 DolReal - Swedish Health Bus Schedule System | Gemini API Integration v1.0.0</p>
+        </footer>
+    </div>
+
+    <!-- Load modules as ES6 modules -->
+    <script type="module" src="./modules/utility.js"></script>
+    <script type="module" src="./modules/validation.js"></script>
+    <script type="module" src="./modules/gemini-api-module.js"></script>
+    <script type="module" src="./scripts.js"></script>
+</body>
+</html>
