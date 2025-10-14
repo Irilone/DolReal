@@ -154,9 +154,18 @@ export const GeminiAPI = (() => {
     }
 
     const model = options.model || config.defaultModel;
-    const temperature = options.temperature ?? 0.7;
+    let temperature = options.temperature ?? 0.7;
     const maxOutputTokens = options.maxOutputTokens || 8192;
 
+    // Validate temperature parameter
+    if (typeof temperature !== 'number' || temperature < 0 || temperature > 1) {
+      const errorMsg = 'Ogiltig temperatur angiven. Temperatur måste vara ett tal mellan 0 och 1.';
+      Utility.log.error(errorMsg);
+      return {
+        success: false,
+        message: errorMsg
+      };
+    }
     const url = `${config.apiBaseUrl}/${model}:generateContent?key=${apiKey}`;
     
     const requestBody = {
