@@ -5,9 +5,9 @@
  * File-based async communication via JSON artifacts
  */
 
-import fs from 'fs/promises';
-import path from 'path';
-import { spawn } from 'child_process';
+import fs from "fs/promises";
+import path from "path";
+import { spawn } from "child_process";
 
 // ============================================================================
 // Configuration
@@ -26,59 +26,59 @@ interface AgentConfig {
 
 const AGENTS: AgentConfig[] = [
   {
-    id: 'gemini-ultra',
-    name: 'Gemini 2.5 Pro Ultra (Research)',
-    command: 'gemini',
+    id: "gemini-ultra",
+    name: "Gemini 2.5 Pro Ultra (Research)",
+    command: "gemini",
     inputArtifacts: [],
-    outputArtifact: 'artifacts/1_gemini_ultra_research.json',
-    promptFile: 'prompts/1_gemini_ultra_research.md',
+    outputArtifact: "artifacts/1_gemini_ultra_research.json",
+    promptFile: "prompts/1_gemini_ultra_research.md",
     canRunInParallel: false,
   },
   {
-    id: 'gpt5-codex',
-    name: 'GPT-5 Codex (Architecture)',
-    command: 'openai',
-    inputArtifacts: ['artifacts/1_gemini_ultra_research.json'],
-    outputArtifact: 'artifacts/2_gpt5_codex_architecture.json',
-    promptFile: 'prompts/2_gpt5_codex_architecture.md',
+    id: "gpt5-codex",
+    name: "GPT-5 Codex (Architecture)",
+    command: "openai",
+    inputArtifacts: ["artifacts/1_gemini_ultra_research.json"],
+    outputArtifact: "artifacts/2_gpt5_codex_architecture.json",
+    promptFile: "prompts/2_gpt5_codex_architecture.md",
     canRunInParallel: false,
   },
   {
-    id: 'claude-frontend',
-    name: 'Claude Sonnet 4.5 #1 (Frontend)',
-    command: 'claude',
+    id: "claude-frontend",
+    name: "Claude Sonnet 4.5 #1 (Frontend)",
+    command: "claude",
     inputArtifacts: [
-      'artifacts/1_gemini_ultra_research.json',
-      'artifacts/2_gpt5_codex_architecture.json',
+      "artifacts/1_gemini_ultra_research.json",
+      "artifacts/2_gpt5_codex_architecture.json",
     ],
-    outputArtifact: 'artifacts/3a_claude_frontend_output.json',
-    promptFile: 'prompts/3a_claude_frontend.md',
+    outputArtifact: "artifacts/3a_claude_frontend_output.json",
+    promptFile: "prompts/3a_claude_frontend.md",
     canRunInParallel: true,
     parallelGroup: 1,
   },
   {
-    id: 'claude-backend',
-    name: 'Claude Sonnet 4.5 #2 (Backend)',
-    command: 'claude',
+    id: "claude-backend",
+    name: "Claude Sonnet 4.5 #2 (Backend)",
+    command: "claude",
     inputArtifacts: [
-      'artifacts/1_gemini_ultra_research.json',
-      'artifacts/2_gpt5_codex_architecture.json',
+      "artifacts/1_gemini_ultra_research.json",
+      "artifacts/2_gpt5_codex_architecture.json",
     ],
-    outputArtifact: 'artifacts/3b_claude_backend_output.json',
-    promptFile: 'prompts/3b_claude_backend.md',
+    outputArtifact: "artifacts/3b_claude_backend_output.json",
+    promptFile: "prompts/3b_claude_backend.md",
     canRunInParallel: true,
     parallelGroup: 1,
   },
   {
-    id: 'gemini-cli',
-    name: 'Gemini CLI (Final Integration)',
-    command: 'gemini',
+    id: "gemini-cli",
+    name: "Gemini CLI (Final Integration)",
+    command: "gemini",
     inputArtifacts: [
-      'artifacts/3a_claude_frontend_output.json',
-      'artifacts/3b_claude_backend_output.json',
+      "artifacts/3a_claude_frontend_output.json",
+      "artifacts/3b_claude_backend_output.json",
     ],
-    outputArtifact: 'artifacts/4_gemini_cli_final.json',
-    promptFile: 'prompts/4_gemini_cli_final.md',
+    outputArtifact: "artifacts/4_gemini_cli_final.json",
+    promptFile: "prompts/4_gemini_cli_final.md",
     canRunInParallel: false,
   },
 ];
@@ -88,9 +88,9 @@ const AGENTS: AgentConfig[] = [
 // ============================================================================
 
 async function ensureDirectories() {
-  await fs.mkdir('artifacts', { recursive: true });
-  await fs.mkdir('prompts', { recursive: true });
-  await fs.mkdir('logs', { recursive: true });
+  await fs.mkdir("artifacts", { recursive: true });
+  await fs.mkdir("prompts", { recursive: true });
+  await fs.mkdir("logs", { recursive: true });
 }
 
 async function checkArtifactsExist(artifacts: string[]): Promise<boolean> {
@@ -105,12 +105,12 @@ async function checkArtifactsExist(artifacts: string[]): Promise<boolean> {
 }
 
 async function loadArtifact(filePath: string): Promise<unknown> {
-  const content = await fs.readFile(filePath, 'utf-8');
+  const content = await fs.readFile(filePath, "utf-8");
   return JSON.parse(content);
 }
 
 async function saveArtifact(filePath: string, data: unknown): Promise<void> {
-  await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8');
+  await fs.writeFile(filePath, JSON.stringify(data, null, 2), "utf-8");
 }
 
 function log(message: string) {
@@ -170,13 +170,13 @@ async function executeAgent(agent: AgentConfig): Promise<void> {
       const allExist = await checkArtifactsExist(agent.inputArtifacts);
       if (!allExist) {
         throw new Error(
-          `Missing input artifacts for ${agent.id}: ${agent.inputArtifacts.join(', ')}`
+          `Missing input artifacts for ${agent.id}: ${agent.inputArtifacts.join(", ")}`,
         );
       }
     }
 
     // Load prompt
-    const promptContent = await fs.readFile(agent.promptFile, 'utf-8');
+    const promptContent = await fs.readFile(agent.promptFile, "utf-8");
 
     // Load input artifacts and inject into prompt
     let fullPrompt = promptContent;
@@ -188,13 +188,13 @@ async function executeAgent(agent: AgentConfig): Promise<void> {
     // Execute agent-specific command
     let output: string;
     switch (agent.command) {
-      case 'gemini':
+      case "gemini":
         output = await executeGemini(fullPrompt, agent.id);
         break;
-      case 'openai':
+      case "openai":
         output = await executeOpenAI(fullPrompt, agent.id);
         break;
-      case 'claude':
+      case "claude":
         output = await executeClaude(fullPrompt, agent.id);
         break;
       default:
@@ -215,7 +215,7 @@ async function executeAgent(agent: AgentConfig): Promise<void> {
       agent_id: agent.id,
       timestamp: new Date().toISOString(),
       execution_time_ms: Date.now() - startTime,
-      status: 'completed',
+      status: "completed",
     };
 
     await saveArtifact(agent.outputArtifact, outputData);
@@ -236,19 +236,19 @@ async function executeAgent(agent: AgentConfig): Promise<void> {
 
 async function executeGemini(prompt: string, agentId: string): Promise<string> {
   const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) throw new Error('GEMINI_API_KEY not set');
+  if (!apiKey) throw new Error("GEMINI_API_KEY not set");
 
   const model =
-    agentId === 'gemini-ultra' ? 'gemini-2.5-pro-ultra' : 'gemini-2.5-pro';
+    agentId === "gemini-ultra" ? "gemini-2.5-pro-ultra" : "gemini-2.5-pro";
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
   log(`  Calling Gemini API (${model})...`);
 
   const response = await fetch(url, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }],
+      contents: [{ role: "user", parts: [{ text: prompt }] }],
       generationConfig: {
         temperature: 0.2,
         topP: 0.95,
@@ -270,37 +270,43 @@ async function executeGemini(prompt: string, agentId: string): Promise<string> {
     throw new Error(`Gemini API error: ${JSON.stringify(data.error)}`);
   }
 
-  const text = data.candidates?.[0]?.content?.parts?.map((p: { text: string }) => p.text).join('\n') ?? '';
+  const text =
+    data.candidates?.[0]?.content?.parts
+      ?.map((p: { text: string }) => p.text)
+      .join("\n") ?? "";
 
   if (!text) {
-    throw new Error('Gemini API returned empty response');
+    throw new Error("Gemini API returned empty response");
   }
 
   log(`  Received ${text.length} characters from Gemini`);
   return text;
 }
 
-async function executeOpenAI(prompt: string): Promise<string> {
+async function executeOpenAI(
+  prompt: string,
+  agentId: string,
+): Promise<string> {
   const apiKey = process.env.OPENAI_API_KEY;
-  if (!apiKey) throw new Error('OPENAI_API_KEY not set');
+  if (!apiKey) throw new Error("OPENAI_API_KEY not set");
 
   log(`  Calling OpenAI API (gpt-5-codex-high-reasoning)...`);
 
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'gpt-5-codex-high-reasoning',
+      model: "gpt-5-codex-high-reasoning",
       messages: [
         {
-          role: 'system',
+          role: "system",
           content:
-            'You are an expert system architect specializing in TypeScript, React, Next.js, and modern web development.',
+            "You are an expert system architect specializing in TypeScript, React, Next.js, and modern web development.",
         },
-        { role: 'user', content: prompt },
+        { role: "user", content: prompt },
       ],
       temperature: 0.2,
       max_tokens: 16000,
@@ -319,34 +325,37 @@ async function executeOpenAI(prompt: string): Promise<string> {
     throw new Error(`OpenAI API error: ${JSON.stringify(data.error)}`);
   }
 
-  const text = data.choices?.[0]?.message?.content ?? '';
+  const text = data.choices?.[0]?.message?.content ?? "";
 
   if (!text) {
-    throw new Error('OpenAI API returned empty response');
+    throw new Error("OpenAI API returned empty response");
   }
 
   log(`  Received ${text.length} characters from OpenAI`);
   return text;
 }
 
-async function executeClaude(prompt: string): Promise<string> {
+async function executeClaude(
+  prompt: string,
+  agentId: string,
+): Promise<string> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (!apiKey) throw new Error('ANTHROPIC_API_KEY not set');
+  if (!apiKey) throw new Error("ANTHROPIC_API_KEY not set");
 
   log(`  Calling Claude API (claude-sonnet-4.5)...`);
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
+  const response = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': apiKey,
-      'anthropic-version': '2023-06-01',
+      "Content-Type": "application/json",
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01",
     },
     body: JSON.stringify({
-      model: 'claude-sonnet-4.5',
+      model: "claude-sonnet-4.5",
       max_tokens: 32000,
       temperature: 0.2,
-      messages: [{ role: 'user', content: prompt }],
+      messages: [{ role: "user", content: prompt }],
     }),
   });
 
@@ -362,10 +371,10 @@ async function executeClaude(prompt: string): Promise<string> {
     throw new Error(`Claude API error: ${JSON.stringify(data.error)}`);
   }
 
-  const text = data.content?.[0]?.text ?? '';
+  const text = data.content?.[0]?.text ?? "";
 
   if (!text) {
-    throw new Error('Claude API returned empty response');
+    throw new Error("Claude API returned empty response");
   }
 
   log(`  Received ${text.length} characters from Claude`);
@@ -386,7 +395,7 @@ async function executeParallelGroup(agents: AgentConfig[]): Promise<void> {
 // ============================================================================
 
 async function orchestrate() {
-  log('DoL 2025 Multi-Agent Orchestrator starting...');
+  log("DoL 2025 Multi-Agent Orchestrator starting...");
   await ensureDirectories();
 
   const sequentialAgents = AGENTS.filter((a) => !a.canRunInParallel);
@@ -431,7 +440,7 @@ async function orchestrate() {
       await executeAgent(agent);
     }
 
-    log('✓ All agents completed successfully!');
+    log("✓ All agents completed successfully!");
     log(`Final build artifact: ${AGENTS[AGENTS.length - 1].outputArtifact}`);
   } catch (error) {
     log(`✗ Orchestration failed: ${error}`);
@@ -446,23 +455,23 @@ async function orchestrate() {
 const command = process.argv[2];
 
 switch (command) {
-  case 'run':
+  case "run":
     orchestrate();
     break;
-  case 'status':
+  case "status":
     (async () => {
       for (const agent of AGENTS) {
         const exists = await checkArtifactsExist([agent.outputArtifact]);
         console.log(
-          `${agent.id}: ${exists ? '✓ Complete' : '✗ Pending'} (${agent.outputArtifact})`
+          `${agent.id}: ${exists ? "✓ Complete" : "✗ Pending"} (${agent.outputArtifact})`,
         );
       }
     })();
     break;
-  case 'clean':
+  case "clean":
     (async () => {
-      await fs.rm('artifacts', { recursive: true, force: true });
-      log('Artifacts cleaned');
+      await fs.rm("artifacts", { recursive: true, force: true });
+      log("Artifacts cleaned");
     })();
     break;
   default:
