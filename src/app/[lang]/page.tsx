@@ -1,5 +1,6 @@
 'use client';
 
+import { use, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Locale } from '@/types/i18n';
 import type { Stream } from '@/types/stream';
@@ -7,13 +8,13 @@ import { StreamGrid } from '@/components/features/StreamGrid';
 import { LanguageSelector } from '@/components/features/LanguageSelector';
 import { ThemeToggle } from '@/components/features/ThemeToggle';
 import { ViewerCount } from '@/components/features/ViewerCount';
-import { useEffect, useState } from 'react';
 
 interface HomePageProps {
-  params: { lang: Locale };
+  params: Promise<{ lang: Locale }>;
 }
 
-export default function HomePage({ params: { lang } }: HomePageProps) {
+export default function HomePage({ params }: HomePageProps) {
+  const { lang } = use(params);
   const { t } = useTranslation();
   const [initialStreams, setInitialStreams] = useState<Stream[]>([]);
 
