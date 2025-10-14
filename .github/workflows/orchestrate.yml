@@ -1,0 +1,306 @@
+name: Multi-Agent Orchestration Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_all_agents:
+        description: 'Run all 4 agents sequentially'
+        required: false
+        default: 'true'
+        type: boolean
+      specific_agent:
+        description: 'Run specific agent only (gemini-ultra, gpt5-codex, claude-frontend, claude-backend, gemini-cli)'
+        required: false
+        type: choice
+        options:
+          - none
+          - gemini-ultra
+          - gpt5-codex
+          - claude-frontend
+          - claude-backend
+          - claude-parallel
+          - gemini-cli
+  push:
+    branches:
+      - main
+    paths:
+      - 'prompts/**'
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+env:
+  BUN_VERSION: '1.2.23'
+
+jobs:
+  check-secrets:
+    name: Check Required Secrets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify API Keys
+        run: |
+          if [ -z "${{ secrets.GEMINI_API_KEY }}" ]; then
+            echo "❌ GEMINI_API_KEY secret not set"
+            exit 1
+          fi
+          if [ -z "${{ secrets.OPENAI_API_KEY }}" ]; then
+            echo "❌ OPENAI_API_KEY secret not set"
+            exit 1
+          fi
+          if [ -z "${{ secrets.ANTHROPIC_API_KEY }}" ]; then
+            echo "❌ ANTHROPIC_API_KEY secret not set"
+            exit 1
+          fi
+          echo "✅ All required API keys are set"
+
+  agent-1-research:
+    name: 'Agent 1: Gemini Ultra (Research)'
+    runs-on: ubuntu-latest
+    needs: check-secrets
+    if: ${{ github.event.inputs.run_all_agents == 'true' || github.event.inputs.specific_agent == 'gemini-ultra' || github.event_name == 'push' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run Gemini Ultra Research
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: make gemini-ultra
+
+      - name: Upload Research Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-bundle
+          path: |
+            artifacts/1_gemini_ultra_research.json
+            plans/*.md
+          retention-days: 30
+
+  agent-2-architecture:
+    name: 'Agent 2: GPT-5 Codex (Architecture)'
+    runs-on: ubuntu-latest
+    needs: agent-1-research
+    if: ${{ github.event.inputs.run_all_agents == 'true' || github.event.inputs.specific_agent == 'gpt5-codex' || github.event_name == 'push' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Download Research Bundle
+        uses: actions/download-artifact@v4
+        with:
+          name: research-bundle
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run GPT-5 Codex Architecture
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: make gpt5-codex
+
+      - name: Upload Architecture Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: architecture
+          path: artifacts/2_gpt5_codex_architecture.json
+          retention-days: 30
+
+  agent-3-parallel:
+    name: 'Agent 3: Claude Parallel (Frontend + Backend)'
+    runs-on: ubuntu-latest
+    needs: agent-2-architecture
+    if: ${{ github.event.inputs.run_all_agents == 'true' || github.event.inputs.specific_agent == 'claude-parallel' || github.event_name == 'push' }}
+    strategy:
+      matrix:
+        agent:
+          - name: claude-frontend
+            id: '3a'
+            target: claude-frontend
+          - name: claude-backend
+            id: '3b'
+            target: claude-backend
+      fail-fast: false
+      max-parallel: 2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Download Research Bundle
+        uses: actions/download-artifact@v4
+        with:
+          name: research-bundle
+
+      - name: Download Architecture
+        uses: actions/download-artifact@v4
+        with:
+          name: architecture
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run ${{ matrix.agent.name }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: make ${{ matrix.agent.target }}
+
+      - name: Upload ${{ matrix.agent.name }} Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.agent.name }}-output
+          path: artifacts/${{ matrix.agent.id }}_claude_*_output.json
+          retention-days: 30
+
+  agent-4-integration:
+    name: 'Agent 4: Gemini CLI (Integration)'
+    runs-on: ubuntu-latest
+    needs: agent-3-parallel
+    if: ${{ github.event.inputs.run_all_agents == 'true' || github.event.inputs.specific_agent == 'gemini-cli' || github.event_name == 'push' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts-download
+
+      - name: Reorganize Artifacts
+        run: |
+          mkdir -p artifacts
+          cp artifacts-download/research-bundle/artifacts/*.json artifacts/ || true
+          cp artifacts-download/architecture/*.json artifacts/ || true
+          cp artifacts-download/claude-frontend-output/*.json artifacts/ || true
+          cp artifacts-download/claude-backend-output/*.json artifacts/ || true
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run Gemini CLI Integration
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: make gemini-cli
+
+      - name: Upload Final Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: final-build
+          path: artifacts/4_gemini_cli_final.json
+          retention-days: 90
+
+      - name: Upload Release Package
+        uses: actions/upload-artifact@v4
+        with:
+          name: dol-2025-release
+          path: releases/*.zip
+          retention-days: 90
+
+      - name: Generate Release Notes
+        run: |
+          echo "# DoL 2025 Multi-Agent Build Complete" > release-notes.md
+          echo "" >> release-notes.md
+          echo "## Build Info" >> release-notes.md
+          echo "- Workflow: ${{ github.workflow }}" >> release-notes.md
+          echo "- Run ID: ${{ github.run_id }}" >> release-notes.md
+          echo "- Commit: ${{ github.sha }}" >> release-notes.md
+          echo "" >> release-notes.md
+          echo "## Agents Executed" >> release-notes.md
+          echo "1. ✅ Gemini 2.5 Pro Ultra: Research & Planning" >> release-notes.md
+          echo "2. ✅ GPT-5 Codex: System Architecture" >> release-notes.md
+          echo "3. ✅ Claude Sonnet 4.5 #1: Frontend Implementation" >> release-notes.md
+          echo "4. ✅ Claude Sonnet 4.5 #2: Backend & Documentation" >> release-notes.md
+          echo "5. ✅ Gemini 2.5 Pro CLI: Final Integration" >> release-notes.md
+
+      - name: Upload Release Notes
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-notes
+          path: release-notes.md
+          retention-days: 90
+
+  status-summary:
+    name: Pipeline Status Summary
+    runs-on: ubuntu-latest
+    needs: [agent-1-research, agent-2-architecture, agent-3-parallel, agent-4-integration]
+    if: always()
+    steps:
+      - name: Generate Summary
+        run: |
+          echo "# Multi-Agent Orchestration Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Agent Status" >> $GITHUB_STEP_SUMMARY
+          echo "| Agent | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Gemini Ultra (Research) | ${{ needs.agent-1-research.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| GPT-5 Codex (Architecture) | ${{ needs.agent-2-architecture.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Claude Frontend | ${{ needs.agent-3-parallel.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Claude Backend | ${{ needs.agent-3-parallel.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Gemini CLI (Integration) | ${{ needs.agent-4-integration.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ needs.agent-4-integration.result }}" == "success" ]; then
+            echo "## ✅ Build Complete" >> $GITHUB_STEP_SUMMARY
+            echo "Production-ready artifacts generated successfully!" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Download release package from artifacts." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ❌ Build Failed" >> $GITHUB_STEP_SUMMARY
+            echo "Check individual agent logs for details." >> $GITHUB_STEP_SUMMARY
+          fi
+
+  # Optional: Create GitHub Release
+  create-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    needs: agent-4-integration
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Release Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dol-2025-release
+          path: releases
+
+      - name: Download Release Notes
+        uses: actions/download-artifact@v4
+        with:
+          name: release-notes
+
+      - name: Generate Tag
+        id: tag
+        run: |
+          VERSION="v2.0.0-build.${{ github.run_number }}"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.tag.outputs.version }}
+          name: DoL 2025 Build ${{ github.run_number }}
+          body_path: release-notes.md
+          files: releases/*.zip
+          draft: false
+          prerelease: false

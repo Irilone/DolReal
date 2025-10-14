@@ -1,0 +1,354 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoL 2025 Multi-Agent Handoff Schema",
+  "version": "2.0.0",
+  "description": "File-based communication protocol for GPT-5 Codex, Gemini 2.5 Pro Ultra, and 2x Claude Sonnet 4.5 agents",
+
+  "definitions": {
+    "agentMetadata": {
+      "type": "object",
+      "properties": {
+        "agent_id": {
+          "type": "string",
+          "enum": ["gemini-ultra", "gpt5-codex", "claude-frontend", "claude-backend", "gemini-cli"]
+        },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "execution_time_ms": { "type": "number" },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "in_progress", "completed", "failed", "blocked"]
+        },
+        "next_agent": { "type": "string" },
+        "dependencies": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["agent_id", "timestamp", "status"]
+    }
+  },
+
+  "artifacts": {
+
+    "1_research_bundle": {
+      "filename": "artifacts/1_gemini_ultra_research.json",
+      "producer": "gemini-ultra",
+      "consumers": ["gpt5-codex", "claude-frontend", "claude-backend"],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "metadata": { "$ref": "#/definitions/agentMetadata" },
+          "bundle_version": { "type": "string", "const": "2.0" },
+          "project": { "type": "string" },
+          "dates": {
+            "type": "object",
+            "properties": {
+              "day1": { "type": "string", "format": "date" },
+              "day2": { "type": "string", "format": "date" }
+            }
+          },
+          "streams": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 4
+          },
+          "policies": {
+            "type": "object",
+            "properties": {
+              "wcag": { "type": "string" },
+              "autoplay": { "type": "string" },
+              "youtube_concurrency": { "type": "string" }
+            }
+          },
+          "plans": {
+            "type": "object",
+            "properties": {
+              "router_plan_path": { "type": "string" },
+              "obs_plan_path": { "type": "string" },
+              "yt_plan_path": { "type": "string" },
+              "infranodus_plan_path": { "type": "string" },
+              "site_spec_path": { "type": "string" },
+              "manuals_outline_path": { "type": "string" }
+            }
+          },
+          "manuals_required": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": { "type": "string", "format": "uri" },
+                "title": { "type": "string" },
+                "access_date": { "type": "string", "format": "date" }
+              }
+            }
+          }
+        },
+        "required": ["metadata", "bundle_version", "project", "dates", "streams", "policies", "plans"]
+      }
+    },
+
+    "2_architecture": {
+      "filename": "artifacts/2_gpt5_codex_architecture.json",
+      "producer": "gpt5-codex",
+      "consumers": ["claude-frontend", "claude-backend"],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "metadata": { "$ref": "#/definitions/agentMetadata" },
+          "system_architecture": {
+            "type": "object",
+            "properties": {
+              "tech_stack": {
+                "type": "object",
+                "properties": {
+                  "framework": { "type": "string" },
+                  "language": { "type": "string" },
+                  "styling": { "type": "string" },
+                  "i18n": { "type": "string" }
+                }
+              },
+              "directory_structure": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "component_tree": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": { "type": "string" },
+                    "path": { "type": "string" },
+                    "dependencies": { "type": "array", "items": { "type": "string" } },
+                    "assigned_to": {
+                      "type": "string",
+                      "enum": ["claude-frontend", "claude-backend", "shared"]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "api_contracts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "endpoint": { "type": "string" },
+                "method": { "type": "string" },
+                "request_schema": { "type": "object" },
+                "response_schema": { "type": "object" }
+              }
+            }
+          },
+          "scaffolding": {
+            "type": "object",
+            "properties": {
+              "package_json": { "type": "string" },
+              "tsconfig_json": { "type": "string" },
+              "next_config_js": { "type": "string" },
+              "tailwind_config_js": { "type": "string" }
+            }
+          }
+        },
+        "required": ["metadata", "system_architecture", "scaffolding"]
+      }
+    },
+
+    "3a_frontend": {
+      "filename": "artifacts/3a_claude_frontend_output.json",
+      "producer": "claude-frontend",
+      "consumers": ["gemini-cli"],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "metadata": { "$ref": "#/definitions/agentMetadata" },
+          "components": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "file_path": { "type": "string" },
+                "component_name": { "type": "string" },
+                "code": { "type": "string" },
+                "dependencies": { "type": "array", "items": { "type": "string" } },
+                "props_interface": { "type": "string" }
+              }
+            }
+          },
+          "styles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "file_path": { "type": "string" },
+                "content": { "type": "string" }
+              }
+            }
+          },
+          "i18n": {
+            "type": "object",
+            "properties": {
+              "config": { "type": "string" },
+              "translations": {
+                "type": "object",
+                "additionalProperties": { "type": "object" }
+              }
+            }
+          },
+          "youtube_integration": {
+            "type": "object",
+            "properties": {
+              "iframe_controller": { "type": "string" },
+              "player_state_management": { "type": "string" }
+            }
+          },
+          "accessibility_report": {
+            "type": "object",
+            "properties": {
+              "wcag_version": { "type": "string" },
+              "compliance_level": { "type": "string" },
+              "issues_found": { "type": "array", "items": { "type": "object" } },
+              "fixes_applied": { "type": "array", "items": { "type": "object" } }
+            }
+          }
+        },
+        "required": ["metadata", "components", "i18n"]
+      }
+    },
+
+    "3b_backend": {
+      "filename": "artifacts/3b_claude_backend_output.json",
+      "producer": "claude-backend",
+      "consumers": ["gemini-cli"],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "metadata": { "$ref": "#/definitions/agentMetadata" },
+          "api_routes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "file_path": { "type": "string" },
+                "endpoint": { "type": "string" },
+                "code": { "type": "string" }
+              }
+            }
+          },
+          "integrations": {
+            "type": "object",
+            "properties": {
+              "infranodus": {
+                "type": "object",
+                "properties": {
+                  "mcp_config": { "type": "string" },
+                  "embed_urls": { "type": "array", "items": { "type": "string" } }
+                }
+              },
+              "youtube": {
+                "type": "object",
+                "properties": {
+                  "api_client": { "type": "string" },
+                  "stream_ids": { "type": "array", "items": { "type": "string" } }
+                }
+              }
+            }
+          },
+          "documentation": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": { "type": "string" },
+                "file_path": { "type": "string" },
+                "content": { "type": "string" }
+              }
+            }
+          },
+          "manuals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": { "type": "string" },
+                "file_path": { "type": "string" },
+                "content": { "type": "string" },
+                "language": { "type": "string" }
+              }
+            }
+          },
+          "tests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "file_path": { "type": "string" },
+                "test_suite": { "type": "string" },
+                "code": { "type": "string" }
+              }
+            }
+          },
+          "router_config": {
+            "type": "object",
+            "properties": {
+              "qos_settings": { "type": "string" },
+              "port_forwarding": { "type": "array" }
+            }
+          }
+        },
+        "required": ["metadata", "integrations", "documentation", "manuals"]
+      }
+    },
+
+    "4_final_build": {
+      "filename": "artifacts/4_gemini_cli_final.json",
+      "producer": "gemini-cli",
+      "consumers": [],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "metadata": { "$ref": "#/definitions/agentMetadata" },
+          "merge_status": {
+            "type": "object",
+            "properties": {
+              "frontend_integrated": { "type": "boolean" },
+              "backend_integrated": { "type": "boolean" },
+              "conflicts_resolved": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "build_output": {
+            "type": "object",
+            "properties": {
+              "exit_code": { "type": "number" },
+              "build_time_ms": { "type": "number" },
+              "warnings": { "type": "array", "items": { "type": "string" } },
+              "errors": { "type": "array", "items": { "type": "string" } }
+            }
+          },
+          "performance_metrics": {
+            "type": "object",
+            "properties": {
+              "lcp": { "type": "number" },
+              "cls": { "type": "number" },
+              "js_bundle_size_kb": { "type": "number" }
+            }
+          },
+          "release": {
+            "type": "object",
+            "properties": {
+              "version": { "type": "string" },
+              "tag": { "type": "string" },
+              "artifact_path": { "type": "string" },
+              "checksum": { "type": "string" }
+            }
+          }
+        },
+        "required": ["metadata", "merge_status", "build_output", "release"]
+      }
+    }
+  }
+}

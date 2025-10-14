@@ -1,0 +1,17 @@
+{
+  "servers": {
+    "infranodus": {
+      "enabled": true,
+      "url": "https://infranodus.com/mcp",
+      "auth": {
+        "type": "bearer",
+        "token": "${INFRANODUS_API_KEY}"
+      }
+    },
+    "obs": {
+      "enabled": true,
+      "url": "ws://localhost:4455",
+      "protocol": "obs-websocket-5.0"
+    }
+  }
+}
