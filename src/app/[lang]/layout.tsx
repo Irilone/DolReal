@@ -22,18 +22,14 @@ export default async function LangLayout({
   const direction = getLocaleDirection(lang);
 
   return (
-    <html lang={lang} dir={direction} suppressHydrationWarning>
-      <body>
-        <ThemeProvider>
-          <I18nProvider locale={lang}>
-            <div className="flex min-h-screen flex-col">
-              <Header locale={lang} />
-              <main className="flex-grow">{children}</main>
-              <Footer />
-            </div>
-          </I18nProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ThemeProvider>
+      <I18nProvider locale={lang}>
+        <div className="flex min-h-screen flex-col">
+          <Header locale={lang} />
+          <main className="flex-grow">{children}</main>
+          <Footer />
+        </div>
+      </I18nProvider>
+    </ThemeProvider>
   );
 }
