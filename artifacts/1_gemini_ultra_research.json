@@ -170,8 +170,16 @@
     "policies": {
       "wcag": "2.2 AA",
       "autoplay": "user-gesture-only",
-      "youtube_concurrency": "Community verified ≤10; Officially Undefined (Unverified ✗)"
+      "youtube_concurrency": "Community verified ≤10; Officially Undefined (Blocking Issue: Unverified ✗)"
     },
+    "blocking_issues": [
+      {
+        "issue": "YouTube Live Streaming concurrency limit is officially undefined and unverified.",
+        "impact": "Could cause complete system failure if actual concurrency is lower than expected during live event.",
+        "resolution_required": true,
+        "status": "BLOCKING"
+      }
+    ],
     "plans": {
       "router_plan_path": "plans/router_plan.md",
       "obs_plan_path": "plans/obs_plan.md",
