@@ -512,3 +512,252 @@
   ],
 
   "scaffolding": {
+    "package_json": {
+      "name": "dol-2025",
+      "version": "2.0.0",
+      "description": "Dagar om Lagar 2025 - Multi-agent orchestration streaming platform",
+      "private": true,
+      "type": "module",
+      "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "typecheck": "tsc --noEmit",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:e2e": "playwright test",
+        "format": "prettier --write \"src/**/*.{ts,tsx,json,css,md}\"",
+        "clean": "rm -rf .next out"
+      },
+      "dependencies": {
+        "next": "^15.0.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-i18next": "^14.0.0",
+        "i18next": "^23.7.0",
+        "zustand": "^4.5.0",
+        "clsx": "^2.1.0",
+        "tailwind-merge": "^2.2.0",
+        "react-force-graph-2d": "^1.25.0",
+        "googleapis": "^134.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^20.10.0",
+        "@types/react": "^18.3.0",
+        "@types/react-dom": "^18.3.0",
+        "@testing-library/react": "^14.1.0",
+        "@testing-library/jest-dom": "^6.1.0",
+        "@playwright/test": "^1.40.0",
+        "typescript": "^5.3.0",
+        "tailwindcss": "^4.0.0",
+        "postcss": "^8.4.0",
+        "autoprefixer": "^10.4.0",
+        "eslint": "^8.56.0",
+        "eslint-config-next": "^15.0.0",
+        "prettier": "^3.2.0",
+        "prettier-plugin-tailwindcss": "^0.5.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0"
+      }
+    },
+    
+    "tsconfig_json": {
+      "compilerOptions": {
+        "target": "ES2020",
+        "lib": ["ES2020", "DOM", "DOM.Iterable"],
+        "jsx": "preserve",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "strict": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "incremental": true,
+        "isolatedModules": true,
+        "paths": {
+          "@/*": ["./src/*"],
+          "@/components/*": ["./src/components/*"],
+          "@/lib/*": ["./src/lib/*"],
+          "@/hooks/*": ["./src/hooks/*"],
+          "@/types/*": ["./src/types/*"],
+          "@/i18n/*": ["./src/i18n/*"],
+          "@/stores/*": ["./src/stores/*"]
+        },
+        "plugins": [{ "name": "next" }]
+      },
+      "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+      "exclude": ["node_modules", ".next", "out"]
+    },
+    
+    "next_config_js": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  reactStrictMode: true,\n  swcMinify: true,\n\n  // i18n configuration\n  i18n: {\n    locales: ['se', 'en', 'ar', 'fa', 'zh', 'es'],\n    defaultLocale: 'se',\n    localeDetection: true,\n  },\n\n  // Image optimization\n  images: {\n    domains: ['infranodus.com', 'i.ytimg.com', 'img.youtube.com'],\n    formats: ['image/avif', 'image/webp'],\n  },\n\n  // Performance optimizations\n  compiler: {\n    removeConsole: process.env.NODE_ENV === 'production',\n  },\n\n  // Environment variables\n  env: {\n    NEXT_PUBLIC_SITE_NAME: 'Dagar om Lagar 2025',\n    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',\n  },\n\n  // Headers for security\n  async headers() {\n    return [\n      {\n        source: '/:path*',\n        headers: [\n          { key: 'X-DNS-Prefetch-Control', value: 'on' },\n          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },\n          { key: 'X-Content-Type-Options', value: 'nosniff' },\n          { key: 'Referrer-Policy', value: 'origin-when-cross-origin' },\n        ],\n      },\n    ];\n  },\n};\n\nmodule.exports = nextConfig;",
+    
+    "tailwind_config_js": "/** @type {import('tailwindcss').Config} */\nmodule.exports = {\n  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],\n  darkMode: 'class',\n  theme: {\n    extend: {\n      colors: {\n        primary: {\n          50: '#f0f9ff',\n          100: '#e0f2fe',\n          200: '#bae6fd',\n          300: '#7dd3fc',\n          400: '#38bdf8',\n          500: '#0ea5e9',\n          600: '#0284c7',\n          700: '#0369a1',\n          800: '#075985',\n          900: '#0c4a6e',\n        },\n      },\n      fontFamily: {\n        sans: ['Inter', 'system-ui', 'sans-serif'],\n        mono: ['Fira Code', 'monospace'],\n      },\n      animation: {\n        'fade-in': 'fadeIn 0.3s ease-in',\n        'slide-up': 'slideUp 0.4s ease-out',\n      },\n      keyframes: {\n        fadeIn: {\n          '0%': { opacity: '0' },\n          '100%': { opacity: '1' },\n        },\n        slideUp: {\n          '0%': { transform: 'translateY(20px)', opacity: '0' },\n          '100%': { transform: 'translateY(0)', opacity: '1' },\n        },\n      },\n    },\n  },\n  plugins: [\n    require('@tailwindcss/forms'),\n    require('@tailwindcss/typography'),\n  ],\n};",
+    
+    "env_example": "# Gemini API (Agent 1 + Agent 4)\nGEMINI_API_KEY=your-gemini-api-key-here\n\n# OpenAI API (Agent 2)\nOPENAI_API_KEY=your-openai-api-key-here\n\n# Anthropic API (Agent 3a + Agent 3b)\nANTHROPIC_API_KEY=your-anthropic-api-key-here\n\n# Application Environment Variables\nNEXT_PUBLIC_SITE_URL=http://localhost:3000\nNEXT_PUBLIC_YOUTUBE_API_KEY=your-youtube-api-key-here\nINFRANODUS_API_KEY=your-infranodus-api-key-here\n\n# YouTube Stream IDs\nNODVAST_YOUTUBE_ID=stream-id-1\nNODSYD_YOUTUBE_ID=stream-id-2\nNODOST_YOUTUBE_ID=stream-id-3\nNODMIDD_YOUTUBE_ID=stream-id-4\n\n# Event Configuration\nNEXT_PUBLIC_EVENT_DAY=1\nNEXT_PUBLIC_EVENT_DATES=2025-11-06,2025-11-07\n\n# Feature Flags\nNEXT_PUBLIC_ENABLE_INFRANODUS_MCP=false\nNEXT_PUBLIC_ENABLE_ANALYTICS=false"
+  },
+
+  "type_definitions": {
+    "src/types/stream.ts": "export type StreamNode = 'nodvast' | 'nodsyd' | 'nodost' | 'nodmidd';\n\nexport type EventDay = 1 | 2;\n\nexport interface Stream {\n  id: StreamNode;\n  name: string;\n  youtubeId: string;\n  embedUrl: string;\n  active: boolean;\n  day: EventDay;\n}\n\nexport interface StreamHealth {\n  status: 'good' | 'ok' | 'bad' | 'offline';\n  message: string;\n  details?: {\n    bitrate: number;\n    resolution: string;\n    fps: number;\n  };\n}\n\nexport interface ViewerCount {\n  videoId: string;\n  concurrentViewers: number;\n}",
+    
+    "src/types/i18n.ts": "export type Locale = 'se' | 'en' | 'ar' | 'fa' | 'zh' | 'es';\n\nexport type Direction = 'ltr' | 'rtl';\n\nexport interface LocaleConfig {\n  code: Locale;\n  name: string;\n  nativeName: string;\n  direction: Direction;\n  flag: string;\n}\n\nexport const LOCALE_CONFIGS: Record<Locale, LocaleConfig> = {\n  se: { code: 'se', name: 'Swedish', nativeName: 'Svenska', direction: 'ltr', flag: '🇸🇪' },\n  en: { code: 'en', name: 'English', nativeName: 'English', direction: 'ltr', flag: '🇬🇧' },\n  ar: { code: 'ar', name: 'Arabic', nativeName: 'العربية', direction: 'rtl', flag: '🇸🇦' },\n  fa: { code: 'fa', name: 'Farsi', nativeName: 'فارسی', direction: 'rtl', flag: '🇮🇷' },\n  zh: { code: 'zh', name: 'Chinese', nativeName: '中文', direction: 'ltr', flag: '🇨🇳' },\n  es: { code: 'es', name: 'Spanish', nativeName: 'Español', direction: 'ltr', flag: '🇪🇸' },\n};",
+    
+    "src/types/api.ts": "import { Stream, StreamHealth, ViewerCount } from './stream';\nimport { EventDay } from './stream';\n\n// GET /api/streams\nexport interface StreamsResponse {\n  streams: Stream[];\n  currentDay: EventDay;\n}\n\n// GET /api/stream-health/[streamId]\nexport interface StreamHealthResponse extends StreamHealth {}\n\n// GET /api/viewer-count\nexport interface ViewerCountResponse {\n  counts: ViewerCount[];\n  total: number;\n}\n\n// POST /api/infranodus/analyze\nexport interface InfraNodusAnalyzeRequest {\n  text: string;\n  contextId: string;\n}\n\nexport interface InfraNodusAnalyzeResponse {\n  success: boolean;\n  contextId: string;\n  statementId: string;\n}\n\n// GET /api/infranodus/graph/[contextId]\nexport interface GraphNode {\n  id: string;\n  label: string;\n  val: number;\n}\n\nexport interface GraphLink {\n  source: string;\n  target: string;\n  value: number;\n}\n\nexport interface InfraNodusGraphResponse {\n  nodes: GraphNode[];\n  links: GraphLink[];\n}",
+    
+    "src/types/component.ts": "import { ReactNode } from 'react';\nimport { Locale } from './i18n';\n\nexport interface BaseComponentProps {\n  className?: string;\n  children?: ReactNode;\n}\n\nexport interface LocalizedComponentProps extends BaseComponentProps {\n  locale: Locale;\n}\n\nexport interface PageProps {\n  params: {\n    locale: Locale;\n  };\n  searchParams?: Record<string, string | string[] | undefined>;\n}"
+  },
+
+  "task_allocation": {
+    "claude_frontend": [
+      "Create src/app/layout.tsx (root layout with Header and Footer)",
+      "Create src/app/[locale]/layout.tsx (locale-specific layout with RTL support)",
+      "Create src/app/[locale]/page.tsx (home page with StreamGrid)",
+      "Create src/app/[locale]/stream/[node]/page.tsx (individual stream page)",
+      "Create src/app/[locale]/schedule/page.tsx (event schedule)",
+      "Create src/app/[locale]/archive/page.tsx (VOD archive)",
+      "Create src/app/[locale]/about/page.tsx (about page)",
+      "Create src/components/features/Header.tsx",
+      "Create src/components/features/Footer.tsx",
+      "Create src/components/features/StreamGrid.tsx",
+      "Create src/components/features/StreamCard.tsx",
+      "Create src/components/features/YouTubeEmbed.tsx",
+      "Create src/components/features/LanguageSelector.tsx",
+      "Create src/components/features/ThemeToggle.tsx",
+      "Create src/components/features/StreamHealthIndicator.tsx",
+      "Create src/components/features/ViewerCount.tsx",
+      "Create src/components/features/InfraNodusGraph.tsx",
+      "Create src/components/features/ConceptCloud.tsx",
+      "Create src/components/features/ScheduleTimeline.tsx",
+      "Create src/components/features/EventCountdown.tsx",
+      "Create src/components/ui/button.tsx",
+      "Create src/components/ui/card.tsx",
+      "Create src/components/ui/modal.tsx",
+      "Create src/components/ui/select.tsx",
+      "Create src/components/shared/Loading.tsx",
+      "Create src/components/shared/ErrorBoundary.tsx",
+      "Create src/components/shared/SEO.tsx",
+      "Create src/hooks/useStreamHealth.ts",
+      "Create src/hooks/useViewerCount.ts",
+      "Create src/hooks/useLocalStorage.ts",
+      "Create src/hooks/useMediaQuery.ts",
+      "Create src/stores/streamStore.ts (Zustand)",
+      "Create src/stores/uiStore.ts (Zustand)",
+      "Create src/i18n/locales/se.json",
+      "Create src/i18n/locales/en.json",
+      "Create src/i18n/locales/ar.json",
+      "Create src/i18n/locales/fa.json",
+      "Create src/i18n/locales/zh.json",
+      "Create src/i18n/locales/es.json",
+      "Implement WCAG 2.2 AA accessibility standards",
+      "Test RTL layout with Arabic and Farsi",
+      "Write unit tests for components (Jest + Testing Library)",
+      "Ensure performance budget: LCP <2.5s, CLS <0.1, JS <250KB"
+    ],
+    
+    "claude_backend": [
+      "Create src/app/api/streams/route.ts",
+      "Create src/app/api/stream-health/[streamId]/route.ts",
+      "Create src/app/api/viewer-count/route.ts",
+      "Create src/app/api/infranodus/analyze/route.ts",
+      "Create src/app/api/infranodus/graph/[contextId]/route.ts",
+      "Create src/lib/youtube/client.ts (YouTube Data API v3 wrapper)",
+      "Create src/lib/youtube/types.ts (YouTube API response types)",
+      "Create src/lib/infranodus/client.ts (InfraNodus REST API wrapper)",
+      "Create src/lib/infranodus/cache.ts (5-minute caching strategy)",
+      "Create src/lib/infranodus/rate-limiter.ts (100 req/hour limiter)",
+      "Create src/lib/utils/cn.ts (clsx + tailwind-merge utility)",
+      "Create src/lib/utils/date.ts (date formatting)",
+      "Create src/lib/utils/locale.ts (locale detection)",
+      "Create src/i18n/config.ts (i18next configuration)",
+      "Create comprehensive API documentation in docs/api/",
+      "Write Router QoS configuration guide from plans/router_plan.md",
+      "Write OBS multi-RTMP setup guide from plans/obs_plan.md",
+      "Write YouTube channel setup guide from plans/yt_plan.md",
+      "Write InfraNodus integration guide from plans/infranodus_plan.md",
+      "Create operational procedures documentation",
+      "Set up Jest configuration (jest.config.js)",
+      "Set up Playwright E2E tests configuration",
+      "Write integration tests for API routes",
+      "Implement error handling and logging utilities",
+      "Create deployment documentation (Vercel setup)"
+    ]
+  },
+
+  "implementation_notes": {
+    "parallel_execution": {
+      "description": "Claude Frontend (3a) and Claude Backend (3b) will execute in parallel",
+      "coordination": "API contracts defined in this document serve as the interface contract",
+      "conflict_avoidance": "Clear separation: Frontend owns src/components, Backend owns src/app/api and src/lib clients",
+      "shared_files": "Type definitions in src/types/ are READ-ONLY during parallel execution - no modifications"
+    },
+    
+    "critical_dependencies": {
+      "frontend_on_backend": [
+        "API contracts must be implemented by backend before frontend can test",
+        "Type definitions must be complete before component development"
+      ],
+      "backend_on_frontend": [
+        "None - backend can develop independently using API contracts"
+      ]
+    },
+    
+    "testing_strategy": {
+      "unit_tests": "Jest + React Testing Library for components (Frontend)",
+      "integration_tests": "API route testing with mocked external services (Backend)",
+      "e2e_tests": "Playwright for full user flows (Shared, run after both agents complete)",
+      "coverage_target": ">80% for both frontend and backend"
+    },
+    
+    "performance_optimization": {
+      "code_splitting": "Dynamic imports for non-critical components (InfraNodusGraph, ConceptCloud)",
+      "image_optimization": "Next.js Image component with AVIF/WebP formats",
+      "font_optimization": "next/font for Inter and Fira Code with preloading",
+      "bundle_size": "Monitor with next-bundle-analyzer, target <250KB JS"
+    },
+    
+    "accessibility_requirements": {
+      "keyboard_navigation": "All interactive elements must be keyboard-accessible",
+      "screen_readers": "Proper ARIA labels and semantic HTML",
+      "color_contrast": "4.5:1 minimum for text, 3:1 for UI components",
+      "focus_indicators": "Visible focus styles on all focusable elements",
+      "testing": "Automated testing with axe-core, manual testing with VoiceOver"
+    }
+  },
+
+  "next_steps": {
+    "immediate": [
+      "Agent 3a (Claude Frontend) receives this architecture document",
+      "Agent 3b (Claude Backend) receives this architecture document",
+      "Both agents execute in parallel, creating files according to task allocation"
+    ],
+    
+    "handoff_to_agent_3a": {
+      "input_files": [
+        "2_gpt5_codex_architecture.json",
+        "plans/site_spec.md"
+      ],
+      "expected_output": "3a_claude_frontend_output.json with all frontend components and tests"
+    },
+    
+    "handoff_to_agent_3b": {
+      "input_files": [
+        "2_gpt5_codex_architecture.json",
+        "plans/router_plan.md",
+        "plans/obs_plan.md",
+        "plans/yt_plan.md",
+        "plans/infranodus_plan.md",
+        "plans/manuals_outline.md"
+      ],
+      "expected_output": "3b_claude_backend_output.json with all API routes, clients, and documentation"
+    },
+    
+    "integration_phase": {
+      "description": "After both Agent 3a and 3b complete, Agent 4 (Gemini CLI) will integrate outputs",
+      "validation": "Verify type consistency, API contract compliance, test coverage",
+      "final_steps": "Build production bundle, run E2E tests, deploy to Vercel"
+    }
+  }
+}
