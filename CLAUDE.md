@@ -41,6 +41,9 @@ make clean
 
 # Validate environment variables
 make check-env
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 ```
 
@@ -48,6 +51,25 @@ make check-env
 
 ```bash
 ./scripts/interactive-orchestrate.sh    # Step-by-step execution with approval gates
+```
+
+### Next.js Development (After Orchestration)
+
+```bash
+# Start dev server
+bun dev
+# Opens http://localhost:3000
+
+# Production build
+bun run build
+
+# Start production server
+bun start
+
+# Type checking
+bun run typecheck
+# or
+tsc --noEmit
 ```
 
 ### Next.js Development (After Orchestration)
@@ -92,11 +114,36 @@ bun update
 
 # Run scripts
 bun run <script>
+<<<<<<< Updated upstream
+=======
 ```
 
 ### Testing
 
 ```bash
+# Run all tests
+bun test
+# or
+bun run test
+
+# Watch mode
+bun run test:watch
+
+# Coverage report
+bun run test:coverage
+
+# Run specific test file
+bun test src/app/api/streams/route.test.ts
+
+# Run tests matching pattern
+bun test --testPathPattern=components
+>>>>>>> Stashed changes
+```
+
+### Testing
+
+```bash
+<<<<<<< Updated upstream
 # Run all tests
 bun test
 # or
@@ -125,6 +172,8 @@ bun run build             # Production build
 bun start                 # Start production server
 bun run lint              # Run Next.js linting
 =======
+=======
+>>>>>>> Stashed changes
 # Run Trunk linter (markdownlint, prettier, trufflehog, git-diff-check)
 trunk check
 trunk check --all
@@ -140,6 +189,9 @@ bun run format:check
 
 # Auto-format
 bun run format
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 ```
 
@@ -147,11 +199,14 @@ bun run format
 
 ```bash
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 bun test                  # Run all tests (Jest)
 bun test <file>           # Run specific test file
 bun run test:watch        # Run tests in watch mode
 bun run test:coverage     # Generate coverage report (target: >80%)
 =======
+=======
+>>>>>>> Stashed changes
 # Required for orchestration
 export GEMINI_API_KEY="your-gemini-key"
 export OPENAI_API_KEY="your-openai-key"
@@ -169,6 +224,21 @@ export NODMIDD_YOUTUBE_ID="stream-id-4"
 
 # Optional: Site URL
 export NEXT_PUBLIC_SITE_URL="https://dolreal.se"
+<<<<<<< Updated upstream
+=======
+```
+
+### View Agent Logs
+
+```bash
+# View all logs (last 20 lines each)
+make logs
+
+# View specific log
+cat logs/1_gemini_ultra.log
+cat logs/3a_claude_frontend.log
+tail -f logs/4_gemini_cli.log
+>>>>>>> Stashed changes
 ```
 
 ### View Agent Logs
@@ -376,6 +446,9 @@ All artifacts conform to `schemas/agent-handoff-schema.json` - this defines the 
 ├── ARCHITECTURE.md         # System architecture details
 ├── ASUSWRT-MERLIN-DOCS.md  # Router documentation
 └── README.md               # Project overview
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 ```
 
@@ -407,6 +480,17 @@ import { StreamData } from '@/types/streams';
 import { useTranslation } from '@/i18n/config';
 ```
 
+### TypeScript Path Aliases
+
+```typescript
+// Configured in tsconfig.json
+import { Button } from '@/components/ui/button';
+import { useYouTube } from '@/hooks/useYouTube';
+import { YouTubeClient } from '@/lib/youtube/client';
+import { StreamData } from '@/types/streams';
+import { useTranslation } from '@/i18n/config';
+```
+
 ### Component Hierarchy
 
 ```typescript
@@ -425,6 +509,9 @@ src/components/
 └── shared/                   // Reusable components
     ├── ThemeToggle.tsx
     └── LoadingSpinner.tsx
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 ```
 src/app/api/
@@ -445,6 +532,9 @@ src/app/api/
 └── health/
     └── route.ts             // GET /api/health
                              // Health check endpoint
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 ```
 
@@ -574,6 +664,9 @@ git clone <repo-url>
 cd DolReal
 
 # Install Bun (if not installed)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 curl -fsSL https://bun.sh/install | bash
 
@@ -594,6 +687,7 @@ bun dev
 ```
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ### Day-to-Day Development
 
 ```bash
@@ -602,6 +696,8 @@ bun dev
 
 # Make changes to src/
 =======
+=======
+>>>>>>> Stashed changes
 ### 2. Run Orchestration (First Time)
 
 ```bash
@@ -766,6 +862,7 @@ bun run build
 make check-env
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # Check .env.local exists
 ls -la .env.local
 ```
@@ -781,6 +878,8 @@ ls -la .env.local
 
 ### Schema Validation
 =======
+=======
+>>>>>>> Stashed changes
 # Expected output:
 # ✓ GEMINI_API_KEY configured
 # ✓ OPENAI_API_KEY configured
@@ -901,6 +1000,9 @@ After orchestration completes, find comprehensive guides in `docs/manuals/`:
 - **CI secrets**: Store in GitHub Secrets for workflows
 - **Router credentials**: Redact from documentation before publishing
 - **Stream keys**: Rotate after event (Nov 7, 2025)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 All artifacts **must** conform to `schemas/agent-handoff-schema.json`. Validate with:
@@ -912,10 +1014,13 @@ make validate-schema
 This schema defines the communication protocol between agents. Each artifact must include:
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 - `metadata`: Agent ID, timestamp, execution time, status
 - `research`/`architecture`/`components`/etc.: Agent-specific payload
 - `dependencies`: Inter-agent dependencies
 =======
+=======
+>>>>>>> Stashed changes
 1. **Read documentation first**: README.md, CLAUDE.md (this file), AGENTS.md, ARCHITECTURE.md
 2. **Follow agent boundaries**: Don't mix frontend/backend responsibilities (see project structure)
 3. **Validate JSON schemas**: All artifacts must match `schemas/agent-handoff-schema.json`
@@ -923,6 +1028,9 @@ This schema defines the communication protocol between agents. Each artifact mus
 5. **Test thoroughly**: Coverage >80% required (`bun test --coverage`)
 6. **Document changes**: Update relevant sections in CLAUDE.md, AGENTS.md
 7. **Use TypeScript path aliases**: Import via `@/` prefix (see tsconfig.json)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 ### Agent Boundaries
@@ -1020,12 +1128,15 @@ function MyComponent() {
 ## Additional Resources
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 - **Full orchestration details**: `october/README.md`
 - **Agent guidelines**: `AGENTS.md` (if exists)
 - **Router configuration**: `ASUSWRT-MERLIN-DOCS.md` (if exists)
 - **Quick start**: `QUICKSTART.md` (if exists)
 - **Implementation summary**: `IMPLEMENTATION_SUMMARY.md` (if exists)
 =======
+=======
+>>>>>>> Stashed changes
 - **Main README**: `README.md` (project overview, quick start)
 - **Orchestration Details**: `october/README.md` (full orchestration suite details)
 - **Agent Guidelines**: `AGENTS.md` (repository conventions, commit style)
