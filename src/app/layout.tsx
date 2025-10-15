@@ -35,7 +35,21 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {/* Space background with stars and nebulas */}
+        <div className="space-background" aria-hidden="true" />
+
+        {/* Shooting stars */}
+        <div className="shooting-stars" aria-hidden="true">
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+        </div>
+
+        {children}
+      </body>
     </html>
   );
 }

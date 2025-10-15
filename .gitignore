@@ -3,10 +3,14 @@ node_modules/
 .pnp
 .pnp.js
 .tmp-home/
+bun.lockb
+.yarn/
+.npm/
 
 # Testing
 coverage/
-.nyc_output
+.nyc_output/
+*.test.js.snap
 
 # Build output
 .next/
@@ -19,13 +23,15 @@ build/
 .env
 .env.local
 .env.*.local
+!.env.example
 
-# Artifacts and releases
+# Artifacts and releases (DoL-specific)
 artifacts/
 releases/
 logs/
+plans/
 
-# Actions runner
+# Actions runner (DoL-specific)
 actions-runner/
 actions-runner-*.tar.gz
 
@@ -35,21 +41,36 @@ actions-runner-*.tar.gz
 *.swp
 *.swo
 *~
+.project
+.classpath
+.settings/
 
 # OS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
 Thumbs.db
+Desktop.ini
 
 # Temporary files
 *.tmp
 .cache/
 tsconfig.tsbuildinfo
+.turbo/
 
 # Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-bun-debug.log*
+lerna-debug.log*
+pnpm-debug.log*
 
-.gemini/
-gha-creds-*.json
+# Local development
+.vercel
+.netlify
+
+# Backup files (to prevent this corruption from happening again)
+*.corrupt.backup
+*.gitignore.bak
+*.gitignore.old
