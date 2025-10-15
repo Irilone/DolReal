@@ -6,8 +6,30 @@
   "nav": {
     "home": "Home",
     "schedule": "Schedule",
+    "streams": "Streams",
+    "graph": "Knowledge Graph",
     "archive": "Archive",
     "about": "About"
+  },
+  "carousel": {
+    "previous": "Previous",
+    "next": "Next",
+    "goto": "Go to stream",
+    "label": "Stream carousel"
+  },
+  "graph": {
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "reset": "Reset view",
+    "legend": "Legend",
+    "connections": "connections"
+  },
+  "program": {
+    "title": "Program",
+    "day1": "Day 1",
+    "day2": "Day 2",
+    "speakers": "Speakers",
+    "streams": "Streams"
   },
   "streams": {
     "nodvast": "Northwest Node",
@@ -15,7 +37,7 @@
     "nodost": "East Node",
     "nodmidd": "Central Node",
     "inactive": "Not active today",
-    "live": "Live",
+    "live": "LIVE",
     "viewers": "viewers",
     "play": "Play",
     "pause": "Pause",
@@ -33,5 +55,11 @@
     "ok": "Good",
     "bad": "Poor",
     "offline": "Offline"
+  },
+  "common": {
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try again"
   }
 }

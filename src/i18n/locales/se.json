@@ -6,16 +6,38 @@
   "nav": {
     "home": "Hem",
     "schedule": "Schema",
+    "streams": "Strömmar",
+    "graph": "Kunskapsgraf",
     "archive": "Arkiv",
     "about": "Om"
   },
+  "carousel": {
+    "previous": "Föregående",
+    "next": "Nästa",
+    "goto": "Gå till ström",
+    "label": "Strömkarusell"
+  },
+  "graph": {
+    "zoomIn": "Zooma in",
+    "zoomOut": "Zooma ut",
+    "reset": "Återställ vy",
+    "legend": "Teckenförklaring",
+    "connections": "kopplingar"
+  },
+  "program": {
+    "title": "Program",
+    "day1": "Dag 1",
+    "day2": "Dag 2",
+    "speakers": "Talare",
+    "streams": "Strömmar"
+  },
   "streams": {
-    "nodvast": "Nodväst",
-    "nodsyd": "Nodsyd",
-    "nodost": "Nodöst",
-    "nodmidd": "Nodmidd",
+    "nodvast": "Nordväst",
+    "nodsyd": "Nordsyd",
+    "nodost": "Nordöst",
+    "nodmidd": "Nordmidd",
     "inactive": "Ej aktiv idag",
-    "live": "Live",
+    "live": "LIVE",
     "viewers": "tittare",
     "play": "Spela",
     "pause": "Pausa",
@@ -33,5 +55,11 @@
     "ok": "Bra",
     "bad": "Dålig",
     "offline": "Offline"
+  },
+  "common": {
+    "close": "Stäng",
+    "loading": "Laddar...",
+    "error": "Ett fel uppstod",
+    "retry": "Försök igen"
   }
 }
