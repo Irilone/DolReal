@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 interface Stream {
   id: string;
   title: string;
   youtubeId: string;
-  node: 'nodvast' | 'nodsyd' | 'nodost' | 'nodmidd';
+  node: "nodvast" | "nodsyd" | "nodost" | "nodmidd";
   thumbnail?: string;
   isLive?: boolean;
   active?: boolean;
@@ -21,37 +21,37 @@ interface StreamCarouselProps {
 
 const defaultStreams: Stream[] = [
   {
-    id: '1',
-    node: 'nodvast',
-    title: 'Nordväst',
-    youtubeId: process.env.NEXT_PUBLIC_NODVAST_YOUTUBE_ID || '',
+    id: "1",
+    node: "nodvast",
+    title: "Nordväst",
+    youtubeId: process.env.NEXT_PUBLIC_NODVAST_YOUTUBE_ID || "",
     active: true,
     day: 1,
     isLive: true,
   },
   {
-    id: '2',
-    node: 'nodsyd',
-    title: 'Nordsyd',
-    youtubeId: process.env.NEXT_PUBLIC_NODSYD_YOUTUBE_ID || '',
+    id: "2",
+    node: "nodsyd",
+    title: "Nordsyd",
+    youtubeId: process.env.NEXT_PUBLIC_NODSYD_YOUTUBE_ID || "",
     active: true,
     day: 1,
     isLive: true,
   },
   {
-    id: '3',
-    node: 'nodost',
-    title: 'Nordöst',
-    youtubeId: process.env.NEXT_PUBLIC_NODOST_YOUTUBE_ID || '',
+    id: "3",
+    node: "nodost",
+    title: "Nordöst",
+    youtubeId: process.env.NEXT_PUBLIC_NODOST_YOUTUBE_ID || "",
     active: true,
     day: 1,
     isLive: true,
   },
   {
-    id: '4',
-    node: 'nodmidd',
-    title: 'Nordmidd',
-    youtubeId: process.env.NEXT_PUBLIC_NODMIDD_YOUTUBE_ID || '',
+    id: "4",
+    node: "nodmidd",
+    title: "Nordmidd",
+    youtubeId: process.env.NEXT_PUBLIC_NODMIDD_YOUTUBE_ID || "",
     active: true,
     day: 1,
     isLive: true,
@@ -60,7 +60,7 @@ const defaultStreams: Stream[] = [
 
 export default function StreamCarousel({
   streams = defaultStreams,
-  className = '',
+  className = "",
 }: StreamCarouselProps) {
   const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -70,17 +70,17 @@ export default function StreamCarousel({
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const nodeColors = {
-    nodvast: 'from-purple-600/20 to-purple-800/20',
-    nodsyd: 'from-blue-600/20 to-blue-800/20',
-    nodost: 'from-cyan-600/20 to-cyan-800/20',
-    nodmidd: 'from-indigo-600/20 to-indigo-800/20',
+    nodvast: "from-purple-600/20 to-purple-800/20",
+    nodsyd: "from-blue-600/20 to-blue-800/20",
+    nodost: "from-cyan-600/20 to-cyan-800/20",
+    nodmidd: "from-indigo-600/20 to-indigo-800/20",
   };
 
   const nodeLabels = {
-    nodvast: 'Nordväst',
-    nodsyd: 'Nordsyd',
-    nodost: 'Nordöst',
-    nodmidd: 'Nordmidd',
+    nodvast: "Nordväst",
+    nodsyd: "Nordsyd",
+    nodost: "Nordöst",
+    nodmidd: "Nordmidd",
   };
 
   const handlePrev = () => {
@@ -120,7 +120,7 @@ export default function StreamCarousel({
     const scrollAmount = currentIndex * cardWidth;
     carouselRef.current.scrollTo({
       left: scrollAmount,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   }, [currentIndex, streams.length]);
 
@@ -129,10 +129,10 @@ export default function StreamCarousel({
       {/* Navigation Arrows */}
       <button
         onClick={handlePrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 glass-strong rounded-full p-3
+        className={`absolute left-4 top-1/2 -translate-y-1/2 z-10 glass-strong rounded-full p-3
                    opacity-0 group-hover:opacity-100 transition-opacity duration-300
                    hover:scale-110 hover:shadow-glow focus:outline-none focus:ring-2
-                   focus:ring-primary/50"
+                   focus:ring-primary/50`}
         aria-label="Previous stream"
       >
         <svg
@@ -153,10 +153,10 @@ export default function StreamCarousel({
 
       <button
         onClick={handleNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 glass-strong rounded-full p-3
+        className={`absolute right-4 top-1/2 -translate-y-1/2 z-10 glass-strong rounded-full p-3
                    opacity-0 group-hover:opacity-100 transition-opacity duration-300
                    hover:scale-110 hover:shadow-glow focus:outline-none focus:ring-2
-                   focus:ring-primary/50"
+                   focus:ring-primary/50`}
         aria-label="Next stream"
       >
         <svg
@@ -187,7 +187,10 @@ export default function StreamCarousel({
         aria-label="Stream carousel"
       >
         {streams.map((stream) => (
-          <div key={stream.id} className="flex-none w-[80%] sm:w-[45%] lg:w-[30%] xl:w-[22%]">
+          <div
+            key={stream.id}
+            className="flex-none w-[80%] sm:w-[45%] lg:w-[30%] xl:w-[22%]"
+          >
             <div
               className={`glass-strong rounded-glass overflow-hidden group/card
                           hover:scale-105 hover:shadow-glow-lg transition-all duration-300
@@ -226,18 +229,24 @@ export default function StreamCarousel({
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
                     </span>
-                    <span className="text-xs font-semibold text-white uppercase">LIVE</span>
+                    <span className="text-xs font-semibold text-white uppercase">
+                      LIVE
+                    </span>
                   </div>
                 )}
 
                 {/* Play Button Overlay */}
                 <div
-                  className="absolute inset-0 flex items-center justify-center
+                  className={`absolute inset-0 flex items-center justify-center
                              opacity-0 group-hover/card:opacity-100 transition-opacity
-                             bg-black/30"
+                             bg-black/30`}
                 >
                   <div className="glass-strong rounded-full p-4 hover:scale-110 transition-transform">
-                    <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="w-12 h-12 text-white"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
                       <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z" />
                     </svg>
                   </div>
@@ -249,7 +258,9 @@ export default function StreamCarousel({
                 <h3 className="text-lg font-semibold text-white mb-1 line-clamp-2">
                   {stream.title}
                 </h3>
-                <p className="text-sm text-white/70">{nodeLabels[stream.node]}</p>
+                <p className="text-sm text-white/70">
+                  {nodeLabels[stream.node]}
+                </p>
               </div>
             </div>
           </div>
@@ -265,11 +276,11 @@ export default function StreamCarousel({
             className={`h-2 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50
                        ${
                          index === currentIndex
-                           ? 'w-8 bg-primary shadow-glow'
-                           : 'w-2 bg-white/30 hover:bg-white/50'
+                           ? "w-8 bg-primary shadow-glow"
+                           : "w-2 bg-white/30 hover:bg-white/50"
                        }`}
             aria-label={`Go to stream ${index + 1}`}
-            aria-current={index === currentIndex ? 'true' : 'false'}
+            aria-current={index === currentIndex ? "true" : "false"}
           />
         ))}
       </div>
