@@ -292,11 +292,11 @@ All artifacts conform to `schemas/agent-handoff-schema.json` - this defines the 
 
 ```typescript
 // Configured in tsconfig.json
-import { Button } from '@/components/ui/button';
-import { useYouTube } from '@/hooks/useYouTube';
-import { YouTubeClient } from '@/lib/youtube/client';
-import { StreamData } from '@/types/streams';
-import { useTranslation } from '@/i18n/config';
+import { Button } from "@/components/ui/button";
+import { useYouTube } from "@/hooks/useYouTube";
+import { YouTubeClient } from "@/lib/youtube/client";
+import { StreamData } from "@/types/streams";
+import { useTranslation } from "@/i18n/config";
 ```
 
 ### Component Hierarchy
