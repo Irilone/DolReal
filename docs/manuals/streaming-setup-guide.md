@@ -56,7 +56,7 @@ Yes. YouTube Live Control Room allows multiple concurrent events under a single 
    ```json
    {
      "command": "npx",
-     "args": ["-y", "@smithery/cli@latest", "run", "@obsproject/mcp-obs"]
+     "args": ["-y", "@smithery/cli@1.2.3", "run", "@obsproject/mcp-obs"]
    }
    ```
 3. Grant the server WebSocket access to OBS (`Tools > WebSocket Server Settings`). Use TLS + strong password.
