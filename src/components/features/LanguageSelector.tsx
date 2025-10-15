@@ -22,15 +22,23 @@ export function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
       <select
         value={currentLocale}
         onChange={(e) => handleLanguageChange(e.target.value as Locale)}
-        className="appearance-none rounded-md border border-slate-300 bg-white px-4 py-2 pr-8 text-sm font-medium text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+        className="glass-strong appearance-none rounded-lg px-4 py-2 pr-10 text-sm font-medium text-white
+                   hover:scale-105 transition-transform cursor-pointer
+                   focus:outline-none focus:ring-2 focus:ring-primary/50
+                   border border-white/20"
         aria-label="Select language"
       >
         {Object.values(LOCALE_CONFIGS).map((locale) => (
-          <option key={locale.code} value={locale.code}>
+          <option key={locale.code} value={locale.code} className="bg-slate-900 text-white">
             {locale.flag} {locale.nativeName}
           </option>
         ))}
       </select>
+      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white/70">
+        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
     </div>
   );
 }
