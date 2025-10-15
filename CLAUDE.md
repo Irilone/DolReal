@@ -42,6 +42,9 @@ make clean
 # Validate environment variables
 make check-env
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -51,6 +54,25 @@ make check-env
 
 ```bash
 ./scripts/interactive-orchestrate.sh    # Step-by-step execution with approval gates
+```
+
+### Next.js Development (After Orchestration)
+
+```bash
+# Start dev server
+bun dev
+# Opens http://localhost:3000
+
+# Production build
+bun run build
+
+# Start production server
+bun start
+
+# Type checking
+bun run typecheck
+# or
+tsc --noEmit
 ```
 
 ### Next.js Development (After Orchestration)
@@ -115,12 +137,37 @@ bun update
 # Run scripts
 bun run <script>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
 =======
 ```
 
 ### Testing
 
 ```bash
+# Run all tests
+bun test
+# or
+bun run test
+
+# Watch mode
+bun run test:watch
+
+# Coverage report
+bun run test:coverage
+
+# Run specific test file
+bun test src/app/api/streams/route.test.ts
+
+# Run tests matching pattern
+bun test --testPathPattern=components
+>>>>>>> Stashed changes
+```
+
+### Testing
+
+```bash
+<<<<<<< Updated upstream
 # Run all tests
 bun test
 # or
@@ -174,6 +221,8 @@ bun run lint              # Run Next.js linting
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 # Run Trunk linter (markdownlint, prettier, trufflehog, git-diff-check)
 trunk check
 trunk check --all
@@ -190,6 +239,9 @@ bun run format:check
 # Auto-format
 bun run format
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -200,11 +252,14 @@ bun run format
 ```bash
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 bun test                  # Run all tests (Jest)
 bun test <file>           # Run specific test file
 bun run test:watch        # Run tests in watch mode
 bun run test:coverage     # Generate coverage report (target: >80%)
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 # Required for orchestration
@@ -225,7 +280,22 @@ export NODMIDD_YOUTUBE_ID="stream-id-4"
 # Optional: Site URL
 export NEXT_PUBLIC_SITE_URL="https://dolreal.se"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+```
+
+### View Agent Logs
+
+```bash
+# View all logs (last 20 lines each)
+make logs
+
+# View specific log
+cat logs/1_gemini_ultra.log
+cat logs/3a_claude_frontend.log
+tail -f logs/4_gemini_cli.log
+>>>>>>> Stashed changes
 ```
 
 ### View Agent Logs
@@ -447,6 +517,9 @@ All artifacts conform to `schemas/agent-handoff-schema.json` - this defines the 
 ├── ASUSWRT-MERLIN-DOCS.md  # Router documentation
 └── README.md               # Project overview
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -491,6 +564,17 @@ import { StreamData } from '@/types/streams';
 import { useTranslation } from '@/i18n/config';
 ```
 
+### TypeScript Path Aliases
+
+```typescript
+// Configured in tsconfig.json
+import { Button } from '@/components/ui/button';
+import { useYouTube } from '@/hooks/useYouTube';
+import { YouTubeClient } from '@/lib/youtube/client';
+import { StreamData } from '@/types/streams';
+import { useTranslation } from '@/i18n/config';
+```
+
 ### Component Hierarchy
 
 ```typescript
@@ -510,6 +594,9 @@ src/components/
     ├── ThemeToggle.tsx
     └── LoadingSpinner.tsx
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -533,6 +620,9 @@ src/app/api/
     └── route.ts             // GET /api/health
                              // Health check endpoint
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -665,6 +755,9 @@ cd DolReal
 
 # Install Bun (if not installed)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -688,6 +781,7 @@ bun dev
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 ### Day-to-Day Development
 
 ```bash
@@ -696,6 +790,8 @@ bun dev
 
 # Make changes to src/
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 ### 2. Run Orchestration (First Time)
@@ -863,6 +959,7 @@ make check-env
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # Check .env.local exists
 ls -la .env.local
 ```
@@ -878,6 +975,8 @@ ls -la .env.local
 
 ### Schema Validation
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 # Expected output:
@@ -1001,6 +1100,9 @@ After orchestration completes, find comprehensive guides in `docs/manuals/`:
 - **Router credentials**: Redact from documentation before publishing
 - **Stream keys**: Rotate after event (Nov 7, 2025)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1015,10 +1117,13 @@ This schema defines the communication protocol between agents. Each artifact mus
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 - `metadata`: Agent ID, timestamp, execution time, status
 - `research`/`architecture`/`components`/etc.: Agent-specific payload
 - `dependencies`: Inter-agent dependencies
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 1. **Read documentation first**: README.md, CLAUDE.md (this file), AGENTS.md, ARCHITECTURE.md
@@ -1029,6 +1134,9 @@ This schema defines the communication protocol between agents. Each artifact mus
 6. **Document changes**: Update relevant sections in CLAUDE.md, AGENTS.md
 7. **Use TypeScript path aliases**: Import via `@/` prefix (see tsconfig.json)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1129,12 +1237,15 @@ function MyComponent() {
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 - **Full orchestration details**: `october/README.md`
 - **Agent guidelines**: `AGENTS.md` (if exists)
 - **Router configuration**: `ASUSWRT-MERLIN-DOCS.md` (if exists)
 - **Quick start**: `QUICKSTART.md` (if exists)
 - **Implementation summary**: `IMPLEMENTATION_SUMMARY.md` (if exists)
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 - **Main README**: `README.md` (project overview, quick start)
