@@ -28,6 +28,78 @@
     "day1": "第1天 - 2025年11月6日",
     "day2": "第2天 - 2025年11月7日"
   },
+  "dol": {
+    "header": {
+      "tagline": "数字会议枢纽",
+      "title": "2025年法律日 – 数字枢纽"
+    },
+    "nav": {
+      "aria": "主导航",
+      "home": "首页",
+      "program2024": "2024年议程",
+      "register": "注册",
+      "speakers": "讲者",
+      "recordings": "2024年录制",
+      "speakers2024": "2024年讲者",
+      "contact": "联系我们"
+    },
+    "language": {
+      "label": "语言"
+    },
+    "hero": {
+      "tagline": "数字会议平台 • 2025年11月6–7日",
+      "title": "四大节点，一体化司法体系",
+      "description": "在西北、南方、东方与中部节点之间自由切换。查看每日议程，并通过知识图谱获取更深洞察。",
+      "primaryCta": "开启主会场直播",
+      "secondaryCta": "浏览议程"
+    },
+    "graph": {
+      "title": "知识图谱 —— 导航节点",
+      "subtitle": "点击节点即可打开相应直播与日程。"
+    },
+    "graphLabels": {
+      "core": "法律日",
+      "policy": "政策与协同",
+      "resiliens": "韧性",
+      "inkludering": "包容",
+      "innovation": "创新",
+      "data": "数据与人工智能"
+    },
+    "days": {
+      "label": "选择会议日程",
+      "day1": "第1天 – 11月6日",
+      "day2": "第2天 – 11月7日"
+    },
+    "streams": {
+      "title": "直播频道",
+      "subtitle": "使用下方轮播切换节点，每次仅播放一个直播。",
+      "inactiveDay": "该节点在第{{day}}天未开播。",
+      "switchToMain": "切换到主节点 Nodväst",
+      "thumbnailLabel": "{{node}} – 切换直播",
+      "meta": {
+        "location": "地点",
+        "theme": "主题"
+      }
+    },
+    "program": {
+      "title": "{{node}} 节点行程",
+      "empty": "该日暂无安排。",
+      "speakers": "讲者",
+      "focus": "重点",
+      "format": {
+        "keynote": "主题演讲",
+        "panel": "圆桌论坛",
+        "workshop": "工作坊",
+        "fireside": "炉边对话",
+        "dialog": "对话",
+        "break": "休息"
+      }
+    },
+    "footer": {
+      "info": "2025年法律日官方数字平台。",
+      "rights": "© 2025 法律日。保留所有权利。"
+    }
+  },
   "health": {
     "good": "优秀",
     "ok": "良好",
