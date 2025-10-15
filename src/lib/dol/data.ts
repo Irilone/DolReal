@@ -49,8 +49,8 @@ export const DOL_NODES: Record<DolNodeKey, DolNodeData> = {
     theme: "Digital transformation och rättspolitik",
     graphId: "dol-nodvast",
     streams: {
-      1: { youtubeId: "u1T05ChwPcg", active: true },
-      2: { youtubeId: "u1T05ChwPcg", active: true },
+      1: { youtubeId: process.env.NEXT_PUBLIC_NODVAST_YOUTUBE_ID_D1 || "u1T05ChwPcg", active: true },
+      2: { youtubeId: process.env.NEXT_PUBLIC_NODVAST_YOUTUBE_ID_D2 || "u1T05ChwPcg", active: true },
     },
     program: {
       1: [
