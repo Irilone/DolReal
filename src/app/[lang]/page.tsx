@@ -1,6 +1,5 @@
 'use client';
 
-import { use } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Locale } from '@/types/i18n';
 import StreamCarousel from '@/components/features/StreamCarousel';
@@ -8,11 +7,10 @@ import ProgramSchedule from '@/components/features/ProgramSchedule';
 import GraphNavigation from '@/components/features/GraphNavigation';
 
 interface HomePageProps {
-  params: Promise<{ lang: Locale }>;
+  lang: Locale;
 }
 
-export default function HomePage({ params }: HomePageProps) {
-  const { lang } = use(params);
+export default function HomePage({ lang }: HomePageProps) {
   const { t } = useTranslation();
 
   return (

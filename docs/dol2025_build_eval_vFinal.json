@@ -1,0 +1,22 @@
+{
+  "goal": "Rebuild DoL 2025 frontend using Vite+Deno+Tailwind+NanoCSS",
+  "context": {
+    "legacy": "Webpack",
+    "tools": [
+      "Vite",
+      "Deno",
+      "Tailwind",
+      "NanoCSS"
+    ],
+    "mcp": [
+      "buildoracle",
+      "perfmonk",
+      "joyloop",
+      "devsavant",
+      "metricslayer",
+      "nanocss",
+      "tailwind-opt"
+    ]
+  },
+  "task": "Analyze, migrate, and optimize DX and CSS tooling"
+}
