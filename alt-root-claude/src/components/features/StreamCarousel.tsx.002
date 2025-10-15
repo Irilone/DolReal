@@ -1,0 +1,16 @@
+
+interface StreamCarouselProps {
+  streams?: Stream[];
+  className?: string;
+}
+
+const defaultStreams: Stream[] = [
+  {
+    id: '1',
+    node: 'nodvast',
+    title: 'Nordväst',
+    youtubeId: process.env.NEXT_PUBLIC_NODVAST_YOUTUBE_ID || '',
+    active: true,
+    day: 1,
+    isLive: true,
+  },

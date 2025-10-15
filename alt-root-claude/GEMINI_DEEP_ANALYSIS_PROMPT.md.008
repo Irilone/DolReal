@@ -1,0 +1,10 @@
+#### 🛠️ Utilities & Hooks
+- ✅ `src/lib/utils/cn.ts` - className utility (clsx + tailwind-merge)
+- ✅ `src/lib/utils/date.ts` - Event date utilities, current day detection
+- ✅ `src/lib/utils/locale.ts` - Locale validation, RTL detection
+- ✅ `src/hooks/useStreamHealth.ts` - Auto-refresh stream health
+- ✅ `src/hooks/useViewerCount.ts` - Auto-refresh viewer counts
+- ✅ `src/hooks/useLocalStorage.ts` - localStorage state management
+- ✅ `src/hooks/useMediaQuery.ts` - Responsive breakpoint detection
+
+#### 🎨 Styling & Animations

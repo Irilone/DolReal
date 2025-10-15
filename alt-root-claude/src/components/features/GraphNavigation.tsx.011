@@ -1,0 +1,13 @@
+    },
+    [isDragging, dragStart]
+  );
+
+  const handleMouseUp = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  const handleNodeClick = useCallback(
+    (node: GraphNode) => {
+      setSelectedNode(node.id);
+      onNodeClick?.(node);
+    },

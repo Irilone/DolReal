@@ -1,0 +1,10 @@
+    [onNodeClick]
+  );
+
+  const handleZoomIn = () => setZoom((prev) => Math.min(3, prev * 1.2));
+  const handleZoomOut = () => setZoom((prev) => Math.max(0.5, prev / 1.2));
+  const handleReset = () => {
+    setZoom(1);
+    setPan({ x: 0, y: 0 });
+    setSelectedNode(null);
+  };

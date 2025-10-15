@@ -1,0 +1,11 @@
+**Note**: Free accounts have rate limits. Advanced, Pro, and Premium subscribers get higher usage limits.
+
+## Configuration
+
+### Claude Desktop Configuration
+
+**macOS:**
+```bash
+open ~/Library/Application\ Support/Claude/claude_desktop_config.json
+```
+

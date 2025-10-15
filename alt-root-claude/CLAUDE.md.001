@@ -1,0 +1,10 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+**DolReal** - Multi-agent orchestration system that builds a Next.js 15 streaming platform for "Dagar om Lagar 2025" (Nov 6-7, 2025). Uses file-based async communication between 4 specialized AI agents (Gemini Ultra, GPT-5 Codex, 2x Claude Sonnet 4.5) to generate production-ready code in 50-70 minutes.
+
+**Tech Stack**: Next.js 15 (App Router), TypeScript (strict mode), Tailwind CSS v4, react-i18next (6 languages), YouTube IFrame API, InfraNodus MCP, Zustand (state management), Jest (testing), Bun (runtime)
+

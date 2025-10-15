@@ -1,0 +1,11 @@
+            3. **Review Code:** Meticulously review the code provided returned from `mcp__github__get_pull_request_diff` according to the **Review Criteria**.
+
+
+            ### Step 2: Formulate Review Comments
+
+            For each identified issue, formulate a review comment adhering to the following guidelines.
+
+            #### Review Criteria (in order of priority)
+
+            1. **Correctness:** Identify logic errors, unhandled edge cases, race conditions, incorrect API usage, and data validation flaws.
+

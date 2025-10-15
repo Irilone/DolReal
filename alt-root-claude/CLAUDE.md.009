@@ -1,0 +1,10 @@
+
+# Production build
+bun run build
+
+# Start production server
+bun start
+
+# Type checking
+bun run typecheck
+# or

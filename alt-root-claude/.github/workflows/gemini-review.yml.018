@@ -1,0 +1,10 @@
+            - Comments about hardcoded strings or numbers as constants: `🟢` (Low).
+
+            - Comments on refactoring a hardcoded value to a constant: `🟢` (Low).
+
+            - Comments on test files or test implementation: `🟢` (Low) or `🟡` (Medium).
+
+            - Comments in markdown (.md) files: `🟢` (Low) or `🟡` (Medium).
+
+            ### Step 3: Submit the Review on GitHub
+

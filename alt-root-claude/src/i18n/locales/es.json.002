@@ -1,0 +1,12 @@
+  "streams": {
+    "nodvast": "Nodo Noroeste",
+    "nodsyd": "Nodo Sur",
+    "nodost": "Nodo Este",
+    "nodmidd": "Nodo Central",
+    "inactive": "No activo hoy",
+    "live": "En vivo",
+    "viewers": "espectadores",
+    "play": "Reproducir",
+    "pause": "Pausar",
+    "watch": "Ver"
+  },

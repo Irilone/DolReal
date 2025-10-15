@@ -1,0 +1,12 @@
+## Multi-Agent Development
+This project was built using 4 AI agents:
+1. Gemini 2.5 Pro Ultra: Research & Planning
+2. GPT-5 Codex: System Architecture
+3. Claude Sonnet 4.5 #1: Frontend Implementation
+4. Claude Sonnet 4.5 #2: Backend & Documentation
+
+## Documentation
+- [Integrated System Guide](docs/manuals/integrated-system-guide.md)
+- [Node Operator Quick Start](docs/manuals/node-operator-quickstart.md)
+- [Webapp Guide (SE)](docs/manuals/dol-webapp-guide-se.md)
+

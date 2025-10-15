@@ -1,0 +1,30 @@
+│  │  - Env Var Mgmt      │  │  - Environment Check │              │
+│  │  - Error Messages    │  │  - Browser Check     │              │
+│  │  - Notifications     │  │  - Connectivity Test │              │
+│  │  - Sanitization      │  │  - Status Reporting  │              │
+│  │  - Helper Functions  │  │  - Command Execution │              │
+│  └──────────────────────┘  └──────────────────────┘              │
+│              │                         │                           │
+│              └──────────┬──────────────┘                           │
+│                         ▼                                          │
+│  ┌─────────────────────────────────────────────────────────────┐  │
+│  │         gemini-api-module.js (API Client Layer)             │  │
+│  │  =========================================================   │  │
+│  │  - initialize()        : Setup with API key                 │  │
+│  │  - testConnection()    : Verify API access                  │  │
+│  │  - generateContent()   : Main content generation            │  │
+│  │  - listModels()        : Get available models               │  │
+│  │  - getStatus()         : Check module state                 │  │
+│  │  - updateConfig()      : Modify configuration               │  │
+│  │  - reset()             : Reset module state                 │  │
+│  │                                                              │  │
+│  │  Features:                                                   │  │
+│  │  - Retry Logic (3 attempts with backoff)                    │  │
+│  │  - Timeout Protection (30s default)                         │  │
+│  │  - Error Handling                                            │  │
+│  │  - Configuration Management                                  │  │
+│  └──────────────────────┬──────────────────────────────────────┘  │
+│                         │                                          │
+│                         ▼                                          │
+│  ┌─────────────────────────────────────────────────────────────┐  │
+│  │              LocalStorage (Development)                      │  │

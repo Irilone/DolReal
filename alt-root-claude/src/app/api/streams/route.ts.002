@@ -1,0 +1,16 @@
+
+const STREAM_DEFINITIONS: readonly StreamDefinition[] = [
+  {
+    id: 'nodvast',
+    name: 'Nodväst',
+    envKey: 'NODVAST_YOUTUBE_ID',
+    activeDays: [1, 2],
+    defaultDay: 1,
+  },
+  {
+    id: 'nodsyd',
+    name: 'Nodsyd',
+    envKey: 'NODSYD_YOUTUBE_ID',
+    activeDays: [1],
+    defaultDay: 1,
+  },

@@ -1,0 +1,12 @@
+5. **Performance optimization**
+   - Bundle size analysis
+   - Code splitting effectiveness
+   - Animation performance (60fps target)
+   - Lighthouse score (target: 90+)
+
+6. **Security review**
+   - API key protection (never in client bundle)
+   - XSS vulnerability check
+   - CORS configuration
+   - Input sanitization
+

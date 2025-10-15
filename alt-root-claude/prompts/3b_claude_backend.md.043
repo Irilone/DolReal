@@ -1,0 +1,17 @@
+  ]
+}
+```
+
+---
+
+## VALIDATION CHECKLIST
+
+Before submitting:
+- [ ] All API routes implemented and tested
+- [ ] YouTube API client handles concurrent stream checks
+- [ ] InfraNodus integration with MCP + fallback
+- [ ] All 3 manuals complete with actionable instructions
+- [ ] Testing setup configured (Jest + tests)
+- [ ] Router/OBS documentation includes exact commands
+- [ ] MCP configuration valid JSON
+

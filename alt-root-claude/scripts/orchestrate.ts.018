@@ -1,0 +1,10 @@
+
+    // Parse and save output
+    const outputData = extractJSON(output);
+
+    // Ensure metadata exists
+    if (!outputData.metadata) {
+      outputData.metadata = {};
+    }
+
+    // Add orchestrator metadata

@@ -1,0 +1,10 @@
+## Troubleshooting
+
+### Stream Won't Connect
+
+- Check internet connection
+- Verify stream key is correct
+- Try backup RTMP server: `rtmp://b.rtmp.youtube.com/live2/`
+
+### High CPU Usage
+

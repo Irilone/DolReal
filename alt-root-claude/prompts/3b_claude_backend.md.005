@@ -1,0 +1,11 @@
+    {
+      id: 'nodsyd',
+      name: 'Nodsyd',
+      youtubeId: process.env.NODSYD_YOUTUBE_ID!,
+      embedUrl: `https://www.youtube.com/embed/${process.env.NODSYD_YOUTUBE_ID}`,
+      active: day === '1', // Inactive on Day 2
+      day: 1,
+    },
+    // ... Nodöst, Nodmidd
+  ];
+

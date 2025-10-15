@@ -1,0 +1,10 @@
+#### Multi-Instance OBS Setup
+1. Create separate OBS installations for each stream:
+```bash
+# Create directory for each instance
+mkdir OBS_Nodvast OBS_Nodsyd OBS_Nodost OBS_Nodmidd
+
+# Copy OBS files to each directory
+# Configure each instance with unique stream keys
+```
+

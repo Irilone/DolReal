@@ -1,0 +1,11 @@
+
+function log(message: string, color: keyof typeof COLORS = 'reset') {
+  console.log(`${COLORS[color]}${message}${COLORS.reset}`);
+}
+
+function parseArgs(): Args {
+  const args = process.argv.slice(2);
+  const parsed: Partial<Args> = {};
+
+  for (let i = 0; i < args.length; i += 2) {
+    const key = args[i].replace(/^--/, '') as keyof Args;

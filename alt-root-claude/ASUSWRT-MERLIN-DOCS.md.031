@@ -1,0 +1,14 @@
+---
+
+## Key Features
+
+### Networking
+
+- **OpenVPN Client/Server**: Up to 5 simultaneous VPN connections
+- **VPN Director**: Route specific devices through VPN
+- **WireGuard Support**: Modern VPN protocol (model-dependent)
+- **IPv6 Tunneling**: 6in4, 6rd, 6to4
+- **Link Aggregation**: Combine ethernet ports
+- **DNS Privacy**: DNS-over-TLS (DoT)
+- **DNSFilter**: Per-device DNS control
+

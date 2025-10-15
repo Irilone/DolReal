@@ -1,0 +1,10 @@
+
+  // Group parallel agents by parallelGroup
+  const parallelGroups = new Map<number, AgentConfig[]>();
+  for (const agent of parallelAgents) {
+    const group = agent.parallelGroup ?? 0;
+    if (!parallelGroups.has(group)) {
+      parallelGroups.set(group, []);
+    }
+    parallelGroups.get(group)!.push(agent);
+  }

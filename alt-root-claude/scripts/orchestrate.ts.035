@@ -1,0 +1,10 @@
+// ============================================================================
+// Main Orchestration
+// ============================================================================
+
+async function orchestrate() {
+  log("DoL 2025 Multi-Agent Orchestrator starting...");
+  await ensureDirectories();
+
+  const sequentialAgents = AGENTS.filter((a) => !a.canRunInParallel);
+  const parallelAgents = AGENTS.filter((a) => a.canRunInParallel);

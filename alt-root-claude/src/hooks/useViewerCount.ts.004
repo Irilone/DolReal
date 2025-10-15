@@ -1,0 +1,9 @@
+
+    fetchCounts();
+    const interval = setInterval(fetchCounts, refreshInterval);
+
+    return () => clearInterval(interval);
+  }, [videoIds, refreshInterval]);
+
+  return { counts, total, loading, error };
+}

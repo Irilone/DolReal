@@ -1,0 +1,11 @@
+2. **Use web UI** (https://gemini.google.com)
+   - Copy contents of `GEM_ULTRA_PROMPT_v2.md`
+   - Paste into Gemini Advanced
+   - Enable "Deep Thinking" mode
+   - Wait 30 minutes for response
+
+3. **Use previous analysis** (already created)
+   - Read `GEMINI_DEEP_ANALYSIS_PROMPT.md`
+   - Follow manual analysis checklist
+   - Use Claude Code (me!) to implement fixes
+

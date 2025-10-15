@@ -1,0 +1,14 @@
+3. **Network Security**
+   - HTTPS recommendations
+   - CORS considerations documented
+   - Timeout protection
+
+### Recommendations for Production
+
+- Use backend proxy for API calls
+- Implement user authentication
+- Add rate limiting per user
+- Monitor API usage and costs
+- Log errors securely
+- Rotate API keys regularly
+

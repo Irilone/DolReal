@@ -1,0 +1,12 @@
+### Priority 3: Nice-to-Have (COULD FIX)
+7. **Error handling improvements**
+   - User-friendly error messages
+   - Retry logic for failed API calls
+   - Offline state handling
+   - Error boundary components
+
+8. **Testing recommendations**
+   - Critical paths to test
+   - Playwright E2E test suggestions
+   - Manual testing checklist
+

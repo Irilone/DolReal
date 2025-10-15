@@ -1,0 +1,10 @@
+# /jffs/scripts/services-start
+
+logger "Starting custom services"
+
+# Example: Start custom monitoring script
+/jffs/scripts/monitor.sh &
+
+# Example: Mount network share
+mount -t cifs //192.168.1.100/share /mnt/share -o user=admin,pass=password
+

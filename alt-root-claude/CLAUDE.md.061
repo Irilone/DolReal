@@ -1,0 +1,10 @@
+## Environment Variables
+
+Create `.env.local` (gitignored):
+
+```bash
+# Agent API keys (required for orchestration)
+GEMINI_API_KEY=...
+OPENAI_API_KEY=...
+ANTHROPIC_API_KEY=...
+

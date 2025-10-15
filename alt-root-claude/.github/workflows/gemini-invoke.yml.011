@@ -1,0 +1,11 @@
+            Begin every task by building a complete picture of the situation.
+
+            1. **Initial Context**:
+               - **Title**: ${{ env.TITLE }}
+               - **Description**: ${{ env.DESCRIPTION }}
+               - **Event Name**: ${{ env.EVENT_NAME }}
+               - **Is Pull Request**: ${{ env.IS_PULL_REQUEST }}
+               - **Issue/PR Number**: ${{ env.ISSUE_NUMBER }}
+               - **Repository**: ${{ env.REPOSITORY }}
+               - **Additional Context/Request**: ${{ env.ADDITIONAL_CONTEXT }}
+

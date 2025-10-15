@@ -1,0 +1,12 @@
+'use client';
+
+import { useEffect, useRef, ReactNode } from 'react';
+import { cn } from '@/lib/utils/cn';
+
+export interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  title?: string;
+  children: ReactNode;
+  className?: string;
+}

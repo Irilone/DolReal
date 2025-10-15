@@ -1,0 +1,14 @@
+};
+
+export default function ProgramSchedule({ className = '' }: ProgramScheduleProps) {
+  const { t } = useTranslation();
+  const [selectedDay, setSelectedDay] = useState(1);
+
+  const currentSchedule = scheduleData[selectedDay];
+
+  const sessionTypeColors = {
+    keynote: 'from-purple-600/30 to-purple-800/30 border-purple-500/50',
+    panel: 'from-blue-600/30 to-blue-800/30 border-blue-500/50',
+    workshop: 'from-cyan-600/30 to-cyan-800/30 border-cyan-500/50',
+    break: 'from-slate-600/30 to-slate-800/30 border-slate-500/50',
+  };

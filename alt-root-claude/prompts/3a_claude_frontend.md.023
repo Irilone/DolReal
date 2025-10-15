@@ -1,0 +1,11 @@
+### 6. Responsive Design
+
+Breakpoints:
+- Mobile: 0-640px
+- Tablet: 641-1024px
+- Desktop: 1025px+
+
+All components must work on all screen sizes.
+
+---
+

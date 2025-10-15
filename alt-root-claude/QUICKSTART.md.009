@@ -1,0 +1,15 @@
+## Check Status
+
+```bash
+make status
+```
+
+Output:
+```
+gemini-ultra: ✓ Complete
+gpt5-codex: ✓ Complete
+claude-frontend: ✓ Complete
+claude-backend: ✓ Complete
+gemini-cli: ✗ Pending
+```
+

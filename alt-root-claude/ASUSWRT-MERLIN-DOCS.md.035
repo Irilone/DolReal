@@ -1,0 +1,13 @@
+
+### Router Model
+
+**ASUS RT-AX86U Pro** with Asuswrt-Merlin firmware
+
+### Use Case Requirements
+
+- **4 Simultaneous YouTube Live Streams** (Nodväst, Nodsyd, Nodöst, Nodmidd)
+- **OBS Multi-RTMP Streaming**
+- **InfraNodus MCP Integration**
+- **QoS for Streaming Prioritization**
+- **Low-Latency Network Configuration**
+

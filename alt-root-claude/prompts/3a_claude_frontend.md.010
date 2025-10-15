@@ -1,0 +1,10 @@
+  // - Event schedule display
+  // - i18n content (all 6 languages)
+  // - Responsive layout
+  // - Semantic HTML
+}
+```
+
+#### E. LanguageSwitcher Component
+```typescript
+// src/components/features/LanguageSwitcher.tsx

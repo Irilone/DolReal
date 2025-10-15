@@ -1,0 +1,11 @@
+# DolReal - Dagar om Lagar 2025
+
+Multi-Agent Orchestration Suite with Gemini API Integration
+
+## Project Overview
+
+This repository contains two main systems:
+
+### 1. Multi-Agent Orchestration Suite (TypeScript/Node.js)
+Located in root directory - A 4-agent coordinated build system for "Dagar om Lagar 2025" streaming platform.
+

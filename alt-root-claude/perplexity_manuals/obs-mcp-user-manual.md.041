@@ -1,0 +1,13 @@
+### Log Analysis
+
+#### OBS Logs Location
+**Windows**: `%APPDATA%\obs-studio\logs\`
+**macOS**: `~/Library/Application Support/obs-studio/logs/`
+**Linux**: `~/.config/obs-studio/logs/`
+
+#### Key Log Indicators
+- Connection timeout errors
+- Encoding overload warnings  
+- Network stability issues
+- Audio/video synchronization problems
+

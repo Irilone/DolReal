@@ -1,0 +1,13 @@
+#### Source Tools
+- **obs-get-source-list**: List all configured sources
+- **obs-toggle-source-mute**: Mute/unmute audio sources
+- **obs-set-source-volume**: Adjust source audio levels
+- **obs-get-source-settings**: Retrieve source configuration
+
+#### Streaming Tools
+- **obs-start-stream**: Begin live streaming
+- **obs-stop-stream**: End current stream
+- **obs-start-record**: Start recording
+- **obs-stop-record**: Stop recording
+- **obs-start-virtual-cam**: Enable virtual camera output
+

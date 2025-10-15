@@ -1,0 +1,10 @@
+MIT License - See LICENSE file for details
+
+## Documentation
+
+- [Multi-Agent Orchestration](october/README.md)
+- [Browser Gemini Integration](october/INTEGRATION_README.md)
+- [InfraNodus Integration](plans/infranodus_plan.md)
+- [Agent Prompts](prompts/)
+
+## Project Status

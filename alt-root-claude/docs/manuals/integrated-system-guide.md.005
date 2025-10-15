@@ -1,0 +1,16 @@
+
+### Installation
+
+1. Download OBS Studio 30+ from obsproject.com
+2. Install Multiple RTMP Outputs Plugin by SoraYuki
+3. Restart OBS Studio
+
+### Streaming Settings
+
+**Video Settings:**
+- Base Resolution: 1920x1080
+- Output Resolution: 1280x720
+- FPS: 30
+- Encoder: VideoToolbox (hardware encoding on macOS)
+- Bitrate: 2500-4000 Kbps per stream
+

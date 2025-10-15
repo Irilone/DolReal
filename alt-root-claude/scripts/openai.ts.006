@@ -1,0 +1,10 @@
+  return parsed as Args;
+}
+
+function mapModelName(model: string): string {
+  const modelMap: Record<string, string> = {
+    'gpt-5-codex': 'gpt-4-turbo', // Fallback to GPT-4 Turbo until GPT-5 is available
+    'gpt-5': 'gpt-4-turbo',
+    'gpt-4-turbo': 'gpt-4-turbo-preview',
+  };
+

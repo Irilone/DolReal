@@ -1,0 +1,12 @@
+#### D. Integration Testing
+- Test frontend → backend API calls
+- Verify YouTube player controls
+- Check InfraNodus embed loads
+- Test day 1 vs day 2 logic
+
+### 4. Documentation Review
+
+#### A. README.md
+Generate comprehensive README:
+```markdown
+# Dagar om Lagar 2025

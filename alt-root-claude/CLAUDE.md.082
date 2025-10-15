@@ -1,0 +1,14 @@
+- System architecture design (data flow, component hierarchy)
+- Component tree with task allocation to Claude agents
+- API contracts between frontend/backend
+- Core scaffolding (package.json, tsconfig, next.config, etc.)
+- Output: `artifacts/2_gpt5_codex_architecture.json`
+
+### 3a. Claude Frontend (`prompts/3a_claude_frontend.md`)
+- React/Next.js components (App Router pattern)
+- Tailwind CSS styling + dark mode (CSS variables)
+- i18n integration (6 languages + RTL for ar/fa)
+- YouTube IFrame API integration (single-player policy)
+- WCAG 2.2 AA accessibility (keyboard nav, ARIA, contrast)
+- Output: `artifacts/3a_claude_frontend_output.json`
+

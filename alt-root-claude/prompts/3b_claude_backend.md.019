@@ -1,0 +1,11 @@
+      body: JSON.stringify({ method, params }),
+    });
+    return response.json();
+  }
+}
+```
+
+### 4. Documentation (docs/)
+
+Create comprehensive documentation:
+

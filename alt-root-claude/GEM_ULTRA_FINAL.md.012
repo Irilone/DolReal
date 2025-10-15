@@ -1,0 +1,10 @@
+export GEMINI_API_KEY="AIza..."
+
+# Option 2: Load from .env
+echo 'GEMINI_API_KEY=AIza...' >> .env
+source .env
+
+# Option 3: 1Password integration
+export GEMINI_API_KEY=$(op read "op://Personal/Gemini API Key/credential")
+```
+

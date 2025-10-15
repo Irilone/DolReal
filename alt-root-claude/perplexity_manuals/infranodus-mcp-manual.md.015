@@ -1,0 +1,12 @@
+### Available Tools Overview
+
+#### 1. generate_knowledge_graph
+**Purpose**: Convert any text into a visual knowledge graph
+**Usage**: "Generate a knowledge graph from this conference agenda"
+**Output**: Interactive graph showing concepts and relationships
+
+#### 2. analyze_existing_graph_by_name  
+**Purpose**: Retrieve and analyze existing graphs from your account
+**Usage**: "Analyze my graph named 'DoL 2025 Conference'"
+**Output**: Detailed analysis with statistics and insights
+

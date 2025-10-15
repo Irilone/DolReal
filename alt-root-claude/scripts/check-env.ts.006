@@ -1,0 +1,13 @@
+    if (!value) allRequired = false;
+  }
+
+  console.log('Optional (for final build):');
+  for (const env of optionalEnvVars) {
+    const value = process.env[env.name];
+    const status = value ? '✅' : '⚠️ ';
+    const maskedValue = value ? `${value.slice(0, 8)}...` : 'NOT SET';
+
+    console.log(`  ${status} ${env.name}`);
+    console.log(`     ${env.description}`);
+    console.log(`     Value: ${maskedValue}\n`);
+  }

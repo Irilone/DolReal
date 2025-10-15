@@ -1,0 +1,28 @@
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {activeNode && (
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="bg-white text-black p-6 rounded-lg max-w-2xl w-full relative">
+            <h3 className="text-xl font-semibold mb-2">{activeNode}</h3>
+            <iframe
+              src={graphEmbed}
+              title="InfraNodus Graph"
+              className="w-full h-80 border border-gray-200 rounded-md mb-4"
+              aria-label="InfraNodus knowledge graph embed"
+            />
+            <div className="flex gap-3 justify-end">
+              <Button
+                onClick={() =>
+                  setActiveStream(
+                    nodes.findIndex((n) => n.name === activeNode) || 0,
+                  )
+                }

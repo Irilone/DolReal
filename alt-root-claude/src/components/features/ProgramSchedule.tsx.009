@@ -1,0 +1,11 @@
+      {
+        id: 'd2-4',
+        time: '11:30 - 13:00',
+        title: 'Avslutande Panel: Framtiden för Juridiken',
+        description: 'Sammanfattning och framtidsperspektiv',
+        speakers: ['Alla talare'],
+        streams: ['nodvast'],
+        type: 'keynote',
+      },
+    ],
+  },

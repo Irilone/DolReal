@@ -1,4 +1,4 @@
-/** @jest-environment node */
+/* @jest-environment node */
 // src/app/api/streams/route.test.ts
 import { GET } from './route';
 import { NextRequest } from 'next/server';

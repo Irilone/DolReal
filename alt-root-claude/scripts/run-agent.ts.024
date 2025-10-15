@@ -1,0 +1,11 @@
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Claude API error (${response.status}): ${errorText}`);
+  }
+
+  const data = await response.json();
+
+  if (data.error) {
+    throw new Error(`Claude API error: ${JSON.stringify(data.error)}`);
+  }

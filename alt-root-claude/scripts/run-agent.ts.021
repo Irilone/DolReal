@@ -1,0 +1,12 @@
+
+  const data = await response.json();
+
+  if (data.error) {
+    throw new Error(`OpenAI API error: ${JSON.stringify(data.error)}`);
+  }
+
+  const text = data.choices?.[0]?.message?.content ?? '';
+
+  if (!text) {
+    throw new Error('OpenAI API returned empty response');
+  }

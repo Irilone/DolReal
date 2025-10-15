@@ -1,0 +1,30 @@
+        <div className="mb-8 text-center">
+          <p className="text-lg text-slate-600 dark:text-slate-400">
+            Utforska inspelningar från tidigare års evenemang
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {archives.map((archive) => (
+            <Card key={archive.year} className="overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-800">
+                <CardTitle className="flex items-center justify-between">
+                  <span className="text-2xl">{archive.title}</span>
+                  <span className="rounded-full bg-blue-600 px-3 py-1 text-sm font-semibold text-white">
+                    {archive.year}
+                  </span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <p className="mb-4 text-slate-600 dark:text-slate-400">
+                  {archive.description}
+                </p>
+                <div className="mb-6 flex gap-6 text-sm text-slate-500 dark:text-slate-400">
+                  <div className="flex items-center gap-2">
+                    <svg
+                      className="h-5 w-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path

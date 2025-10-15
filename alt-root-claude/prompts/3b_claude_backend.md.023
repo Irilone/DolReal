@@ -1,0 +1,10 @@
+### Performance Settings
+- Encoder: NVENC H.264 (if available) or x264
+- Rate control: CBR
+- Bitrate: 6000 Kbps per stream
+- Keyframe interval: 2 seconds
+- Preset: Quality
+
+## YouTube Live Events
+
+### Event Creation

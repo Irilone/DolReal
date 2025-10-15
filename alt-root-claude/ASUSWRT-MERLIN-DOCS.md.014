@@ -1,0 +1,10 @@
+All user scripts stored in: `/jffs/scripts/`
+
+### Creating Scripts
+
+#### 1. Basic Script Template
+
+```bash
+#!/bin/sh
+# Script Name: example-script
+# Description: What this script does

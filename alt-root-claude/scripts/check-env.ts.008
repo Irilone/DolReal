@@ -1,0 +1,7 @@
+  console.log('✅ All required environment variables are set!');
+  console.log('\nYou can now run:');
+  console.log('  make all          # Full orchestration');
+  console.log('  make gemini-ultra # Individual agent\n');
+}
+
+checkEnv();

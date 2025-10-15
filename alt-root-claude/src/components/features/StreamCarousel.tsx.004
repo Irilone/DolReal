@@ -1,0 +1,11 @@
+  {
+    id: '4',
+    node: 'nodmidd',
+    title: 'Nordmidd',
+    youtubeId: process.env.NEXT_PUBLIC_NODMIDD_YOUTUBE_ID || '',
+    active: true,
+    day: 1,
+    isLive: true,
+  },
+];
+

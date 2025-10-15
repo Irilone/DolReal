@@ -1,0 +1,18 @@
+Quality of Service Configuration:
+Priority 1: Streaming traffic (40% allocation)
+Priority 2: Audio/communication (20% allocation) 
+Priority 3: Monitoring/control (20% allocation)
+Priority 4: General traffic (20% allocation)
+```
+
+#### Hardware Specifications Per Node
+```
+Minimum Specifications:
+- CPU: Intel i7-9700K or AMD Ryzen 7 3700X
+- RAM: 16GB DDR4
+- GPU: NVIDIA RTX 3060 or equivalent
+- Storage: 500GB SSD
+- Network: Gigabit Ethernet (dedicated)
+- Audio: Professional audio interface
+- Video: 4K capable cameras
+

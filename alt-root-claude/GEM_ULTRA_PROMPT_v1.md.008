@@ -1,0 +1,12 @@
+3. **Test production build**
+   - Run `bun run build` successfully
+   - Optimize bundle size
+   - Check for runtime errors
+
+### Priority 2: Important (SHOULD FIX)
+4. **Accessibility audit (WCAG 2.2 AA)**
+   - Screen reader compatibility
+   - Keyboard navigation completeness
+   - Color contrast verification
+   - RTL layout testing (Arabic/Farsi)
+

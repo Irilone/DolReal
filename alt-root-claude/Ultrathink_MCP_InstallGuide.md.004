@@ -1,0 +1,11 @@
+---
+
+### 3. stackhistorian
+- **Purpose:** Tracks bundler evolution, community shifts, and deprecation timelines.
+- **Prompt example:**
+```json
+"task": "Trace Webpack and Vite adoption trends in production SSR contexts."
+```
+
+---
+

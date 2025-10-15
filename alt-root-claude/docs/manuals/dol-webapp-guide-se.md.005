@@ -1,0 +1,10 @@
+
+Varje strömkort visar en hälsoindikator:
+- 🟢 **Utmärkt**: Perfekt kvalitet
+- 🟡 **Bra**: God kvalitet
+- 🔴 **Dålig**: Anslutningsproblem
+- ⚫ **Offline**: Strömmen är inte aktiv
+
+## Interaktiv Användning
+
+### Titta på en Ström

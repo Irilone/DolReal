@@ -1,0 +1,10 @@
+
+  return response.data.items;
+}
+
+// Verify concurrent stream policy compliance
+export async function checkConcurrentStreams(channelId: string): Promise<{
+  count: number;
+  withinLimit: boolean;
+}> {
+  const streams = await listLiveStreams(channelId);

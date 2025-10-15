@@ -1,0 +1,10 @@
+
+  // Check if we're at the limit
+  if (requestTimestamps.length >= config.maxRequests) {
+    return false;
+  }
+
+  // Add current request timestamp
+  requestTimestamps.push(now);
+  return true;
+}

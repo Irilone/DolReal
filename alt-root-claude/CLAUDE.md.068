@@ -1,0 +1,10 @@
+- **Firmware**: Asuswrt-Merlin
+- **QoS**: Prioritize RTMP (port 1935) traffic
+- **Bandwidth**: Reserve 80 Mbps upload for streaming
+- **Failover**: Automatic WAN failover if configured
+- **Docs**: See `ASUSWRT-MERLIN-DOCS.md`
+
+---
+>>>>>>> Stashed changes
+
+## Development Workflow

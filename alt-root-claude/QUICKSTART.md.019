@@ -1,0 +1,11 @@
+2. **Push to main**:
+   ```bash
+   git add .
+   git commit -m "Multi-agent orchestration setup"
+   git push origin main
+   ```
+
+3. **Workflow runs automatically**, produces release artifact
+
+---
+

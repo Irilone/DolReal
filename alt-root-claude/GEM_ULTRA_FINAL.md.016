@@ -1,0 +1,12 @@
+After 20-35 minutes, you should have:
+
+✅ **StreamCarousel fixed**
+```tsx
+// Before (build error):
+className="absolute left-4 top-1/2 -translate-y-1/2..."
+
+// After (Gemini's fix):
+className={cn(
+  "absolute left-4 top-1/2 -translate-y-1/2",
+  "opacity-0 group-hover:opacity-100",
+  // ... rest of classes

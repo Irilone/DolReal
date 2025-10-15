@@ -1,0 +1,10 @@
+
+async function executeClaude(
+  prompt: string,
+  agentId: string,
+): Promise<string> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) throw new Error("ANTHROPIC_API_KEY not set");
+
+  log(`  Calling Claude API (claude-sonnet-4.5)...`);
+

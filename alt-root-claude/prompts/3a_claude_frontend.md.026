@@ -1,0 +1,11 @@
+  ],
+  "i18n": {
+    "config": "// Full i18n config code",
+    "translations": {
+      "se": { /* full JSON */ },
+      "en": { /* full JSON */ },
+      "ar": { /* full JSON */ },
+      "fa": { /* full JSON */ },
+      "zh": { /* full JSON */ },
+      "es": { /* full JSON */ }
+    }

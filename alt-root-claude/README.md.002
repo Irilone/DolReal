@@ -1,0 +1,10 @@
+**See:** [`october/README.md`](october/README.md) for detailed orchestration documentation.
+
+### 2. Browser-Based Gemini API Integration (JavaScript/ES6+)
+Located in `october/` directory - A browser-based Gemini API integration for Swedish Health Bus Schedule System.
+
+**See:** [`october/INTEGRATION_README.md`](october/INTEGRATION_README.md) for browser integration documentation.
+
+## Quick Start
+
+### For Orchestration Suite (TypeScript)

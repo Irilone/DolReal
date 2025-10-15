@@ -1,0 +1,10 @@
+/**
+ * Initialization Module
+ * Bootstraps all modules and starts the application
+ */
+(function(window) {
+  'use strict';
+  
+  window.VaccineBusInit = (function () {
+      
+      function init() {

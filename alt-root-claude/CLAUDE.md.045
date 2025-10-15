@@ -1,0 +1,30 @@
+│   ├── components/        # React components
+│   │   ├── features/      # Feature-specific components
+│   │   │   ├── Header.tsx           # Site header with nav/lang/dark mode
+│   │   │   ├── StreamCarousel.tsx   # 4 YouTube players
+│   │   │   ├── GraphNavModal.tsx    # InfraNodus integration
+│   │   │   ├── ProgramSection.tsx   # Event schedule
+│   │   │   └── LanguageSwitcher.tsx # 6-language dropdown
+│   │   ├── ui/            # Base UI components (shadcn/ui style)
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── dialog.tsx
+│   │   │   └── modal.tsx
+│   │   ├── shared/        # Reusable components
+│   │   │   ├── SEO.tsx
+│   │   │   ├── Loading.tsx
+│   │   │   └── ErrorBoundary.tsx
+│   │   └── providers/     # Context providers
+│   │       ├── ThemeProvider.tsx
+│   │       └── I18nProvider.tsx
+│   ├── lib/               # Utilities and integrations
+│   │   ├── youtube/       # YouTube API client
+│   │   ├── infranodus/    # InfraNodus MCP client
+│   │   ├── mcp/           # MCP client base
+│   │   └── utils/         # Utility functions (cn, date, locale)
+│   ├── hooks/             # Custom React hooks
+│   │   ├── useStreamPlayer.ts
+│   │   ├── useStreamHealth.ts
+│   │   ├── useViewerCount.ts
+│   │   ├── useLocalStorage.ts
+│   │   └── useMediaQuery.ts

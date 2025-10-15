@@ -1,0 +1,12 @@
+  {
+    id: "gemini-cli",
+    name: "Gemini CLI (Final Integration)",
+    command: "gemini",
+    inputArtifacts: [
+      "artifacts/3a_claude_frontend_output.json",
+      "artifacts/3b_claude_backend_output.json",
+    ],
+    outputArtifact: "artifacts/4_gemini_cli_final.json",
+    promptFile: "prompts/4_gemini_cli_final.md",
+    canRunInParallel: false,
+  },

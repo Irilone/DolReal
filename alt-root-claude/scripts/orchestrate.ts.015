@@ -1,0 +1,10 @@
+
+  try {
+    // Check if input artifacts exist
+    if (agent.inputArtifacts.length > 0) {
+      const allExist = await checkArtifactsExist(agent.inputArtifacts);
+      if (!allExist) {
+        throw new Error(
+          `Missing input artifacts for ${agent.id}: ${agent.inputArtifacts.join(", ")}`,
+        );
+      }

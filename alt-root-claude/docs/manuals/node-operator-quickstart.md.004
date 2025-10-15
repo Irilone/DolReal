@@ -1,0 +1,15 @@
+
+1. Go to **Settings → Stream**
+2. Service: YouTube - RTMPS
+3. Server: Primary YouTube ingest server
+4. Stream Key: [Paste your stream key]
+
+### Step 3: Set Up Scene
+
+1. Click **+ in Scenes panel**
+2. Name it "Main Stream"
+3. Add Sources:
+   - Video Capture Device (camera)
+   - Audio Input Capture (microphone)
+   - Text (optional: node name overlay)
+

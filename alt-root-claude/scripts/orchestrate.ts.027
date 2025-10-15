@@ -1,0 +1,14 @@
+    body: JSON.stringify({
+      model: "gpt-5-codex-high-reasoning",
+      messages: [
+        {
+          role: "system",
+          content:
+            "You are an expert system architect specializing in TypeScript, React, Next.js, and modern web development.",
+        },
+        { role: "user", content: prompt },
+      ],
+      temperature: 0.2,
+      max_tokens: 16000,
+    }),
+  });

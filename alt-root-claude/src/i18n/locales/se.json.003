@@ -1,0 +1,19 @@
+  "program": {
+    "title": "Program",
+    "day1": "Dag 1",
+    "day2": "Dag 2",
+    "speakers": "Talare",
+    "streams": "Strömmar"
+  },
+  "streams": {
+    "nodvast": "Nordväst",
+    "nodsyd": "Nordsyd",
+    "nodost": "Nordöst",
+    "nodmidd": "Nordmidd",
+    "inactive": "Ej aktiv idag",
+    "live": "LIVE",
+    "viewers": "tittare",
+    "play": "Spela",
+    "pause": "Pausa",
+    "watch": "Titta"
+  },

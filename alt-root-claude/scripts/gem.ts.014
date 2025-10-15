@@ -1,0 +1,12 @@
+    const outputDir = dirname(args.output);
+    await mkdir(outputDir, { recursive: true });
+
+    // Write output
+    log('\n→ Writing output file...', 'yellow');
+    await writeFile(args.output, responseText, 'utf-8');
+    log(`✓ Wrote ${responseText.length} characters to ${args.output}`, 'green');
+
+    const overallElapsed = ((Date.now() - overallStart) / 1000).toFixed(2);
+    log(`\n${COLORS.green}✓ Complete in ${overallElapsed}s${COLORS.reset}`);
+    log('═══════════════════════════════════════════════════════\n', 'magenta');
+

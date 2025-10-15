@@ -1,0 +1,12 @@
+### 6. Post-Build Verification
+
+#### A. Smoke Tests
+- [ ] App starts without errors
+- [ ] All 4 streams load
+- [ ] Language switcher works (all 6 locales)
+- [ ] Dark mode toggles
+- [ ] InfraNodus modal opens
+- [ ] Day 2 logic disables 3 streams
+- [ ] Keyboard navigation works
+- [ ] Mobile responsive
+

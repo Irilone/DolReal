@@ -1,0 +1,14 @@
+## Validation
+
+### Browser Integration Validation
+
+1. Open browser integration: http://localhost:8000
+2. Configure API key
+3. Click "Validera allt" (Validate All)
+
+Expected checks:
+- ✓ Gemini API configured and accessible
+- ✓ Environment variables present
+- ✓ Browser compatibility confirmed
+- ✓ HTTPS enabled (for production)
+

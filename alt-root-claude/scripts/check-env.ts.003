@@ -1,0 +1,13 @@
+  {
+    name: 'ANTHROPIC_API_KEY',
+    required: true,
+    description: 'Claude Sonnet 4.5 x2 (Agents 3a & 3b)',
+  },
+];
+
+const optionalEnvVars: EnvCheck[] = [
+  {
+    name: 'NEXT_PUBLIC_YOUTUBE_API_KEY',
+    required: false,
+    description: 'YouTube Data API (for final build)',
+  },

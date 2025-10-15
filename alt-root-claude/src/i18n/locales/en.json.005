@@ -1,0 +1,7 @@
+  "common": {
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try again"
+  }
+}

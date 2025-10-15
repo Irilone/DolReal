@@ -1,0 +1,12 @@
+  "streams": {
+    "nodvast": "西北节点",
+    "nodsyd": "南方节点",
+    "nodost": "东方节点",
+    "nodmidd": "中央节点",
+    "inactive": "今天不活跃",
+    "live": "直播",
+    "viewers": "观众",
+    "play": "播放",
+    "pause": "暂停",
+    "watch": "观看"
+  },

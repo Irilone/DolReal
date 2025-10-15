@@ -1,0 +1,30 @@
+# DolReal Gemini API Integration - Architecture
+
+## System Architecture Diagram
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                          Browser Environment                         │
+│                                                                      │
+│  ┌─────────────────────────────────────────────────────────────┐  │
+│  │                      index.html (UI Layer)                   │  │
+│  │  - Swedish Language Interface                                │  │
+│  │  - API Configuration Form                                    │  │
+│  │  - Validation Controls                                       │  │
+│  │  - Content Generation Testing                                │  │
+│  │  - System Status Display                                     │  │
+│  └─────────────────────────────────────────────────────────────┘  │
+│                               │                                     │
+│                               ▼                                     │
+│  ┌─────────────────────────────────────────────────────────────┐  │
+│  │                  scripts.js (Controller)                     │  │
+│  │  - Event Handlers                                            │  │
+│  │  - UI State Management                                       │  │
+│  │  - User Interaction Logic                                    │  │
+│  └───────────┬─────────────────────────┬───────────────────────┘  │
+│              │                         │                           │
+│              ▼                         ▼                           │
+│  ┌──────────────────────┐  ┌──────────────────────┐              │
+│  │  utility.js          │  │  validation.js       │              │
+│  │  ================     │  │  ==================  │              │
+│  │  - Logging           │  │  - API Key Validation│              │

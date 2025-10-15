@@ -1,0 +1,10 @@
+
+// Option 1: MCP Server (if available)
+import { MCPClient } from '@/lib/mcp/client';
+
+export async function getInfraNodusEmbed(nodeId: string): Promise<string> {
+  if (process.env.INFRANODUS_MCP_ENABLED === 'true') {
+    const mcpClient = new MCPClient({
+      serverUrl: process.env.INFRANODUS_MCP_URL!,
+    });
+    const result = await mcpClient.call('getEmbed', { nodeId });

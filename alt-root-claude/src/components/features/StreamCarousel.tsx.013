@@ -1,0 +1,30 @@
+      {/* Carousel Container */}
+      <div
+        ref={carouselRef}
+        className="flex gap-4 overflow-x-auto scroll-smooth scrollbar-hide cursor-grab active:cursor-grabbing px-4"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseLeave}
+        role="region"
+        aria-label="Stream carousel"
+      >
+        {streams.map((stream) => (
+          <div key={stream.id} className="flex-none w-[80%] sm:w-[45%] lg:w-[30%] xl:w-[22%]">
+            <div
+              className={`glass-strong rounded-glass overflow-hidden group/card
+                          hover:scale-105 hover:shadow-glow-lg transition-all duration-300
+                          bg-gradient-to-br ${nodeColors[stream.node]}`}
+            >
+              {/* Thumbnail Container */}
+              <div className="relative aspect-video bg-black/20">
+                {stream.thumbnail ? (
+                  <img
+                    src={stream.thumbnail}
+                    alt={stream.title}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <svg

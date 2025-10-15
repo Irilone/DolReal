@@ -1,0 +1,15 @@
+  return (
+    <Head>
+      <title>{pageTitle}</title>
+      <meta name="description" content={pageDescription} />
+      <meta name="keywords" content={pageKeywords.join(', ')} />
+      {author && <meta name="author" content={author} />}
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={pageDescription} />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:description" content={pageDescription} />
+    </Head>
+  );
+}

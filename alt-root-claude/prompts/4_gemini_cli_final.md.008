@@ -1,0 +1,10 @@
+#### A. Performance Audit
+```typescript
+// Analyze build output
+{
+  "lcp": 2.1, // seconds (target: <2.5)
+  "cls": 0.08, // (target: <0.1)
+  "js_bundle_size_kb": 245, // (target: <250)
+  "first_contentful_paint": 1.5,
+  "time_to_interactive": 3.2
+}

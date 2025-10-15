@@ -1,0 +1,11 @@
+**Symptoms:**
+- "Invalid API key" error
+- "API error: 400" messages
+- Authentication failures
+
+**Solutions:**
+1. Verify key format (Gemini: starts with `AIza`)
+2. Check for extra spaces or newlines
+3. Ensure API is enabled in Google Cloud Console
+4. Regenerate the API key if needed
+

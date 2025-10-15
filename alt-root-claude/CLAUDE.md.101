@@ -1,0 +1,30 @@
+All artifacts **must** conform to `schemas/agent-handoff-schema.json`. Validate with:
+
+```bash
+make validate-schema
+```
+
+This schema defines the communication protocol between agents. Each artifact must include:
+
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+- `metadata`: Agent ID, timestamp, execution time, status
+- `research`/`architecture`/`components`/etc.: Agent-specific payload
+- `dependencies`: Inter-agent dependencies
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+1. **Read documentation first**: README.md, CLAUDE.md (this file), AGENTS.md, ARCHITECTURE.md
+2. **Follow agent boundaries**: Don't mix frontend/backend responsibilities (see project structure)
+3. **Validate JSON schemas**: All artifacts must match `schemas/agent-handoff-schema.json`
+4. **Run linters**: `trunk check` before committing
+5. **Test thoroughly**: Coverage >80% required (`bun test --coverage`)

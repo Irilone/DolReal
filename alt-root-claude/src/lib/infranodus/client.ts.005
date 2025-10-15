@@ -1,0 +1,10 @@
+    return data.context_id;
+  } catch (error) {
+    console.error('Error analyzing text with InfraNodus:', error);
+    throw error;
+  }
+}
+
+export async function getGraph(contextId: string): Promise<{ nodes: GraphNode[]; links: GraphLink[] }> {
+  // Check cache first
+  const cached = getCachedData<InfraNodusAnalyzeResponse>(contextId);

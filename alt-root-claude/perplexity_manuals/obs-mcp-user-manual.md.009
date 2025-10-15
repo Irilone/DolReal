@@ -1,0 +1,12 @@
+npm run build
+```
+
+### Step 4: Configure Environment Variables
+
+Set the WebSocket password in your environment:
+
+**Windows:**
+```cmd
+set OBS_WEBSOCKET_PASSWORD=your_password_here
+```
+

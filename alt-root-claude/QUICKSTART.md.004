@@ -1,0 +1,11 @@
+```
+
+---
+
+## One-Command Build (50-70 minutes)
+
+```bash
+# Clone repo
+git clone <repo-url>
+cd DolReal
+

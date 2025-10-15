@@ -1,0 +1,15 @@
+### Port Forwarding
+| Service | Port | Protocol | Internal IP |
+|---------|------|----------|-------------|
+| RTMP    | 1935 | TCP      | 192.168.1.100 (OBS PC) |
+
+## OBS Configuration
+
+### Multi-RTMP Setup
+Install plugin: OBS Multi-RTMP
+Configure 4 outputs:
+1. Nodväst: rtmps://a.rtmp.youtube.com/live2/[key1]
+2. Nodsyd: rtmps://a.rtmp.youtube.com/live2/[key2]
+3. Nodöst: rtmps://a.rtmp.youtube.com/live2/[key3]
+4. Nodmidd: rtmps://a.rtmp.youtube.com/live2/[key4]
+

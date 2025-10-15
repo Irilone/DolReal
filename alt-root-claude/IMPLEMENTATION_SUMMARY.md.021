@@ -1,0 +1,11 @@
+### For All Four Agents
+
+The system supports integration with all four agents:
+
+1. **Agent 1**: Research and data gathering
+2. **Agent 2**: Content analysis
+3. **Agent 3**: Scheduling and routing
+4. **Agent 4**: Reporting and notifications
+
+Each agent can use the same API module with different prompts and configurations.
+

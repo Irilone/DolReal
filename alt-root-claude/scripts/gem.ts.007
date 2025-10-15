@@ -1,0 +1,11 @@
+
+  log(`\n${COLORS.cyan}→ Calling Gemini API: ${model}${COLORS.reset}`);
+  log(`  Prompt length: ${prompt.length} characters`, 'blue');
+
+  const startTime = Date.now();
+
+  const response = await fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },

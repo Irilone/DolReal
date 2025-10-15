@@ -1,0 +1,11 @@
+bun run typecheck
+# or
+tsc --noEmit
+```
+
+### Next.js Development (After Orchestration)
+
+```bash
+# Start dev server
+bun dev
+# Opens http://localhost:3000

@@ -1,0 +1,10 @@
+    const value = args[i + 1];
+    parsed[key] = value;
+  }
+
+  if (!parsed.model || !parsed.input || !parsed.output) {
+    log('Error: Missing required arguments', 'red');
+    log('Usage: bun run scripts/anthropic.ts --model <model> --input <file> --output <file>', 'yellow');
+    process.exit(1);
+  }
+

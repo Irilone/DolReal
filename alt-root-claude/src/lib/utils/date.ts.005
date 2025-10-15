@@ -1,0 +1,7 @@
+
+  return date.toLocaleDateString(localeMap[locale] || 'sv-SE', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}

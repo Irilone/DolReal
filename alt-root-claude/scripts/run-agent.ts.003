@@ -1,0 +1,14 @@
+  'claude-frontend': {
+    name: 'Claude Sonnet 4.5 #1 (Frontend)',
+    promptFile: 'prompts/3a_claude_frontend.md',
+    outputFile: 'artifacts/3a_claude_frontend_output.json',
+    envKey: 'ANTHROPIC_API_KEY',
+    model: 'claude-sonnet-4.5',
+  },
+  'claude-backend': {
+    name: 'Claude Sonnet 4.5 #2 (Backend)',
+    promptFile: 'prompts/3b_claude_backend.md',
+    outputFile: 'artifacts/3b_claude_backend_output.json',
+    envKey: 'ANTHROPIC_API_KEY',
+    model: 'claude-sonnet-4.5',
+  },

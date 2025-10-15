@@ -1,0 +1,11 @@
+#!/usr/bin/env bun
+/**
+ * Multi-Agent Orchestrator for DoL 2025
+ * Coordinates GPT-5 Codex, Gemini 2.5 Pro Ultra, and 2x Claude Sonnet 4.5
+ * File-based async communication via JSON artifacts
+ */
+
+import fs from "fs/promises";
+import path from "path";
+import { spawn } from "child_process";
+

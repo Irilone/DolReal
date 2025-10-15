@@ -1,0 +1,10 @@
+          window.MapUpdater.initialize();
+          
+          // Wait for schedule to load, then update daily map
+          window.MapUpdater.waitForSchedule().then(() => {
+              window.MapUpdater.updateDailyMap();
+          });
+          
+          // Setup automatic daily updates
+          window.MapUpdater.setupDailyUpdate();
+          

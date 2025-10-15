@@ -1,0 +1,10 @@
+3. Add ARIA labels and keyboard navigation for accessibility
+
+4. Add translations to all 6 language files in `src/i18n/locales/`
+
+### Adding a New API Route
+
+1. Create `route.ts` in `src/app/api/{endpoint}/`
+
+2. Export named functions: `GET`, `POST`, `PUT`, `DELETE`
+

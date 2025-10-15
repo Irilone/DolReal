@@ -1,0 +1,11 @@
+### Troubleshooting Checklist
+
+- [ ] Verify firmware version matches documentation
+- [ ] Check JFFS is enabled and formatted
+- [ ] Ensure SSH is accessible
+- [ ] Test custom scripts manually before production
+- [ ] Monitor router temperature during high load
+- [ ] Backup configuration before making changes
+- [ ] Document all custom rules and scripts
+- [ ] Test failover scenarios (WAN disconnect, power loss)
+

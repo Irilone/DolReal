@@ -1,0 +1,10 @@
+cat jest.setup.ts
+```
+
+### Performance Issues
+
+```bash
+# Analyze bundle size
+bun run build
+
+# Check Lighthouse score

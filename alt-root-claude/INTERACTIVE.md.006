@@ -1,0 +1,12 @@
+✅ **Browser sessions logged in:**
+- Gemini (with Pro/Ultra subscription)
+- ChatGPT (with GPT-5 Codex access)
+- Claude (with Sonnet 4.5 access)
+
+✅ **Clipboard tool:**
+- macOS: `pbcopy`/`pbpaste` (built-in)
+- Linux: `xclip` (install: `sudo apt-get install xclip`)
+
+✅ **Optional:**
+- `jq` for JSON validation: `brew install jq`
+

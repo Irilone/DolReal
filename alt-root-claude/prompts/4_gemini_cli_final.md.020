@@ -1,0 +1,12 @@
+## Testing
+- Unit tests: 45 passing
+- Integration tests: 12 passing
+- Coverage: 87%
+
+## Known Issues
+None
+
+## Upgrade Notes
+First release
+```
+

@@ -1,0 +1,24 @@
+# Choose prompt version
+echo -e "${YELLOW}Choose analysis depth:${NC}"
+echo -e "  ${BLUE}1${NC}) Quick Analysis (v1 - ~15min)"
+echo -e "  ${BLUE}2${NC}) Deep Analysis (v2 - ~30min)"
+echo -e "  ${BLUE}3${NC}) Custom prompt"
+read -p "Selection [2]: " CHOICE
+CHOICE=${CHOICE:-2}
+
+case $CHOICE in
+    1)
+        PROMPT_FILE="GEM_ULTRA_PROMPT_v1.md"
+        ;;
+    2)
+        PROMPT_FILE="GEM_ULTRA_PROMPT_v2.md"
+        ;;
+    3)
+        read -p "Enter prompt file path: " PROMPT_FILE
+        ;;
+    *)
+        echo -e "${RED}Invalid choice${NC}"
+        exit 1
+        ;;
+esac
+

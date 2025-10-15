@@ -1,0 +1,14 @@
+#### Step 3: Test Installation
+```bash
+# Inspect the MCP server
+npm run inspect
+```
+
+### Obtaining InfraNodus API Key
+
+1. Create account at https://infranodus.com
+2. Navigate to your user account settings
+3. Go to API section
+4. Click "Create new key"
+5. Copy the generated API key
+

@@ -1,0 +1,10 @@
+# Re-run specific agent
+make claude-frontend     # Only regenerate frontend
+make claude-backend      # Only regenerate backend
+
+# Or re-run full pipeline
+make all
+```
+
+## Policies & Requirements
+

@@ -1,0 +1,30 @@
+              {
+                "issue_number": 456,
+                "labels_to_set": ["kind/enhancement"],
+                "explanation": "The user is requesting a new export feature, which constitutes an enhancement."
+              }
+            ]
+            ```
+
+  label:
+    runs-on: 'ubuntu-latest'
+    needs:
+      - 'triage'
+    if: |-
+      needs.triage.outputs.available_labels != '' &&
+      needs.triage.outputs.available_labels != '[]' &&
+      needs.triage.outputs.triaged_issues != '' &&
+      needs.triage.outputs.triaged_issues != '[]'
+    permissions:
+      contents: 'read'
+      issues: 'write'
+      pull-requests: 'write'
+    steps:
+      - name: 'Mint identity token'
+        id: 'mint_identity_token'
+        if: |-
+          ${{ vars.APP_ID }}
+        uses: 'actions/create-github-app-token@a8d616148505b5069dccd32f177bb87d7f39123b' # ratchet:actions/create-github-app-token@v2
+        with:
+          app-id: '${{ vars.APP_ID }}'
+          private-key: '${{ secrets.APP_PRIVATE_KEY }}'

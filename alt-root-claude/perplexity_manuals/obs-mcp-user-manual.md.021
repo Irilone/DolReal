@@ -1,0 +1,15 @@
+1. Sign in to YouTube Studio
+2. Click **Go Live** in the top-right corner
+3. If first time: Request access and wait up to 24 hours for activation
+4. Complete phone verification if prompted
+
+### OBS YouTube Integration
+
+#### Method 1: Account Connection (Recommended)
+1. Open OBS Studio
+2. Go to **Settings > Stream**
+3. Select **YouTube - RTMPS** as service
+4. Click **Connect Account (recommended)**
+5. Authorize OBS in browser
+6. Return to OBS and verify connection
+

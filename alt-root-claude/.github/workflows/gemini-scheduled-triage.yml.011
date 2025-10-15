@@ -1,0 +1,11 @@
+            ## Execution Workflow
+
+            Follow this four-step process sequentially:
+
+            ## Step 1: Parse Input Data
+
+            Parse the provided data above:
+            - Split the available labels by comma to get the list of valid labels
+            - Parse the JSON array of issues to analyze
+            - Note the output file path where you will write your results
+

@@ -1,0 +1,18 @@
+4. **Monitor Usage**
+   - Check API dashboards
+   - Review cost metrics
+   - Monitor error logs
+
+## Support
+
+If you encounter issues not covered here:
+
+1. Check detailed documentation in `october/INTEGRATION_README.md`
+2. Review [Gemini API docs](https://ai.google.dev/docs)
+3. Search existing GitHub issues
+4. Open a new issue with:
+   - Error messages
+   - Browser/Node version
+   - Steps to reproduce
+   - Console logs (redact API keys!)
+

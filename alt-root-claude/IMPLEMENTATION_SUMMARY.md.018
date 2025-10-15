@@ -1,0 +1,11 @@
+2. **Start Local Server**
+   ```bash
+   cd october
+   python3 -m http.server 8000
+   ```
+
+3. **Open Browser**
+   ```
+   http://localhost:8000
+   ```
+

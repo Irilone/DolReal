@@ -1,0 +1,16 @@
+  "locales": ["se", "en", "ar", "fa", "zh", "es"],
+  "day2_policy": "Only Nodväst active; UI unchanged"
+}
+```
+
+---
+
+## STYLE GUIDELINES
+
+- **Swedish** for UI labels, user-facing text
+- **English** for technical documentation
+- **Short numbered bullets** for lists
+- **Tables** for structured data
+- **Citations** with URL + title + access date
+- Mark **all unverified claims** clearly
+

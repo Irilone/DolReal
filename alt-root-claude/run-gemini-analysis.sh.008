@@ -1,0 +1,8 @@
+# Optional: Open in default editor
+read -p "Open report in default editor? (y/n) " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    ${EDITOR:-open} "$OUTPUT_FILE"
+fi
+
+echo -e "\n${GREEN}🎉 Done! Happy optimizing! 🚀${NC}"

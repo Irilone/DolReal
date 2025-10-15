@@ -1,0 +1,14 @@
+import { writeFile, readFile, mkdir } from 'fs/promises';
+import { dirname } from 'path';
+
+interface Args {
+  model: string;
+  input: string;
+  output: string;
+}
+
+interface OpenAIResponse {
+  choices?: Array<{
+    message?: {
+      content?: string;
+    };

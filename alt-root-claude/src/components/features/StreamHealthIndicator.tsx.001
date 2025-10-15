@@ -1,0 +1,10 @@
+'use client';
+
+import { useTranslation } from 'react-i18next';
+import type { StreamHealth } from '@/types/stream';
+import { useStreamHealth } from '@/hooks/useStreamHealth';
+
+interface StreamHealthIndicatorProps {
+  streamId: string | null;
+  refreshInterval?: number;
+}

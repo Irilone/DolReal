@@ -1,0 +1,12 @@
+---
+
+## 🤔 DEEP THINKING QUESTIONS FOR YOU
+
+Use your extended reasoning to answer:
+
+1. **StreamCarousel Fix Strategy**
+   - Is the multiline className a Next.js 15 compiler bug?
+   - Should we use `cn()` utility for class composition?
+   - Are there other components with similar patterns?
+   - What's the safest fix that won't break drag scrolling?
+

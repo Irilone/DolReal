@@ -1,0 +1,14 @@
+### Available Tool Categories
+
+#### General Tools
+- **obs-get-version**: Retrieve OBS Studio version information
+- **obs-get-stats**: Get streaming statistics and performance metrics
+- **obs-trigger-hotkey**: Execute configured hotkeys programmatically
+- **obs-toggle-studio-mode**: Enable/disable Studio Mode
+
+#### Scene Tools  
+- **obs-get-scene-list**: List all configured scenes
+- **obs-set-current-scene**: Switch to specified scene
+- **obs-create-scene**: Create new scene with given name
+- **obs-remove-scene**: Delete specified scene
+

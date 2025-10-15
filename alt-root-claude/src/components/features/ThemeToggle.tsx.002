@@ -1,0 +1,10 @@
+  useEffect(() => {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    setDarkMode(isDark);
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newMode = !darkMode;

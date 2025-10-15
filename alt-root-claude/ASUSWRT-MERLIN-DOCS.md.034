@@ -1,0 +1,10 @@
+### Security
+
+- **DNS-over-TLS**: Encrypted DNS queries
+- **AiProtection**: Trend Micro security (if supported by model)
+- **VPN Kill Switch**: Block traffic if VPN drops
+- **Custom Firewall Rules**: Advanced access control
+
+---
+
+## DoL 2025 Integration Notes

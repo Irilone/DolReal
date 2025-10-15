@@ -1,0 +1,10 @@
+#### 11. generate_difference_graph
+**Purpose**: Find differences between texts
+**Usage**: "What topics are missing from track A compared to track B?"
+**Output**: Unique concepts and gaps
+
+#### 12. generate_google_search_graph
+**Purpose**: Analyze Google search results for keywords
+**Usage**: "What do search results show for 'digital transformation'?"
+**Output**: Graph of current information landscape
+

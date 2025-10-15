@@ -1,0 +1,10 @@
+  }
+}
+
+// ============================================================================
+// Agent Execution
+// ============================================================================
+
+async function executeAgent(agent: AgentConfig): Promise<void> {
+  log(`Starting ${agent.name}...`);
+  const startTime = Date.now();

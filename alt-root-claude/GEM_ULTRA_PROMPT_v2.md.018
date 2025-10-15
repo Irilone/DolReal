@@ -1,0 +1,10 @@
+2. **Translation Quality**
+   - Are translations human-verified?
+   - Technical terms correctly translated?
+   - Context-appropriate phrasing?
+
+3. **Font Loading**
+   - Are CJK fonts loaded efficiently?
+   - Arabic font shaping correct?
+   - Font fallback strategy?
+

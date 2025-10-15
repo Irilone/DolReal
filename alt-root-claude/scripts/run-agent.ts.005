@@ -1,0 +1,11 @@
+ * Extract JSON from markdown code blocks or plain text
+ */
+function extractJSON(text: string): any {
+  // Try to find JSON in markdown code blocks
+  const jsonBlockMatch = text.match(/```json\s*([\s\S]*?)\s*```/);
+  if (jsonBlockMatch) {
+    try {
+      return JSON.parse(jsonBlockMatch[1]);
+    } catch (e) {
+      console.log(`Failed to parse JSON from code block: ${e}`);
+    }

@@ -1,0 +1,10 @@
+2. Configure each instance:
+   - Unique stream key for each YouTube event
+   - Appropriate encoder settings for available bandwidth
+   - Distinct source configurations
+
+## Advanced Multi-Channel Streaming
+
+### Infrastructure Requirements
+
+#### Network Bandwidth Calculation

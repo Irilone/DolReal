@@ -1,0 +1,22 @@
+        <Card>
+          <CardHeader>
+            <CardTitle>Kontakt</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="mb-4 text-slate-600 dark:text-slate-400">
+              För frågor om evenemanget, kontakta oss på:
+            </p>
+            <div className="space-y-2 text-slate-600 dark:text-slate-400">
+              <p>
+                <strong>E-post:</strong> info@dagaromlagar.se
+              </p>
+              <p>
+                <strong>Telefon:</strong> +46 8 123 456 78
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}

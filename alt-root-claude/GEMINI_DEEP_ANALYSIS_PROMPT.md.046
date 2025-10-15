@@ -1,0 +1,11 @@
+---
+
+## 📁 HOW TO USE THIS PROMPT
+
+### Option 1: Direct Copy-Paste to Gemini
+1. Open Google AI Studio or Gemini UI with Ultra subscription
+2. Enable "Deep Thinking" mode (if available)
+3. Copy this entire document
+4. Paste into Gemini
+5. Add context: "Analyze the codebase at `/Users/air/DoL-2025/DolReal/` and provide comprehensive report"
+

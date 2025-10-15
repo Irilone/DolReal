@@ -1,0 +1,30 @@
+│   ├── 2_gpt5_codex_architecture.md
+│   ├── 3a_claude_frontend.md
+│   ├── 3b_claude_backend.md
+│   └── 4_gemini_cli_final.md
+├── schemas/                # JSON schemas
+│   └── agent-handoff-schema.json
+├── scripts/                # Orchestration scripts (TypeScript)
+│   ├── gem.ts             # Gemini API wrapper
+│   ├── anthropic.ts       # Claude API wrapper
+│   └── openai.ts          # GPT-5 Codex wrapper
+├── src/                    # Next.js application source
+│   ├── app/               # App Router pages + API routes
+│   │   ├── [locale]/      # i18n routing
+│   │   └── api/           # Backend API endpoints
+│   ├── components/        # React components
+│   │   ├── features/      # Feature-specific components
+│   │   ├── ui/            # shadcn/ui base components
+│   │   └── shared/        # Reusable components
+│   ├── lib/               # Utilities
+│   │   ├── youtube/       # YouTube API client
+│   │   ├── infranodus/    # InfraNodus client
+│   │   └── mcp/           # MCP client
+│   ├── hooks/             # Custom React hooks
+│   ├── types/             # TypeScript type definitions
+│   └── i18n/              # Internationalization
+│       ├── config.ts      # i18next config
+│       └── locales/       # Translation files (se, en, ar, fa, zh, es)
+├── docs/                   # Documentation
+│   └── manuals/           # 3 comprehensive manuals (generated)
+├── public/                 # Static assets (images, fonts)

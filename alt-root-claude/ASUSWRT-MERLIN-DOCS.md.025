@@ -1,0 +1,10 @@
+2. **Use Logger**: Add logging statements
+   ```bash
+   logger "DEBUG: Variable value is $VAR"
+   ```
+
+3. **Debug Markers**: Create temporary files
+   ```bash
+   touch /tmp/000script-executed
+   ```
+

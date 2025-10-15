@@ -1,0 +1,18 @@
+### 3b. Claude Backend (`prompts/3b_claude_backend.md`)
+- Next.js API routes (App Router `/api/` pattern)
+- YouTube Data API v3 client
+- InfraNodus + MCP integration (fallback to iframe)
+- Testing setup (Jest, React Testing Library)
+- 3 comprehensive manuals (Integrated System, Node Operator, Webapp Guide)
+- Output: `artifacts/3b_claude_backend_output.json`
+
+### 4. Gemini CLI Final (`prompts/4_gemini_cli_final.md`)
+- Merge frontend + backend outputs
+- Resolve conflicts (imports, types, duplicates)
+- Run build + tests (`bun run build`, `bun test`)
+- Performance audits (bundle size, LCP, CLS)
+- Accessibility audits (axe-core, WCAG compliance)
+- Generate release artifacts (ZIP with all files)
+- Output: `artifacts/4_gemini_cli_final.json` + `releases/*.zip`
+>>>>>>> Stashed changes
+

@@ -1,0 +1,16 @@
+                const targetPos = nodePositions.get(targetId);
+                if (!sourcePos || !targetPos) return null;
+
+                return (
+                  <line
+                    key={`${node.id}-${targetId}`}
+                    x1={sourcePos.x}
+                    y1={sourcePos.y}
+                    x2={targetPos.x}
+                    y2={targetPos.y}
+                    stroke="rgba(255, 255, 255, 0.2)"
+                    strokeWidth={selectedNode === node.id || selectedNode === targetId ? 2 : 1}
+                    className="transition-all duration-300"
+                  />
+                );
+              })

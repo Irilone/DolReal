@@ -1,0 +1,9 @@
+
+export function getRemainingRequests(config: RateLimitConfig = DEFAULT_CONFIG): number {
+  const now = Date.now();
+  const windowStart = now - config.windowMs;
+
+  // Count requests within current window
+  const recentRequests = requestTimestamps.filter(ts => ts >= windowStart);
+  return Math.max(0, config.maxRequests - recentRequests.length);
+}

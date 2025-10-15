@@ -1,0 +1,11 @@
+    cat "$PROMPT_FILE" | gem | tee "$OUTPUT_FILE"
+fi
+
+# Check if output was created
+if [[ -f "$OUTPUT_FILE" && -s "$OUTPUT_FILE" ]]; then
+    echo -e "\n${GREEN}✅ Analysis complete!${NC}"
+    echo -e "${GREEN}📄 Report: $OUTPUT_FILE${NC}\n"
+
+    FILE_SIZE=$(du -h "$OUTPUT_FILE" | cut -f1)
+    LINE_COUNT=$(wc -l < "$OUTPUT_FILE")
+

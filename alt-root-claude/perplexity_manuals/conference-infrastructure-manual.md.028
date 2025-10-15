@@ -1,0 +1,11 @@
+    insights = claude.query(f"""
+    Using InfraNodus tools:
+    1. Generate knowledge graph from: {session_content}
+    2. Identify key themes and gaps
+    3. Create follow-up questions
+    4. Suggest related topics for discussion
+    """)
+    
+    # Update streaming overlays
+    update_obs_overlays(insights.key_themes)
+    

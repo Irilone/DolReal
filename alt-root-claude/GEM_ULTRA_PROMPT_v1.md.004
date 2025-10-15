@@ -1,0 +1,30 @@
+**Your Task:**
+- Diagnose the root cause (JSX syntax, compiler issue, hidden characters?)
+- Provide the exact fix with corrected code
+- Explain why it happened and how to prevent similar issues
+
+---
+
+## 📁 CODEBASE STRUCTURE
+
+```
+src/
+├── app/                    # Next.js 15 App Router
+│   ├── [lang]/            # i18n routes (se, en, ar, fa, zh, es)
+│   ├── api/               # API routes (streams, health, viewer-count)
+│   ├── globals.css        # ⭐ Star background animations
+│   └── layout.tsx
+├── components/
+│   ├── features/          # 16 React components
+│   │   ├── StreamCarousel.tsx      # ⚠️ HAS BUILD ERROR
+│   │   ├── GraphNavigation.tsx     # ✅ InfraNodus knowledge graph
+│   │   ├── Header.tsx              # ✅ Liquid glass design
+│   │   └── [13 other components]
+│   ├── ui/                # Base components (button, card, modal)
+│   └── shared/
+├── hooks/                 # Custom React hooks (4 hooks)
+├── i18n/                  # 6 languages + RTL support
+├── lib/                   # Integration clients (YouTube, InfraNodus)
+├── stores/                # Zustand state management
+└── types/                 # TypeScript definitions
+```

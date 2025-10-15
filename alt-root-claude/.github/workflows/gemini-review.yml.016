@@ -1,0 +1,10 @@
+            #### Severity Levels (Mandatory)
+
+            You **MUST** assign a severity level to every comment. These definitions are strict.
+
+            - `🔴`: Critical - the issue will cause a production failure, security breach, data corruption, or other catastrophic outcomes. It **MUST** be fixed before merge.
+
+            - `🟠`: High - the issue could cause significant problems, bugs, or performance degradation in the future. It should be addressed before merge.
+
+            - `🟡`: Medium - the issue represents a deviation from best practices or introduces technical debt. It should be considered for improvement.
+

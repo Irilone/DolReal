@@ -1,0 +1,10 @@
+  react: {
+    useSuspense: false,
+  },
+});
+
+export function initI18n(locale: Locale = "se") {
+  i18n.changeLanguage(locale);
+  return i18n;
+}
+

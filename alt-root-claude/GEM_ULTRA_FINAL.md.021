@@ -1,0 +1,10 @@
+   # Edit src/components/features/StreamCarousel.tsx
+   code src/components/features/StreamCarousel.tsx
+   ```
+
+3. **Test the build**
+   ```bash
+   bun run build
+   # Should complete with zero errors now
+   ```
+

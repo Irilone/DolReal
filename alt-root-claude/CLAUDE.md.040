@@ -1,0 +1,11 @@
+### Linting & Formatting
+
+```bash
+bun run lint              # Run ESLint on all files
+bun run format            # Format code with Prettier
+bun run format:check      # Check formatting without changes
+trunk check               # Run all linters (markdownlint, prettier, trufflehog)
+trunk check --all         # Check all files
+trunk fmt                 # Auto-fix formatting issues
+```
+

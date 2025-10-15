@@ -1,0 +1,10 @@
+// Windows: %APPDATA%\Claude\claude_desktop_config.json
+{
+  "mcpServers": {
+    "obs-nodvast": {
+      "command": "npx",
+      "args": ["-y", "obs-mcp@latest"],
+      "env": {
+        "OBS_WEBSOCKET_PASSWORD": "NodeVast_SecurePass2025",
+        "OBS_WEBSOCKET_URL": "ws://nodvast-server:4455"
+      }

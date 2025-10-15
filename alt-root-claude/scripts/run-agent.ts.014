@@ -1,0 +1,11 @@
+}
+
+async function executeGemini(
+  prompt: string,
+  model: string,
+  apiKey: string
+): Promise<string> {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+
+  console.log(`   Calling Gemini API (${model})...`);
+

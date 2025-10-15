@@ -1,0 +1,19 @@
+                  >
+                    Strömmar
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4">Kontakt</h3>
+              <p className="text-white/60 text-sm">info@dagaromlagar.se</p>
+            </div>
+          </div>
+          <div className="border-t border-white/10 pt-8 text-center text-white/60 text-sm">
+            <p>&copy; 2025 Dagar om Lagar. Alla rättigheter förbehållna.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

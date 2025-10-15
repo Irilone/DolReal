@@ -1,0 +1,14 @@
+### Network Metrics and Insights
+
+#### Key Metrics
+- **Betweenness Centrality**: Most important bridging concepts
+- **Clustering Coefficient**: How well concepts group together
+- **Network Density**: Overall connectivity level
+- **Modularity**: Quality of topic separation
+
+#### Interpretation Guide
+- **High Centrality**: Core themes requiring attention
+- **Low Connectivity**: Areas needing development
+- **Isolated Clusters**: Potentially separate tracks/sessions
+- **Bridge Nodes**: Cross-cutting themes
+

@@ -1,0 +1,10 @@
+# 2. Clone & install dependencies
+git clone <repo>
+cd DolReal
+bun install
+
+# 3. Set environment variables
+cp .env.example .env.local
+# Edit .env.local with your API keys
+
+# 4. Run orchestration (generates full app)

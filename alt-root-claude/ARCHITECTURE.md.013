@@ -1,0 +1,10 @@
+    Client-side:
+        window.ENV → utility.js → GeminiAPI
+
+Configuration Priority:
+    1. window.ENV (highest - SSR production)
+    2. localStorage (medium - browser dev)
+    3. Default values (lowest - fallback)
+```
+
+## Error Handling Strategy

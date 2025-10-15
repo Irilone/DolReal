@@ -1,0 +1,10 @@
+interface RateLimitConfig {
+  maxRequests: number;
+  windowMs: number;
+}
+
+const DEFAULT_CONFIG: RateLimitConfig = {
+  maxRequests: 10,
+  windowMs: 60 * 1000, // 1 minute
+};
+

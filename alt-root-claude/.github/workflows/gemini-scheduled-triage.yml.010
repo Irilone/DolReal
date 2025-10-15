@@ -1,0 +1,10 @@
+            **Issues to Triage** (JSON array where each object has `"number"`, `"title"`, and `"body"` keys):
+            ```
+            ${{ env.ISSUES_TO_TRIAGE }}
+            ```
+
+            **Output File Path** where your final JSON output must be written:
+            ```
+            ${{ env.GITHUB_ENV }}
+            ```
+

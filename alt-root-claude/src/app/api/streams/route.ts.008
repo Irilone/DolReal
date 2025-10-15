@@ -1,0 +1,13 @@
+}
+
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const dayParam = searchParams.get('day');
+  const day = parseDayParam(dayParam);
+
+  if (day === null) {
+    return NextResponse.json(
+      { error: 'Invalid day parameter. Allowed values are "1" or "2".' },
+      { status: 400 }
+    );
+  }

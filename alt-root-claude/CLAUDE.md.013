@@ -1,0 +1,10 @@
+# Start production server
+bun start
+
+# Type checking
+bun run typecheck
+# or
+tsc --noEmit
+```
+
+### Next.js Development (After Orchestration)

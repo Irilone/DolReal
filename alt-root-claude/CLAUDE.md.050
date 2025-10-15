@@ -1,0 +1,10 @@
+<<<<<<< Updated upstream
+### API Routes (Backend)
+
+All API routes follow Next.js 15 App Router conventions (route.ts files):
+
+=======
+### TypeScript Path Aliases
+
+```typescript
+// Configured in tsconfig.json

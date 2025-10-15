@@ -1,0 +1,10 @@
+#### Environment Configuration
+```bash
+# Set environment variables per node
+export OBS_WEBSOCKET_PASSWORD="NodeVast_SecurePass2025"
+export OBS_WEBSOCKET_URL="ws://localhost:4455"
+```
+
+### 2.2 Multi-Instance OBS Setup
+
+#### Creating Isolated OBS Instances

@@ -1,0 +1,4 @@
+    expect(response.status).toBe(500);
+    expect(data.error).toMatch(/Stream configuration is incomplete/);
+  });
+});

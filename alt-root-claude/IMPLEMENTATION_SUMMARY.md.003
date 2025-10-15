@@ -1,0 +1,14 @@
+2. **utility.js** (5.3 KB)
+   - Shared helper functions
+   - Logging utilities with Swedish labels
+   - Environment variable management
+   - Swedish error message mapping
+   - Input sanitization and security helpers
+
+3. **validation.js** (8.7 KB)
+   - API key format validation
+   - Environment configuration checks
+   - Browser compatibility detection
+   - Network connectivity testing
+   - Comprehensive validation reporting
+

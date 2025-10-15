@@ -1,0 +1,12 @@
+  },
+  "documentation": [
+    {
+      "title": "Integrated System Guide",
+      "file_path": "docs/manuals/integrated-system-guide.md",
+      "content": "// Full markdown content"
+    },
+    {
+      "title": "Node Operator Quick Start",
+      "file_path": "docs/manuals/node-operator-quickstart.md",
+      "content": "// Full markdown content"
+    },

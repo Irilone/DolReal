@@ -1,0 +1,10 @@
+
+  const data = await response.json() as GeminiResponse;
+
+  if (data.error) {
+    log(`✗ API Error: ${data.error.message}`, 'red');
+    throw new Error(`Gemini API error: ${data.error.message}`);
+  }
+
+  const text = data.candidates?.[0]?.content?.parts?.map((p) => p.text).join('\n') ?? '';
+

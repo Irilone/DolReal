@@ -1,0 +1,15 @@
+1. **Read Documentation**
+   - [Browser Integration](october/INTEGRATION_README.md)
+   - [Orchestration Suite](october/README.md)
+
+2. **Try Examples**
+   - Generate test content in browser
+   - Run individual agents
+   - Execute full orchestration
+
+3. **Configure for Production**
+   - Set up HTTPS
+   - Implement backend proxy
+   - Configure monitoring
+   - Set up rate limiting
+

@@ -1,0 +1,15 @@
+
+```
+scripts.js
+    │
+    ├─→ utility.js
+    │      └─→ No dependencies
+    │
+    ├─→ validation.js
+    │      └─→ utility.js
+    │
+    └─→ gemini-api-module.js
+           ├─→ utility.js
+           └─→ validation.js
+```
+

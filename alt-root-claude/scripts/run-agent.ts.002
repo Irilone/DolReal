@@ -1,0 +1,14 @@
+  'gemini-ultra': {
+    name: 'Gemini 2.5 Pro Ultra (Research)',
+    promptFile: 'prompts/1_gemini_ultra_research.md',
+    outputFile: 'artifacts/1_gemini_ultra_research.json',
+    envKey: 'GEMINI_API_KEY',
+    model: 'gemini-2.5-pro-ultra',
+  },
+  'gpt5-codex': {
+    name: 'GPT-5 Codex (Architecture)',
+    promptFile: 'prompts/2_gpt5_codex_architecture.md',
+    outputFile: 'artifacts/2_gpt5_codex_architecture.json',
+    envKey: 'OPENAI_API_KEY',
+    model: 'gpt-5-codex-high-reasoning',
+  },

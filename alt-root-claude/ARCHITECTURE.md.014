@@ -1,0 +1,30 @@
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                   Error Handling Flow                        │
+│                                                              │
+│  API Request                                                 │
+│       │                                                      │
+│       ├─→ Network Error                                     │
+│       │       ├─→ Retry (up to 3 times)                     │
+│       │       ├─→ Log error                                 │
+│       │       └─→ Return Swedish error message              │
+│       │                                                      │
+│       ├─→ Timeout                                           │
+│       │       ├─→ Abort request                             │
+│       │       ├─→ Log timeout                               │
+│       │       └─→ Return timeout message                    │
+│       │                                                      │
+│       ├─→ API Error (4xx/5xx)                               │
+│       │       ├─→ Parse error response                      │
+│       │       ├─→ Map to Swedish message                    │
+│       │       └─→ Display to user                           │
+│       │                                                      │
+│       └─→ Success                                           │
+│               ├─→ Validate response                         │
+│               ├─→ Extract content                           │
+│               └─→ Return to caller                          │
+│                                                              │
+│  User Notification                                          │
+│       ├─→ Success: Green notification                       │
+│       ├─→ Error: Red notification                           │

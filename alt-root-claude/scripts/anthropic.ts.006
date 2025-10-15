@@ -1,0 +1,10 @@
+  return parsed as Args;
+}
+
+function mapModelName(model: string): string {
+  const modelMap: Record<string, string> = {
+    'claude-sonnet-4-5': 'claude-sonnet-4-20250514',
+    'claude-opus-4': 'claude-opus-4-20250514',
+    'claude-3-5-sonnet': 'claude-3-5-sonnet-20241022',
+  };
+

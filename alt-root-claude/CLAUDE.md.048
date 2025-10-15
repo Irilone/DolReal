@@ -1,0 +1,30 @@
+├── tests/                  # Test files
+│   ├── api/               # API route tests
+│   └── integration/       # Integration tests
+├── october/                # Legacy prototypes (deprecated, retain for reference)
+├── .trunk/                 # Trunk linter config
+├── .github/                # GitHub workflows
+│   └── workflows/         # CI/CD pipelines
+├── Makefile                # Orchestration commands
+├── package.json            # Dependencies + scripts
+├── tsconfig.json           # TypeScript config
+├── next.config.js          # Next.js config
+├── tailwind.config.js      # Tailwind CSS config
+├── jest.config.ts          # Jest test config
+├── jest.setup.ts           # Jest setup file
+├── .env.example            # Environment template
+├── CLAUDE.md               # This file
+├── AGENTS.md               # Repository guidelines
+├── ARCHITECTURE.md         # System architecture details
+├── ASUSWRT-MERLIN-DOCS.md  # Router documentation
+└── README.md               # Project overview
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======

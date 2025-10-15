@@ -1,0 +1,10 @@
+interface CacheEntry<T> {
+  data: T;
+  expiry: number;
+}
+
+const cache = new Map<string, CacheEntry<any>>();
+
+export function getCachedData<T>(key: string): T | null {
+  const entry = cache.get(key);
+  

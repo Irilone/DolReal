@@ -1,0 +1,15 @@
+'use client';
+
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+
+interface GraphNode {
+  id: string;
+  label: string;
+  type: 'topic' | 'stream' | 'speaker' | 'keyword';
+  x?: number;
+  y?: number;
+  vx?: number;
+  vy?: number;
+  connections?: string[];
+}

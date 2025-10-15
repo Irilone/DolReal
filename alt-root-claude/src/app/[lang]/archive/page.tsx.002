@@ -1,0 +1,14 @@
+    {
+      year: 2024,
+      title: 'Dagar om Lagar 2024',
+      description: 'Fokus på digitalisering och rättssäkerhet',
+      videos: 24,
+      views: 15420,
+    },
+    {
+      year: 2023,
+      title: 'Dagar om Lagar 2023',
+      description: 'Klimatlagstiftning i centrum',
+      videos: 20,
+      views: 12350,
+    },
