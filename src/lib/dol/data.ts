@@ -1,4 +1,4 @@
-import type { EventDay, StreamNode } from "@/types/stream";
+import type { EventDay, StreamNode } from "@/types/index";
 
 export type DolNodeKey = StreamNode;
 
