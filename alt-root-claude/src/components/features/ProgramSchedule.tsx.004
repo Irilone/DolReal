@@ -1,0 +1,18 @@
+      {
+        id: 'd1-2',
+        time: '09:30 - 11:00',
+        title: 'AI och Juridik - Framtidens Utmaningar',
+        description: 'En djupdykning i AI:s påverkan på rättssystemet',
+        speakers: ['Prof. Anna Svensson', 'Dr. Erik Andersson'],
+        streams: ['nodvast', 'nodsyd'],
+        type: 'panel',
+      },
+      {
+        id: 'd1-3',
+        time: '09:30 - 11:00',
+        title: 'Arbetsrätt i Digital Tid',
+        description: 'Nya utmaningar för arbetsmarknaden',
+        speakers: ['Advokat Maria Nilsson'],
+        streams: ['nodost', 'nodmidd'],
+        type: 'panel',
+      },

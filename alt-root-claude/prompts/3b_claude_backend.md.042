@@ -1,0 +1,13 @@
+  ],
+  "router_config": {
+    "qos_settings": "// QoS configuration steps",
+    "port_forwarding": [
+      {"service": "RTMP", "port": 1935, "protocol": "TCP"}
+    ]
+  },
+  "mcp_servers": [
+    {
+      "name": "infranodus",
+      "enabled": true,
+      "config": "// MCP server config"
+    }

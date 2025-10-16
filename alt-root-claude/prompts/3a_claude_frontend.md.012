@@ -1,0 +1,14 @@
+  // - RTL support for ar/fa
+  // - Accessible select element
+}
+```
+
+### 2. Styling (Tailwind CSS)
+
+#### A. Design System (`tailwind.config.js` - extend if needed)
+- Color scheme (light + dark mode)
+- Typography scale
+- Spacing system
+- Breakpoints
+- RTL utilities
+

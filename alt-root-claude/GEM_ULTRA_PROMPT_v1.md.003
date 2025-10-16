@@ -1,0 +1,10 @@
+---
+
+## 🔍 KNOWN CRITICAL ISSUE
+
+**Build Error in `src/components/features/StreamCarousel.tsx`:**
+```
+Module parse failed: Unterminated string constant (105:58)
+Location: Lines 132-135 (multiline className attribute)
+```
+

@@ -1,0 +1,10 @@
+#### D. ProgramSection Component
+```typescript
+// src/components/features/ProgramSection.tsx
+'use client';
+import { useTranslation } from 'react-i18next';
+
+export function ProgramSection() {
+  const { t } = useTranslation();
+
+  // Implementation with:

@@ -1,0 +1,11 @@
+```bash
+# Create separate directories for each node
+mkdir OBS_Nodvast OBS_Nodsyd OBS_Nodost OBS_Nodmidd
+
+# For each directory:
+# 1. Copy OBS files (bin, data, obs-plugins)
+# 2. Create 'config' folder  
+# 3. Create 'obs_portable_mode.txt' file
+# 4. Configure unique settings per instance
+```
+

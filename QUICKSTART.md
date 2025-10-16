@@ -1,284 +1,260 @@
-# QuickStart Guide - DoL 2025 Multi-Agent Orchestration
+# Quick Start Guide - DolReal
 
-**Build a production-ready streaming platform in 60 minutes using 4 AI agents.**
+Get up and running with DolReal in 5 minutes!
 
----
+## Prerequisites
 
-## Prerequisites (5 minutes)
+You need:
+- A computer with macOS, Linux, or Windows
+- Internet connection
+- 15 minutes of your time
 
-### 1. Install Bun
+## Step 1: Install Required Software (5 minutes)
+
+### Install Node.js
+
+**macOS/Linux:**
+```bash
+# Using nvm (recommended)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+nvm install 20
+nvm use 20
+```
+
+**Windows:**
+Download and install from [nodejs.org](https://nodejs.org/) (choose LTS version 20.x)
+
+**Verify installation:**
+```bash
+node --version  # Should show v20.x.x
+npm --version   # Should show 10.x.x
+```
+
+### Install Git (if not already installed)
+
+**macOS:**
+```bash
+brew install git
+```
+
+**Linux (Ubuntu/Debian):**
+```bash
+sudo apt-get update
+sudo apt-get install git
+```
+
+**Windows:**
+Download from [git-scm.com](https://git-scm.com/download/win)
+
+**Verify installation:**
+```bash
+git --version
+```
+
+### Optional: Install Bun (Faster Alternative to npm)
+
+**macOS/Linux:**
 ```bash
 curl -fsSL https://bun.sh/install | bash
 ```
 
-### 2. Get API Keys
-
-You need 3 API keys for orchestration:
-
-| Service | Purpose | Get Key |
-|---------|---------|---------|
-| **Gemini API** | Agents 1 & 4 (Research + Integration) | [makersuite.google.com](https://makersuite.google.com/app/apikey) |
-| **OpenAI API** | Agent 2 (Architecture) | [platform.openai.com](https://platform.openai.com/api-keys) |
-| **Anthropic API** | Agents 3a & 3b (Frontend + Backend) | [console.anthropic.com](https://console.anthropic.com/) |
-
-### 3. Set Environment Variables
+**Windows:**
 ```bash
-export GEMINI_API_KEY="your-key"
-export OPENAI_API_KEY="your-key"
-export ANTHROPIC_API_KEY="your-key"
+powershell -c "irm bun.sh/install.ps1 | iex"
 ```
 
-Or create `.env` file:
-```bash
-cp .env.example .env
-# Edit .env with your keys
-```
-
----
-
-## One-Command Build (50-70 minutes)
+## Step 2: Clone the Repository (1 minute)
 
 ```bash
-# Clone repo
-git clone <repo-url>
+# Clone the repository
+git clone https://github.com/Irilone/DolReal.git
+
+# Navigate into the directory
 cd DolReal
+```
 
-# Install dependencies
+## Step 3: Install Dependencies (2-3 minutes)
+
+**Using npm (default):**
+```bash
+npm install
+```
+
+**OR using Bun (faster):**
+```bash
 bun install
-
-# Run full orchestration
-make all
 ```
 
-**That's it!** The orchestration will:
-1. ✅ Agent 1: Research & planning (~10-15 min)
-2. ✅ Agent 2: System architecture (~5-10 min)
-3. ✅ Agent 3a & 3b: Frontend + Backend **in parallel** (~15-20 min)
-4. ✅ Agent 4: Integration + build (~5-10 min)
+Wait for the installation to complete. This may take a few minutes depending on your internet speed.
 
-**Output**: `releases/dol-2025-v2.0.0.zip` (production-ready build)
-
----
-
-## Step-by-Step Build (optional)
-
-If you want to run agents individually:
-
-### Step 1: Research (Gemini Ultra)
-```bash
-make gemini-ultra
-```
-**Output**: `artifacts/1_gemini_ultra_research.json`
-
-### Step 2: Architecture (GPT-5 Codex)
-```bash
-make gpt5-codex
-```
-**Output**: `artifacts/2_gpt5_codex_architecture.json`
-
-### Step 3: Parallel Implementation (Both Claudes)
-```bash
-make claude-parallel
-```
-**Output**:
-- `artifacts/3a_claude_frontend_output.json`
-- `artifacts/3b_claude_backend_output.json`
-
-### Step 4: Integration (Gemini CLI)
-```bash
-make gemini-cli
-```
-**Output**:
-- `artifacts/4_gemini_cli_final.json`
-- `releases/dol-2025-v2.0.0.zip`
-
----
-
-## Check Status
+## Step 4: Set Up Environment Variables (1 minute)
 
 ```bash
-make status
-```
-
-Output:
-```
-gemini-ultra: ✓ Complete
-gpt5-codex: ✓ Complete
-claude-frontend: ✓ Complete
-claude-backend: ✓ Complete
-gemini-cli: ✗ Pending
-```
-
----
-
-## After Orchestration
-
-### Extract Release
-```bash
-cd releases
-unzip dol-2025-v2.0.0.zip
-cd dol-2025-v2.0.0
-```
-
-### Configure Application
-```bash
-# Add YouTube/InfraNodus keys to .env
+# Copy the example environment file
 cp .env.example .env
-# Edit .env with your API keys
+
+# Open .env in your text editor
+# For macOS/Linux:
+nano .env
+
+# For Windows:
+notepad .env
 ```
 
-### Run Development Server
-```bash
-bun dev
+Add your API keys (you'll need these for the AI agents):
+```env
+GEMINI_API_KEY=your-key-here
+OPENAI_API_KEY=your-key-here
+ANTHROPIC_API_KEY=your-key-here
 ```
-Visit: http://localhost:3000
 
-### Build for Production
+**Don't have API keys yet?** That's okay! The development server will still run. You'll just need them later for the AI orchestration features.
+
+## Step 5: Start the Development Server (30 seconds)
+
 ```bash
-bun run build
-bun start
+npm run dev
 ```
+
+**OR with Bun:**
+```bash
+bun run dev
+```
+
+You should see:
+
+## Step 6: Open in Browser (5 seconds)
+
+Open your web browser and go to:
+```
+http://localhost:3000
+```
+
+🎉 **Congratulations!** You're now running DolReal locally!
+
+---
+
+## What's Next?
+
+### Explore the Application
+
+- **Home Page**: See the 4 live streams layout
+- **Archive**: Browse past streams
+- **Schedule**: View event schedule
+- **About**: Learn about the project
+
+### Learn More
+
+- 📖 Read the full [README.md](README.md) for detailed documentation
+- 🤝 Check [CONTRIBUTING.md](CONTRIBUTING.md) to contribute
+- 🛠️ Explore the codebase in the `src/` directory
+
+### Common Commands
+
+```bash
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Run tests
+npm test
+
+# Type check
+npm run typecheck
+
+# Lint code
+npm run lint
+
+# Format code
+npm run format
+```
+
+### Get Help
+
+- 🐛 Report bugs: [GitHub Issues](https://github.com/Irilone/DolReal/issues)
+- 💬 Ask questions: [GitHub Discussions](https://github.com/Irilone/DolReal/discussions)
+- 📧 Email: Contact the DoL 2025 Team
 
 ---
 
 ## Troubleshooting
 
-### Missing API Keys
-```bash
-make check-env  # Verify keys are set
-```
-
-### Agent Fails
-```bash
-# Check logs
-cat logs/gemini-ultra.log
-
-# Re-run specific agent
-make gemini-ultra
-```
-
-### Clean Start
-```bash
-make clean  # Remove all artifacts
-make all    # Start fresh
-```
-
----
-
-## What Gets Built?
-
-✅ **Next.js 15** app with App Router
-✅ **TypeScript** (strict mode)
-✅ **Tailwind CSS v4** + dark mode
-✅ **6 languages** (se, en, ar, fa, zh, es) with RTL support
-✅ **4 YouTube streams** (concurrent, one active player)
-✅ **InfraNodus knowledge graph** (modal embed)
-✅ **WCAG 2.2 AA** accessibility
-✅ **Performance optimized** (LCP <2.5s, CLS <0.1, JS <250KB)
-✅ **3 comprehensive manuals** (Router + OBS + Webapp)
-✅ **Full test suite** (Jest + coverage)
-
----
-
-## Key Commands
+### Port 3000 is already in use
 
 ```bash
-# Orchestration
-make all              # Full pipeline
-make status           # Check progress
-make clean            # Remove artifacts
+# Kill the process using port 3000
+lsof -ti:3000 | xargs kill -9
 
-# Individual Agents
-make gemini-ultra     # Agent 1
-make gpt5-codex       # Agent 2
-make claude-parallel  # Both Claudes
-make gemini-cli       # Agent 4
-
-# Development (after orchestration)
-bun dev               # Dev server
-bun run build         # Production build
-bun test              # Run tests
-bun run lint          # Lint code
+# Or use a different port
+PORT=3001 npm run dev
 ```
 
----
+### Module not found errors
 
-## CI/CD Integration
-
-### GitHub Actions
-
-1. **Add secrets** to your GitHub repository:
-   - `GEMINI_API_KEY`
-   - `OPENAI_API_KEY`
-   - `ANTHROPIC_API_KEY`
-
-2. **Push to main**:
-   ```bash
-   git add .
-   git commit -m "Multi-agent orchestration setup"
-   git push origin main
-   ```
-
-3. **Workflow runs automatically**, produces release artifact
-
----
-
-## Architecture Overview
-
-```
-Gemini Ultra (Research)
-   ↓
-GPT-5 Codex (Architecture)
-   ↓
-   ├─→ Claude #1 (Frontend) ─┐
-   └─→ Claude #2 (Backend) ──┤ (parallel)
-                             ↓
-                       Gemini CLI (Integration)
-                             ↓
-                       Production Build
-```
-
-**Why 4 agents?**
-- ✅ Specialized for each task
-- ✅ Parallel execution (saves 15-20 min)
-- ✅ File-based handoffs (traceable)
-- ✅ Can re-run any agent independently
-
----
-
-## Performance Targets
-
-| Metric | Target | Status |
-|--------|--------|--------|
-| LCP (Largest Contentful Paint) | <2.5s | ✅ 2.1s |
-| CLS (Cumulative Layout Shift) | <0.1 | ✅ 0.08 |
-| JS Bundle Size | <250KB | ✅ 245KB |
-| Test Coverage | >80% | ✅ 87% |
-| WCAG Compliance | 2.2 AA | ✅ Pass |
-
----
-
-## Next Steps
-
-1. ✅ Run `make all` to build
-2. ✅ Unzip release package
-3. ✅ Configure `.env` with YouTube/InfraNodus keys
-4. ✅ Run `bun dev` to start
-5. ✅ Deploy to Vercel/Netlify/Docker
-
----
-
-## Support
-
-- 📖 Full docs: [README.md](./october/README.md)
-- 🔧 Troubleshooting: See main README
-- 🐛 Issues: [GitHub Issues](https://github.com/...)
-
----
-
-**Ready to build?**
 ```bash
-make all
+# Clear node_modules and reinstall
+rm -rf node_modules package-lock.json
+npm install
 ```
 
-**Total time: ~50-70 minutes** ⏱️
+### Build fails
+
+```bash
+# Check for TypeScript errors
+npm run typecheck
+
+# Check for linting errors
+npm run lint
+```
+
+### Still stuck?
+
+Check the [full troubleshooting guide](README.md#troubleshooting) in README.md
+
+---
+
+## Getting API Keys
+
+### Gemini API Key
+1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Sign in with your Google account
+3. Click "Create API Key"
+4. Copy the key and add to `.env`
+
+### OpenAI API Key
+1. Go to [OpenAI Platform](https://platform.openai.com/api-keys)
+2. Sign in or create an account
+3. Click "Create new secret key"
+4. Copy the key and add to `.env`
+
+### Anthropic API Key
+1. Go to [Anthropic Console](https://console.anthropic.com/)
+2. Sign in or create an account
+3. Navigate to API Keys
+4. Create a new key
+5. Copy the key and add to `.env`
+
+**Note**: Some of these services may require payment or have free tiers with limitations.
+
+---
+
+## Quick Command Reference
+
+| Task | Command |
+|------|---------|
+| Install dependencies | `npm install` |
+| Start dev server | `npm run dev` |
+| Build for production | `npm run build` |
+| Run tests | `npm test` |
+| Type check | `npm run typecheck` |
+| Lint code | `npm run lint` |
+| Format code | `npm run format` |
+| Clean build artifacts | `npm run clean` |
+
+---
+
+**Happy coding! 🚀**
+
+For more detailed instructions, see the [full README](README.md).

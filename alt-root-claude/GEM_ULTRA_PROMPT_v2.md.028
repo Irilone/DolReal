@@ -1,0 +1,16 @@
+### 2. Architecture Validation
+**Consider second-order effects:**
+- Is Next.js 15 App Router truly necessary for this use case?
+- Are we using Server Components effectively?
+- Could this be a static site with client-side routing?
+- What happens if we need to scale to 1000+ simultaneous viewers?
+- What if YouTube API goes down during the event?
+
+### 3. Production Resilience
+**Think about failure modes:**
+- What breaks if YouTube API rate limits us?
+- What if InfraNodus is slow/down?
+- What if one stream fails to load?
+- How do we handle network issues?
+- What's our fallback plan for each failure?
+

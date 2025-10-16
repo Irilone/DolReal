@@ -1,0 +1,13 @@
+#### `manuals_outline.md`
+- Outline for 3 custom manuals:
+  1. Integrated System Guide (router + OBS + YouTube)
+  2. Node Operator Quick Start
+  3. DoL 2025 Webapp Guide (Swedish)
+
+### 5. Risk Matrix
+
+| Risk | Likelihood | Impact | Mitigation | Status |
+|------|-----------|--------|------------|--------|
+| YouTube concurrent limit | High | Critical | [strategy] | Unverified ✗ |
+| ... | ... | ... | ... | ... |
+

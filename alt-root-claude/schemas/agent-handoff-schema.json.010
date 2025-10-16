@@ -1,0 +1,10 @@
+            }
+          },
+          "scaffolding": {
+            "type": "object",
+            "properties": {
+              "package_json": { "type": "string" },
+              "tsconfig_json": { "type": "string" },
+              "next_config_js": { "type": "string" },
+              "tailwind_config_js": { "type": "string" }
+            }

@@ -1,0 +1,13 @@
+### Issue 6: Rate Limiting
+
+**Symptoms:**
+- "Too many requests" (429 errors)
+- API quota exceeded messages
+
+**Solutions:**
+1. Implement request throttling
+2. Add delays between API calls
+3. Use exponential backoff
+4. Upgrade API plan if needed
+5. Monitor usage dashboard
+

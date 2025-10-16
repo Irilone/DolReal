@@ -1,0 +1,14 @@
+**Recommendation:** _______________________
+
+---
+
+## 🎯 CRITICAL QUESTIONS REQUIRING DEEP THINKING
+
+### 1. StreamCarousel Fix Strategy
+**Think step-by-step:**
+- What is the EXACT cause of the build error?
+- What are ALL possible ways to fix it?
+- Which fix has the lowest risk of breaking functionality?
+- How can we prevent similar errors in other components?
+- Should we audit all components for similar patterns?
+

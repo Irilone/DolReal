@@ -1,0 +1,11 @@
+# Clean Next.js cache
+rm -rf .next
+bun run build
+```
+
+### Missing Environment Variables
+
+```bash
+# Verify all keys set
+make check-env
+

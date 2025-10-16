@@ -1,0 +1,25 @@
+          }
+        },
+        "required": ["metadata", "system_architecture", "scaffolding"]
+      }
+    },
+
+    "3a_frontend": {
+      "filename": "artifacts/3a_claude_frontend_output.json",
+      "producer": "claude-frontend",
+      "consumers": ["gemini-cli"],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "metadata": { "$ref": "#/definitions/agentMetadata" },
+          "components": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "file_path": { "type": "string" },
+                "component_name": { "type": "string" },
+                "code": { "type": "string" },
+                "dependencies": { "type": "array", "items": { "type": "string" } },
+                "props_interface": { "type": "string" }
+              }

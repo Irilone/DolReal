@@ -1,0 +1,11 @@
+#### MCP Server Installation
+```bash
+# Install OBS MCP Server globally
+npm install -g obs-mcp@latest
+
+# Or for local development
+git clone https://github.com/royshil/obs-mcp.git
+cd obs-mcp
+npm install && npm run build
+```
+

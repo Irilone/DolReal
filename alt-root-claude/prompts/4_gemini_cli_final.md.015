@@ -1,0 +1,13 @@
+## Docker
+\`\`\`bash
+docker build -t dol-2025 .
+docker run -p 3000:3000 dol-2025
+\`\`\`
+
+## Manual
+\`\`\`bash
+bun run build
+bun start
+\`\`\`
+```
+

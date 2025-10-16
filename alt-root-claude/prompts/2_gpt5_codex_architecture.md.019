@@ -1,0 +1,12 @@
+
+Return valid JSON matching this schema:
+
+```json
+{
+  "metadata": {
+    "agent_id": "gpt5-codex",
+    "timestamp": "2025-10-14T...",
+    "execution_time_ms": 0,
+    "status": "completed",
+    "next_agent": "claude-frontend,claude-backend"
+  },

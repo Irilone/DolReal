@@ -1,0 +1,10 @@
+### Build for Production
+```bash
+bun run build
+bun start
+```
+
+---
+
+## Troubleshooting
+

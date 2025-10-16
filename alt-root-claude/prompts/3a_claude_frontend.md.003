@@ -1,0 +1,12 @@
+Implement these components as specified in architecture:
+
+#### A. Header Component
+```typescript
+// src/components/features/Header.tsx
+'use client';
+import { LanguageSwitcher } from './LanguageSwitcher';
+import { DarkModeToggle } from './DarkModeToggle';
+
+interface HeaderProps {
+  currentLocale: Locale;
+}

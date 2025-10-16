@@ -1,0 +1,12 @@
+
+```bash
+# Using Bun (recommended)
+bun install
+
+# Or using npm
+npm install
+
+# Or using yarn
+yarn install
+```
+

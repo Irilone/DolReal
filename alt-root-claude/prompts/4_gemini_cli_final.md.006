@@ -1,0 +1,15 @@
+#### C. Lint
+```bash
+bun run lint
+```
+- Apply auto-fixes where possible
+- Report unfixable issues
+
+#### D. Run Tests
+```bash
+bun test
+```
+- Execute all Jest tests
+- Generate coverage report
+- Fail if coverage <80%
+

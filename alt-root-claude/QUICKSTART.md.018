@@ -1,0 +1,11 @@
+---
+
+## CI/CD Integration
+
+### GitHub Actions
+
+1. **Add secrets** to your GitHub repository:
+   - `GEMINI_API_KEY`
+   - `OPENAI_API_KEY`
+   - `ANTHROPIC_API_KEY`
+

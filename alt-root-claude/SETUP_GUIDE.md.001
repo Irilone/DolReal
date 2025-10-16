@@ -1,0 +1,14 @@
+# DolReal Setup Guide - Gemini API Integration
+
+Complete setup instructions for both TypeScript orchestration and browser-based Gemini integration.
+
+## Table of Contents
+
+1. [Prerequisites](#prerequisites)
+2. [Initial Setup](#initial-setup)
+3. [API Key Configuration](#api-key-configuration)
+4. [Browser Integration Setup](#browser-integration-setup)
+5. [Orchestration Suite Setup](#orchestration-suite-setup)
+6. [Validation](#validation)
+7. [Common Issues](#common-issues)
+

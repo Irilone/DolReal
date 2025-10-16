@@ -1,0 +1,10 @@
+            }
+          },
+          "i18n": {
+            "type": "object",
+            "properties": {
+              "config": { "type": "string" },
+              "translations": {
+                "type": "object",
+                "additionalProperties": { "type": "object" }
+              }

@@ -1,0 +1,10 @@
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev > 0 ? prev - 1 : streams.length - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev < streams.length - 1 ? prev + 1 : 0));
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {

@@ -1,0 +1,13 @@
+          continue;
+        }
+      }
+
+      await executeAgent(agent);
+    }
+
+    log("✓ All agents completed successfully!");
+    log(`Final build artifact: ${AGENTS[AGENTS.length - 1].outputArtifact}`);
+  } catch (error) {
+    log(`✗ Orchestration failed: ${error}`);
+    process.exit(1);
+  }

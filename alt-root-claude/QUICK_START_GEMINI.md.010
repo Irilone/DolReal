@@ -1,0 +1,15 @@
+# Run Gemini analysis
+./run-gemini-analysis.sh
+```
+
+## 🔑 Required API Keys
+
+Make sure these are in `.env`:
+```bash
+GEMINI_API_KEY=AIza...                    # For Gemini analysis
+OPENAI_API_KEY=sk-proj-...                # (Optional) Used in orchestration
+ANTHROPIC_API_KEY=sk-ant-...              # (Optional) Used in orchestration
+NEXT_PUBLIC_YOUTUBE_API_KEY=...          # For YouTube viewer counts
+INFRANODUS_API_KEY=...                   # For knowledge graph generation
+```
+

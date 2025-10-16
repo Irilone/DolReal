@@ -1,0 +1,10 @@
+'use client';
+
+import { useRouter, usePathname } from 'next/navigation';
+import type { Locale } from '@/types/i18n';
+import { LOCALE_CONFIGS } from '@/types/i18n';
+
+interface LanguageSelectorProps {
+  currentLocale: Locale;
+}
+

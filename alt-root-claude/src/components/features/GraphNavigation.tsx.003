@@ -1,0 +1,11 @@
+
+const defaultNodes: GraphNode[] = [
+  { id: '1', label: 'Juridik', type: 'topic', connections: ['2', '3', '4'] },
+  { id: '2', label: 'Nordväst', type: 'stream', connections: ['1', '5'] },
+  { id: '3', label: 'Nordsyd', type: 'stream', connections: ['1', '6'] },
+  { id: '4', label: 'Nordöst', type: 'stream', connections: ['1', '7'] },
+  { id: '5', label: 'AI & Rätt', type: 'keyword', connections: ['2'] },
+  { id: '6', label: 'Arbetsrätt', type: 'keyword', connections: ['3'] },
+  { id: '7', label: 'Dataskydd', type: 'keyword', connections: ['4'] },
+];
+

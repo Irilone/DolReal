@@ -1,0 +1,16 @@
+# Complete Conference Digital Infrastructure Manual: YouTube Live Streaming with OBS Studio and InfraNodus MCP Integration
+
+## Executive Summary
+
+This manual provides comprehensive guidance for establishing a complete digital infrastructure for the DoL 2025 conference using the SFMI YouTube channel (Dagar.om.lagar@gmail.com), integrating OBS Studio MCP Server for automated streaming control and InfraNodus MCP Server for intelligent content analysis.
+
+## Conference Overview
+
+**Conference**: DoL 2025  
+**Channel**: SFMI  
+**Account**: Dagar.om.lagar@gmail.com  
+**Stream Configuration**:
+- **Day 1**: Multi-node streaming (Nodväst, Nodsyd, Nodöst, Nodmidd)  
+- **Day 2**: Single-node streaming (Nodväst only, others deactivated)  
+- **UI**: No website interface changes during transition
+

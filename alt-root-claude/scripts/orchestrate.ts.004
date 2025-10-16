@@ -1,0 +1,22 @@
+  {
+    id: "gpt5-codex",
+    name: "GPT-5 Codex (Architecture)",
+    command: "openai",
+    inputArtifacts: ["artifacts/1_gemini_ultra_research.json"],
+    outputArtifact: "artifacts/2_gpt5_codex_architecture.json",
+    promptFile: "prompts/2_gpt5_codex_architecture.md",
+    canRunInParallel: false,
+  },
+  {
+    id: "claude-frontend",
+    name: "Claude Sonnet 4.5 #1 (Frontend)",
+    command: "claude",
+    inputArtifacts: [
+      "artifacts/1_gemini_ultra_research.json",
+      "artifacts/2_gpt5_codex_architecture.json",
+    ],
+    outputArtifact: "artifacts/3a_claude_frontend_output.json",
+    promptFile: "prompts/3a_claude_frontend.md",
+    canRunInParallel: true,
+    parallelGroup: 1,
+  },

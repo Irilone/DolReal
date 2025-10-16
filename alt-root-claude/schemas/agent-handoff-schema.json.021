@@ -1,0 +1,10 @@
+            }
+          },
+          "router_config": {
+            "type": "object",
+            "properties": {
+              "qos_settings": { "type": "string" },
+              "port_forwarding": { "type": "array" }
+            }
+          }
+        },

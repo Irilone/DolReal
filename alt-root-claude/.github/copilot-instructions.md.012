@@ -1,0 +1,15 @@
+### TypeScript/JavaScript
+- **Language**: TypeScript is default for both CLI scripts (ES modules) and React code
+- **Indentation**: 2 spaces (Prettier enforced via Trunk)
+- **Components**: PascalCase (e.g., `LiveStreamPlayer`, `KnowledgeGraphModal`)
+- **Functions**: camelCase (e.g., `fetchStreamData`, `validateApiKey`)
+- **Files**: kebab-case for bundles and prompts (e.g., `research_bundle.json`, `site_spec.md`)
+- **Scripts**: Mirror README examples when declaring scripts (e.g., `scripts/gem.ts`)
+
+### React/Next.js Conventions
+- **Client Components**: Use `'use client';` directive when needed
+- **Tailwind Classes**: Group by layout → spacing → color for readability
+- **Hooks**: Follow React hooks rules and best practices
+- **Props**: Use TypeScript interfaces for component props
+- **Accessibility**: Include ARIA attributes and semantic HTML
+

@@ -1,0 +1,10 @@
+
+# Option 2: Local Installation
+git clone https://github.com/yourusername/mcp-server-infranodus.git
+cd mcp-server-infranodus
+npm install && npm run build
+
+# Create .env file
+echo "INFRANODUS_API_KEY=your_api_key_here" > .env
+```
+

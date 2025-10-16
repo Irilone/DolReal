@@ -1,0 +1,15 @@
+- **Open**: https://chat.openai.com
+- **Time**: ~5-10 minutes
+- **Output**: `artifacts/2_gpt5_codex_architecture.json`
+- **Note**: Receives research from Agent 1
+
+### Agent 3a & 3b: Claude Sonnet 4.5 (Parallel)
+- **Open TWO sessions**: https://claude.ai
+  - Session 1: Frontend
+  - Session 2: Backend
+- **Time**: ~15-20 minutes (in parallel)
+- **Output**: 
+  - `artifacts/3a_claude_frontend_output.json`
+  - `artifacts/3b_claude_backend_output.json`
+- **Note**: Both receive research + architecture
+

@@ -1,0 +1,13 @@
+if [[ "$CLI_TOOL" == "gemini-cli" ]]; then
+    echo -e "${BLUE}🚀 Running: gemini-cli chat --model gemini-2.5-pro-002${NC}\n"
+    gemini-cli chat --model gemini-2.5-pro-002 < "$PROMPT_FILE" | tee "$OUTPUT_FILE"
+elif [[ "$CLI_TOOL" == "gem" ]]; then
+    echo -e "${BLUE}🚀 Running: gem analyze --deep-thinking${NC}\n"
+    gem analyze --deep-thinking --context ./src "$(cat $PROMPT_FILE)" | tee "$OUTPUT_FILE"
+fi
+
+# Check if output was created
+if [[ -f "$OUTPUT_FILE" && -s "$OUTPUT_FILE" ]]; then
+    echo -e "\n${GREEN}✅ Analysis complete!${NC}"
+    echo -e "${GREEN}📄 Report saved to: $OUTPUT_FILE${NC}\n"
+

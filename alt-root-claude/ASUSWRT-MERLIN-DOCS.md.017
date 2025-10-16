@@ -1,0 +1,13 @@
+# Make executable
+chmod a+rx /jffs/scripts/*
+# or for single file:
+chmod +x /jffs/scripts/my-script
+```
+
+#### 3. Important Requirements
+
+- **Shebang**: Start with `#!/bin/sh`
+- **Line Endings**: UNIX format (LF, not CRLF)
+- **Permissions**: Must be executable (`chmod +x`)
+- **Testing**: Run manually first: `/jffs/scripts/my-script`
+

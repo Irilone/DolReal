@@ -1,0 +1,18 @@
+      {
+        id: 'd2-2',
+        time: '09:30 - 11:00',
+        title: 'Digitala Bevis och E-discovery',
+        description: 'Tekniska utmaningar i modern rättsskipning',
+        speakers: ['IT-forensiker Per Olsson', 'Domare Anna Lindgren'],
+        streams: ['nodvast'],
+        type: 'workshop',
+      },
+      {
+        id: 'd2-3',
+        time: '11:00 - 11:30',
+        title: 'Kaffepaus',
+        description: 'Sista chansen för networking',
+        speakers: [],
+        streams: [],
+        type: 'break',
+      },

@@ -1,0 +1,12 @@
+# Add cron job for daily backup
+
+cru a BackupConfig "0 3 * * * /jffs/scripts/backup-config"
+```
+
+### Performance Optimization
+
+1. **Disable Unused Services**:
+   - Turn off AiCloud if not used
+   - Disable USB applications if not needed
+   - Turn off IPv6 if not required
+

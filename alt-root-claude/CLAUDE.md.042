@@ -1,0 +1,12 @@
+## Architecture
+
+### Multi-Agent Communication Flow
+
+```
+1. Gemini Ultra → artifacts/1_gemini_ultra_research.json + plans/*.md
+2. GPT-5 Codex → artifacts/2_gpt5_codex_architecture.json
+3a. Claude Frontend → artifacts/3a_claude_frontend_output.json
+3b. Claude Backend → artifacts/3b_claude_backend_output.json (parallel with 3a)
+4. Gemini CLI → artifacts/4_gemini_cli_final.json + releases/*.zip
+```
+

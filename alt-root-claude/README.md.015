@@ -1,0 +1,10 @@
+# Run parallel Claude agents
+make claude-parallel
+
+# Check status
+make status
+
+# Clean artifacts
+make clean
+```
+

@@ -1,0 +1,19 @@
+
+### Legacy Code
+
+- `/october/` contains deprecated prototypes (dol.tsx, alt-dol.tsx, dol-2.tsx) and browser-based Gemini API integration
+- **DO NOT MODIFY** `/october/` - work in `/src/` instead
+- Retained only for reference until full migration complete
+- `/october/README.md` and `/october/INTEGRATION_README.md` contain useful orchestration documentation
+
+### Schema Validation
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+# Expected output:

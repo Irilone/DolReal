@@ -1,0 +1,30 @@
+                  │
+                  └─→ Display system status
+```
+
+### API Key Configuration Flow
+
+```
+User enters API key
+         │
+         ▼
+Click "Spara API-nyckel"
+         │
+         ▼
+handleSaveApiKey()
+         │
+         ├─→ Validate format (utility.js)
+         │        │
+         │        ├─ Invalid → Show error
+         │        │
+         │        └─ Valid → Continue
+         │
+         ├─→ Save to localStorage
+         │
+         └─→ Initialize GeminiAPI
+                  │
+                  ├─→ Test connection
+                  │        │
+                  │        ├─ Success → Enable features
+                  │        │
+                  │        └─ Fail → Show error

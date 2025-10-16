@@ -1,0 +1,12 @@
+
+### Common Issues and Solutions
+
+#### API Connection Issues
+
+**Problem**: "Rate limit exceeded"
+**Solutions**:
+1. Check API key configuration
+2. Upgrade to higher-tier InfraNodus account
+3. Implement request throttling
+4. Use doNotSave parameter to reduce API usage
+

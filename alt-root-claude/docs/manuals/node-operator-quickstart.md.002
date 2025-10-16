@@ -1,0 +1,13 @@
+## 5-Minute Setup
+
+### Step 1: Configure OBS Settings
+
+1. Open OBS Studio
+2. Go to **Settings → Output**
+   - Output Mode: Advanced
+   - Encoder: VideoToolbox (Mac) or NVENC (Windows/Linux)
+   - Rate Control: CBR
+   - Bitrate: 3000 Kbps
+   - Keyframe Interval: 2
+   - Preset: Quality
+

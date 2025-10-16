@@ -1,0 +1,12 @@
+### Event Day (Nov 6-7)
+Hour 0 (Event starts):
+- [ ] Monitor all 4 streams
+- [ ] Check viewer counts
+- [ ] Watch error logs
+- [ ] Response time < 5 min
+
+Hour 1-4:
+- [ ] Continuous monitoring
+- [ ] Fix critical issues immediately
+- [ ] Document all issues
+

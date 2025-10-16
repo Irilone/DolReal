@@ -1,0 +1,12 @@
+Generate complete content for:
+
+#### `package.json`
+- All dependencies with exact versions
+- Scripts for dev, build, test, lint
+- Bun-optimized configuration
+
+#### `tsconfig.json`
+- Strict mode enabled
+- Path aliases (@/components, @/lib, etc.)
+- Next.js-compatible settings
+

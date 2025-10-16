@@ -1,0 +1,12 @@
+2. **Performance Investigation:**
+   - What's the actual bundle size impact of all dependencies?
+   - Can we reduce JavaScript payload with better code splitting?
+   - Are the CSS animations truly GPU-accelerated?
+   - What's the real-world performance on 3G/4G networks?
+
+3. **Security Analysis:**
+   - Are API keys properly secured (never in client bundles)?
+   - Is the YouTube iframe embed vulnerable to clickjacking?
+   - Does the InfraNodus integration leak user data?
+   - Are there CSRF vulnerabilities in API routes?
+

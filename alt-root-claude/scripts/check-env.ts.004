@@ -1,0 +1,10 @@
+  {
+    name: 'INFRANODUS_API_KEY',
+    required: false,
+    description: 'InfraNodus integration (for final build)',
+  },
+];
+
+function checkEnv() {
+  console.log('🔍 Checking environment variables...\n');
+

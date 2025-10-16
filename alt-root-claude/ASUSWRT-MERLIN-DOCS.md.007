@@ -1,0 +1,15 @@
+
+```bash
+# SSH into router and run:
+nvram set DOWNGRADE_CHECK_PASS=1
+nvram commit
+```
+
+#### 3. Flash Firmware
+
+- Navigate to: **Administration > Firmware Upgrade**
+- Select downloaded `.trx` or `.w` file
+- Click **Upload**
+- **DO NOT** interrupt the process
+- Router will reboot automatically (3-5 minutes)
+

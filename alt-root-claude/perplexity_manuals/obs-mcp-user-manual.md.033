@@ -1,0 +1,13 @@
+**Bandwidth Allocation:**
+- Total required: 32 Mbps upload
+- Per node: 8 Mbps allocated
+- Reserve: 8 Mbps for overhead/backup
+
+#### Day 2: Single-Node Operation
+
+**Automated Transition:**
+1. Maintain Nodväst stream active
+2. Gracefully end other streams
+3. Keep website UI unchanged
+4. Redirect all traffic to primary node
+

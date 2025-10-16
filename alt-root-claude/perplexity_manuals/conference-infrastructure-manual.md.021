@@ -1,0 +1,10 @@
+#### Account Setup
+1. **Create InfraNodus Account**: Sign up at https://infranodus.com
+2. **Obtain API Key**: Navigate to API settings and generate key
+3. **Select Plan**: Choose appropriate plan for conference volume
+
+#### MCP Server Installation
+```bash
+# Option 1: Via Smithery (Recommended)
+# Visit Smithery MCP Server page for InfraNodus
+# Select Claude/Cursor and install

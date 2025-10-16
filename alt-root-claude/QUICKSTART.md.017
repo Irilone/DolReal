@@ -1,0 +1,13 @@
+# Individual Agents
+make gemini-ultra     # Agent 1
+make gpt5-codex       # Agent 2
+make claude-parallel  # Both Claudes
+make gemini-cli       # Agent 4
+
+# Development (after orchestration)
+bun dev               # Dev server
+bun run build         # Production build
+bun test              # Run tests
+bun run lint          # Lint code
+```
+

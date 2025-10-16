@@ -1,0 +1,11 @@
+
+export function Header({ currentLocale }: HeaderProps) {
+  // Implementation with:
+  // - Logo
+  // - Language switcher (6 languages)
+  // - Dark mode toggle
+  // - ARIA landmarks
+  // - Keyboard navigation
+}
+```
+

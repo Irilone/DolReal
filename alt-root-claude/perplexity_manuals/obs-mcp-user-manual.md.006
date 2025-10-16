@@ -1,0 +1,10 @@
+### Step 2: Enable WebSocket Server in OBS
+
+1. Open OBS Studio
+2. Navigate to **Tools > WebSocket Server Settings**
+3. Check **Enable WebSocket server**
+4. Set a secure password (required for MCP server connection)
+5. Note the server port (default: 4455)
+6. Click **OK** to save settings
+
+### Step 3: Install OBS MCP Server

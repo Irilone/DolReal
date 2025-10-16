@@ -1,0 +1,15 @@
+## Technical Specifications
+
+### Architecture
+
+```
+october/
+├── modules/
+│   ├── gemini-api-module.js    # Main API client
+│   ├── utility.js              # Shared utilities
+│   └── validation.js           # Validation system
+├── index.html                  # User interface
+├── scripts.js                  # Application logic
+└── style.css                   # Styling
+```
+

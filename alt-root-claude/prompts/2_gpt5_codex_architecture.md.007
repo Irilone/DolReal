@@ -1,0 +1,12 @@
+3. **GraphNavModal** (assigned_to: claude-frontend)
+   - InfraNodus embed
+   - Modal controls
+
+4. **ProgramSection** (assigned_to: claude-frontend)
+   - Schedule display
+   - i18n content
+
+5. **YouTubePlayer** (assigned_to: claude-backend)
+   - YouTube IFrame API wrapper
+   - Player state management
+

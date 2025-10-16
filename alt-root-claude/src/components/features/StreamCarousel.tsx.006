@@ -1,0 +1,14 @@
+
+  const nodeColors = {
+    nodvast: 'from-purple-600/20 to-purple-800/20',
+    nodsyd: 'from-blue-600/20 to-blue-800/20',
+    nodost: 'from-cyan-600/20 to-cyan-800/20',
+    nodmidd: 'from-indigo-600/20 to-indigo-800/20',
+  };
+
+  const nodeLabels = {
+    nodvast: 'Nordväst',
+    nodsyd: 'Nordsyd',
+    nodost: 'Nordöst',
+    nodmidd: 'Nordmidd',
+  };

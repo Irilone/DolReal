@@ -1,0 +1,12 @@
+# Priority queue for marked packets
+tc qdisc add dev eth0 root handle 1: htb default 10
+tc class add dev eth0 parent 1: classid 1:1 htb rate 1000mbit
+tc class add dev eth0 parent 1:1 classid 1:10 htb rate 950mbit prio 1
+tc filter add dev eth0 parent 1: protocol ip prio 1 handle 1 fw flowid 1:10
+```
+
+#### 2. YouTube Concurrency Policy
+
+**Limit**: ≤12 simultaneous events per channel
+**DoL 2025 Usage**: 4 events (within limits)
+

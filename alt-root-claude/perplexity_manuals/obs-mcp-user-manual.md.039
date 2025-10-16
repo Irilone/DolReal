@@ -1,0 +1,10 @@
+
+**Problem**: Dropped frames or poor quality
+**Solutions**:
+1. Reduce encoder settings (bitrate, resolution)
+2. Close unnecessary applications
+3. Check CPU/GPU utilization
+4. Verify sufficient upload bandwidth
+
+#### Multi-Stream Conflicts
+

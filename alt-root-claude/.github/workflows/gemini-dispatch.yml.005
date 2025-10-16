@@ -1,0 +1,12 @@
+            const eventType = process.env.EVENT_TYPE
+            core.setOutput('request', request);
+
+            if (request.startsWith("@gemini-cli /review")) {
+              core.setOutput('command', 'review');
+              const additionalContext = request.replace(/^@gemini-cli \/review/, '').trim();
+              core.setOutput('additional_context', additionalContext);
+            } else if (request.startsWith("@gemini-cli /triage")) {
+              core.setOutput('command', 'triage');
+            } else if (request.startsWith("@gemini-cli")) {
+              core.setOutput('command', 'invoke');
+              const additionalContext = request.replace(/^@gemini-cli/, '').trim();

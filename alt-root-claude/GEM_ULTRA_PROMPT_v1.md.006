@@ -1,0 +1,11 @@
+### Backend (All Implemented)
+- ✅ YouTube Data API v3 integration
+- ✅ InfraNodus REST API client
+- ✅ 5-minute response caching
+- ✅ Rate limiting (10 req/min)
+- ✅ Stream health monitoring
+- ✅ Viewer count tracking
+- ✅ Day-based stream logic (Day 1: all 4 streams, Day 2: Nodväst only)
+
+---
+

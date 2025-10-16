@@ -1,0 +1,13 @@
+# Interactive Multi-Agent Orchestration
+
+**Use your authenticated browser sessions - no API keys needed!**
+
+---
+
+## Quick Start
+
+```bash
+cd /Users/air/DoL-2025/DolReal
+./scripts/interactive-orchestrate.sh
+```
+

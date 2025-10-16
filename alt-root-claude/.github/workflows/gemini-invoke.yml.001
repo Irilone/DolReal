@@ -1,0 +1,10 @@
+name: '▶️ Gemini Invoke'
+
+on:
+  workflow_call:
+    inputs:
+      additional_context:
+        type: 'string'
+        description: 'Any additional context from the request'
+        required: false
+

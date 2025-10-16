@@ -1,0 +1,14 @@
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="mt-8 rounded-lg bg-blue-50 p-4 dark:bg-blue-900/20">
+          <p className="text-sm text-blue-900 dark:text-blue-100">
+            <strong>Observera:</strong> Alla tider är i svensk tid (CET/CEST).
+            Schemat kan komma att ändras.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}

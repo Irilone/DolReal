@@ -1,0 +1,10 @@
+import type { EventDay } from '@/types/stream';
+
+export const EVENT_DATES = {
+  day1: new Date('2025-11-06T00:00:00+01:00'),
+  day2: new Date('2025-11-07T00:00:00+01:00'),
+};
+
+export function getCurrentEventDay(): EventDay {
+  const now = new Date();
+  const eventStart = EVENT_DATES.day1;

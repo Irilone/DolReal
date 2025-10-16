@@ -1,0 +1,13 @@
+- **Operating System**: Windows 10/11, macOS 10.15+, or Linux (Ubuntu 18.04+)
+- **OBS Studio**: Version 31.0 or later with WebSocket server support
+- **Node.js**: Version 16.0 or later
+- **AI Client**: Claude Desktop, Cursor IDE, or compatible MCP client
+
+## Installation and Setup
+
+### Step 1: Install OBS Studio
+
+1. Download OBS Studio from the official website: https://obsproject.com/
+2. Install using the appropriate installer for your operating system
+3. Launch OBS Studio and complete the initial setup wizard
+

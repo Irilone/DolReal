@@ -1,0 +1,12 @@
+#### `next.config.js`
+- i18n configuration
+- Image optimization
+- Performance optimizations
+- Environment variables
+
+#### `tailwind.config.js`
+- Design system tokens
+- Dark mode configuration
+- Custom utilities
+- RTL support for Arabic/Farsi
+

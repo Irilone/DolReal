@@ -1,0 +1,10 @@
+  it('fails with a 500 when required environment variables are missing', async () => {
+    process.env = {
+      ...process.env,
+      NODVAST_YOUTUBE_ID: '',
+    } as NodeJS.ProcessEnv;
+
+    const request = new Request('http://localhost/api/streams?day=1');
+    const response = await GET(request);
+    const data = await response.json();
+

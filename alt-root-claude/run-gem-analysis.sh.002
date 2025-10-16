@@ -1,0 +1,11 @@
+echo -e "${BLUE}🧠 Gemini 2.5 Pro Ultra Deep Analysis${NC}"
+echo -e "${BLUE}═══════════════════════════════════${NC}\n"
+
+# Check for gem CLI
+if ! command -v gem &> /dev/null; then
+    echo -e "${RED}❌ Error: 'gem' CLI not found${NC}"
+    echo -e "${YELLOW}💡 Install: brew install gemini-cli${NC}"
+    echo -e "${YELLOW}💡 Or use: npm install -g @google/generative-ai-cli${NC}"
+    exit 1
+fi
+

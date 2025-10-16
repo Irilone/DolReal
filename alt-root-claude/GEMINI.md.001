@@ -1,0 +1,10 @@
+# Project: Dagar om Lagar 2025
+
+## Project Overview
+
+This project is a web application for the "Dagar om Lagar 2025" event. It is built using React, TypeScript, and Next.js, with Tailwind CSS for styling. The application provides information about the event, including a program schedule, and features a knowledge graph integration with InfraNodus and live video streams from YouTube. It also includes internationalization support using `i18next`.
+
+The main user interface is a single page with a header, a knowledge graph navigator, a live stream section, a program schedule, and a footer. There is also an alternative split-view layout for an immersive experience with the knowledge graph and a video stream.
+
+## Key Technologies
+

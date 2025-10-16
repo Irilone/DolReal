@@ -1,0 +1,30 @@
+│       ├─→ Warning: Orange notification                      │
+│       └─→ Info: Blue notification                           │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## Agent Integration Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Agent Integration                         │
+│                                                              │
+│  Agent 1: Research Agent                                     │
+│  ├─ Uses GeminiAPI.generateContent()                        │
+│  ├─ Low temperature (0.2) for factual accuracy              │
+│  └─ Long prompts for comprehensive research                 │
+│                                                              │
+│  Agent 2: Analysis Agent                                     │
+│  ├─ Uses GeminiAPI.generateContent()                        │
+│  ├─ Medium temperature (0.5) for balanced output            │
+│  └─ Structured prompts for specific analysis                │
+│                                                              │
+│  Agent 3: Scheduling Agent                                   │
+│  ├─ Uses GeminiAPI.generateContent()                        │
+│  ├─ Low temperature (0.3) for consistency                   │
+│  └─ Iterative calls for schedule optimization               │
+│                                                              │
+│  Agent 4: Reporting Agent                                    │
+│  ├─ Uses GeminiAPI.generateContent()                        │
+│  ├─ Medium temperature (0.5) for readable reports           │
+│  └─ Multiple calls for different report sections            │

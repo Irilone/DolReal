@@ -1,0 +1,14 @@
+## 🚨 WHAT NEEDS YOUR DEEP THINKING
+
+### Priority 1: Critical (MUST FIX)
+1. **Fix StreamCarousel.tsx build error**
+   - Analyze lines 132-135 multiline className
+   - Check for hidden characters (BOM, zero-width spaces)
+   - Verify JSX syntax compatibility with Next.js 15
+   - Provide corrected code snippet
+
+2. **Verify TypeScript compilation**
+   - Check all type definitions
+   - Fix any implicit `any` types
+   - Ensure strict mode compliance
+

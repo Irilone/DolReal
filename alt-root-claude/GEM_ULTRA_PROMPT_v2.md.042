@@ -1,0 +1,10 @@
+Day 2:
+- [ ] Deploy to staging
+- [ ] Smoke tests
+- [ ] Load testing (simulate 1000 users)
+
+Day 3:
+- [ ] UAT with stakeholders
+- [ ] Fix critical bugs
+- [ ] Regression testing
+

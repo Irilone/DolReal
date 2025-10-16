@@ -1,0 +1,12 @@
+// === FILE: DoL.tsx ===
+// Dynamic site with InfraNodus integration, enhanced accessibility, ARIA compliance
+// TypeScript React (Next.js 15 + Tailwind + i18next)
+
+"use client";
+import React, { useState } from "react";
+
+export const dynamic = "force-dynamic";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
+

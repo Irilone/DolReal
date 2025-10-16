@@ -1,0 +1,10 @@
+
+1. Create component in appropriate directory:
+   - Feature components → `src/components/features/`
+   - Base UI components → `src/components/ui/`
+   - Reusable/shared → `src/components/shared/`
+
+2. Follow naming conventions:
+   - PascalCase for component files: `StreamCard.tsx`
+   - Export component as named export or default
+

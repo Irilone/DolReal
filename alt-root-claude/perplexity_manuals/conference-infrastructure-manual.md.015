@@ -1,0 +1,10 @@
+  "role": "secondary_node",
+  "backup_enabled": false
+}
+```
+
+### 2.3 AI Integration Setup
+
+#### Claude Desktop Configuration
+```json
+// macOS: ~/Library/Application Support/Claude/claude_desktop_config.json

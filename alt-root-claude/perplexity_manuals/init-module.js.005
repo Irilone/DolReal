@@ -1,0 +1,11 @@
+          // Initialize schedule carousel
+          window.ScheduleCarousel.init();
+          
+          console.log('Vaccine Bus Schedule System initialized successfully');
+      }
+      
+      // Auto-initialize when DOM is ready
+      if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+      } else {
+          // DOM is already loaded

@@ -1,0 +1,12 @@
+  const { t } = useTranslation()
+  return <h1>{t('nav.home')}</h1>  // → "Hem" (Swedish)
+}
+```
+
+### Testing Guidelines
+
+- **Unit tests**: For utilities, hooks, and isolated components
+- **Integration tests**: For API routes and component interactions
+- **Test files**: Co-located with source (e.g., `route.test.ts` next to `route.ts`)
+- **Coverage target**: >80% (enforced in CI)
+

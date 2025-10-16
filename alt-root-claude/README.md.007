@@ -1,0 +1,30 @@
+## Project Structure
+
+```
+DolReal/
+├── .github/                  # GitHub workflows and configurations
+├── artifacts/               # Generated artifacts from agents
+├── docs/                    # Documentation
+├── october/                 # Browser-based Gemini integration
+│   ├── modules/            # ES6+ modules
+│   │   ├── gemini-api-module.js
+│   │   ├── utility.js
+│   │   └── validation.js
+│   ├── index.html          # Main UI
+│   ├── scripts.js          # Application logic
+│   ├── style.css           # Styling
+│   ├── README.md           # Orchestration docs
+│   └── INTEGRATION_README.md  # Browser integration docs
+├── plans/                   # Planning documents
+├── prompts/                 # Agent prompts
+├── schemas/                 # JSON schemas
+├── scripts/                 # Orchestration scripts (TypeScript)
+│   ├── gem.ts              # Gemini wrapper
+│   ├── anthropic.ts        # Anthropic wrapper
+│   ├── orchestrate.ts      # Main orchestrator
+│   ├── run-agent.ts        # Individual agent runner
+│   └── check-env.ts        # Environment checker
+├── src/                     # Next.js application source
+├── .env.example            # Environment template
+├── .gitignore              # Git ignore rules
+├── Makefile                # Build commands

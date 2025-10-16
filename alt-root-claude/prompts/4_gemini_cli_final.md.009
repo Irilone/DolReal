@@ -1,0 +1,13 @@
+```
+
+#### B. Accessibility Check
+- Run axe-core or similar
+- Verify WCAG 2.2 AA compliance
+- Check keyboard navigation
+- Validate ARIA attributes
+
+#### C. i18n Verification
+- Ensure all 6 locales have complete translations
+- Check RTL rendering (ar, fa)
+- Verify no missing keys
+

@@ -1,0 +1,11 @@
+                - `explanation` (String): A brief, one-sentence justification for the chosen labels.
+
+            **Example Output JSON:**
+
+            ```json
+            [
+              {
+                "issue_number": 123,
+                "labels_to_set": ["kind/bug","priority/p2"],
+                "explanation": "The issue describes a critical error in the login functionality, indicating a high-priority bug."
+              },

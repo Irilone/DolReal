@@ -1,0 +1,11 @@
+  },
+  "task_allocation": {
+    "claude_frontend": [
+      "Implement Header component",
+      "Implement StreamCarousel component",
+      // ... all frontend tasks
+    ],
+    "claude_backend": [
+      "Create /api/streams route",
+      "Implement YouTube API client",
+      // ... all backend tasks

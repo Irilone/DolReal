@@ -1,0 +1,13 @@
+Webbplatsen är optimerad för skärmläsare:
+- Alla bilder har alt-text
+- Knappar har beskrivande etiketter
+- Formulär har tydliga instruktioner
+- ARIA-attribut används korrekt
+
+### RTL-Stöd
+
+För arabiska och persiska användare:
+- Automatisk höger-till-vänster textriktn ing
+- Speglad layout för naturlig läsning
+- Korrekt typografi och avstånd
+

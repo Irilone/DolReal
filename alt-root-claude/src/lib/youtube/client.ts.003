@@ -1,0 +1,13 @@
+  } catch (error) {
+    console.error('YouTube API error:', error)
+    return null
+  }
+}
+
+export async function listLiveStreams(channelId: string) {
+  const response = await youtube.search.list({
+    part: ['snippet'],
+    channelId,
+    eventType: 'live',
+    type: ['video'],
+  });

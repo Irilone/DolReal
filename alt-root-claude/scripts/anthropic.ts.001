@@ -1,0 +1,14 @@
+#!/usr/bin/env bun
+/**
+ * Anthropic API Wrapper for DoL 2025 Multi-Agent Orchestration
+ *
+ * Usage:
+ *   bun run scripts/anthropic.ts --model <model> --input <file> --output <file>
+ *
+ * Example:
+ *   bun run scripts/anthropic.ts \
+ *     --model claude-sonnet-4-5 \
+ *     --input /tmp/claude-frontend-input.md \
+ *     --output artifacts/3a_claude_frontend_output.json
+ */
+

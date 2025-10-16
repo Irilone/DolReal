@@ -1,0 +1,16 @@
+**Problem**: MCP server not responding
+**Solutions**:
+1. Verify Node.js installation and version
+2. Check environment variable configuration
+3. Restart AI client application
+4. Validate InfraNodus API key
+
+#### Graph Generation Problems
+
+**Problem**: Poor quality knowledge graphs
+**Solutions**:
+1. Ensure text has sufficient content (minimum 100-200 words)
+2. Use clear, well-structured text
+3. Enable entity detection in settings
+4. Try different topic naming algorithms
+

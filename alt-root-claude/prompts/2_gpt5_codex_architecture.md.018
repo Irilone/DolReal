@@ -1,0 +1,10 @@
+
+- **Dev server**: `bun dev` (hot reload)
+- **Type checking**: `tsc --noEmit` (pre-commit)
+- **Linting**: ESLint + Prettier
+- **Testing**: Jest + React Testing Library
+- **Build**: `bun run build` (production)
+
+---
+
+## OUTPUT FORMAT

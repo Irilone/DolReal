@@ -1,0 +1,14 @@
+- **General Operations**: Version info, statistics, hotkey management, studio mode control
+- **Scene Management**: List, switch, create, and remove scenes
+- **Source Control**: Manage sources, settings, audio levels, mute/unmute functions  
+- **Scene Item Manipulation**: Position, visibility, and property management
+- **Streaming & Recording Control**: Start/stop streaming, recording, virtual camera
+- **Transition Management**: Set transitions, durations, trigger effects
+
+### Key Benefits
+
+1. **AI-Powered Automation**: Control OBS through natural language commands
+2. **Standardized Integration**: Uses MCP protocol for consistent API interactions
+3. **Real-time Control**: Immediate response to commands and status updates
+4. **Multi-platform Support**: Compatible with Claude Desktop, Cursor IDE, and other MCP clients
+

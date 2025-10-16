@@ -1,0 +1,15 @@
+#### Real-time Conference Analysis
+```
+During Sessions:
+1. Command: "Generate text overview from current session transcript"
+2. Command: "Identify emerging themes from audience questions"  
+3. Command: "Create knowledge graph from speaker presentations"
+4. Command: "Generate follow-up questions for next session"
+
+Cross-Node Analysis:
+1. Command: "Compare topics being discussed across all nodes"
+2. Command: "Find connection opportunities between node discussions"
+3. Command: "Generate synthesis points for closing sessions"
+4. Command: "Create transition content between sessions"
+```
+

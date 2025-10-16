@@ -1,0 +1,15 @@
+Gemini reads entire codebase context:
+- 16 React components
+- API routes and integrations
+- i18n system (6 languages)
+- State management (Zustand)
+- CSS animations (star background)
+
+### Phase 2: Analysis (10-15 min)
+Extended reasoning on:
+- Root cause diagnosis (not just symptoms)
+- Edge cases and failure modes
+- Trade-offs between solutions
+- Second-order effects
+- Production resilience
+

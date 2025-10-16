@@ -1,0 +1,6 @@
+
+    return () => clearInterval(interval);
+  }, [streamId, refreshInterval]);
+
+  return { health, loading, error };
+}

@@ -1,30 +1,92 @@
-// src/lib/infranodus/client.ts
+import type { GraphNode, GraphLink } from '@/types/api';
+import { getCachedData, setCachedData } from './cache';
+import { checkRateLimit } from './rate-limiter';
 
-// Option 1: MCP Server (if available)
-import { MCPClient } from '@/lib/mcp/client';
+const INFRANODUS_API_BASE = 'https://infranodus.com/api';
 
-export async function getInfraNodusEmbed(nodeId: string): Promise<string> {
-  if (process.env.INFRANODUS_MCP_ENABLED === 'true') {
-    const mcpClient = new MCPClient({
-      serverUrl: process.env.INFRANODUS_MCP_URL!,
-    });
-    const result = await mcpClient.call('getEmbed', { nodeId });
-    return result.embedUrl;
-  }
-
-  // Option 2: Fallback to iframe embed
-  return `https://infranodus.com/embed/${nodeId}`;
+interface InfraNodusAnalyzeResponse {
+  context_id: string;
+  nodes: GraphNode[];
+  links: GraphLink[];
+  stats: {
+    node_count: number;
+    link_count: number;
+  };
 }
 
-// Option 3: REST API (if available)
-export async function fetchGraphData(nodeId: string) {
-  const response = await fetch(
-    `https://infranodus.com/api/graph/${nodeId}`,
-    {
+export async function analyzeText(text: string, contextId: string): Promise<string> {
+  // Check rate limit
+  if (!checkRateLimit()) {
+    throw new Error('Rate limit exceeded. Please wait before making another request.');
+  }
+
+  const apiKey = process.env.INFRANODUS_API_KEY;
+  if (!apiKey) {
+    throw new Error('INFRANODUS_API_KEY is not configured');
+  }
+
+  try {
+    const response = await fetch(`${INFRANODUS_API_BASE}/analyze`, {
+      method: 'POST',
       headers: {
-        'Authorization': `Bearer ${process.env.INFRANODUS_API_KEY}`,
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
       },
+      body: JSON.stringify({ text, context_id: contextId }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`InfraNodus API error: ${response.statusText}`);
     }
-  );
-  return response.json();
+
+    const data: InfraNodusAnalyzeResponse = await response.json();
+    
+    // Cache the result for 5 minutes
+    setCachedData(contextId, data, 5 * 60 * 1000);
+    
+    return data.context_id;
+  } catch (error) {
+    console.error('Error analyzing text with InfraNodus:', error);
+    throw error;
+  }
+}
+
+export async function getGraph(contextId: string): Promise<{ nodes: GraphNode[]; links: GraphLink[] }> {
+  // Check cache first
+  const cached = getCachedData<InfraNodusAnalyzeResponse>(contextId);
+  if (cached) {
+    return { nodes: cached.nodes, links: cached.links };
+  }
+
+  // Check rate limit
+  if (!checkRateLimit()) {
+    throw new Error('Rate limit exceeded. Please wait before making another request.');
+  }
+
+  const apiKey = process.env.INFRANODUS_API_KEY;
+  if (!apiKey) {
+    throw new Error('INFRANODUS_API_KEY is not configured');
+  }
+
+  try {
+    const response = await fetch(`${INFRANODUS_API_BASE}/graph/${contextId}`, {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`InfraNodus API error: ${response.statusText}`);
+    }
+
+    const data: InfraNodusAnalyzeResponse = await response.json();
+    
+    // Cache the result for 5 minutes
+    setCachedData(contextId, data, 5 * 60 * 1000);
+    
+    return { nodes: data.nodes, links: data.links };
+  } catch (error) {
+    console.error('Error fetching graph from InfraNodus:', error);
+    throw error;
+  }
 }

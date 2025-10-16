@@ -1,0 +1,13 @@
+{
+  "header": {
+    "title": "Dagar om Lagar 2025",
+    "logo_alt": "DoL Logotyp"
+  },
+  "nav": {
+    "home": "Hem",
+    "schedule": "Schema",
+    "streams": "Strömmar",
+    "graph": "Kunskapsgraf",
+    "archive": "Arkiv",
+    "about": "Om"
+  },

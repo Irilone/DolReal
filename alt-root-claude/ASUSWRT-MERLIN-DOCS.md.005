@@ -1,0 +1,13 @@
+## Installation Guide
+
+### Download
+
+**Official Download**: [https://www.asuswrt-merlin.net/download](https://www.asuswrt-merlin.net/download)
+
+### Prerequisites
+
+1. **Check Compatibility**: Verify your router model is supported
+2. **Backup Settings**: Export current configuration (if reverting later)
+3. **Stable Power**: Ensure uninterrupted power during flash process
+4. **Read Release Notes**: Check changelog for your specific model
+

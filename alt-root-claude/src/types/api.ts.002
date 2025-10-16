@@ -1,0 +1,11 @@
+// GET /api/viewer-count
+export interface ViewerCountResponse {
+  counts: ViewerCount[];
+  total: number;
+}
+
+// POST /api/infranodus/analyze
+export interface InfraNodusAnalyzeRequest {
+  text: string;
+  contextId: string;
+}

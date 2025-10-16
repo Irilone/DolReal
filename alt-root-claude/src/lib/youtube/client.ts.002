@@ -1,0 +1,13 @@
+      part: ['liveStreamingDetails', 'snippet'],
+      id: [streamId],
+    })
+
+    const video = response.data.items?.[0]
+    if (!video) return null
+
+    return {
+      isLive: video.snippet?.liveBroadcastContent === 'live',
+      viewerCount: parseInt(video.liveStreamingDetails?.concurrentViewers || '0'),
+      title: video.snippet?.title || '',
+      thumbnail: video.snippet?.thumbnails?.high?.url || '',
+    }

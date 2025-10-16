@@ -1,0 +1,20 @@
+    # Prepare input
+    local input_file="/tmp/agent_${agent_num}_input.md"
+    cp "$prompt_file" "$input_file"
+
+    # Append previous artifacts if specified
+    if [ -n "$prev_artifacts" ]; then
+        echo "" >> "$input_file"
+        echo "## Input Artifacts from Previous Agents" >> "$input_file"
+        echo "" >> "$input_file"
+        for artifact in $prev_artifacts; do
+            if [ -f "$artifact" ]; then
+                echo "### $(basename $artifact)" >> "$input_file"
+                echo '```json' >> "$input_file"
+                cat "$artifact" >> "$input_file"
+                echo '```' >> "$input_file"
+                echo "" >> "$input_file"
+            fi
+        done
+    fi
+

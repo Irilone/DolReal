@@ -1,0 +1,13 @@
+      `/embed/${encodeURIComponent(youtubeId)}`,
+      YOUTUBE_EMBED_BASE
+    ).toString();
+
+    return {
+      id: definition.id,
+      name: definition.name,
+      youtubeId,
+      embedUrl,
+      active,
+      day: active ? day : definition.defaultDay,
+    } satisfies Stream;
+  });

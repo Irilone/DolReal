@@ -1,0 +1,10 @@
+    outputData.metadata = {
+      ...outputData.metadata,
+      agent_id: agent.id,
+      timestamp: new Date().toISOString(),
+      execution_time_ms: Date.now() - startTime,
+      status: "completed",
+    };
+
+    await saveArtifact(agent.outputArtifact, outputData);
+

@@ -1,0 +1,14 @@
+**Output**: `releases/dol-2025-v2.0.0.zip` (production-ready build)
+
+---
+
+## Step-by-Step Build (optional)
+
+If you want to run agents individually:
+
+### Step 1: Research (Gemini Ultra)
+```bash
+make gemini-ultra
+```
+**Output**: `artifacts/1_gemini_ultra_research.json`
+

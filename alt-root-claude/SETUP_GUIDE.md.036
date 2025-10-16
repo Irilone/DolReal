@@ -1,0 +1,10 @@
+
+# Test orchestration
+make gemini-ultra
+# Check artifacts/1_gemini_ultra_research.json exists
+```
+
+## Next Steps
+
+After successful setup:
+

@@ -1,0 +1,14 @@
+#### For Cursor IDE  
+1. Go to InfraNodus MCP server page on Smithery
+2. Choose "Cursor" in "Add Your Own Client" > Auto menu
+3. Smithery will open Cursor and offer to add the server
+4. Give it a short name (e.g., "InfraNodus")
+5. Click "Connect"
+
+#### For Claude Web
+1. Open Claude Web Connectors page
+2. Click "Add Custom Connector"
+3. Add this URL: `https://server.smithery.ai/@infranodus/mcp-server-infranodus/mcp`
+4. Give it a name (e.g., "InfraNodus")
+5. Click "Connect" and complete authentication
+

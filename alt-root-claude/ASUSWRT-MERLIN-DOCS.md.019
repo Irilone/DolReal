@@ -1,0 +1,10 @@
+### Example Scripts
+
+#### Monitor WAN Connection
+
+```bash
+#!/bin/sh
+# /jffs/scripts/wan-event
+
+logger "WAN Event: $1 on interface $2"
+

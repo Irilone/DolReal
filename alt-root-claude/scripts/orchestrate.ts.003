@@ -1,0 +1,11 @@
+
+const AGENTS: AgentConfig[] = [
+  {
+    id: "gemini-ultra",
+    name: "Gemini 2.5 Pro Ultra (Research)",
+    command: "gemini",
+    inputArtifacts: [],
+    outputArtifact: "artifacts/1_gemini_ultra_research.json",
+    promptFile: "prompts/1_gemini_ultra_research.md",
+    canRunInParallel: false,
+  },

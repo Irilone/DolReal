@@ -1,0 +1,12 @@
+{
+  "src/components/features/Header.tsx": "// Frontend code",
+  "src/app/api/streams/route.ts": "// Backend code",
+  // ... all files
+}
+```
+
+#### C. Dependency Resolution
+- Merge `package.json` dependencies
+- Remove duplicates
+- Resolve version conflicts (use highest compatible version)
+

@@ -1,0 +1,10 @@
+
+    async function fetchHealth() {
+      try {
+        const response = await fetch(`/api/stream-health/${streamId}`);
+        
+        if (!response.ok) {
+          throw new Error('Failed to fetch stream health');
+        }
+
+        const data: StreamHealth = await response.json();

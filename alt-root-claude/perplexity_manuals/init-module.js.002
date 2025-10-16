@@ -1,0 +1,12 @@
+          console.log('Initializing Vaccine Bus Schedule System...');
+          
+          // Check if all required modules are loaded
+          if (!window.MapUpdater) {
+              console.error('MapUpdater module not loaded');
+              return;
+          }
+          
+          if (!window.ScheduleCarousel) {
+              console.error('ScheduleCarousel module not loaded');
+              return;
+          }

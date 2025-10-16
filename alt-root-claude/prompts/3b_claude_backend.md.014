@@ -1,0 +1,10 @@
+    return result.embedUrl;
+  }
+
+  // Option 2: Fallback to iframe embed
+  return `https://infranodus.com/embed/${nodeId}`;
+}
+
+// Option 3: REST API (if available)
+export async function fetchGraphData(nodeId: string) {
+  const response = await fetch(

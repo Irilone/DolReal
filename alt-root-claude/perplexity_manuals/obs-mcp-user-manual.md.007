@@ -1,0 +1,10 @@
+
+#### Option A: Using NPM (Recommended)
+```bash
+# Install globally
+npm install -g obs-mcp@latest
+
+# Or install locally in project directory
+npm install obs-mcp@latest
+```
+

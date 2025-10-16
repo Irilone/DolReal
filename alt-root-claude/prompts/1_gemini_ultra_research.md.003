@@ -1,0 +1,12 @@
+### 1. Overview Table
+| Task | Tools | Risk Level | Next Agent |
+|------|-------|------------|------------|
+| [List all major tasks] | [Tools needed] | [High/Med/Low] | [Agent ID] |
+
+### 2. Manuals Index
+Create detailed index of 6 required manuals with:
+- **Title**
+- **URL** (actual documentation links)
+- **Abstract** (2-3 sentence summary)
+- **Access date**
+

@@ -1,0 +1,10 @@
+### Internationalization
+=======
+### 1. Gemini Ultra Research (`prompts/1_gemini_ultra_research.md`)
+- Deep research with cited sources
+- Policy verification (WCAG 2.2 AA, YouTube API, streaming limits)
+- Manual gathering (6 required manuals: ASUS, OBS, YouTube, InfraNodus, Next.js, Tailwind)
+- Generate research bundle + 6 plan files
+- Output: `artifacts/1_gemini_ultra_research.json`
+
+### 2. GPT-5 Codex Architecture (`prompts/2_gpt5_codex_architecture.md`)

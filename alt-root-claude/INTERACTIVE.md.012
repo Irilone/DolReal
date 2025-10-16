@@ -1,0 +1,10 @@
+The script checks for existing artifacts. If found, it asks if you want to regenerate.
+
+---
+
+## Check Progress
+
+```bash
+# View status
+make status
+

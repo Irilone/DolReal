@@ -1,0 +1,15 @@
+  }
+}
+```
+
+### 3.2 Content Analysis Workflow Integration
+
+#### Pre-Conference Content Analysis
+```
+Phase 1: Speaker Abstract Analysis
+1. Collect all speaker abstracts and session descriptions
+2. Command: "Generate knowledge graph from DoL 2025 speaker abstracts"
+3. Command: "Identify main topical clusters in conference content"
+4. Command: "Find content gaps in our conference program"
+5. Command: "Generate research questions for panel discussions"
+

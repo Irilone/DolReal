@@ -1,0 +1,11 @@
+#!/usr/bin/env bun
+/**
+ * Environment Variables Checker
+ * Validates all required API keys before orchestration
+ */
+
+interface EnvCheck {
+  name: string;
+  required: boolean;
+  description: string;
+}

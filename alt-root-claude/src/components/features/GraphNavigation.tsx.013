@@ -1,0 +1,30 @@
+
+  return (
+    <div className={`relative glass-strong rounded-glass overflow-hidden ${className}`}>
+      {/* Controls */}
+      <div className="absolute top-4 right-4 z-10 flex flex-col gap-2">
+        <button
+          onClick={handleZoomIn}
+          className="glass-strong p-2 rounded-lg hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-primary/50"
+          aria-label="Zoom in"
+        >
+          <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+          </svg>
+        </button>
+        <button
+          onClick={handleZoomOut}
+          className="glass-strong p-2 rounded-lg hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-primary/50"
+          aria-label="Zoom out"
+        >
+          <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+          </svg>
+        </button>
+        <button
+          onClick={handleReset}
+          className="glass-strong p-2 rounded-lg hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-primary/50"
+          aria-label="Reset view"
+        >
+          <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path

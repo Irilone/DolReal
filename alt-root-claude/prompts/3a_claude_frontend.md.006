@@ -1,0 +1,10 @@
+
+export function StreamCarousel({ streams, currentDay }: StreamCarouselProps) {
+  // Implementation with:
+  // - 4 stream cards (Nodväst, Nodsyd, Nodöst, Nodmidd)
+  // - Active stream selection (only one plays)
+  // - Day 2 logic: disable 3 streams, show "Ej aktiv idag"
+  // - YouTube IFrame API integration
+  // - No autoplay (user-gesture-only policy)
+  // - Keyboard controls (Space to play/pause, Arrow keys to switch)
+  // - Focus management

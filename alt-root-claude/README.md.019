@@ -1,0 +1,11 @@
+
+**API Key Not Working**
+- Verify key format (Gemini keys start with "AIza")
+- Check that API is enabled in Google Cloud Console
+- Ensure no extra spaces in the key
+
+**CORS Errors**
+- Use a local web server instead of opening HTML directly
+- Ensure HTTPS for production
+- Consider implementing a backend proxy
+

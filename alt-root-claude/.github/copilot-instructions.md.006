@@ -1,0 +1,10 @@
+```bash
+# Install dependencies (Bun preferred)
+bun install
+# OR
+npm install
+
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your API keys
+

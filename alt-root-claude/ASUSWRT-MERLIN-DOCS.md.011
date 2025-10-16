@@ -1,0 +1,12 @@
+2. **Access Recovery Interface**:
+   - Set PC IP to: `192.168.1.2` (subnet: `255.255.255.0`)
+   - Browse to: `http://192.168.1.1` or `http://192.168.50.1`
+   - Upload firmware via recovery web interface
+
+### Important Warnings
+
+⚠️ **DO NOT restore settings from different firmware versions**
+⚠️ **DO NOT use ASUS Firmware Restoration Tool** (use web interface or recovery mode)
+⚠️ **ALWAYS reboot before flashing**
+⚠️ **Factory reset recommended** for major version jumps
+

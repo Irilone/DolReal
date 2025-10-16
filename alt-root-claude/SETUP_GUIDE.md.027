@@ -1,0 +1,10 @@
+**Solutions:**
+1. Use a local web server (not file://)
+2. Ensure HTTPS for production
+3. Implement backend proxy for API calls
+
+```bash
+# Start local server
+cd october && python3 -m http.server 8000
+```
+

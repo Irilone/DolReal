@@ -1,0 +1,10 @@
+          },
+          "build_output": {
+            "type": "object",
+            "properties": {
+              "exit_code": { "type": "number" },
+              "build_time_ms": { "type": "number" },
+              "warnings": { "type": "array", "items": { "type": "string" } },
+              "errors": { "type": "array", "items": { "type": "string" } }
+            }
+          },

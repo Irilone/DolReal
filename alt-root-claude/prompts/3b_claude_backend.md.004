@@ -1,0 +1,11 @@
+  const day = searchParams.get('day') || '1';
+
+  const streams: Stream[] = [
+    {
+      id: 'nodvast',
+      name: 'Nodväst',
+      youtubeId: process.env.NODVAST_YOUTUBE_ID!,
+      embedUrl: `https://www.youtube.com/embed/${process.env.NODVAST_YOUTUBE_ID}`,
+      active: day === '1' || day === '2', // Day 2: only Nodväst
+      day: parseInt(day) as 1 | 2,
+    },

@@ -1,0 +1,10 @@
+### Coding Standards
+
+- **TypeScript**: Follow existing patterns in `scripts/`
+- **JavaScript**: ES6+ modules with JSDoc comments
+- **Swedish UI**: All user-facing text in Swedish
+- **Accessibility**: Maintain WCAG 2.2 AA compliance
+- **Security**: Never commit secrets or API keys
+
+## License
+

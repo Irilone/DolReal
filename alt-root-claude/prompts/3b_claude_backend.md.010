@@ -1,0 +1,11 @@
+
+  return response.data.items?.[0]?.liveStreamingDetails;
+}
+
+export async function listLiveStreams(channelId: string) {
+  const response = await youtube.search.list({
+    part: ['snippet'],
+    channelId,
+    eventType: 'live',
+    type: ['video'],
+  });

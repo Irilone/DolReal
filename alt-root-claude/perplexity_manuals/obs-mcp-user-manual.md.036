@@ -1,0 +1,13 @@
+```
+Priority 1: Streaming traffic (highest)
+Priority 2: Audio/communication
+Priority 3: Control/monitoring
+Priority 4: Other traffic (lowest)
+```
+
+#### Firewall Configuration
+Required ports:
+- **OBS WebSocket**: 4455 (internal)
+- **RTMPS YouTube**: 443 (outbound)
+- **Monitoring**: Custom ports as needed
+

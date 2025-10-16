@@ -1,0 +1,10 @@
+---
+
+## Workflow
+
+### Agent 1: Gemini 2.5 Pro Ultra (Research)
+- **Open**: https://gemini.google.com/app
+- **Time**: ~10-15 minutes
+- **Output**: `artifacts/1_gemini_ultra_research.json`
+
+### Agent 2: GPT-5 Codex (Architecture)

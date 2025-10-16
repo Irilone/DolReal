@@ -1,0 +1,10 @@
+  const eventEnd = new Date('2025-11-07T23:59:59+01:00');
+
+  if (now < eventStart || now > eventEnd) {
+    return 1; // Default to Day 1 if outside event period
+  }
+
+  if (now >= EVENT_DATES.day2) {
+    return 2;
+  }
+

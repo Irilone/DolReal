@@ -1,0 +1,12 @@
+## Orchestration Suite Setup
+
+### Verify Environment
+
+```bash
+# Check all environment variables
+bun run scripts/check-env.ts
+
+# Or use Makefile
+make check-env
+```
+

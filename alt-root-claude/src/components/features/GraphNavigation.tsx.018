@@ -1,0 +1,16 @@
+              const radius = isSelected ? 25 : 20;
+
+              return (
+                <g key={node.id} className="node-group">
+                  {/* Node glow */}
+                  {isSelected && (
+                    <circle
+                      cx={pos.x}
+                      cy={pos.y}
+                      r={radius + 10}
+                      fill={nodeColors[node.type]}
+                      opacity={0.2}
+                      className="animate-pulse-glow"
+                    />
+                  )}
+

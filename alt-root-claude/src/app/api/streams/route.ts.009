@@ -1,0 +1,10 @@
+
+  try {
+    const streams = buildStreams(day);
+    return NextResponse.json({ streams });
+  } catch (error) {
+    return NextResponse.json(
+      { error: 'Stream configuration is incomplete. Verify YouTube environment variables.' },
+      { status: 500 }
+    );
+  }

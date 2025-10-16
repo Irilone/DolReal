@@ -1,0 +1,22 @@
+  "plans": {
+    "router_plan_path": "plans/router_plan.md",
+    "obs_plan_path": "plans/obs_plan.md",
+    "yt_plan_path": "plans/yt_plan.md",
+    "infranodus_plan_path": "plans/infranodus_plan.md",
+    "site_spec_path": "plans/site_spec.md",
+    "manuals_outline_path": "plans/manuals_outline.md"
+  },
+  "manuals_required": [
+    "ASUS RT-AX86U Pro",
+    "Asuswrt-Merlin",
+    "OBS + MCP",
+    "InfraNodus + MCP",
+    "YouTube Studio",
+    "YouTube Live Streaming"
+  ],
+  "citations": [
+    {
+      "url": "https://...",
+      "title": "...",
+      "access_date": "2025-10-14"
+    }

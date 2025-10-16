@@ -1,0 +1,14 @@
+### November 6-7
+13. **Event day monitoring** (real-time)
+14. **Hotfix capability** ready
+15. **Success celebration** 🎉
+
+---
+
+## 🤖 EXAMPLE: Running the Analysis
+
+```bash
+$ cd /Users/air/DoL-2025/DolReal
+$ export GEMINI_API_KEY="AIzaSyATiLQRM0xrc_en12HU_LmJ1BqnVIcJXEI"
+$ ./run-gem-analysis.sh
+

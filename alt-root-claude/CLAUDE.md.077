@@ -1,0 +1,11 @@
+bun run build
+```
+
+### Re-running Orchestration
+
+If you need to regenerate specific parts:
+
+```bash
+# Clean artifacts
+make clean
+

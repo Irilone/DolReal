@@ -1,0 +1,10 @@
+- **Purpose:** Deep bundler analysis, plugin graph mapping, SSR compatibility.
+- **Prompt example:**
+```json
+"task": "Analyze build chain plugins and SSR compat for React 18 with Webpack and Vite."
+```
+- **CLI Command:**
+```bash
+claude --model sonnet-4.5 --ultrathink --mcp buildoracle --input build-analysis.json
+```
+

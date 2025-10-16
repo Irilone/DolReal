@@ -1,0 +1,10 @@
+3. Use `initI18n(lang)` to initialize translations
+
+4. Add route to navigation in `src/components/features/Header.tsx`
+
+### Working with Translations
+
+```typescript
+import { useTranslation } from 'react-i18next'
+
+function MyComponent() {

@@ -1,0 +1,11 @@
+
+  if (!health) {
+    return null;
+  }
+
+  const statusColors = {
+    good: 'bg-green-500',
+    ok: 'bg-yellow-500',
+    bad: 'bg-red-500',
+    offline: 'bg-slate-400',
+  };

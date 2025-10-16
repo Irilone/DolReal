@@ -1,0 +1,10 @@
+- Switch encoder to hardware (VideoToolbox/NVENC)
+- Reduce output resolution to 480p
+- Lower FPS to 24
+
+### Audio Issues
+
+- Check microphone is not muted in OBS
+- Verify audio input device is correct
+- Test audio levels before streaming
+

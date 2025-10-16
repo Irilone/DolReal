@@ -1,0 +1,11 @@
+              >
+                Open Stream
+              </Button>
+              <Button variant="outline" onClick={() => setActiveNode(null)}>
+                Close
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
+

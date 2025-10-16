@@ -1,0 +1,10 @@
+}
+
+export function useYouTubePlayer(videoId: string) {
+  const playerRef = useRef<any>(null);
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    // Load YouTube IFrame API
+    // Create player instance
+    // Handle play/pause/stop events

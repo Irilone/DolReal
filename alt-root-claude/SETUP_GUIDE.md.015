@@ -1,0 +1,10 @@
+For production deployment:
+
+1. **Use HTTPS**: Essential for secure API communication
+2. **Backend Proxy**: Recommended to hide API keys
+3. **Rate Limiting**: Implement request throttling
+4. **Error Logging**: Monitor and log API errors
+5. **Cost Monitoring**: Track API usage
+
+Example Nginx configuration:
+

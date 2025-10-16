@@ -1,0 +1,14 @@
+'use client';
+
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+
+interface Session {
+  id: string;
+  time: string;
+  title: string;
+  description: string;
+  speakers: string[];
+  streams: ('nodvast' | 'nodsyd' | 'nodost' | 'nodmidd')[];
+  type: 'keynote' | 'panel' | 'workshop' | 'break';
+}

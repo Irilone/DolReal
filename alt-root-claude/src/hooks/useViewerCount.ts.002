@@ -1,0 +1,10 @@
+
+    async function fetchCounts() {
+      try {
+        const params = new URLSearchParams({ videoIds: videoIds.join(',') });
+        const response = await fetch(`/api/viewer-count?${params}`);
+
+        if (!response.ok) {
+          throw new Error('Failed to fetch viewer count');
+        }
+

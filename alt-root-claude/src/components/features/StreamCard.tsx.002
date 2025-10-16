@@ -1,0 +1,30 @@
+
+export function StreamCard({ stream, onSelect }: StreamCardProps) {
+  const { t } = useTranslation();
+
+  return (
+    <Card className="group overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+      <CardHeader className="pb-3">
+        <CardTitle className="flex items-center justify-between">
+          <span className="text-lg">{stream.name}</span>
+          {stream.active ? (
+            <span className="flex items-center gap-1.5 rounded-full bg-red-50 px-3 py-1 text-sm font-semibold text-red-600 dark:bg-red-900/20 dark:text-red-400">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75"></span>
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500"></span>
+              </span>
+              {t('streams.live')}
+            </span>
+          ) : (
+            <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+              {t('streams.inactive')}
+            </span>
+          )}
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="pb-4">
+        <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-slate-200 shadow-inner dark:bg-slate-800">
+          {stream.active ? (
+            <iframe
+              src={stream.embedUrl}
+              title={stream.name}

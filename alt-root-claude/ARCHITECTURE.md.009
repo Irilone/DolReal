@@ -1,0 +1,10 @@
+                  │        └─→ Return status
+                  │
+                  └─→ Aggregate results
+                           │
+                           └─→ displayResults()
+                                    │
+                                    └─→ Show in UI
+```
+
+## Module Dependencies

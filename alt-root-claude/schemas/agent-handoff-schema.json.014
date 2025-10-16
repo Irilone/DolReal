@@ -1,0 +1,17 @@
+            }
+          },
+          "youtube_integration": {
+            "type": "object",
+            "properties": {
+              "iframe_controller": { "type": "string" },
+              "player_state_management": { "type": "string" }
+            }
+          },
+          "accessibility_report": {
+            "type": "object",
+            "properties": {
+              "wcag_version": { "type": "string" },
+              "compliance_level": { "type": "string" },
+              "issues_found": { "type": "array", "items": { "type": "object" } },
+              "fixes_applied": { "type": "array", "items": { "type": "object" } }
+            }

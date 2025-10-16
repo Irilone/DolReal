@@ -1,0 +1,12 @@
+
+```bash
+# Full pipeline (50-70 minutes)
+make all
+
+# Monitor progress
+make status
+
+# View logs
+make logs
+```
+

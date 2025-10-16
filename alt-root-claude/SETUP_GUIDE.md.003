@@ -1,0 +1,11 @@
+### Browser Requirements
+
+The browser integration requires:
+- ✅ ES6 Module support
+- ✅ Fetch API
+- ✅ LocalStorage
+- ✅ JavaScript enabled
+- ✅ HTTPS (recommended for production)
+
+Check compatibility at: [caniuse.com](https://caniuse.com)
+

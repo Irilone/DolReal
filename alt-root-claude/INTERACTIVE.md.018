@@ -1,0 +1,9 @@
+---
+
+## Ready to Start?
+
+```bash
+./scripts/interactive-orchestrate.sh
+```
+
+The script will guide you step-by-step through the entire orchestration!

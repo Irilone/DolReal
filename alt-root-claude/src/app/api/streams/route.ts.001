@@ -1,0 +1,11 @@
+import type { Stream } from '@/types/stream';
+import { NextResponse } from 'next/server';
+type Day = 1 | 2;
+
+type StreamDefinition = {
+  id: Stream['id'];
+  name: Stream['name'];
+  envKey: string;
+  activeDays: readonly Day[];
+  defaultDay: Day;
+};

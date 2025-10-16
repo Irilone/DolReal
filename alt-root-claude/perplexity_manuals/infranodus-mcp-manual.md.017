@@ -1,0 +1,10 @@
+#### 5. generate_research_questions
+**Purpose**: Generate research questions that bridge content gaps
+**Usage**: "Create research questions for conference planning"
+**Output**: Targeted questions for further investigation
+
+#### 6. generate_research_questions_from_graph
+**Purpose**: Generate questions based on existing graph
+**Usage**: "What research questions emerge from my conference graph?"
+**Output**: Graph-informed research directions
+

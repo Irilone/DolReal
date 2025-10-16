@@ -1,0 +1,30 @@
+name: Initiate Multi-Agent Orchestration
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_all_agents:
+        description: 'Run all agents sequentially'
+        required: false
+        default: true
+        type: boolean
+      specific_agent:
+        description: 'Override to run a single agent'
+        required: false
+        default: none
+        type: choice
+        options:
+          - none
+          - gemini-ultra
+          - gpt5-codex
+          - claude-frontend
+          - claude-backend
+          - claude-parallel
+          - gemini-cli
+      ref:
+        description: 'Git ref to dispatch orchestrate workflow against'
+        required: false
+        type: string
+jobs:
+  dispatch:
+    name: Dispatch Multi-Agent Workflow

@@ -1,0 +1,30 @@
+## Project Structure
+
+```
+DolReal/
+├── .github/                  # GitHub workflows and configurations
+│   ├── workflows/           # CI/CD pipelines
+│   └── copilot-instructions.md  # This file
+├── artifacts/               # Generated artifacts from agents
+├── docs/                    # Documentation
+├── october/                 # Legacy browser-based Gemini integration
+│   ├── modules/            # ES6+ modules (gemini-api-module.js, etc.)
+│   ├── index.html          # Main UI
+│   └── README.md           # Orchestration suite documentation
+├── plans/                   # Planning documents (router, OBS, YouTube, etc.)
+├── prompts/                 # Agent prompts (1_gemini_ultra_research.md, etc.)
+├── schemas/                 # JSON schemas (agent-handoff-schema.json)
+├── scripts/                 # TypeScript orchestration scripts
+│   ├── gem.ts              # Gemini wrapper
+│   ├── anthropic.ts        # Anthropic wrapper
+│   ├── orchestrate.ts      # Main orchestrator
+│   ├── run-agent.ts        # Individual agent runner
+│   └── check-env.ts        # Environment checker
+├── src/                     # Next.js application source
+├── tests/                   # Test files
+├── .env.example            # Environment template
+├── Makefile                # Build commands
+├── package.json            # Dependencies
+├── AGENTS.md               # General repository guidelines
+└── README.md               # Main documentation
+```

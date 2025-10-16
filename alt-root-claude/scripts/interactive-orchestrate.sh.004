@@ -1,0 +1,12 @@
+    # Check if already completed
+    if [ -f "$output_file" ]; then
+        echo -e "${YELLOW}⚠️  Output already exists: ${output_file}${NC}"
+        echo -n "Regenerate? (y/N): "
+        read -r response
+        if [[ ! "$response" =~ ^[Yy]$ ]]; then
+            echo -e "${GREEN}✓ Skipping (using existing output)${NC}"
+            echo ""
+            return 0
+        fi
+    fi
+

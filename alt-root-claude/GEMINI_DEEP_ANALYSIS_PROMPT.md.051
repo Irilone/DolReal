@@ -1,0 +1,12 @@
+**Option B: SvelteKit Port** (Faster, lighter)
+- Port to SvelteKit for better performance
+- Smaller bundle sizes (30-40% reduction)
+- Built-in i18n and routing
+- Estimated time: 4-5 days
+
+**Option C: Astro + React Islands** (Ultra-fast)
+- Static site generation with Astro
+- React islands for interactive components
+- Best Lighthouse scores possible (95+)
+- Estimated time: 3-4 days
+

@@ -1,0 +1,11 @@
+    log('\n→ Reading input file...', 'yellow');
+    const prompt = await readFile(args.input, 'utf-8');
+    log(`✓ Read ${prompt.length} characters`, 'green');
+
+    // Call OpenAI API
+    const responseText = await callOpenAIAPI(args.model, prompt);
+
+    // Ensure output directory exists
+    const outputDir = dirname(args.output);
+    await mkdir(outputDir, { recursive: true });
+

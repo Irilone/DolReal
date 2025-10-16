@@ -1,0 +1,10 @@
+
+export default function LanguageSwitcher({ currentLocale }: { currentLocale: Locale }) {
+  const pathname = usePathname()
+
+  return (
+    <select
+      value={currentLocale}
+      onChange={(e) => {
+        const newLocale = e.target.value as Locale
+        const newPath = pathname.replace(`/${currentLocale}`, `/${newLocale}`)

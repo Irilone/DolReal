@@ -1,0 +1,10 @@
+---
+
+## 🔧 TROUBLESHOOTING
+
+### gem CLI not found
+```bash
+# Option 1: Homebrew
+brew install gemini-cli
+
+# Option 2: npm

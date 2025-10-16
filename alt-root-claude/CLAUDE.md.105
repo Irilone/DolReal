@@ -1,0 +1,10 @@
+### Path Aliases
+
+TypeScript is configured with `@/*` alias mapping to `src/*`:
+
+```typescript
+import { cn } from "@/lib/utils/cn"; // → src/lib/utils/cn.ts
+import { Header } from "@/components/features/Header"; // → src/components/features/Header.tsx
+import type { Locale } from "@/types/i18n"; // → src/types/i18n.ts
+```
+

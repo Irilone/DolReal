@@ -1,0 +1,10 @@
+  return modelMap[model] || model;
+}
+
+async function callAnthropicAPI(model: string, prompt: string): Promise<string> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    throw new Error('ANTHROPIC_API_KEY environment variable not set');
+  }
+
+  const apiModel = mapModelName(model);

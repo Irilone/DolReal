@@ -1,0 +1,17 @@
+run_agent \
+    "2" \
+    "GPT-5 Codex - System Architecture" \
+    "$PROMPTS_DIR/2_gpt5_codex_architecture.md" \
+    "$ARTIFACTS_DIR/2_gpt5_codex_architecture.json" \
+    "chat.openai.com" \
+    "$ARTIFACTS_DIR/1_gemini_ultra_research.json"
+
+# Agent 3a: Claude Frontend
+echo -e "${CYAN}Next: Running both Claude agents in parallel${NC}"
+echo -e "${YELLOW}You'll need TWO Claude chat sessions open${NC}"
+echo -e "${BLUE}  - Session 1: Frontend (Agent 3a)${NC}"
+echo -e "${BLUE}  - Session 2: Backend (Agent 3b)${NC}"
+echo ""
+echo -n "Ready? Press ENTER to continue..."
+read -r
+

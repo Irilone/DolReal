@@ -1,0 +1,18 @@
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Om Evenemanget</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <p className="text-slate-600 dark:text-slate-400">
+              Dagar om Lagar 2025 är ett juridiskt symposium som utforskar samspelet mellan
+              lagstiftning och samhälle. Under två intensiva dagar samlas jurister, akademiker,
+              politiker och medborgare för att diskutera aktuella rättsliga frågor.
+            </p>
+            <p className="text-slate-600 dark:text-slate-400">
+              Evenemanget sänds live från fyra olika platser i Sverige - Nodväst, Nodsyd,
+              Nodöst och Nodmidd - vilket möjliggör ett unikt geografiskt perspektiv på
+              svenska rättssystemet.
+            </p>
+          </CardContent>
+        </Card>
+

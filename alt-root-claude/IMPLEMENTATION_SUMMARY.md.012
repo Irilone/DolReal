@@ -1,0 +1,15 @@
+### API Capabilities
+
+**Supported Operations:**
+```javascript
+// Initialize API
+await GeminiAPI.initialize({ apiKey: 'AIza...' });
+
+// Generate content
+const result = await GeminiAPI.generateContent(
+  'Prompt text',
+  { 
+    model: 'gemini-2.5-pro',
+    temperature: 0.7,
+    maxOutputTokens: 8192
+  }

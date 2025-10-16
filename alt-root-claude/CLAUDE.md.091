@@ -1,0 +1,10 @@
+tsc --noEmit
+
+# Check for missing dependencies
+bun install
+
+# Clean node_modules and reinstall
+rm -rf node_modules bun.lockb .next
+bun install
+```
+

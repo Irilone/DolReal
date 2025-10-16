@@ -1,0 +1,12 @@
+### 4. YouTube Integration
+
+#### A. YouTube IFrame API Setup
+```typescript
+// src/lib/youtube/useYouTubePlayer.ts
+import { useEffect, useRef, useState } from 'react';
+
+declare global {
+  interface Window {
+    YT: any;
+    onYouTubeIframeAPIReady: () => void;
+  }

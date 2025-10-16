@@ -1,0 +1,10 @@
+
+```bash
+# All 5 artifacts should exist:
+ls artifacts/
+# 1_gemini_ultra_research.json
+# 2_gpt5_codex_architecture.json
+# 3a_claude_frontend_output.json
+# 3b_claude_backend_output.json
+# 4_gemini_cli_final.json
+

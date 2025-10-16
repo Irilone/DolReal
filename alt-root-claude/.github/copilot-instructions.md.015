@@ -1,0 +1,12 @@
+2. **Component Tests**: When Next.js scaffolding lands, co-locate React Testing Library specs beside components
+   - Cover YouTube player state
+   - Test modal focus traps
+   - Verify day-two deactivation logic
+   
+3. **Before PR**: Run `trunk check` and any new `npm test` job in CI
+
+### Test Coverage Goals
+- Aim for >80% code coverage
+- Prioritize critical paths (API calls, state management, user interactions)
+- Test accessibility features (keyboard navigation, screen readers)
+

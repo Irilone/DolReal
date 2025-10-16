@@ -1,0 +1,10 @@
+### gem CLI syntax unknown
+The script tries multiple syntaxes:
+1. `gem analyze --deep-thinking`
+2. `gem chat --model gemini-2.5-pro-002`
+3. `gemini-cli chat`
+4. Direct pipe: `cat prompt.md | gem`
+
+If all fail, run manually:
+```bash
+# Get help on your gem CLI

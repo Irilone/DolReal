@@ -1,0 +1,11 @@
+cat logs/gemini-ultra.log
+tail -n 50 logs/3a_claude_frontend.log
+
+# Re-run specific agent
+make gemini-ultra
+
+# Clean and restart
+make clean
+make all
+```
+

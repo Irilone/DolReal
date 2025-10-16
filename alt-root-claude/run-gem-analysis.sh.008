@@ -1,0 +1,11 @@
+elif command -v gemini-cli &> /dev/null; then
+    # Fallback to gemini-cli
+    gemini-cli chat \
+        --model gemini-2.5-pro-002 \
+        < "$PROMPT_FILE" \
+        | tee "$OUTPUT_FILE"
+
+else
+    echo -e "${RED}❌ Error: Could not determine gem CLI syntax${NC}"
+    echo -e "${YELLOW}💡 Trying direct pipe method...${NC}\n"
+

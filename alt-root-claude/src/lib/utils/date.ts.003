@@ -1,0 +1,10 @@
+  return 1;
+}
+
+export function isEventActive(): boolean {
+  const now = new Date();
+  const eventStart = EVENT_DATES.day1;
+  const eventEnd = new Date('2025-11-07T23:59:59+01:00');
+
+  return now >= eventStart && now <= eventEnd;
+}

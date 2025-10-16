@@ -1,0 +1,14 @@
+                  │        │
+                  │        ├─→ Attempt 2 (after 1s)
+                  │        │
+                  │        └─→ Attempt 3 (after 2s)
+                  │
+                  ├─→ Parse response
+                  │
+                  └─→ Return result
+                           │
+                           ├─ Success → Display content
+                           │
+                           └─ Error → Show error message
+```
+

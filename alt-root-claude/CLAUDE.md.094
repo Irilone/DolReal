@@ -1,0 +1,11 @@
+npx lighthouse http://localhost:3000 --output html --output-path ./lighthouse-report.html
+
+# Optimize images
+npm install -g sharp-cli
+sharp -i public/images/*.jpg -o public/images/optimized/ --webp
+```
+
+### i18n Not Working
+
+```bash
+# Verify translation files exist

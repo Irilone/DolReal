@@ -1,0 +1,13 @@
+#### `infranodus_plan.md`
+- Embed URL structure
+- Modal integration in Next.js
+- MCP server configuration (if available)
+- Fallback iframe approach
+
+#### `site_spec.md`
+- Component architecture
+- Routing structure
+- i18n setup (6 languages: se, en, ar, fa, zh, es)
+- Accessibility requirements (WCAG 2.2 AA)
+- Performance budgets (LCP <2.5s, CLS <0.1, JS <250KB)
+

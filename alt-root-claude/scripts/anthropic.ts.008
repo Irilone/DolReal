@@ -1,0 +1,14 @@
+  const apiUrl = 'https://api.anthropic.com/v1/messages';
+
+  log(`\n${COLORS.cyan}→ Calling Anthropic API: ${apiModel}${COLORS.reset}`);
+  log(`  Prompt length: ${prompt.length} characters`, 'blue');
+
+  const startTime = Date.now();
+
+  const response = await fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+    },

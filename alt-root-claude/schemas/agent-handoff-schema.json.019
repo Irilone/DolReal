@@ -1,0 +1,11 @@
+          },
+          "manuals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": { "type": "string" },
+                "file_path": { "type": "string" },
+                "content": { "type": "string" },
+                "language": { "type": "string" }
+              }

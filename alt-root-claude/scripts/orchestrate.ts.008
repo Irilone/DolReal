@@ -1,0 +1,11 @@
+
+async function checkArtifactsExist(artifacts: string[]): Promise<boolean> {
+  for (const artifact of artifacts) {
+    try {
+      await fs.access(artifact);
+    } catch {
+      return false;
+    }
+  }
+  return true;
+}

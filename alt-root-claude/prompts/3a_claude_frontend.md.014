@@ -1,0 +1,19 @@
+### 3. i18n Integration (react-i18next)
+
+#### A. Configuration
+```typescript
+// src/i18n/config.ts
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+i18n
+  .use(initReactI18next)
+  .init({
+    resources: {
+      se: { translation: require('./locales/se.json') },
+      en: { translation: require('./locales/en.json') },
+      ar: { translation: require('./locales/ar.json') },
+      fa: { translation: require('./locales/fa.json') },
+      zh: { translation: require('./locales/zh.json') },
+      es: { translation: require('./locales/es.json') },
+    },

@@ -1,0 +1,10 @@
+Clearly separate responsibilities:
+
+#### Claude Frontend (3a)
+- All React components in `src/components/`
+- Tailwind styling
+- i18n integration in components
+- Accessibility implementation
+- Client-side state management
+- YouTube iframe UI controls
+
