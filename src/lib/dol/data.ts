@@ -373,6 +373,12 @@ export const GRAPH_LINKS = GRAPH_NODES.flatMap((node) =>
   })),
 );
 
+/**
+ * Selects the first DoL node that has an active stream for the given event day.
+ *
+ * @param day - The event day to search for an active stream
+ * @returns The key of the first node whose stream is active on `day`, or `"nodvast"` if none are active
+ */
 export function getFirstActiveNodeForDay(day: EventDay): DolNodeKey {
   const entry = (Object.keys(DOL_NODES) as DolNodeKey[]).find(
     (key) => DOL_NODES[key].streams[day]?.active,
@@ -380,6 +386,12 @@ export function getFirstActiveNodeForDay(day: EventDay): DolNodeKey {
   return entry ?? "nodvast";
 }
 
+/**
+ * Constructs the URL for a YouTube video's high-quality default thumbnail.
+ *
+ * @param youtubeId - The YouTube video identifier
+ * @returns The URL of the video's high-quality default thumbnail image
+ */
 export function buildThumbnailUrl(youtubeId: string): string {
   return `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
 }
