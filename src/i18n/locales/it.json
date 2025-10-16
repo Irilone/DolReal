@@ -1,0 +1,65 @@
+{
+  "header": {
+    "title": "Giorni sulle Leggi 2025",
+    "logo_alt": "Logo DoL"
+  },
+  "nav": {
+    "home": "Home",
+    "schedule": "Programma",
+    "streams": "Streaming",
+    "graph": "Grafo della Conoscenza",
+    "archive": "Archivio",
+    "about": "Informazioni"
+  },
+  "carousel": {
+    "previous": "Precedente",
+    "next": "Successivo",
+    "goto": "Vai allo streaming",
+    "label": "Carosello streaming"
+  },
+  "graph": {
+    "zoomIn": "Ingrandisci",
+    "zoomOut": "Riduci",
+    "reset": "Ripristina vista",
+    "legend": "Legenda",
+    "connections": "connessioni"
+  },
+  "program": {
+    "title": "Programma",
+    "day1": "Giorno 1",
+    "day2": "Giorno 2",
+    "speakers": "Relatori",
+    "streams": "Streaming"
+  },
+  "streams": {
+    "nodvast": "Nodo Nord-Ovest",
+    "nodsyd": "Nodo Sud",
+    "nodost": "Nodo Est",
+    "nodmidd": "Nodo Centrale",
+    "inactive": "Non attivo oggi",
+    "live": "IN DIRETTA",
+    "viewers": "spettatori",
+    "play": "Riproduci",
+    "pause": "Pausa",
+    "watch": "Guarda"
+  },
+  "event": {
+    "title": "Giorni sulle Leggi 2025",
+    "dates": "6-7 novembre 2025",
+    "description": "Un simposio legale che esplora leggi e società",
+    "day1": "Giorno 1 - 6 novembre 2025",
+    "day2": "Giorno 2 - 7 novembre 2025"
+  },
+  "health": {
+    "good": "Eccellente",
+    "ok": "Buono",
+    "bad": "Scarso",
+    "offline": "Offline"
+  },
+  "common": {
+    "close": "Chiudi",
+    "loading": "Caricamento...",
+    "error": "Si è verificato un errore",
+    "retry": "Riprova"
+  }
+}
