@@ -48,7 +48,7 @@ describe('infranodus client', () => {
   it('fetchGraphData calls REST API with auth header', async () => {
     const fake = { ok: true };
     const jsonMock = jest.fn().mockResolvedValue(fake);
-    const fetchMock = jest.fn().mockResolvedValue({ json: jsonMock } as any);
+    const fetchMock = jest.fn().mockResolvedValue({ json: jsonMock } as Partial<Response>);
     // @ts-ignore override global fetch for test
     global.fetch = fetchMock;
 
