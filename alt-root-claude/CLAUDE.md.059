@@ -1,6 +1,5 @@
 **Testing API routes**: `bun test src/app/api/streams/route.test.ts`
 
-<<<<<<< Updated upstream
 ### State Management
 
 Uses **Zustand** for lightweight, performant state:

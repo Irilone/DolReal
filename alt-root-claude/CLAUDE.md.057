@@ -4,13 +4,3 @@
 │                          # InfraNodus knowledge graph integration
 └── health/route.ts        # GET /api/health
                            # System health check (API status, connectivity)
-=======
-├── streams/
-│   └── route.ts             // GET /api/streams?day=1|2
-│                            // Returns active stream IDs for given day
-├── graph/
-│   └── route.ts             // GET /api/graph?nodeId=string
-│                            // Fetches InfraNodus graph data
-└── health/
-    └── route.ts             // GET /api/health
-                             // Health check endpoint

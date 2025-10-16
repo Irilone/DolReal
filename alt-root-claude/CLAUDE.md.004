@@ -5,7 +5,3 @@ make claude-backend       # Agent 3b: API routes + docs
 make status               # Check agent completion status
 make logs                 # View agent logs
 make clean                # Remove all artifacts
-=======
-# Clean artifacts
-make clean
-

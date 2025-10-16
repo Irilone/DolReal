@@ -1,5 +1,3 @@
-### Internationalization
-=======
 ### 1. Gemini Ultra Research (`prompts/1_gemini_ultra_research.md`)
 - Deep research with cited sources
 - Policy verification (WCAG 2.2 AA, YouTube API, streaming limits)
@@ -8,3 +6,8 @@
 - Output: `artifacts/1_gemini_ultra_research.json`
 
 ### 2. GPT-5 Codex Architecture (`prompts/2_gpt5_codex_architecture.md`)
+- System architecture design (data flow, component hierarchy)
+- Component tree with task allocation to Claude agents
+- API contracts between frontend/backend
+- Core scaffolding (package.json, tsconfig, next.config, etc.)
+- Output: `artifacts/2_gpt5_codex_architecture.json`

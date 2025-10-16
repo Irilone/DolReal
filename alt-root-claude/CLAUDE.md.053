@@ -1,11 +1,1 @@
-import { Button } from '@/components/ui/button';
-import { useYouTube } from '@/hooks/useYouTube';
-import { YouTubeClient } from '@/lib/youtube/client';
-import { StreamData } from '@/types/streams';
-import { useTranslation } from '@/i18n/config';
-```
 
-### TypeScript Path Aliases
-
-```typescript
-// Configured in tsconfig.json

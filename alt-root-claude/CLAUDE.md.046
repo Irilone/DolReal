@@ -22,9 +22,3 @@
 ├── tailwind.config.js     # Tailwind CSS configuration
 ├── jest.config.ts         # Jest testing configuration
 └── eslint.config.mjs      # ESLint configuration
-=======
-├── artifacts/              # Agent communication artifacts (JSON)
-├── plans/                  # Research plans (Markdown)
-├── releases/               # Production builds (ZIP)
-├── prompts/                # Agent prompt files
-│   ├── 1_gemini_ultra_research.md

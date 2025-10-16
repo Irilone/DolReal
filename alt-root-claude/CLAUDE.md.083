@@ -14,5 +14,3 @@
 - Accessibility audits (axe-core, WCAG compliance)
 - Generate release artifacts (ZIP with all files)
 - Output: `artifacts/4_gemini_cli_final.json` + `releases/*.zip`
->>>>>>> Stashed changes
-
