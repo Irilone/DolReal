@@ -1,15 +1,25 @@
 // src/lib/youtube/useYouTubePlayer.ts
 import { useEffect, useRef, useState } from 'react';
 
+interface YouTubePlayer {
+  playVideo(): void;
+  pauseVideo(): void;
+  stopVideo(): void;
+}
+
+interface YouTubeAPI {
+  Player: new (elementId: string, config: unknown) => YouTubePlayer;
+}
+
 declare global {
   interface Window {
-    YT: any;
+    YT: YouTubeAPI;
     onYouTubeIframeAPIReady: () => void;
   }
 }
 
 export function useYouTubePlayer(videoId: string) {
-  const playerRef = useRef<any>(null);
+  const playerRef = useRef<YouTubePlayer | null>(null);
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -35,7 +45,7 @@ export function useYouTubePlayer(videoId: string) {
       });
     };
 
-    const onPlayerReady = (event: any) => {
+    const onPlayerReady = () => {
       setIsReady(true);
     };
 

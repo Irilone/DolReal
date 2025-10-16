@@ -1,8 +1,12 @@
 // src/lib/mcp/client.ts
-export class MCPClient {
-  constructor(private config: { serverUrl: string; auth?: any }) {}
+interface MCPAuth {
+  token: string;
+}
 
-  async call(method: string, params: any) {
+export class MCPClient {
+  constructor(private config: { serverUrl: string; auth?: MCPAuth }) {}
+
+  async call(method: string, params: Record<string, unknown>) {
     const response = await fetch(this.config.serverUrl, {
       method: 'POST',
       headers: {
