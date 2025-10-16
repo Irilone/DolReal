@@ -1,6 +1,7 @@
 {
   "header": {
     "title": "Giorni sulle Leggi 2025",
+    "title": "Giornate sulle Leggi 2025",
     "logo_alt": "Logo DoL"
   },
   "nav": {
@@ -10,12 +11,16 @@
     "graph": "Grafo della Conoscenza",
     "archive": "Archivio",
     "about": "Informazioni"
+    "graph": "Grafo di Conoscenza",
+    "archive": "Archivio",
+    "about": "Chi Siamo"
   },
   "carousel": {
     "previous": "Precedente",
     "next": "Successivo",
     "goto": "Vai allo streaming",
     "label": "Carosello streaming"
+    "label": "Carosello degli streaming"
   },
   "graph": {
     "zoomIn": "Ingrandisci",
@@ -23,6 +28,11 @@
     "reset": "Ripristina vista",
     "legend": "Legenda",
     "connections": "connessioni"
+    "connections": "connessioni",
+    "title": "Navigatore del Grafo di Conoscenza",
+    "view": "Visualizza",
+    "openStream": "Apri Streaming",
+    "close": "Chiudi"
   },
   "program": {
     "title": "Programma",
@@ -30,6 +40,28 @@
     "day2": "Giorno 2",
     "speakers": "Relatori",
     "streams": "Streaming"
+    "streams": "Streaming",
+    "schedule": "Programma degli Eventi",
+    "day1.opening": "Cerimonia di Apertura",
+    "day1.keynote1": "Keynote: Diritti Digitali nel 2025",
+    "day1.workshop1": "Workshop: Fondamenti della Legge sulla Privacy",
+    "day1.panel1": "Pannello: IA ed Etica Legale",
+    "day1.keynote2": "Keynote: Prospettive del Diritto Internazionale",
+    "day1.afternoon1": "Sessione Pomeridiana: Casi di Studio",
+    "day1.workshop2": "Workshop: Aggiornamenti sul Diritto Contrattuale",
+    "day1.panel2": "Pannello: Diritto Ambientale",
+    "day1.keynote3": "Keynote: Diritti Umani in Primo Piano",
+    "day1.closing": "Considerazioni Finali Giorno 1",
+    "day2.opening": "Apertura Giorno 2",
+    "day2.keynote1": "Keynote: Futuro della Tecnologia Legale",
+    "day2.panel1": "Pannello: Cambiamenti Legislativi 2025",
+    "day2.keynote2": "Keynote Pomeridiano: Prospettive Globali",
+    "day2.closing": "Cerimonia di Chiusura",
+    "speakers.svensson": "Dr. Anna Svensson",
+    "speakers.johansson": "Prof. Erik Johansson",
+    "speakers.bergstrom": "Maria Bergström",
+    "speakers.andersson": "Dr. Lars Andersson",
+    "speakers.techleader": "Leader Tecnologico"
   },
   "streams": {
     "nodvast": "Nodo Nord-Ovest",
@@ -37,6 +69,9 @@
     "nodost": "Nodo Est",
     "nodmidd": "Nodo Centrale",
     "inactive": "Non attivo oggi",
+    "inactive_day2": "Questo nodo è attivo solo il Giorno 1. Per favore, passa allo streaming principale (Nordväst).",
+    "inactive_general": "Questo nodo non è attualmente attivo",
+    "switchToMain": "Passa allo Streaming Principale",
     "live": "IN DIRETTA",
     "viewers": "spettatori",
     "play": "Riproduci",
@@ -45,6 +80,11 @@
   },
   "event": {
     "title": "Giorni sulle Leggi 2025",
+    "watch": "Guarda",
+    "liveStreams": "Streaming in Diretta"
+  },
+  "event": {
+    "title": "Giornate sulle Leggi 2025",
     "dates": "6-7 novembre 2025",
     "description": "Un simposio legale che esplora leggi e società",
     "day1": "Giorno 1 - 6 novembre 2025",
@@ -61,5 +101,14 @@
     "loading": "Caricamento...",
     "error": "Si è verificato un errore",
     "retry": "Riprova"
+  },
+  "footer": {
+    "copyright": "© 2025 Giornate sulle Leggi – Tutti i diritti riservati",
+    "contact": "Contatto"
+  },
+  "hero": {
+    "welcome": "Benvenuti alle Giornate sulle Leggi 2025",
+    "subtitle": "Un simposio legale che esplora leggi e società",
+    "watchLive": "Guarda in Diretta"
   }
 }

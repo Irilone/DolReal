@@ -15,11 +15,15 @@
     "nodost": "Nodo Este",
     "nodmidd": "Nodo Central",
     "inactive": "No activo hoy",
+    "inactive_day2": "Este nodo solo está activo el Día 1. Por favor, cambia al streaming principal (Nordväst).",
+    "inactive_general": "Este nodo no está activo actualmente",
+    "switchToMain": "Cambiar al Streaming Principal",
     "live": "En vivo",
     "viewers": "espectadores",
     "play": "Reproducir",
     "pause": "Pausar",
-    "watch": "Ver"
+    "watch": "Ver",
+    "liveStreams": "Transmisiones en Vivo"
   },
   "event": {
     "title": "Días sobre Leyes 2025",
@@ -33,5 +37,20 @@
     "ok": "Bueno",
     "bad": "Pobre",
     "offline": "Desconectado"
+  },
+  "common": {
+    "close": "Cerrar",
+    "loading": "Cargando...",
+    "error": "Ocurrió un error",
+    "retry": "Intentar de nuevo"
+  },
+  "footer": {
+    "copyright": "© 2025 Días sobre Leyes – Todos los derechos reservados",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "welcome": "Bienvenido a Días sobre Leyes 2025",
+    "subtitle": "Un simposio legal explorando leyes y sociedad",
+    "watchLive": "Ver en Vivo"
   }
 }
