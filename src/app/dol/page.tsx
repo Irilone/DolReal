@@ -321,24 +321,33 @@ export default function DagarOmLagarDolPage() {
                       aria-pressed={isActive}
                     >
                       <div className="relative aspect-video w-full overflow-hidden">
-                        <Image
-                          src={buildThumbnailUrl(stream.youtubeId)}
-                          alt={t(
-                            "dol.streams.thumbnailLabel",
-                            "{{node}} – växla ström",
-                            { node: node.name },
-                          )}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                          className={cn(
-                            "object-cover transition",
-                            isActive
-                              ? "opacity-100"
-                              : "opacity-90 group-hover:opacity-100",
-                          )}
-                          loading="lazy"
-                        />
-                        {!stream.active && (
+                        {stream?.youtubeId ? (
+                          <Image
+                            src={buildThumbnailUrl(stream.youtubeId)}
+                            alt={t(
+                              "dol.streams.thumbnailLabel",
+                              "{{node}} – växla ström",
+                              { node: node.name },
+                            )}
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                            className={cn(
+                              "object-cover transition",
+                              isActive
+                                ? "opacity-100"
+                                : "opacity-90 group-hover:opacity-100",
+                            )}
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="flex aspect-video items-center justify-center bg-black/40 text-center text-xs font-semibold uppercase tracking-wide text-white/70">
+                            {t(
+                              "dol.streams.noThumbnail",
+                              "Ingen miniatyr tillgänglig",
+                            )}
+                          </div>
+                        )}
+                        {!stream?.active && (
                           <div className="absolute inset-0 flex items-center justify-center bg-black/60 text-center text-xs font-semibold uppercase tracking-wide text-white">
                             {t(
                               "dol.streams.inactiveDay",

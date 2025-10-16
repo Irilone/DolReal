@@ -76,6 +76,7 @@
       "inactiveDay": "Este nodo no transmite en el día {{day}}.",
       "switchToMain": "Cambiar a la transmisión principal de Nodväst",
       "thumbnailLabel": "{{node}} – cambiar transmisión",
+      "noThumbnail": "Miniatura no disponible",
       "meta": {
         "location": "Ubicación",
         "theme": "Tema"

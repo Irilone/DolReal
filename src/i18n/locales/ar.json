@@ -76,6 +76,7 @@
       "inactiveDay": "هذه العقدة غير متصلة في اليوم {{day}}.",
       "switchToMain": "الانتقال إلى بث نودفاست الرئيسي",
       "thumbnailLabel": "{{node}} – تغيير البث",
+      "noThumbnail": "لا توجد صورة مصغرة متاحة",
       "meta": {
         "location": "الموقع",
         "theme": "الموضوع"

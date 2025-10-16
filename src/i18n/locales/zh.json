@@ -76,6 +76,7 @@
       "inactiveDay": "该节点在第{{day}}天未开播。",
       "switchToMain": "切换到主节点 Nodväst",
       "thumbnailLabel": "{{node}} – 切换直播",
+      "noThumbnail": "缩略图不可用",
       "meta": {
         "location": "地点",
         "theme": "主题"

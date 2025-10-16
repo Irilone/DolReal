@@ -98,6 +98,7 @@
       "inactiveDay": "This node is offline on day {{day}}.",
       "switchToMain": "Switch to the main Nodväst stream",
       "thumbnailLabel": "{{node}} – switch stream",
+      "noThumbnail": "No thumbnail available",
       "meta": {
         "location": "Location",
         "theme": "Theme"

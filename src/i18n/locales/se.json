@@ -98,6 +98,7 @@
       "inactiveDay": "Denna nod sänder inte live dag {{day}}.",
       "switchToMain": "Byt till huvudströmmens Nodväst",
       "thumbnailLabel": "{{node}} – växla ström",
+      "noThumbnail": "Ingen miniatyr tillgänglig",
       "meta": {
         "location": "Plats",
         "theme": "Tema"

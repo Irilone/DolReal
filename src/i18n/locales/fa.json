@@ -76,6 +76,7 @@
       "inactiveDay": "این گره در روز {{day}} فعال نیست.",
       "switchToMain": "رفتن به پخش اصلی نودوست",
       "thumbnailLabel": "{{node}} – تغییر پخش",
+      "noThumbnail": "تصویر کوچک موجود نیست",
       "meta": {
         "location": "مکان",
         "theme": "محور"
