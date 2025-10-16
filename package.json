@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4.1.14",
     "@testing-library/jest-dom": "^6.1.0",
     "@testing-library/react": "^14.1.0",
     "@testing-library/user-event": "^14.5.0",
@@ -83,5 +84,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/dorian/dol-2025.git"
-  }
+  },
+  "trustedDependencies": [
+    "@tailwindcss/oxide",
+    "unrs-resolver"
+  ]
 }
