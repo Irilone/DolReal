@@ -10,7 +10,7 @@ export async function getInfraNodusEmbed(nodeId: string): Promise<string | undef
     const serverUrl = process.env.INFRANODUS_MCP_URL;
 
     if (!serverUrl) {
-      throw new Error('INFRANODUS_MCP_URL is not configured');
+      throw new Error('INFRANODUS_MCP_URL must be set when INFRANODUS_MCP_ENABLED is true');
     }
 
     const client = new MCPClient({ serverUrl });
