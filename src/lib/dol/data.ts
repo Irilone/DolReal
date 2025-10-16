@@ -5,6 +5,9 @@
 
 import type { StreamNode, EventDay } from "@/types/stream";
 
+// Re-export types for consumers
+export type { StreamNode, EventDay };
+
 export interface DolNode {
   id: StreamNode;
   name: string;
