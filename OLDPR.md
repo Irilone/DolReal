@@ -1,103 +1,81 @@
-Skip to content
-Navigation Menu
-Irilone
-DolReal
+# Pull Request Status Documentation
 
-Type / to search
+**Last Updated**: 2025-10-16
 
-Code
-Issues
-2
-Pull requests
-Actions
-Projects
-Models
-Wiki
-Security
-8
-Insights
-Settings
- Merged
-Revert "Build DoL 2025 streaming hub"
-#16
-Irilone merged 2 commits into main from revert-12-codex/finish-website-setup-for-conference-streaming2025-10-1522-52-41  2 minutes ago
-+303 −1,952 
- Conversation 25
- Commits 2
- Checks 13
- Files changed 15
-Conversation
-Irilone
-Owner
-Irilone commented 10 minutes ago • 
-User description
-Reverts #12
+## Summary
 
-PR Type
-Other
+This document tracks the status of pull requests in the DolReal repository and documents decisions about which PRs should be merged, closed, or need attention.
 
-Description
-Reverts previous PR that built DoL 2025 streaming hub infrastructure
+## Currently Open Pull Requests
 
-Removes Italian language support from i18n configuration
+### PR #17: Build DoL 2025 streaming hub with multi-node video, graph navigation
+- **Status**: Open (not draft)
+- **Mergeable**: Yes
+- **Base**: main
+- **Description**: Complete streaming hub implementation with Italian localization, data models, and operations documentation
+- **Changes**: +2215 additions, -10 deletions, 17 files changed
+- **Recommendation**: **REVIEW NEEDED** - This appears to be comprehensive work but has some review comments that should be addressed
 
-Deletes comprehensive DoL node data, program schedules, and streaming configuration
+### PR #18: Implement DoL 2025 streaming hub with Italian localization  
+- **Status**: Open (draft)
+- **Mergeable**: Yes
+- **Base**: main
+- **Description**: Similar to PR #17 - streaming hub implementation with Italian localization
+- **Changes**: +1266 additions, -10 deletions, 7 files changed
+- **Recommendation**: **CLOSE** - Duplicate of PR #17, keep the more complete PR #17
 
-Replaces full-featured DoL page with simplified placeholder implementation
+### PR #22: Update build artifacts and add events log
+- **Status**: Open (not draft)
+- **Mergeable**: Yes
+- **Base**: main
+- **Description**: Updates .DS_Store files, .next/trace, and adds .next/_events.json
+- **Changes**: +238 additions, 0 deletions, 2 files changed
+- **Recommendation**: **CLOSE** - Build artifacts and .DS_Store files should NOT be committed to the repository. These should be in .gitignore
 
-Diagram Walkthrough
+### PR #25: Merge and fix all prs and merges
+- **Status**: Open (draft)
+- **Mergeable**: Yes
+- **Base**: copilot/create-streaming-hub-dol-2025 (NOT main!)
+- **Description**: Attempts to merge PR #17 and #21
+- **Changes**: +3 additions, 0 deletions, 3 files changed
+- **Recommendation**: **CLOSE** - This PR targets the wrong base branch (should target main, not another PR branch). Also, the purpose is unclear.
 
-File Walkthrough
-Summary by CodeRabbit
-New Features
-Redesigned Dol page with a simpler, interactive UI: knowledge-graph modal, main YouTube stream with selectable thumbnails, compact program, dark mode and language toggles.
-Refactor
-Streamlined layout and accessibility for faster navigation; simplified internal data handling with placeholder content where needed.
-Localization
-Removed Italian locale and pruned Dol-specific translations across languages; language selector now lists only available locales.
-Documentation
-Removed the legacy streaming setup guide.
-@Irilone
-Revert "Build DoL 2025 streaming hub"
-cc0e9f6
-@github-actionsGitHub Actions
-Contributor
-github-actions bot commented 9 minutes ago
-🤖 Hi @Irilone, I've received your request, and I'm working on it now! You can track my progress in the logs for more details.
+### PR #26: [WIP] Fix all pending pull requests
+- **Status**: Open (draft)
+- **Base**: main
+- **Description**: This PR - created to address the "fix all prs" request
+- **Recommendation**: **KEEP ACTIVE** - This is the PR for documenting and fixing the PR situation
 
-@Irilone Irilone assigned Copilot 9 minutes ago
-@Irilone Irilone deleted a comment from coderabbitai bot 9 minutes ago
-@gemini-code-assistGemini Code Assist
-Contributor
-gemini-code-assist bot commented 9 minutes ago
-Summary of Changes
-Hello @Irilone, I'm Gemini Code Assist1! I'm currently reviewing this pull request and will post my feedback shortly. In the meantime, here's a summary to help you and other reviewers quickly get up to speed!
+## Merged Pull Requests
 
-This pull request fully reverts the implementation of the 'Dagar om Lagar 2025 streaming hub.' This rollback includes the removal of all associated code, documentation, and internationalization content, effectively returning the /dol page to a simplified, placeholder state. The changes streamline the codebase by eliminating features and dependencies no longer required for the streaming hub.
+### PR #16: Revert "Build DoL 2025 streaming hub"
+- **Status**: Merged to main
+- **Date**: 2025-10-15
+- **Description**: Reverted PR #12 which had built streaming hub infrastructure
+- **Impact**: Removed Italian locale, DoL data, and streaming documentation
 
-Highlights
-Reversion of DoL 2025 Streaming Hub: This pull request completely rolls back the implementation of the 'Dagar om Lagar 2025 streaming hub', undoing all associated code and features.
-Documentation Removal: The comprehensive setup guide for the streaming hub, including details on YouTube multi-stream, OBS, MCP, and InfraNodus integration, has been removed.
-Simplified UI for DoL Page: The src/app/dol/page.tsx component has been reverted to a basic placeholder, removing dynamic content, knowledge graph integration, and detailed program schedules.
-Dependency Clean-up: Numerous development dependencies related to TypeScript compilation and other utilities, such as ts-node and various @tsconfig packages, have been removed from package-lock.json.
-Internationalization Scope Reduction: Italian (it) locale support and all specific 'DoL' related translation keys have been removed from the i18n configuration and locale files.
-Using Gemini Code Assist
-Footnotes
-Review the Privacy Notices, Generative AI Prohibited Use Policy, Terms of Service, and learn how to configure Gemini Code Assist in GitHub here. Gemini can make mistakes, so double check it and use code with caution. ↩
+## Recommended Actions
 
-@codiumai-pr-agent-free codiumai-pr-agent-free bot added the Review effort 2/5 label 9 minutes ago
-@codiumai-pr-agent-freeCodiumAI PR-Agent (Free)
-codiumai-pr-agent-free bot commented 9 minutes ago
-PR Compliance Guide 🔍
-Below is a summary of compliance checks for this PR:
+1. **Close PR #18** - Duplicate of PR #17
+2. **Close PR #22** - Build artifacts should not be committed
+3. **Close PR #25** - Targets wrong branch and purpose unclear
+4. **Review PR #17** - Address review comments and consider merging if approved
+5. **Update .gitignore** - Ensure build artifacts (.next/, .DS_Store) are properly ignored
 
-Security Compliance
-🟢	
-No security concerns identified
-Ticket Compliance
-⚪	
-🎫 No ticket provided
-Codebase Duplication Compliance
+## Decision Log
+
+### 2025-10-16: Initial Analysis
+- Identified 5 open PRs (#17, #18, #22, #25, #26)
+- PR #17 and #18 are duplicates, #17 is more complete
+- PR #22 contains build artifacts that shouldn't be committed
+- PR #25 targets wrong base branch
+- Recommended closing #18, #22, #25 and reviewing #17
+
+## Notes
+
+- The repository uses GitHub Copilot coding agent for some PRs
+- Multiple AI agents (Copilot, Claude, Gemini, CodeRabbit) are reviewing PRs
+- The DoL 2025 streaming hub feature has been through multiple iterations (built in #12, reverted in #16, rebuilt in #17/#18)
 ⚪	
 Codebase context is not defined
 Custom Compliance
