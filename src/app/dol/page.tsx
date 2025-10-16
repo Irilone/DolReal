@@ -313,7 +313,7 @@ export default function DagarOmLagar2025() {
                   >
                     <img
                       src={getThumbnail(node.youtubeId)}
-                      alt={`${node.name} thumbnail`}
+                      alt={`${node.name} thumbnail ${isActive ? 'live' : 'inactive'}`}
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-2">
