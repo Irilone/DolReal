@@ -5,9 +5,7 @@ import { MCPClient } from '@/lib/mcp/client';
 // Mock MCPClient
 jest.mock('@/lib/mcp/client');
 // Mock fetch globally
-// @ts-ignore
-global.fetch = jest.fn();
-
+global.fetch = jest.fn() as jest.MockedFunction<typeof fetch>;
 describe('InfraNodus Client', () => {
   const originalEnv = process.env;
 
