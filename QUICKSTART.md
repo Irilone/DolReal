@@ -122,13 +122,6 @@ bun run dev
 ```
 
 You should see:
-```
-▲ Next.js 15.5.5
-- Local:        http://localhost:3000
-- Network:      http://192.168.1.x:3000
-
-✓ Ready in 2.3s
-```
 
 ## Step 6: Open in Browser (5 seconds)
 
