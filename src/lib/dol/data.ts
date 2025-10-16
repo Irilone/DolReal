@@ -101,7 +101,7 @@ export const dolStreams: DolStream[] = [
   {
     id: 'stream-nodsyd-day1',
     nodeId: 'nodsyd',
-    youtubeId: '5NV6Rdv1a3I',
+    youtubeId: 'ACTUAL_NODSYD_STREAM_ID_DAY1',
     title: 'Nodsyd - Day 1',
     isLive: true,
     scheduledStart: '2025-11-06T09:00:00Z',
