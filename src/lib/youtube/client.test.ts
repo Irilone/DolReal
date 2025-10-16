@@ -83,7 +83,7 @@ describe('YouTube client', () => {
       });
     });
 
-    it('returns undefined when request fails', async () => {
+    it('throws an error when request fails', async () => {
       searchListMock.mockRejectedValue(new Error('bad request'));
 
       await expect(listLiveStreams('broken-channel')).rejects.toThrow('bad request');
