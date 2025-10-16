@@ -6,6 +6,7 @@ node_modules/
 .pnp.js
 .tmp-home/
 bun.lockb
+alt-root-claude/
 
 # Testing
 coverage/
