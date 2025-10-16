@@ -1,8 +1,10 @@
-'use client';
+"use client";
 
-import { useTranslation } from 'react-i18next';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
+export const dynamic = "force-dynamic";
+
+import { useTranslation } from "react-i18next";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export default function ArchivePage() {
   const { t } = useTranslation();
@@ -10,22 +12,22 @@ export default function ArchivePage() {
   const archives = [
     {
       year: 2024,
-      title: 'Dagar om Lagar 2024',
-      description: 'Fokus på digitalisering och rättssäkerhet',
+      title: "Dagar om Lagar 2024",
+      description: "Fokus på digitalisering och rättssäkerhet",
       videos: 24,
       views: 15420,
     },
     {
       year: 2023,
-      title: 'Dagar om Lagar 2023',
-      description: 'Klimatlagstiftning i centrum',
+      title: "Dagar om Lagar 2023",
+      description: "Klimatlagstiftning i centrum",
       videos: 20,
       views: 12350,
     },
     {
       year: 2022,
-      title: 'Dagar om Lagar 2022',
-      description: 'Pandemilagstiftning och demokrati',
+      title: "Dagar om Lagar 2022",
+      description: "Pandemilagstiftning och demokrati",
       videos: 18,
       views: 10200,
     },
@@ -35,7 +37,7 @@ export default function ArchivePage() {
     <div className="container mx-auto px-4 py-12">
       <div className="mx-auto max-w-4xl">
         <h1 className="mb-8 text-center text-4xl font-bold text-slate-900 dark:text-slate-100">
-          {t('nav.archive')}
+          {t("nav.archive")}
         </h1>
 
         <div className="mb-8 text-center">
@@ -96,7 +98,9 @@ export default function ArchivePage() {
                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                       />
                     </svg>
-                    <span>{archive.views.toLocaleString('sv-SE')} visningar</span>
+                    <span>
+                      {archive.views.toLocaleString("sv-SE")} visningar
+                    </span>
                   </div>
                 </div>
                 <Button className="w-full sm:w-auto">
@@ -119,13 +123,13 @@ export default function ArchivePage() {
             Letar du efter äldre material?
           </h3>
           <p className="text-sm text-slate-600 dark:text-slate-400">
-            Kontakta oss på{' '}
+            Kontakta oss på{" "}
             <a
               href="mailto:info@dagaromlagar.se"
               className="text-blue-600 hover:underline dark:text-blue-400"
             >
               info@dagaromlagar.se
-            </a>{' '}
+            </a>{" "}
             för att få tillgång till äldre inspelningar.
           </p>
         </div>

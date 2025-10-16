@@ -1,7 +1,9 @@
-'use client';
+"use client";
 
-import { useTranslation } from 'react-i18next';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+export const dynamic = "force-dynamic";
+
+import { useTranslation } from "react-i18next";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function AboutPage() {
   const { t } = useTranslation();
@@ -10,7 +12,7 @@ export default function AboutPage() {
     <div className="container mx-auto px-4 py-12">
       <div className="mx-auto max-w-4xl">
         <h1 className="mb-8 text-center text-4xl font-bold text-slate-900 dark:text-slate-100">
-          {t('nav.about')}
+          {t("nav.about")}
         </h1>
 
         <Card className="mb-8">
@@ -19,14 +21,15 @@ export default function AboutPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             <p className="text-slate-600 dark:text-slate-400">
-              Dagar om Lagar 2025 är ett juridiskt symposium som utforskar samspelet mellan
-              lagstiftning och samhälle. Under två intensiva dagar samlas jurister, akademiker,
-              politiker och medborgare för att diskutera aktuella rättsliga frågor.
+              Dagar om Lagar 2025 är ett juridiskt symposium som utforskar
+              samspelet mellan lagstiftning och samhälle. Under två intensiva
+              dagar samlas jurister, akademiker, politiker och medborgare för
+              att diskutera aktuella rättsliga frågor.
             </p>
             <p className="text-slate-600 dark:text-slate-400">
-              Evenemanget sänds live från fyra olika platser i Sverige - Nodväst, Nodsyd,
-              Nodöst och Nodmidd - vilket möjliggör ett unikt geografiskt perspektiv på
-              svenska rättssystemet.
+              Evenemanget sänds live från fyra olika platser i Sverige -
+              Nodväst, Nodsyd, Nodöst och Nodmidd - vilket möjliggör ett unikt
+              geografiskt perspektiv på svenska rättssystemet.
             </p>
           </CardContent>
         </Card>

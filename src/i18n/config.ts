@@ -1,5 +1,4 @@
 import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
 import type { Locale } from "@/types/i18n";
 
 import se from "./locales/se.json";
@@ -20,20 +19,42 @@ const resources = {
   it: { translation: it },
 };
 
-i18n.use(initReactI18next).init({
+const initOptions = {
   resources,
-  lng: "se",
-  fallbackLng: "se",
+  lng: "se" as Locale,
+  fallbackLng: "se" as Locale,
   interpolation: {
     escapeValue: false,
   },
   react: {
     useSuspense: false,
   },
-});
+};
 
-export function initI18n(locale: Locale = "se") {
-  i18n.changeLanguage(locale);
+const initializationPromise: Promise<typeof i18n> =
+  typeof window === "undefined"
+    ? i18n.isInitialized
+      ? Promise.resolve(i18n)
+      : i18n.init({
+          ...initOptions,
+          initImmediate: false,
+        })
+    : (async () => {
+        if (!i18n.isInitialized) {
+          const { initReactI18next } = await import("react-i18next");
+          i18n.use(initReactI18next);
+          await i18n.init(initOptions);
+        }
+        return i18n;
+      })();
+
+export async function initI18n(locale: Locale = "se") {
+  await initializationPromise;
+
+  if (i18n.language !== locale) {
+    await i18n.changeLanguage(locale);
+  }
+
   return i18n;
 }
 
