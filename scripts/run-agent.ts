@@ -48,7 +48,7 @@ const AGENTS = {
 /**
  * Extract JSON from markdown code blocks or plain text
  */
-function extractJSON(text: string): any {
+function extractJSON(text: string): unknown {
   // Try to find JSON in markdown code blocks
   const jsonBlockMatch = text.match(/```json\s*([\s\S]*?)\s*```/);
   if (jsonBlockMatch) {
@@ -186,7 +186,7 @@ async function executeGemini(
     throw new Error(`Gemini API error: ${JSON.stringify(data.error)}`);
   }
 
-  const text = data.candidates?.[0]?.content?.parts?.map((p: any) => p.text).join('\n') ?? '';
+  const text = data.candidates?.[0]?.content?.parts?.map((p: { text: string }) => p.text).join('\n') ?? '';
 
   if (!text) {
     throw new Error('Gemini API returned empty response');

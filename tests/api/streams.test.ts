@@ -1,7 +1,7 @@
 /* @jest-environment node */
-// src/app/api/streams/route.test.ts
+// tests/api/streams.test.ts
 import type { Stream } from "@/types/stream";
-import { GET } from "./route";
+import { GET } from "@/app/api/streams/route";
 
 const ORIGINAL_ENV = { ...process.env };
 
@@ -130,7 +130,8 @@ describe("/api/streams", () => {
       const data = await response.json();
 
       const nodvast = data.streams.find((s: Stream) => s.id === 'nodvast');
-      expect(nodvast.day).toBe(2);
+      expect(nodvast).toBeDefined();
+      expect(nodvast?.day).toBe(2);
     });
 
     it('keeps day 1 for inactive streams on day 2', async () => {
@@ -238,10 +239,10 @@ describe("/api/streams", () => {
     it('maintains consistent stream order', async () => {
       const request1 = new Request('http://localhost/api/streams?day=1');
       const request2 = new Request('http://localhost/api/streams?day=2');
-      
+
       const response1 = await GET(request1);
       const response2 = await GET(request2);
-      
+
       const data1 = await response1.json();
       const data2 = await response2.json();
 

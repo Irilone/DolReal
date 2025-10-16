@@ -1,15 +1,38 @@
 // src/lib/youtube/useYouTubePlayer.ts
 import { useEffect, useRef, useState } from 'react';
 
+interface YTPlayer {
+  playVideo: () => void;
+  pauseVideo: () => void;
+  stopVideo: () => void;
+  seekTo: (seconds: number, allowSeekAhead: boolean) => void;
+  loadVideoById: (videoId: string) => void;
+}
+
+interface YTPlayerOptions {
+  height: string;
+  width: string;
+  videoId: string;
+  events: {
+    onReady: (event: YTEvent) => void;
+  };
+}
+
+interface YTEvent {
+  target: YTPlayer;
+}
+
 declare global {
   interface Window {
-    YT: any;
+    YT: {
+      Player: new (elementId: string, options: YTPlayerOptions) => YTPlayer;
+    };
     onYouTubeIframeAPIReady: () => void;
   }
 }
 
 export function useYouTubePlayer(videoId: string) {
-  const playerRef = useRef<any>(null);
+  const playerRef = useRef<YTPlayer | null>(null);
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -35,7 +58,7 @@ export function useYouTubePlayer(videoId: string) {
       });
     };
 
-    const onPlayerReady = (event: any) => {
+    const onPlayerReady = (_event: YTEvent) => {
       setIsReady(true);
     };
 

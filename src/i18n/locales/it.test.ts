@@ -66,7 +66,7 @@ describe("Italian Locale (it.json)", () => {
 
   describe("Translation Quality", () => {
     it("should have non-empty translation strings", () => {
-      const checkNonEmpty = (obj: any, path = ""): void => {
+      const checkNonEmpty = (obj: Record<string, unknown>, path = ""): void => {
         Object.entries(obj).forEach(([key, value]) => {
           const currentPath = path ? `${path}.${key}` : key;
           if (typeof value === "string") {

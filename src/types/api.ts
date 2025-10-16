@@ -7,7 +7,7 @@ export interface StreamsResponse {
 }
 
 // GET /api/stream-health/[streamId]
-export interface StreamHealthResponse extends StreamHealth {}
+export type StreamHealthResponse = StreamHealth;
 
 // GET /api/viewer-count
 export interface ViewerCountResponse {

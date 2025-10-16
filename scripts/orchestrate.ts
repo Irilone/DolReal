@@ -121,7 +121,7 @@ function log(message: string) {
 /**
  * Extract JSON from markdown code blocks or plain text
  */
-function extractJSON(text: string): any {
+function extractJSON(text: string): unknown {
   // Try to find JSON in markdown code blocks
   const jsonBlockMatch = text.match(/```json\s*([\s\S]*?)\s*```/);
   if (jsonBlockMatch) {
