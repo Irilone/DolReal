@@ -6,5 +6,4 @@ make gpt5-codex           # Agent 2: System Architecture (5-10 min)
 make claude-parallel      # Agents 3a & 3b in parallel (15-20 min)
 make gemini-cli           # Agent 4: Final Integration (5-10 min)
 
-<<<<<<< Updated upstream
 # Or run Claudes separately

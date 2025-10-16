@@ -1,24 +1,5 @@
 ## Additional Resources
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-- **Full orchestration details**: `october/README.md`
-- **Agent guidelines**: `AGENTS.md` (if exists)
-- **Router configuration**: `ASUSWRT-MERLIN-DOCS.md` (if exists)
-- **Quick start**: `QUICKSTART.md` (if exists)
-- **Implementation summary**: `IMPLEMENTATION_SUMMARY.md` (if exists)
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 - **Main README**: `README.md` (project overview, quick start)
 - **Orchestration Details**: `october/README.md` (full orchestration suite details)
 - **Agent Guidelines**: `AGENTS.md` (repository conventions, commit style)
@@ -26,4 +7,3 @@
 - **Router Docs**: `ASUSWRT-MERLIN-DOCS.md` (networking setup, QoS config)
 - **Prompts**: `prompts/` directory (agent instructions)
 - **Schema**: `schemas/agent-handoff-schema.json` (communication protocol)
->>>>>>> Stashed changes

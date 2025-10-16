@@ -2,7 +2,6 @@
 
 ```
 /
-<<<<<<< Updated upstream
 ├── artifacts/              # Agent JSON handoff artifacts (gitignored)
 ├── plans/                  # Research plans (router, OBS, YouTube, site spec)
 ├── prompts/                # Agent prompt files (detailed instructions for each agent)

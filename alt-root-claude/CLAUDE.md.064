@@ -1,17 +1,1 @@
-                             // - Error handling
-```
-
----
-
-## Key Features
-
-### Internationalization (i18n)
-
-- **6 languages**: Swedish (se), English (en), Arabic (ar), Farsi (fa), Chinese (zh), Spanish (es)
-- **Default locale**: Swedish (se)
-- **RTL support**: Automatic for Arabic/Farsi via `dir="rtl"`
-- **Implementation**: react-i18next with JSON translation files
-- **Routing**: `/[locale]/` pattern in Next.js App Router
-- **Translation files**: `src/i18n/locales/{locale}/common.json`
-- **Locale detection**: Browser language detection enabled
 

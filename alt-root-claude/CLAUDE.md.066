@@ -1,11 +1,1 @@
-### YouTube Integration
-
-- **IFrame API**: Full player control via `window.YT`
-- **Policy**: Only one active player at a time (others paused)
-- **No autoplay**: User gesture required (WCAG + policy compliance)
-- **Day 2 logic**: Disable Nodsyd, Nodöst, Nodmidd; show "Ej aktiv idag"
-- **Keyboard controls**:
-  - Space: play/pause active stream
-  - Arrow keys: switch between streams
-  - Escape: close fullscreen
 
