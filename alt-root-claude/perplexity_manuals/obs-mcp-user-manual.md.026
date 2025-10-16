@@ -1,0 +1,11 @@
+For multiple HD streams (1080p30):
+- **Per stream**: 5-8 Mbps upload
+- **Four streams**: 20-32 Mbps total upload required
+- **Recommended**: 40+ Mbps upload for reliability
+
+#### Hardware Specifications
+- **CPU**: Intel i7-9700K or AMD Ryzen 7 3700X (minimum for 4 streams)
+- **RAM**: 32GB for simultaneous multi-stream encoding
+- **GPU**: NVIDIA RTX 3060 or better for hardware encoding
+- **Network**: Gigabit ethernet connection (no WiFi)
+

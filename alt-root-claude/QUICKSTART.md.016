@@ -1,0 +1,10 @@
+---
+
+## Key Commands
+
+```bash
+# Orchestration
+make all              # Full pipeline
+make status           # Check progress
+make clean            # Remove artifacts
+

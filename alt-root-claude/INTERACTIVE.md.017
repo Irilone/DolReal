@@ -1,0 +1,13 @@
+---
+
+## Comparison: Interactive vs API
+
+| | **Interactive** | **API** |
+|---|---|---|
+| **Cost** | Subscription only | Per-token billing |
+| **Setup** | None (already logged in) | API keys required |
+| **Features** | Full web UI | API limitations |
+| **Context** | Persistent sessions | Stateless |
+| **Control** | Manual checkpoints | Automated |
+| **Time** | 50-70 min (active) | 50-70 min (passive) |
+

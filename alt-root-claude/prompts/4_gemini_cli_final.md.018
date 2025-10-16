@@ -1,0 +1,12 @@
+## Features
+- ✅ 4-stream YouTube integration
+- ✅ InfraNodus knowledge graph
+- ✅ 6-language i18n (se, en, ar, fa, zh, es)
+- ✅ WCAG 2.2 AA accessibility
+- ✅ Day 2 single-stream mode
+
+## Performance
+- LCP: 2.1s (target: <2.5s) ✅
+- CLS: 0.08 (target: <0.1) ✅
+- JS bundle: 245KB (target: <250KB) ✅
+

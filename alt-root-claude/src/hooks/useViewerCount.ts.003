@@ -1,0 +1,10 @@
+        const data = await response.json();
+        setCounts(data.counts);
+        setTotal(data.total);
+        setError(null);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Unknown error');
+      } finally {
+        setLoading(false);
+      }
+    }

@@ -1,0 +1,10 @@
+
+  try {
+    const response = await fetch(`${INFRANODUS_API_BASE}/analyze`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({ text, context_id: contextId }),
+    });

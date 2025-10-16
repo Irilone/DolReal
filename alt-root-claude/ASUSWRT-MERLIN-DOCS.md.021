@@ -1,0 +1,10 @@
+
+```bash
+#!/bin/sh
+# /jffs/scripts/firewall-start
+
+logger "Applying custom firewall rules"
+
+# Example: Block specific IP range
+iptables -I INPUT -s 192.168.100.0/24 -j DROP
+

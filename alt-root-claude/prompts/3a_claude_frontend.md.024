@@ -1,0 +1,12 @@
+## OUTPUT FORMAT
+
+Return valid JSON:
+
+```json
+{
+  "metadata": {
+    "agent_id": "claude-frontend",
+    "timestamp": "2025-10-14T...",
+    "execution_time_ms": 0,
+    "status": "completed"
+  },

@@ -1,0 +1,24 @@
+    # Wait for user
+    echo -n "Press ENTER when response is ready in clipboard..."
+    read -r
+
+    # Paste from clipboard
+    echo ""
+    echo -e "${YELLOW}Saving response from clipboard...${NC}"
+    
+    if command -v pbpaste &> /dev/null; then
+        pbpaste > "$output_file"
+    elif command -v xclip &> /dev/null; then
+        xclip -selection clipboard -o > "$output_file"
+    else
+        echo -e "${RED}✗ Could not read from clipboard${NC}"
+        echo -n "Enter path to response file: "
+        read -r response_path
+        if [ -f "$response_path" ]; then
+            cp "$response_path" "$output_file"
+        else
+            echo -e "${RED}✗ File not found: ${response_path}${NC}"
+            return 1
+        fi
+    fi
+

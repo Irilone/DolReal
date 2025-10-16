@@ -1,0 +1,11 @@
+{
+  "header": {
+    "title": "Días sobre Leyes 2025",
+    "logo_alt": "Logo DoL"
+  },
+  "nav": {
+    "home": "Inicio",
+    "schedule": "Horario",
+    "archive": "Archivo",
+    "about": "Acerca de"
+  },

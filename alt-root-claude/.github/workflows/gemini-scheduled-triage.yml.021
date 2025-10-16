@@ -1,0 +1,10 @@
+
+              const issueNumber = issue.issue_number;
+              if (!issueNumber) {
+                core.debug(`Skipping issue with no data: ${JSON.stringify(issue)}`);
+                continue;
+              }
+
+              // Extract and reject invalid labels - we do this just in case
+              // someone was able to prompt inject malicious labels.
+              let labelsToSet = (issue.labels_to_set || [])

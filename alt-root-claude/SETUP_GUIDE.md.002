@@ -1,0 +1,10 @@
+## Prerequisites
+
+### System Requirements
+
+- **Node.js**: v18+ (for orchestration)
+- **Bun**: Latest version (recommended) or npm/yarn
+- **Modern Browser**: Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
+- **Python 3**: For local HTTP server (optional)
+- **Git**: For version control
+

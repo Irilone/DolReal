@@ -1,0 +1,10 @@
+// InfraNodus Graph API
+GET /api/graph?nodeId=string
+Response: {
+  embedUrl: string;
+  fallbackIframe: string;
+}
+```
+
+### 3. Core Scaffolding Files
+

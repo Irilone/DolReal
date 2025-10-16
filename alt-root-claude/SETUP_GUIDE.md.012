@@ -1,0 +1,11 @@
+### Development Setup
+
+#### Option 1: Python HTTP Server
+
+```bash
+cd october
+python3 -m http.server 8000
+```
+
+Open: http://localhost:8000
+

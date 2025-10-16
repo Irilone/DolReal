@@ -1,0 +1,10 @@
+#### C. Checksums
+Generate SHA-256 hashes:
+```
+dol-2025-v2.0.0.zip → sha256:abc123...
+```
+
+#### D. Release Notes
+```markdown
+# DoL 2025 v2.0.0
+

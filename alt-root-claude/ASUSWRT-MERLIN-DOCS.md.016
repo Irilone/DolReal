@@ -1,0 +1,10 @@
+```bash
+# SSH into router
+ssh admin@192.168.1.1
+
+# Navigate to scripts directory
+cd /jffs/scripts
+
+# Create script
+nano my-script
+

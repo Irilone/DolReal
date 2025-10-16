@@ -1,0 +1,19 @@
+4. **Check Logs**: View system log
+   ```bash
+   # View log via web interface:
+   # System Log > General Log
+
+   # Or via SSH:
+   cat /tmp/syslog.log | grep "my-script"
+   ```
+
+5. **Error Handling**: Add checks
+   ```bash
+   if [ -f /jffs/config/myconfig ]; then
+       logger "Config found, proceeding"
+   else
+       logger "ERROR: Config not found"
+       exit 1
+   fi
+   ```
+

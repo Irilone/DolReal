@@ -1,0 +1,16 @@
+        console.log(
+          `${agent.id}: ${exists ? "✓ Complete" : "✗ Pending"} (${agent.outputArtifact})`,
+        );
+      }
+    })();
+    break;
+  case "clean":
+    (async () => {
+      await fs.rm("artifacts", { recursive: true, force: true });
+      log("Artifacts cleaned");
+    })();
+    break;
+  default:
+    console.log(`
+DoL 2025 Multi-Agent Orchestrator
+

@@ -1,0 +1,10 @@
+  }
+}
+
+async function runAgent(agentId: keyof typeof AGENTS) {
+  const agent = AGENTS[agentId];
+  if (!agent) {
+    console.error(`Unknown agent: ${agentId}`);
+    console.error(`Available agents: ${Object.keys(AGENTS).join(', ')}`);
+    process.exit(1);
+  }

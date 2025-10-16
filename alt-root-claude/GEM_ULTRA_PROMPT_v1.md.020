@@ -1,0 +1,11 @@
+Launch (Nov 6-7):
+- [ ] Event day monitoring
+- [ ] Hot-fix capability ready
+```
+
+### 3. 🛠️ CODE FIXES (Ready to Apply)
+Provide copy-paste ready fixes for:
+- StreamCarousel.tsx (complete fixed version)
+- Any other files with critical issues
+- package.json scripts (add missing typecheck, etc)
+

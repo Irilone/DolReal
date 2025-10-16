@@ -1,0 +1,10 @@
+
+async function loadArtifact(filePath: string): Promise<unknown> {
+  const content = await fs.readFile(filePath, "utf-8");
+  return JSON.parse(content);
+}
+
+async function saveArtifact(filePath: string, data: unknown): Promise<void> {
+  await fs.writeFile(filePath, JSON.stringify(data, null, 2), "utf-8");
+}
+

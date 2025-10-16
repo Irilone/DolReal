@@ -1,0 +1,12 @@
+### Phase 1: Understanding (5-10 minutes thinking time)
+- Read entire codebase context
+- Map component relationships
+- Identify critical paths
+- Understand business requirements
+
+### Phase 2: Analysis (10-15 minutes thinking time)
+- Diagnose root causes (not just symptoms)
+- Consider edge cases and failure modes
+- Evaluate trade-offs between solutions
+- Think about second-order effects
+

@@ -1,0 +1,11 @@
+bun run typecheck
+
+# Run linter
+bun run lint
+
+# Try production build (will fail due to StreamCarousel error)
+bun run build
+
+# Run dev server (may work despite build error)
+bun run dev
+

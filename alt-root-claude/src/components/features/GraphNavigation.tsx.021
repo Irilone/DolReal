@@ -1,0 +1,21 @@
+      {/* Selected Node Info */}
+      {selectedNode && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 glass-strong p-4 rounded-lg max-w-md">
+          {(() => {
+            const node = nodes.find((n) => n.id === selectedNode);
+            if (!node) return null;
+            return (
+              <div>
+                <h3 className="text-lg font-semibold text-white mb-1">{node.label}</h3>
+                <p className="text-sm text-white/70 capitalize mb-2">{node.type}</p>
+                <p className="text-xs text-white/60">
+                  {node.connections?.length || 0} connections
+                </p>
+              </div>
+            );
+          })()}
+        </div>
+      )}
+    </div>
+  );
+}

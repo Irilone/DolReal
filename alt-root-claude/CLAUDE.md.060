@@ -1,0 +1,10 @@
+### Internationalization Architecture
+
+**Routing**: `/[lang]/*` pattern (e.g., `/se/about`, `/en/schedule`)
+
+**Languages**: Swedish (se - default), English (en), Arabic (ar), Farsi (fa), Chinese (zh), Spanish (es)
+
+**RTL Support**: Arabic/Farsi automatically get `dir="rtl"` via `getLocaleDirection()` in `src/lib/utils/locale.ts`
+
+**Translation Files**: `src/i18n/locales/{lang}.json` - structured by feature (nav, streams, footer, etc.)
+

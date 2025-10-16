@@ -1,0 +1,30 @@
+## Data Flow
+
+### Initialization Flow
+
+```
+User Opens Application
+         │
+         ▼
+index.html loads
+         │
+         ├─→ style.css applied
+         │
+         ├─→ utility.js loaded
+         │
+         ├─→ validation.js loaded
+         │
+         ├─→ gemini-api-module.js loaded
+         │
+         └─→ scripts.js loaded
+                  │
+                  ▼
+         DOMContentLoaded event
+                  │
+                  ├─→ Initialize UI
+                  │
+                  ├─→ Check for existing API key
+                  │        │
+                  │        ├─ Found → Auto-initialize GeminiAPI
+                  │        │
+                  │        └─ Not Found → Show config form

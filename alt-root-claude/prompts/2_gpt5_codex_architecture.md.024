@@ -1,0 +1,17 @@
+    ]
+  }
+}
+```
+
+---
+
+## VALIDATION CHECKLIST
+
+Before outputting, verify:
+- [ ] Component tree is complete and balanced between agents
+- [ ] API contracts define all frontend/backend communication
+- [ ] Scaffolding files are production-ready
+- [ ] TypeScript types cover all domain entities
+- [ ] Task allocation has no overlap or gaps
+- [ ] Performance budgets are achievable with this architecture
+

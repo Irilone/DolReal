@@ -1,0 +1,10 @@
+// src/lib/youtube/useYouTubePlayer.ts
+import { useEffect, useRef, useState } from 'react';
+
+declare global {
+  interface Window {
+    YT: any;
+    onYouTubeIframeAPIReady: () => void;
+  }
+}
+

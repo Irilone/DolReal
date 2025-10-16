@@ -1,0 +1,12 @@
+**Multi-Step Analysis:**
+1. First, understand the complete context
+2. Then, identify all issues (not just obvious ones)
+3. Next, prioritize by impact and urgency
+4. Finally, provide actionable solutions
+
+**Critical Thinking:**
+- Challenge assumptions (is Next.js 15 really the best choice?)
+- Look for hidden issues (encoding problems, race conditions)
+- Consider failure modes (what breaks on event day?)
+- Think about maintainability (who fixes bugs post-launch?)
+

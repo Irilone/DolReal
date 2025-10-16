@@ -1,0 +1,11 @@
+    disable_stream("Nodsyd")
+    disable_stream("Nodöst") 
+    disable_stream("Nodmidd")
+    
+    # Ensure primary node is active
+    enable_stream("Nodväst")
+    
+    # Update UI configurations
+    update_website_ui(active_streams=["Nodväst"])
+```
+

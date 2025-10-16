@@ -1,0 +1,10 @@
+### Run Full Orchestration
+
+```bash
+# Complete pipeline (50-70 minutes)
+make all
+
+# Or using npm scripts
+bun run orchestrate
+```
+

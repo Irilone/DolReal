@@ -1,0 +1,16 @@
+    {
+      year: 2022,
+      title: 'Dagar om Lagar 2022',
+      description: 'Pandemilagstiftning och demokrati',
+      videos: 18,
+      views: 10200,
+    },
+  ];
+
+  return (
+    <div className="container mx-auto px-4 py-12">
+      <div className="mx-auto max-w-4xl">
+        <h1 className="mb-8 text-center text-4xl font-bold text-slate-900 dark:text-slate-100">
+          {t('nav.archive')}
+        </h1>
+

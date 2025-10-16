@@ -1,0 +1,10 @@
+    body: JSON.stringify({
+      model: apiModel,
+      max_tokens: 8192,
+      temperature: 0.7,
+      messages: [{
+        role: 'user',
+        content: prompt,
+      }],
+    }),
+  });

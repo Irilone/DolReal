@@ -39,7 +39,7 @@ NC := \033[0m # No Color
 #############################################
 
 ## all: Run complete orchestration pipeline (50-70 minutes)
-all: check-env dirs gemini-ultra gpt5-codex claude-parallel gemini-cli
+all: dirs gemini-ultra gpt5-codex claude-parallel gemini-cli
 	@echo "$(GREEN)✓ Full orchestration complete!$(NC)"
 	@echo "$(CYAN)Release artifacts:$(NC)"
 	@ls -lh $(RELEASES_DIR)/*.zip 2>/dev/null || echo "No release found"
@@ -67,17 +67,6 @@ help:
 	@echo "  make logs             - View all agent logs"
 	@echo "  make help             - Show this message"
 
-#############################################
-# Environment Check
-#############################################
-
-## check-env: Verify required environment variables
-check-env:
-	@echo "$(BLUE)Checking environment variables...$(NC)"
-	@test -n "$$GEMINI_API_KEY" || (echo "$(RED)✗ GEMINI_API_KEY not set$(NC)" && exit 1)
-	@test -n "$$OPENAI_API_KEY" || (echo "$(RED)✗ OPENAI_API_KEY not set$(NC)" && exit 1)
-	@test -n "$$ANTHROPIC_API_KEY" || (echo "$(RED)✗ ANTHROPIC_API_KEY not set$(NC)" && exit 1)
-	@echo "$(GREEN)✓ All API keys configured$(NC)"
 
 #############################################
 # Directory Setup
@@ -97,7 +86,8 @@ dirs:
 #############################################
 
 ## gemini-ultra: Run Agent 1 - Gemini 2.5 Pro Ultra (Research & Planning)
-gemini-ultra: check-env dirs
+gemini-ultra: dirs
+	@test -n "$$GEMINI_API_KEY" || (echo "$(RED)✗ GEMINI_API_KEY not set$(NC)" && exit 1)
 	@echo "$(MAGENTA)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
 	@echo "$(MAGENTA)  Agent 1: Gemini 2.5 Pro Ultra$(NC)"
 	@echo "$(MAGENTA)  Research & Planning (~10-15 min)$(NC)"
@@ -110,7 +100,8 @@ gemini-ultra: check-env dirs
 	@echo "$(GREEN)✓ Agent 1 complete: $(ARTIFACT_1)$(NC)"
 
 ## gpt5-codex: Run Agent 2 - GPT-5 Codex (System Architecture)
-gpt5-codex: $(ARTIFACT_1)
+gpt5-codex: dirs $(ARTIFACT_1)
+	@test -n "$$OPENAI_API_KEY" || (echo "$(RED)✗ OPENAI_API_KEY not set$(NC)" && exit 1)
 	@echo "$(MAGENTA)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
 	@echo "$(MAGENTA)  Agent 2: GPT-5 Codex$(NC)"
 	@echo "$(MAGENTA)  System Architecture (~5-10 min)$(NC)"
@@ -124,7 +115,8 @@ gpt5-codex: $(ARTIFACT_1)
 	@echo "$(GREEN)✓ Agent 2 complete: $(ARTIFACT_2)$(NC)"
 
 ## claude-frontend: Run Agent 3a - Claude Sonnet 4.5 #1 (Frontend)
-claude-frontend: $(ARTIFACT_1) $(ARTIFACT_2)
+claude-frontend: dirs $(ARTIFACT_1) $(ARTIFACT_2)
+	@test -n "$$ANTHROPIC_API_KEY" || (echo "$(RED)✗ ANTHROPIC_API_KEY not set$(NC)" && exit 1)
 	@echo "$(MAGENTA)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
 	@echo "$(MAGENTA)  Agent 3a: Claude Sonnet 4.5 #1$(NC)"
 	@echo "$(MAGENTA)  Frontend Implementation (~15-20 min)$(NC)"
@@ -138,7 +130,8 @@ claude-frontend: $(ARTIFACT_1) $(ARTIFACT_2)
 	@echo "$(GREEN)✓ Agent 3a complete: $(ARTIFACT_3A)$(NC)"
 
 ## claude-backend: Run Agent 3b - Claude Sonnet 4.5 #2 (Backend)
-claude-backend: $(ARTIFACT_1) $(ARTIFACT_2)
+claude-backend: dirs $(ARTIFACT_1) $(ARTIFACT_2)
+	@test -n "$$ANTHROPIC_API_KEY" || (echo "$(RED)✗ ANTHROPIC_API_KEY not set$(NC)" && exit 1)
 	@echo "$(MAGENTA)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
 	@echo "$(MAGENTA)  Agent 3b: Claude Sonnet 4.5 #2$(NC)"
 	@echo "$(MAGENTA)  Backend & Documentation (~15-20 min)$(NC)"
@@ -152,7 +145,8 @@ claude-backend: $(ARTIFACT_1) $(ARTIFACT_2)
 	@echo "$(GREEN)✓ Agent 3b complete: $(ARTIFACT_3B)$(NC)"
 
 ## claude-parallel: Run both Claude agents in parallel
-claude-parallel: $(ARTIFACT_1) $(ARTIFACT_2)
+claude-parallel: dirs $(ARTIFACT_1) $(ARTIFACT_2)
+	@test -n "$$ANTHROPIC_API_KEY" || (echo "$(RED)✗ ANTHROPIC_API_KEY not set$(NC)" && exit 1)
 	@echo "$(MAGENTA)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
 	@echo "$(MAGENTA)  Running Claude agents in parallel...$(NC)"
 	@echo "$(MAGENTA)  Agent 3a & 3b (~15-20 min)$(NC)"
@@ -176,6 +170,7 @@ claude-parallel: $(ARTIFACT_1) $(ARTIFACT_2)
 
 ## gemini-cli: Run Agent 4 - Gemini 2.5 Pro CLI (Final Integration)
 gemini-cli: $(ARTIFACT_3A) $(ARTIFACT_3B)
+	@test -n "$$GEMINI_API_KEY" || (echo "$(RED)✗ GEMINI_API_KEY not set$(NC)" && exit 1)
 	@echo "$(MAGENTA)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━$(NC)"
 	@echo "$(MAGENTA)  Agent 4: Gemini 2.5 Pro CLI$(NC)"
 	@echo "$(MAGENTA)  Final Integration (~5-10 min)$(NC)"

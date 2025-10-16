@@ -1,0 +1,13 @@
+
+For conference setups requiring multiple simultaneous streams:
+
+#### Creating Stream Events
+1. In YouTube Studio, navigate to **Content > Live**
+2. Click **Schedule stream** 
+3. Configure each stream:
+   - **Title**: Use conference node names (Nodväst, Nodsyd, Nodöst, Nodmidd)
+   - **Description**: Include conference details
+   - **Visibility**: Set to Public or Unlisted as needed
+   - **Category**: Select appropriate category
+4. Generate unique stream keys for each event
+

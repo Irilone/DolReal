@@ -1,0 +1,17 @@
+#### Claude Configuration for InfraNodus
+```json
+{
+  "mcpServers": {
+    "infranodus": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@smithery/cli@latest",
+        "run", 
+        "@infranodus/mcp-server-infranodus",
+        "--key",
+        "YOUR_SMITHERY_API_KEY",
+        "--profile",
+        "DoL_2025_Conference"
+      ]
+    }

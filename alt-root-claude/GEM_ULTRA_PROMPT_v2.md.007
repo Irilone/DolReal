@@ -1,0 +1,18 @@
+
+### Error Details
+```
+File: src/components/features/StreamCarousel.tsx
+Error: Module parse failed: Unterminated string constant (105:58)
+Location: Lines 132-135
+
+Code (suspected):
+<button
+  onClick={handlePrev}
+  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 glass-strong rounded-full p-3
+             opacity-0 group-hover:opacity-100 transition-opacity duration-300
+             hover:scale-110 hover:shadow-glow focus:outline-none focus:ring-2
+             focus:ring-primary/50"
+  aria-label="Previous stream"
+>
+```
+

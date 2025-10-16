@@ -1,0 +1,16 @@
+### Getting API Keys
+
+1. **Gemini API**: [Google AI Studio](https://aistudio.google.com/apikey)
+2. **OpenAI API**: [OpenAI Platform](https://platform.openai.com/api-keys)
+3. **Anthropic API**: [Anthropic Console](https://console.anthropic.com/)
+
+### Security Best Practices
+
+✅ **DO:**
+- Store API keys in `.env` files (never in code)
+- Use environment variables for production
+- Mask API keys in UI (type="password")
+- Use HTTPS for production deployments
+- Implement rate limiting
+- Monitor API usage and costs
+

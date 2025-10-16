@@ -1,0 +1,14 @@
+#!/usr/bin/env bun
+/**
+ * Gemini API Wrapper for DoL 2025 Multi-Agent Orchestration
+ *
+ * Usage:
+ *   bun run scripts/gem.ts --model <model> --input <file> --output <file>
+ *
+ * Example:
+ *   bun run scripts/gem.ts \
+ *     --model gemini-2.5-pro-ultra \
+ *     --input prompts/1_gemini_ultra_research.md \
+ *     --output artifacts/1_gemini_ultra_research.json
+ */
+

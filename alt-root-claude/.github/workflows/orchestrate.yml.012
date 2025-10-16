@@ -1,0 +1,11 @@
+      - name: Reorganize Artifacts
+        run: |
+          mkdir -p artifacts
+          cp artifacts-download/research-bundle/artifacts/*.json artifacts/ || true
+          cp artifacts-download/architecture/*.json artifacts/ || true
+          cp artifacts-download/claude-frontend-output/*.json artifacts/ || true
+          cp artifacts-download/claude-backend-output/*.json artifacts/ || true
+
+      - name: Install dependencies
+        run: bun install
+

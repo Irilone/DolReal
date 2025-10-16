@@ -1,0 +1,10 @@
+
+    if (!response.ok) {
+      throw new Error(`InfraNodus API error: ${response.statusText}`);
+    }
+
+    const data: InfraNodusAnalyzeResponse = await response.json();
+    
+    // Cache the result for 5 minutes
+    setCachedData(contextId, data, 5 * 60 * 1000);
+    

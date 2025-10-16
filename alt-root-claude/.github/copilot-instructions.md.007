@@ -1,0 +1,11 @@
+# Verify environment
+make check-env
+# OR
+bun run scripts/check-env.ts
+```
+
+### Development
+```bash
+# Run full orchestration (50-70 minutes)
+make all
+# OR

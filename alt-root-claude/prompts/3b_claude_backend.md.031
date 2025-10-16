@@ -1,0 +1,11 @@
+## Tillgänglighet
+- Tangentbordsnavigering: Tab, Enter, Space
+- Skärmläsarstöd
+- WCAG 2.2 AA-kompatibel
+```
+
+### 5. Testing Setup
+
+#### A. Jest Configuration
+```typescript
+// jest.config.ts

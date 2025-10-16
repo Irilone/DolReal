@@ -1,0 +1,11 @@
+
+  return text;
+}
+
+async function executeClaude(
+  prompt: string,
+  model: string,
+  apiKey: string
+): Promise<string> {
+  console.log(`   Calling Claude API (${model})...`);
+

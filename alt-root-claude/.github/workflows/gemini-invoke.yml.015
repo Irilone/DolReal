@@ -1,0 +1,10 @@
+            3. **Post the Plan**: Use `mcp__github__add_issue_comment` to post your plan.
+
+            ### B. Await Human Approval
+
+            1. **Halt Execution**: After posting your plan, your primary task is to wait. Do not proceed.
+
+            2. **Monitor for Approval**: Periodically use `mcp__github__get_issue_comments` to check for a new comment from a maintainer that contains the exact phrase `/approve`.
+
+            3. **Proceed or Terminate**: If approval is granted, move to the Execution phase. If the issue is closed or a comment says `/deny`, terminate your workflow gracefully.
+

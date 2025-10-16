@@ -1,0 +1,11 @@
+
+/* ==========================================
+   SPACE BACKGROUND WITH STARS & NEBULAS
+   Low-resource CSS animations optimized for performance
+   ========================================== */
+
+@layer base {
+  body {
+    background: linear-gradient(
+      180deg,
+      #000000 0%,

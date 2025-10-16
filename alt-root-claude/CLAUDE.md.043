@@ -1,0 +1,12 @@
+All artifacts conform to `schemas/agent-handoff-schema.json` - this defines the communication protocol between agents.
+
+### Agent Responsibilities
+
+| Agent               | Outputs                          | Purpose                                                              |
+| ------------------- | -------------------------------- | -------------------------------------------------------------------- |
+| **Gemini Ultra**    | Research bundle + 6 plan files   | Deep research, policy verification (WCAG, YouTube), manual gathering |
+| **GPT-5 Codex**     | Architecture + scaffolding       | System design, component tree, API contracts, core config files      |
+| **Claude Frontend** | Components + i18n + styles       | React/Next.js UI, Tailwind, accessibility, YouTube integration       |
+| **Claude Backend**  | API routes + integrations + docs | Next.js API routes, YouTube client, InfraNodus MCP, 3 manuals        |
+| **Gemini CLI**      | Final build + release            | Merge outputs, run build/tests, performance audits, create release   |
+

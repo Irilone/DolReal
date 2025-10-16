@@ -1,0 +1,11 @@
+
+## Quick Start
+\`\`\`bash
+bun install
+bun dev
+\`\`\`
+
+## Environment Variables
+\`\`\`bash
+cp .env.example .env
+# Edit .env with your API keys

@@ -1,0 +1,12 @@
+2. **Architecture Assessment**
+   - Is Next.js 15 App Router the right choice for this use case?
+   - Should we use Server Components more extensively?
+   - Is Zustand sufficient or should we use React Query?
+   - Are there any critical architectural flaws?
+
+3. **Production Readiness**
+   - What's missing from the deployment checklist?
+   - Are there any edge cases we haven't considered?
+   - What could break on event day (Nov 6-7)?
+   - How resilient is this to YouTube API failures?
+

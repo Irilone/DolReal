@@ -1,0 +1,11 @@
+  const overallStart = Date.now();
+
+  log('═══════════════════════════════════════════════════════', 'magenta');
+  log('  Anthropic API Wrapper v2.0', 'magenta');
+  log('═══════════════════════════════════════════════════════', 'magenta');
+  log(`\nModel: ${args.model}`, 'cyan');
+  log(`Input: ${args.input}`, 'cyan');
+  log(`Output: ${args.output}`, 'cyan');
+
+  try {
+    // Read input prompt

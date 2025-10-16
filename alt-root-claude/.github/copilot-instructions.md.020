@@ -1,0 +1,11 @@
+### Agent Pipeline (v2.0)
+This project uses file-based async communication between 4 specialized AI agents:
+
+1. **Gemini 2.5 Pro Ultra** - Research & Planning (10-15 min)
+   - Outputs: `research_bundle.json` + 6 plan files
+   - Prompts: `prompts/1_gemini_ultra_research.md`
+
+2. **GPT-5 Codex** - System Architecture (5-10 min)
+   - Outputs: `architecture.json` + scaffolding
+   - Prompts: `prompts/2_gpt5_codex_architecture.md`
+

@@ -1,0 +1,27 @@
+      - name: Upload Release Notes
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-notes
+          path: release-notes.md
+          retention-days: 90
+
+  status-summary:
+    name: Pipeline Status Summary
+    runs-on: ubuntu-latest
+    needs: [agent-1-research, agent-2-architecture, agent-3-parallel, agent-4-integration]
+    if: always()
+    steps:
+      - name: Generate Summary
+        run: |
+          echo "# Multi-Agent Orchestration Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## Agent Status" >> $GITHUB_STEP_SUMMARY
+          echo "| Agent | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Gemini Ultra (Research) | ${{ needs.agent-1-research.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| GPT-5 Codex (Architecture) | ${{ needs.agent-2-architecture.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Claude Frontend | ${{ needs.agent-3-parallel.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Claude Backend | ${{ needs.agent-3-parallel.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Gemini CLI (Integration) | ${{ needs.agent-4-integration.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+

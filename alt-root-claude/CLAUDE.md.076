@@ -1,0 +1,10 @@
+# Run tests
+bun test
+
+# Lint & format
+trunk check
+
+# Type check
+bun run typecheck
+
+# Build

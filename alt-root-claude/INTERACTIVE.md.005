@@ -1,0 +1,10 @@
+### Agent 4: Gemini 2.5 Pro CLI (Integration)
+- **Open**: https://gemini.google.com/app
+- **Time**: ~5-10 minutes
+- **Output**: `artifacts/4_gemini_cli_final.json`
+- **Note**: Receives both Claude outputs
+
+---
+
+## Requirements
+

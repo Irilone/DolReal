@@ -1,0 +1,11 @@
+## 📞 Support
+
+If Gemini analysis fails:
+1. Check GEMINI_API_KEY is valid
+2. Verify API quota hasn't been exhausted
+3. Try web UI instead of CLI
+4. Break prompt into smaller phases
+5. Fall back to manual code review
+
+---
+

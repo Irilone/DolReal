@@ -1,0 +1,10 @@
+## ➕ Suggested Additional MCPs
+
+### 4. joyloop
+- **Purpose:** DX metrics and team ergonomics (HMR feedback, config fatigue, error surfacing).
+- **Installation:** Auto-load with any DX prompt.
+- **Prompt example:**
+```json
+"task": "Measure developer wait-time per HMR cycle and config complexity in Webpack vs Vite."
+```
+

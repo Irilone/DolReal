@@ -1,0 +1,10 @@
+### Deployment Steps
+
+```bash
+# Install dependencies
+bun install
+
+# Build production bundle
+bun run build
+
+# Start production server

@@ -1,0 +1,10 @@
+GET /api/streams
+Response: {
+  streams: Array<{
+    id: string;
+    name: string;
+    youtubeId: string;
+    active: boolean; // day-specific logic
+  }>
+}
+

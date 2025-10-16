@@ -1,0 +1,16 @@
+**Audio Settings:**
+- Sample Rate: 48kHz
+- Channels: Stereo
+- Bitrate: 128 Kbps
+
+### YouTube Integration
+
+1. Create 4 YouTube channels (one per node)
+2. Enable YouTube Live on each channel
+3. Copy Stream Key for each channel
+4. Configure RTMP outputs in OBS:
+   - Nodväst: rtmp://a.rtmp.youtube.com/live2/{stream_key_1}
+   - Nodsyd: rtmp://a.rtmp.youtube.com/live2/{stream_key_2}
+   - Nodöst: rtmp://a.rtmp.youtube.com/live2/{stream_key_3}
+   - Nodmidd: rtmp://a.rtmp.youtube.com/live2/{stream_key_4}
+

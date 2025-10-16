@@ -1,0 +1,17 @@
+---
+
+## 🎯 SUCCESS CRITERIA
+
+Your analysis is successful when Gemini provides:
+
+✅ **Immediate Fix for StreamCarousel** (line-by-line corrected code)
+✅ **Build Verification** (`bun run build` passes)
+✅ **Performance Report** (Lighthouse scores, bundle size)
+✅ **Security Clearance** (no critical vulnerabilities)
+✅ **Accessibility Status** (WCAG 2.2 AA compliance level)
+✅ **Deployment Recommendation** (Optimize/Rebuild/Port with reasoning)
+✅ **Timeline to Launch** (realistic 20-day plan)
+✅ **Risk Assessment** (probability of success, failure modes)
+✅ **Code Patches** (copy-paste ready fixes)
+✅ **Testing Checklist** (manual + automated tests)
+

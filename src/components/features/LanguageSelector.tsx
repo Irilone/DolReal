@@ -1,0 +1,44 @@
+'use client';
+
+import { useRouter, usePathname } from 'next/navigation';
+import type { Locale } from '@/types/i18n';
+import { LOCALE_CONFIGS } from '@/types/i18n';
+
+interface LanguageSelectorProps {
+  currentLocale: Locale;
+}
+
+export function LanguageSelector({ currentLocale }: LanguageSelectorProps) {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLanguageChange = (newLocale: Locale) => {
+    const newPath = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
+    router.push(newPath);
+  };
+
+  return (
+    <div className="relative inline-block">
+      <select
+        value={currentLocale}
+        onChange={(e) => handleLanguageChange(e.target.value as Locale)}
+        className="glass-strong appearance-none rounded-lg px-4 py-2 pr-10 text-sm font-medium text-white
+                   hover:scale-105 transition-transform cursor-pointer
+                   focus:outline-none focus:ring-2 focus:ring-primary/50
+                   border border-white/20"
+        aria-label="Select language"
+      >
+        {Object.values(LOCALE_CONFIGS).map((locale) => (
+          <option key={locale.code} value={locale.code} className="bg-slate-900 text-white">
+            {locale.flag} {locale.nativeName}
+          </option>
+        ))}
+      </select>
+      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-white/70">
+        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </div>
+  );
+}

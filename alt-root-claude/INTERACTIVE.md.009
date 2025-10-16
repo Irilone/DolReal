@@ -1,0 +1,10 @@
+---
+
+## Troubleshooting
+
+### Clipboard not working
+```bash
+# macOS - test clipboard
+echo "test" | pbcopy && pbpaste
+
+# Linux - install xclip

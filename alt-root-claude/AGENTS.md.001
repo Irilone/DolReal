@@ -1,0 +1,16 @@
+# Repository Guidelines
+
+## Project Structure & Module Organization
+
+Root orchestration lives in `Makefile`, `.trunk/`, `.github/workflows/`, and `scripts/`. Core Next.js code sits in `src/` (app routes, components, hooks) with shared schemas in `schemas/`. Store generated research in `artifacts/` (e.g., `research_bundle.json`), never `october/`; keep static assets in `public/` and manuals in `perplexity_manuals/`. Prompts and plans belong in `prompts/` and `plans/`, while integration fixtures live in `tests/`. Retain prototype screens in `october/dol.tsx`, `october/alt-dol.tsx`, and `october/dol-2.tsx` until the production flow replaces them. Use `docs/` for references and `logs/` for automation output.
+
+## Build, Test, and Development Commands
+
+- `npm install`: install workspace dependencies.
+- `npm run gem:research`: refresh Gemini research bundles and planning docs.
+- `npm run gem:flash`: regenerate the Next.js shell from prompts.
+- `npm run gem:pro`: integrate Gemini outputs and run hardening passes.
+- `npm run orchestrate` / `make all`: execute the full A→B→C pipeline.
+- `trunk check`: apply Prettier, ESLint, and Markdown/JSON linting.
+- `npm test`: run Node and React suites; add `NODE_OPTIONS=--test` for quick smoke runs.
+

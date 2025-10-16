@@ -1,0 +1,30 @@
+### Project Structure
+
+```
+/
+<<<<<<< Updated upstream
+├── artifacts/              # Agent JSON handoff artifacts (gitignored)
+├── plans/                  # Research plans (router, OBS, YouTube, site spec)
+├── prompts/                # Agent prompt files (detailed instructions for each agent)
+├── schemas/                # JSON schema for agent communication
+│   └── agent-handoff-schema.json  # Contract between agents
+├── scripts/                # Orchestration scripts (TypeScript/Bun)
+│   ├── gem.ts             # Gemini API wrapper
+│   ├── anthropic.ts       # Claude API wrapper
+│   ├── openai.ts          # OpenAI API wrapper
+│   ├── orchestrate.ts     # Main orchestrator (coordinates all agents)
+│   └── check-env.ts       # Environment validation
+├── src/                    # Next.js 15 application source
+│   ├── app/               # App Router (pages + API routes + layouts)
+│   │   ├── [lang]/        # Localized routes (se, en, ar, fa, zh, es)
+│   │   │   ├── layout.tsx # Lang-specific layout with RTL support
+│   │   │   ├── page.tsx   # Home page
+│   │   │   ├── about/     # About page
+│   │   │   ├── archive/   # Archive page
+│   │   │   └── schedule/  # Schedule page
+│   │   ├── api/           # API routes
+│   │   │   ├── streams/route.ts   # GET /api/streams?day=1|2
+│   │   │   ├── graph/route.ts     # GET /api/graph?nodeId=string
+│   │   │   └── health/route.ts    # GET /api/health
+│   │   ├── layout.tsx     # Root layout
+│   │   └── globals.css    # Global styles

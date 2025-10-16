@@ -1,0 +1,15 @@
+                  }
+                }
+              }
+            }
+          },
+          "api_contracts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "endpoint": { "type": "string" },
+                "method": { "type": "string" },
+                "request_schema": { "type": "object" },
+                "response_schema": { "type": "object" }
+              }

@@ -1,0 +1,30 @@
+                  │
+                  └─→ Update system status
+```
+
+### Content Generation Flow
+
+```
+User enters prompt
+         │
+         ▼
+Click "Generera innehåll"
+         │
+         ▼
+handleGenerateContent()
+         │
+         ├─→ Validate input
+         │
+         ├─→ Show loading state
+         │
+         └─→ GeminiAPI.generateContent()
+                  │
+                  ├─→ Build request payload
+                  │
+                  ├─→ fetchWithRetry()
+                  │        │
+                  │        ├─→ Attempt 1
+                  │        │        │
+                  │        │        ├─ Success → Return
+                  │        │        │
+                  │        │        └─ Fail → Retry

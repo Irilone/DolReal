@@ -1,0 +1,14 @@
+## Conference Content Analysis
+
+### Pre-Conference Planning
+
+#### Speaker Abstract Analysis
+```
+Workflow:
+1. Collect all speaker abstracts
+2. Generate knowledge graph: "Create a knowledge graph from these conference abstracts"
+3. Identify clusters: "Show me the main topical clusters"
+4. Find gaps: "What content gaps exist in our program?"
+5. Generate recommendations: "Suggest additional speakers or topics"
+```
+

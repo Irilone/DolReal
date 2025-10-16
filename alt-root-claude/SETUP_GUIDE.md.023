@@ -1,0 +1,10 @@
+### Orchestration Validation
+
+```bash
+# Quick environment check
+make check-env
+
+# Test Gemini connection
+curl "https://generativelanguage.googleapis.com/v1beta/models?key=$GEMINI_API_KEY"
+
+# Verify artifacts directory

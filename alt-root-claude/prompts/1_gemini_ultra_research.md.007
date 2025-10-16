@@ -1,0 +1,12 @@
+#### `obs_plan.md`
+- Multi-RTMP plugin setup
+- Scene collection structure
+- Audio routing for 4 streams
+- Performance optimization
+
+#### `yt_plan.md`
+- Event creation workflow
+- Stream key management
+- Concurrent stream policy compliance
+- Day 2 logic (only Nodväst active)
+

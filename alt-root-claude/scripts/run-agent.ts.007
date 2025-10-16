@@ -1,0 +1,13 @@
+  }
+
+  // Try to parse the entire text as JSON
+  try {
+    return JSON.parse(text);
+  } catch (e) {
+    // If all else fails, return the raw text
+    console.log(`Warning: Could not parse JSON from response. Saving raw output.`);
+    return {
+      raw_output: text,
+      parse_error: true,
+      error_message: `Failed to extract JSON: ${e}`,
+    };

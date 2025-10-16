@@ -1,0 +1,11 @@
+  const count = streams?.length || 0;
+  return {
+    count,
+    withinLimit: count <= 12, // YouTube's limit
+  };
+}
+```
+
+#### B. InfraNodus Integration
+```typescript
+// src/lib/infranodus/client.ts

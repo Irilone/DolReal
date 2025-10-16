@@ -1,0 +1,11 @@
+
+### First-Time Setup
+
+```bash
+<<<<<<< Updated upstream
+# 1. Install Bun
+=======
+# Clone repository
+git clone <repo-url>
+cd DolReal
+

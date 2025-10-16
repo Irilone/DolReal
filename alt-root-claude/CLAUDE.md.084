@@ -1,0 +1,10 @@
+- **Languages**: Swedish (default), English, Arabic, Farsi, Chinese, Spanish
+- **Routing**: `/[locale]/` pattern in App Router
+- **RTL**: Automatic for ar/fa via CSS
+
+## Troubleshooting
+
+### Agent Execution Fails
+
+```bash
+# Check logs

@@ -1,0 +1,17 @@
+1. **OBS Studio** - Video capture and streaming software
+2. **YouTube Live** - 4 separate channels for simultaneous streams
+3. **ASUS RT-AX86U Pro Router** - Network QoS and bandwidth management
+4. **Next.js 15 Web Application** - Live stream viewer with 6-language support
+5. **InfraNodus API** - Knowledge graph visualization
+
+### Data Flow
+
+```
+OBS Studio (4 instances) 
+  → Multiple RTMP Outputs Plugin 
+  → YouTube Live (4 channels)
+  → YouTube Data API v3
+  → Next.js API Routes
+  → React Frontend
+```
+

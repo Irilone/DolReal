@@ -1,0 +1,11 @@
+
+  useEffect(() => {
+    if (!carouselRef.current || streams.length === 0) return;
+    const cardWidth = carouselRef.current.offsetWidth * 0.3;
+    const scrollAmount = currentIndex * cardWidth;
+    carouselRef.current.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth',
+    });
+  }, [currentIndex, streams.length]);
+

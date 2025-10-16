@@ -1,0 +1,14 @@
+### Design System
+
+**Colors (Tailwind CSS v4):**
+- Primary: Blue (#3b82f6)
+- Secondary: Purple (#8b5cf6)
+- Accent: Indigo (#6366f1)
+- Background: Deep space gradient (black → dark blue → purple)
+- Glass: `backdrop-blur-md bg-white/10` (light), `bg-black/30` (dark)
+
+**Typography:**
+- Font: System font stack (optimized for performance)
+- Sizes: text-sm (14px), text-base (16px), text-lg (18px), text-xl (20px)
+- Weights: regular (400), medium (500), semibold (600), bold (700)
+

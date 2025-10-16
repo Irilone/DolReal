@@ -1,0 +1,12 @@
+  ],
+  "tech_stack": {
+    "framework": "Next.js 15",
+    "language": "TypeScript",
+    "styling": "Tailwind CSS v4",
+    "i18n": "i18next"
+  },
+  "performance": {
+    "LCP": "<2.5 s",
+    "CLS": "<0.1",
+    "JS_budget_kb": 250
+  },

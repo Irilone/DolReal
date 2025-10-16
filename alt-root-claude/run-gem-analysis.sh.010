@@ -1,0 +1,12 @@
+    echo -e "${BLUE}📏 Report size: $FILE_SIZE${NC}"
+    echo -e "${BLUE}📝 Report lines: $LINE_COUNT${NC}\n"
+
+    # Parse for critical findings
+    if grep -q "BUILD ERROR" "$OUTPUT_FILE"; then
+        echo -e "${YELLOW}⚠️  Build errors found - check report${NC}"
+    fi
+
+    if grep -q "SUCCESS" "$OUTPUT_FILE"; then
+        echo -e "${GREEN}✅ Build successful${NC}"
+    fi
+

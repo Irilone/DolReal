@@ -1,0 +1,10 @@
+export default function StreamCarousel({
+  streams = defaultStreams,
+  className = '',
+}: StreamCarouselProps) {
+  const { t } = useTranslation();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);

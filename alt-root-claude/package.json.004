@@ -1,0 +1,21 @@
+  "engines": {
+    "node": ">=20.0.0",
+    "bun": ">=1.0.0"
+  },
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "streaming",
+    "youtube",
+    "infranodus",
+    "multi-agent",
+    "orchestration",
+    "ai"
+  ],
+  "author": "DoL 2025 Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dorian/dol-2025.git"
+  }

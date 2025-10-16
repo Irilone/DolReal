@@ -1,0 +1,14 @@
+### What NOT to Commit
+- ❌ Never commit `GEMINI_API_KEY` or other secrets
+- ❌ Never commit `.env` files (use `.env.example` instead)
+- ❌ Never commit `node_modules/` or build artifacts
+- ❌ Use GitHub secrets for workflows
+
+## Security & Configuration
+
+### API Key Management
+- Store Gemini keys in `.env.local` or shell profiles ignored by Git
+- Reference via CI secrets (`GEMINI_API_KEY`)
+- Never hardcode keys in source code
+- Use type="password" for API key inputs in UI
+

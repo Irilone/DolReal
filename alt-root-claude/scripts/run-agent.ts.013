@@ -1,0 +1,12 @@
+    console.log(`\n✅ ${agent.name} completed in ${(duration / 1000).toFixed(1)}s`);
+    console.log(`📊 Output saved to: ${agent.outputFile}`);
+
+    // Show preview
+    const preview = JSON.stringify(parsedOutput).substring(0, 200);
+    console.log(`   Preview: ${preview}...\n`);
+  } catch (error) {
+    const duration = Date.now() - startTime;
+    console.error(`\n❌ ${agent.name} failed after ${(duration / 1000).toFixed(1)}s`);
+    console.error(`Error: ${error}\n`);
+    process.exit(1);
+  }

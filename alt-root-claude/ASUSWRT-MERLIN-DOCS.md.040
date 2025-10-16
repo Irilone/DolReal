@@ -1,0 +1,10 @@
+Enable Traffic Analyzer:
+- Tools > Traffic Analyzer
+- Monitor real-time bandwidth per stream
+- Set alerts for bandwidth thresholds
+
+#### 6. Backup Script
+
+```bash
+#!/bin/sh
+# /jffs/scripts/backup-config

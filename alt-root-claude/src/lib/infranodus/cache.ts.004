@@ -1,0 +1,4 @@
+
+export function deleteCachedData(key: string): void {
+  cache.delete(key);
+}

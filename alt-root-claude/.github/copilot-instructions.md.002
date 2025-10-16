@@ -1,0 +1,10 @@
+### Technology Stack
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript (strict mode)
+- **Styling**: Tailwind CSS v4 + dark mode
+- **i18n**: react-i18next (6 languages: se, en, ar, fa, zh, es)
+- **Package Manager**: Bun (preferred), npm (fallback)
+- **Testing**: Jest + React Testing Library
+- **Linting**: Trunk Check (Prettier, ESLint)
+
+### Key Integrations

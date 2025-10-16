@@ -1,0 +1,10 @@
+
+`./scripts/interactive-orchestrate.sh` (if available) provides step-by-step execution with:
+
+- Approval gates between agents
+- Artifact inspection
+- Human intervention points
+- Rollback capability
+
+Recommended for development over `make all`.
+

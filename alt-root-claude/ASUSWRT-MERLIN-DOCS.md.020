@@ -1,0 +1,10 @@
+if [ "$1" = "connected" ]; then
+    logger "WAN is UP - running custom tasks"
+    # Add your connected logic here
+elif [ "$1" = "disconnected" ]; then
+    logger "WAN is DOWN - handling disconnect"
+    # Add your disconnected logic here
+fi
+```
+
+#### Custom Firewall Rules

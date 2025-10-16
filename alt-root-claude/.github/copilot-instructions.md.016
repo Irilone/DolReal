@@ -1,0 +1,15 @@
+## Commit & Pull Request Guidelines
+
+### Commit Messages
+- Use short, imperative subjects (e.g., "Add orchestrator Makefile", "Fix YouTube API integration")
+- Match existing history style
+- Separate generated artifacts from source changes in the description
+- Note which prompts or bundles were regenerated
+
+### Pull Requests
+- Link planning tickets in PR description
+- Include command outputs (`npm run orchestrate`, `trunk check`)
+- Attach screenshots for UI changes
+- Highlight follow-up work such as manual guide updates
+- Ensure all checks pass before requesting review
+

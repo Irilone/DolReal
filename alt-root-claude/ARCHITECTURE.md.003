@@ -1,0 +1,26 @@
+│  │  - ENV_GEMINI_API_KEY                                        │  │
+│  │  - User preferences                                          │  │
+│  │  - Configuration cache                                       │  │
+│  └─────────────────────────────────────────────────────────────┘  │
+│                                                                      │
+└──────────────────────────┬───────────────────────────────────────────┘
+                           │
+                           │ HTTPS
+                           │
+                           ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                    Google Gemini API                                 │
+│  https://generativelanguage.googleapis.com/v1beta                   │
+│                                                                      │
+│  Endpoints:                                                          │
+│  - /models?key={apiKey}              : List models                  │
+│  - /models/{model}:generateContent   : Generate content             │
+│                                                                      │
+│  Configuration:                                                      │
+│  - temperature: 0-1 (default 0.7)                                   │
+│  - topK: 40                                                          │
+│  - topP: 0.95                                                        │
+│  - maxOutputTokens: 8192                                            │
+└─────────────────────────────────────────────────────────────────────┘
+```
+

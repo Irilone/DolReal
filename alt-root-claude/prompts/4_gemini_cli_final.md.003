@@ -1,0 +1,11 @@
+Merge all code from both Claude agents into a unified file structure:
+
+#### A. Conflict Detection
+- Check for file path collisions
+- Verify no duplicate implementations
+- Ensure API contracts match between frontend/backend
+
+#### B. File Writing
+Write all files to disk:
+```typescript
+// Example structure

@@ -1,0 +1,10 @@
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: ${{ env.BUN_VERSION }}
+
+      - name: Download Research Bundle
+        uses: actions/download-artifact@v4
+        with:
+          name: research-bundle
+

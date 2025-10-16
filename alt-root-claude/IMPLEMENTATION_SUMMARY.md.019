@@ -1,0 +1,10 @@
+4. **Configure & Validate**
+   - Enter API key in UI
+   - Click "Spara API-nyckel"
+   - Run "Validera allt"
+
+5. **Test Generation**
+   - Enter test prompt
+   - Click "Generera innehåll"
+   - Review results
+

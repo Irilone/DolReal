@@ -1,0 +1,10 @@
+# Extract code from artifacts and build
+# (Agent 4 output contains final merged code)
+jq -r '.components[].code' artifacts/3a_claude_frontend_output.json > /tmp/frontend.txt
+jq -r '.api_routes[].code' artifacts/3b_claude_backend_output.json > /tmp/backend.txt
+```
+
+---
+
+## Estimated Timeline
+

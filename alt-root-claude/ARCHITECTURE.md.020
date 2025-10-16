@@ -1,0 +1,13 @@
+Production:
+    october/
+    └─→ CDN (CloudFlare/AWS CloudFront)
+        ├─→ Static Assets
+        └─→ https://dolreal.se
+                 │
+                 └─→ Backend Proxy (Optional)
+                      ├─→ API Key Management
+                      ├─→ Rate Limiting
+                      ├─→ Usage Analytics
+                      └─→ Caching
+```
+

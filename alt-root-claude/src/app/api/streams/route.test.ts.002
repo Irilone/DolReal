@@ -1,0 +1,10 @@
+
+describe('/api/streams', () => {
+  it('returns all streams for day 1', async () => {
+    const request = new NextRequest('http://localhost/api/streams?day=1');
+  beforeEach(() => {
+    process.env = {
+      ...ORIGINAL_ENV,
+      ...VALID_STREAM_ENV,
+    } as NodeJS.ProcessEnv;
+  });

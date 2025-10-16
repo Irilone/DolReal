@@ -1,0 +1,10 @@
+## Quick Reference
+
+| Setting | Value |
+|---------|-------|
+| Resolution | 1280x720 |
+| FPS | 30 |
+| Bitrate | 3000 Kbps |
+| Encoder | Hardware |
+| Keyframe | 2s |
+| Audio | 48kHz Stereo |

@@ -1,0 +1,12 @@
+    {
+      "title": "DoL 2025 Webapp Guide (SE)",
+      "file_path": "docs/manuals/dol-webapp-guide-se.md",
+      "content": "// Full markdown content"
+    }
+  ],
+  "tests": [
+    {
+      "file_path": "src/app/api/streams/route.test.ts",
+      "test_suite": "API Routes",
+      "code": "// Full test code"
+    }

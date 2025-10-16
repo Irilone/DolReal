@@ -1,0 +1,10 @@
+5. **Best Fix Strategy**
+   - Option A: Use `cn()` utility to compose classes
+   - Option B: Use template literals with backticks
+   - Option C: Single-line className with proper escaping
+   - Option D: Break into multiple className props
+   - **Which option is safest and most maintainable?**
+
+---
+
+## 🧩 COMPONENT INVENTORY & STATUS

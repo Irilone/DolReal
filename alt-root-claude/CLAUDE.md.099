@@ -1,0 +1,10 @@
+---
+
+## Important Notes
+
+### Legacy Code
+- `/october/` contains deprecated prototypes (`dol.tsx`, `alt-dol.tsx`, `dol-2.tsx`)
+- Retained for reference until new Next.js app fully replaces them
+- Do NOT modify `/october/` - work in `/src/` instead
+- `/october/INTEGRATION_README.md` documents browser-based Gemini integration
+

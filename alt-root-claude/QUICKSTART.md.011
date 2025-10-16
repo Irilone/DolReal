@@ -1,0 +1,13 @@
+### Configure Application
+```bash
+# Add YouTube/InfraNodus keys to .env
+cp .env.example .env
+# Edit .env with your API keys
+```
+
+### Run Development Server
+```bash
+bun dev
+```
+Visit: http://localhost:3000
+

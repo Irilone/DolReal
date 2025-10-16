@@ -1,0 +1,14 @@
+          },
+          "manuals_required": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "citations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": { "type": "string", "format": "uri" },
+                "title": { "type": "string" },
+                "access_date": { "type": "string", "format": "date" }
+              }

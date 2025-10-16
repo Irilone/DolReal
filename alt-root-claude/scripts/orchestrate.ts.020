@@ -1,0 +1,10 @@
+    // Log snippet of output for debugging
+    const outputPreview = JSON.stringify(outputData).substring(0, 200);
+    log(`✓ ${agent.name} completed in ${Date.now() - startTime}ms`);
+    log(`  Output preview: ${outputPreview}...`);
+  } catch (error: unknown) {
+    log(`✗ ${agent.name} failed: ${error}`);
+    throw error;
+  }
+}
+

@@ -1,0 +1,12 @@
+      });
+    };
+
+    const onPlayerReady = (event: any) => {
+      setIsReady(true);
+    };
+
+    if (!window.YT) {
+      loadYouTubeAPI();
+    } else {
+      createPlayer();
+    }

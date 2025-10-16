@@ -1,0 +1,10 @@
+# Open in browser
+open http://localhost:8000
+```
+
+## Environment Setup
+
+Create a `.env` file in the root directory (see `.env.example`):
+
+```bash
+# Required for Orchestration

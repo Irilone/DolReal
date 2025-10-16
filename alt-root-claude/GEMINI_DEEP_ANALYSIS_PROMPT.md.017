@@ -1,0 +1,14 @@
+### 🔧 Phase 2: Fix & Optimize
+
+1. **Fix StreamCarousel Build Error** (PRIORITY 1)
+   - Diagnose root cause of unterminated string error
+   - Implement robust fix that works across all browsers
+   - Test on multiple screen sizes (mobile, tablet, desktop)
+   - Verify smooth scrolling and drag interactions
+
+2. **Optimize Star Background** (Already implemented but verify)
+   - Confirm GPU acceleration is active (will-change, transform3d)
+   - Verify no layout thrashing or repaints
+   - Check performance on low-end devices
+   - Ensure mobile optimizations work (disabled shooting stars < 768px)
+

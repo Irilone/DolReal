@@ -1,0 +1,14 @@
+    gem analyze \
+        --model gemini-2.5-pro-002 \
+        --deep-thinking \
+        --context ./src \
+        --instructions "$PROMPT_FILE" \
+        | tee "$OUTPUT_FILE"
+
+elif gem help | grep -q "chat"; then
+    # If gem uses chat command
+    cat "$PROMPT_FILE" | gem chat \
+        --model gemini-2.5-pro-002 \
+        --context ./src \
+        | tee "$OUTPUT_FILE"
+

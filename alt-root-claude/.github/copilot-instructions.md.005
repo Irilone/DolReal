@@ -1,0 +1,10 @@
+
+### Important Directory Notes
+- **Keep orchestration assets at repo root**: `.github/workflows/`, `prompts/`, `artifacts/`, `scripts/`, `Makefile`
+- **Legacy UI in `october/`**: Contains prototypes (`dol.tsx`, `alt-dol.tsx`, `dol-2.tsx`) - retain until new Next.js app fully replaces them
+- **Generated artifacts**: Place in `artifacts/` directory, never in `october/`
+- **Plans**: Store in `plans/` directory (router_plan.md, obs_plan.md, yt_plan.md, etc.)
+
+## Build, Test, and Development Commands
+
+### Setup

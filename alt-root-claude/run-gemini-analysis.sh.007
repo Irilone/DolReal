@@ -1,0 +1,19 @@
+    # Show file size
+    FILE_SIZE=$(du -h "$OUTPUT_FILE" | cut -f1)
+    echo -e "${BLUE}📏 Report size: $FILE_SIZE${NC}"
+
+    # Count lines
+    LINE_COUNT=$(wc -l < "$OUTPUT_FILE")
+    echo -e "${BLUE}📝 Report lines: $LINE_COUNT${NC}\n"
+
+    echo -e "${YELLOW}💡 Next steps:${NC}"
+    echo -e "   1. Review the analysis: ${BLUE}cat $OUTPUT_FILE${NC}"
+    echo -e "   2. Implement recommended fixes"
+    echo -e "   3. Run build: ${BLUE}bun run build${NC}"
+    echo -e "   4. Test deployment: ${BLUE}bun run dev${NC}\n"
+else
+    echo -e "\n${RED}❌ Error: Analysis output file not created or empty${NC}"
+    echo -e "${YELLOW}💡 Check your API key and network connection${NC}"
+    exit 1
+fi
+

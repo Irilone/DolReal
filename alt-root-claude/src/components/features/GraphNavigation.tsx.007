@@ -1,0 +1,10 @@
+      positions.set(node.id, {
+        x: centerX + radius * Math.cos(angle),
+        y: centerY + radius * Math.sin(angle),
+      });
+    });
+
+    setNodePositions(positions);
+  }, [nodes, dimensions]);
+
+  // Update dimensions on resize

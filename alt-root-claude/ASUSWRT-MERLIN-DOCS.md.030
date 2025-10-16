@@ -1,0 +1,11 @@
+
+**Q: Why isn't the latest Asus firmware integrated yet?**
+A: Integration requires:
+1. Complete source code from Asus
+2. Full GPL release
+3. Updated components for all supported models
+4. Time for thorough testing
+
+**Q: Can I revert to stock firmware?**
+A: Yes, flash stock firmware the same way you installed Merlin. Perform factory reset afterward.
+

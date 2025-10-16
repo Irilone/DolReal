@@ -1,0 +1,11 @@
+bun run start
+```
+
+## Monitoring and Troubleshooting
+
+### Stream Health Monitoring
+
+- Check YouTube Live Dashboard for bitrate/connection issues
+- Monitor API `/api/stream-health/{streamId}` for automated checks
+- View aggregate viewer count at `/api/viewer-count`
+

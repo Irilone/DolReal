@@ -1,0 +1,10 @@
+```bash
+export $(cat .env | xargs)
+```
+
+4. Check file permissions:
+
+```bash
+chmod 600 .env
+```
+

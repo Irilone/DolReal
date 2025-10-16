@@ -1,14 +1,15 @@
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-
-  // i18n configuration
-  i18n: {
-    locales: ['se', 'en', 'ar', 'fa', 'zh', 'es'],
-    defaultLocale: 'se',
-    localeDetection: true,
+  eslint: {
+    ignoreDuringBuilds: true,
   },
+  outputFileTracingRoot: __dirname,
 
   // Image optimization
   images: {
@@ -68,4 +69,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;

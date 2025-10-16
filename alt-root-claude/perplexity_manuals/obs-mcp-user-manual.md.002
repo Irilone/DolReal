@@ -1,0 +1,10 @@
+## Introduction
+
+The OBS Studio MCP (Model Context Protocol) Server represents a revolutionary advancement in live streaming technology, enabling AI-powered control and automation of OBS Studio through standardized protocols. This integration allows for seamless interaction between AI assistants (like Claude) and OBS Studio, facilitating automated scene management, source control, and streaming operations.
+
+## OBS Studio MCP Server Overview
+
+### What is the OBS MCP Server?
+
+The OBS MCP Server is a Node.js-based application that provides tools to control OBS Studio via the OBS WebSocket protocol. It acts as a bridge between AI systems and OBS Studio, enabling:
+

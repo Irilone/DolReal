@@ -1,0 +1,11 @@
+        { role: 'user', content: prompt },
+      ],
+      temperature: 0.2,
+      max_tokens: 16000,
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`OpenAI API error (${response.status}): ${errorText}`);
+  }

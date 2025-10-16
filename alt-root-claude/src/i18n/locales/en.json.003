@@ -1,0 +1,19 @@
+  "program": {
+    "title": "Program",
+    "day1": "Day 1",
+    "day2": "Day 2",
+    "speakers": "Speakers",
+    "streams": "Streams"
+  },
+  "streams": {
+    "nodvast": "Northwest Node",
+    "nodsyd": "South Node",
+    "nodost": "East Node",
+    "nodmidd": "Central Node",
+    "inactive": "Not active today",
+    "live": "LIVE",
+    "viewers": "viewers",
+    "play": "Play",
+    "pause": "Pause",
+    "watch": "Watch"
+  },

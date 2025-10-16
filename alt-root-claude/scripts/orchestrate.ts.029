@@ -1,0 +1,10 @@
+
+  const text = data.choices?.[0]?.message?.content ?? "";
+
+  if (!text) {
+    throw new Error("OpenAI API returned empty response");
+  }
+
+  log(`  Received ${text.length} characters from OpenAI`);
+  return text;
+}

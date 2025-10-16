@@ -1,0 +1,14 @@
+
+  .shooting-star:nth-child(5) {
+    top: 20%;
+    left: 90%;
+    animation-delay: 6s;
+  }
+}
+
+/* Animations */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }

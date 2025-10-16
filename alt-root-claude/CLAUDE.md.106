@@ -1,0 +1,10 @@
+### YouTube Player Notes
+
+- **Single active player constraint**: Only one stream can play at a time (enforced in `useStreamPlayer.ts`)
+- **Day 2 logic**: On November 7, 2025, only Nodväst stream is active (others disabled but UI unchanged)
+- **No autoplay**: User must click play (WCAG compliance + YouTube policy)
+- Uses **YouTube IFrame API** loaded via script tag in layout
+
+## Common Development Patterns
+
+### Adding a New Component

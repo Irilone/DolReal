@@ -1,0 +1,18 @@
+      {/* Graph SVG */}
+      <svg
+        ref={svgRef}
+        className="w-full h-full min-h-[600px] cursor-grab active:cursor-grabbing"
+        onWheel={handleWheel}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        role="img"
+        aria-label="Knowledge graph navigation"
+      >
+        <g transform={`translate(${pan.x}, ${pan.y}) scale(${zoom})`}>
+          {/* Links */}
+          <g className="links">
+            {nodes.flatMap((node) =>
+              (node.connections || []).map((targetId) => {
+                const sourcePos = nodePositions.get(node.id);

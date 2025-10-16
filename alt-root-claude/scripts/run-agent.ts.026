@@ -1,0 +1,9 @@
+// CLI
+const agentId = process.argv[2];
+if (!agentId) {
+  console.error('Usage: bun run scripts/run-agent.ts <agent-id>');
+  console.error(`Available agents: ${Object.keys(AGENTS).join(', ')}`);
+  process.exit(1);
+}
+
+runAgent(agentId as keyof typeof AGENTS);

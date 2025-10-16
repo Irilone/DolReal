@@ -1,0 +1,12 @@
+**Q1**: What is YouTube's concurrent live event limit per channel?
+- Official policy: [cite YouTube docs]
+- Workarounds: [if any]
+
+**Q2**: How to configure OBS for 4 simultaneous RTMP streams?
+- Multi-output plugins: [cite OBS forums/docs]
+- Performance requirements: [CPU/bandwidth]
+
+**Q3**: InfraNodus MCP integration - is it possible?
+- Current MCP server status: [check InfraNodus docs]
+- Alternative embedding options: [iframe vs API]
+

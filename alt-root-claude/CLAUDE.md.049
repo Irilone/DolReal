@@ -1,0 +1,16 @@
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+```
+
+### Key Files
+
+- **Makefile:42**: `make all` pipeline definition (full orchestration)
+- **package.json:7-24**: npm scripts including orchestration commands
+- **schemas/agent-handoff-schema.json**: Contract for agent communication
+- **prompts/\*.md**: Detailed instructions for each agent (critical for understanding agent behavior)
+- **scripts/orchestrate.ts**: Main orchestrator coordinating all 4 agents with parallel execution support
+- **src/app/[lang]/layout.tsx**: Localized layout with RTL support (dir attribute)
+- **src/i18n/config.ts**: i18next initialization with 6 language resources
+- **tsconfig.json**: TypeScript strict mode, path aliases (@/_ -> src/_)
+

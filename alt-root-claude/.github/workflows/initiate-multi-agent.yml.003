@@ -1,0 +1,17 @@
+            const runAllAgents = runAllAgentsRaw ? String(runAllAgentsRaw) : 'true';
+            const specificAgent = core.getInput('specific_agent') || 'none';
+            let ref = core.getInput('ref');
+
+            if (!ref) {
+              ref = context.ref;
+            }
+
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'orchestrate.yml',
+              ref,
+              inputs: {
+                run_all_agents: runAllAgents,
+                specific_agent: specificAgent,
+              },

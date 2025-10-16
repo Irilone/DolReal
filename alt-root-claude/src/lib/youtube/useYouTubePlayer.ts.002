@@ -1,0 +1,11 @@
+export function useYouTubePlayer(videoId: string) {
+  const playerRef = useRef<any>(null);
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    const loadYouTubeAPI = () => {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
+

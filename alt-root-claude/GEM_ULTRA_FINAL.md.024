@@ -1,0 +1,12 @@
+🧠 Gemini 2.5 Pro Ultra Deep Analysis
+═══════════════════════════════════
+
+✅ gem CLI found
+✅ GEMINI_API_KEY set
+
+Choose analysis depth:
+  1) Quick Analysis (v1 - ~15min)
+  2) Deep Analysis (v2 - ~30min)
+  3) Custom prompt
+Selection [2]: 2
+

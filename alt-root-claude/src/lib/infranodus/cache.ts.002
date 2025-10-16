@@ -1,0 +1,11 @@
+  if (!entry) {
+    return null;
+  }
+
+  if (Date.now() > entry.expiry) {
+    cache.delete(key);
+    return null;
+  }
+
+  return entry.data as T;
+}

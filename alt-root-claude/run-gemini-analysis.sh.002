@@ -1,0 +1,11 @@
+echo -e "${BLUE}🧠 DoL 2025 - Gemini Deep Analysis Runner${NC}"
+echo -e "${BLUE}═══════════════════════════════════════${NC}\n"
+
+# Check if GEMINI_API_KEY is set
+if [[ -z "${GEMINI_API_KEY:-}" ]]; then
+    echo -e "${RED}❌ Error: GEMINI_API_KEY environment variable not set${NC}"
+    echo -e "${YELLOW}💡 Set it with: export GEMINI_API_KEY='your-api-key'${NC}"
+    echo -e "${YELLOW}💡 Or load from .env: source .env${NC}"
+    exit 1
+fi
+

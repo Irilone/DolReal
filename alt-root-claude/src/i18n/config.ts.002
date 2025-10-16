@@ -1,0 +1,16 @@
+const resources = {
+  se: { translation: se },
+  en: { translation: en },
+  ar: { translation: ar },
+  fa: { translation: fa },
+  zh: { translation: zh },
+  es: { translation: es },
+};
+
+i18n.use(initReactI18next).init({
+  resources,
+  lng: "se",
+  fallbackLng: "se",
+  interpolation: {
+    escapeValue: false,
+  },

@@ -1,0 +1,12 @@
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`OpenAI API error (${response.status}): ${errorText}`);
+  }
+
+  const data = await response.json();
+
+  // Check for API errors
+  if (data.error) {
+    throw new Error(`OpenAI API error: ${JSON.stringify(data.error)}`);
+  }

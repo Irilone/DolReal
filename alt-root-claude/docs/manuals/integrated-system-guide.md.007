@@ -1,0 +1,15 @@
+## Web Application Deployment
+
+### Environment Variables
+
+Create `.env.local`:
+
+```bash
+NEXT_PUBLIC_YOUTUBE_API_KEY=your-youtube-api-key
+INFRANODUS_API_KEY=your-infranodus-api-key
+NODVAST_YOUTUBE_ID=stream-id-1
+NODSYD_YOUTUBE_ID=stream-id-2
+NODOST_YOUTUBE_ID=stream-id-3
+NODMIDD_YOUTUBE_ID=stream-id-4
+```
+

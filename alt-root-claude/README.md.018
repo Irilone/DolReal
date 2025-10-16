@@ -1,0 +1,10 @@
+### Browser Integration Testing
+1. Open `october/index.html` in browser
+2. Configure API key
+3. Click "Testa anslutning" (Test Connection)
+4. Run "Validera allt" (Validate All)
+5. Try generating content with a test prompt
+
+## Troubleshooting
+
+### Common Issues

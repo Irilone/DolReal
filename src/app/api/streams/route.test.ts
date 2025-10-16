@@ -1,36 +1,84 @@
+/* @jest-environment node */
 // src/app/api/streams/route.test.ts
-import { GET } from './route';
-import type { Stream } from '@/types/stream';
+import type { Stream } from "@/types/stream";
+import { GET } from "./route";
 
-// Store original env
 const ORIGINAL_ENV = { ...process.env };
 
-describe('/api/streams', () => {
+const VALID_STREAM_ENV = {
+  NODVAST_YOUTUBE_ID: "video-nodvast",
+  NODSYD_YOUTUBE_ID: "video-nodsyd",
+  NODOST_YOUTUBE_ID: "video-nodost",
+  NODMIDD_YOUTUBE_ID: "video-nodmidd",
+};
+
+describe("/api/streams", () => {
   beforeEach(() => {
-    // Set up test environment variables
     process.env = {
       ...ORIGINAL_ENV,
-      NODVAST_YOUTUBE_ID: 'test-nodvast-id',
-      NODSYD_YOUTUBE_ID: 'test-nodsyd-id',
-      NODOST_YOUTUBE_ID: 'test-nodost-id',
-      NODMIDD_YOUTUBE_ID: 'test-nodmidd-id',
-    };
+      ...VALID_STREAM_ENV,
+    } as NodeJS.ProcessEnv;
   });
 
   afterEach(() => {
-    process.env = { ...ORIGINAL_ENV };
+    process.env = { ...ORIGINAL_ENV } as NodeJS.ProcessEnv;
+  });
+
+  afterAll(() => {
+    process.env = ORIGINAL_ENV as NodeJS.ProcessEnv;
+  });
+
+  it("returns all streams for day 1 with valid configuration", async () => {
+    const request = new Request("http://localhost/api/streams?day=1");
+    const response = await GET(request);
+    const data = (await response.json()) as { streams: Stream[] };
+
+    expect(response.status).toBe(200);
+    expect(data.streams).toHaveLength(4);
+    expect(data.streams.every((stream) => stream.active)).toBe(true);
+    expect(
+      data.streams.every((stream) =>
+        stream.embedUrl.includes("https://www.youtube.com/embed/"),
+      ),
+    ).toBe(true);
+  });
+
+  it("returns only Nodväst as active for day 2", async () => {
+    const request = new Request("http://localhost/api/streams?day=2");
+    const response = await GET(request);
+    const data = (await response.json()) as { streams: Stream[] };
+
+    const activeStreams = data.streams.filter((stream) => stream.active);
+    expect(response.status).toBe(200);
+    expect(activeStreams).toHaveLength(1);
+    expect(activeStreams[0].id).toBe("nodvast");
+    expect(activeStreams[0].day).toBe(2);
+  });
+
+  it("rejects invalid day parameters", async () => {
+    const request = new Request("http://localhost/api/streams?day=3");
+    const response = await GET(request);
+    const data = (await response.json()) as { error: string };
+
+    expect(response.status).toBe(400);
+    expect(data.error).toMatch(/Invalid day parameter/);
+  });
+
+  it("fails with a 500 when required environment variables are missing", async () => {
+    process.env = {
+      ...process.env,
+      NODVAST_YOUTUBE_ID: "",
+    } as NodeJS.ProcessEnv;
+
+    const request = new Request("http://localhost/api/streams?day=1");
+    const response = await GET(request);
+    const data = (await response.json()) as { error: string };
+
+    expect(response.status).toBe(500);
+    expect(data.error).toMatch(/Stream configuration is incomplete/);
   });
 
   describe('Day 1 behavior', () => {
-    it('returns all streams for day 1', async () => {
-      const request = new Request('http://localhost/api/streams?day=1');
-      const response = await GET(request);
-      const data = await response.json();
-
-      expect(data.streams).toHaveLength(4);
-      expect(data.streams.every((s: any) => s.active)).toBe(true);
-    });
-
     it('returns correct stream structure for day 1', async () => {
       const request = new Request('http://localhost/api/streams?day=1');
       const response = await GET(request);
@@ -66,16 +114,6 @@ describe('/api/streams', () => {
   });
 
   describe('Day 2 behavior', () => {
-    it('returns only Nodväst as active for day 2', async () => {
-      const request = new Request('http://localhost/api/streams?day=2');
-      const response = await GET(request);
-      const data = await response.json();
-
-      const activeStreams = data.streams.filter((s: Stream) => s.active);
-      expect(activeStreams).toHaveLength(1);
-      expect(activeStreams[0].id).toBe('nodvast');
-    });
-
     it('returns all 4 streams for day 2 (with 3 inactive)', async () => {
       const request = new Request('http://localhost/api/streams?day=2');
       const response = await GET(request);
@@ -128,16 +166,6 @@ describe('/api/streams', () => {
   });
 
   describe('Invalid day parameter handling', () => {
-    it('handles invalid day parameter gracefully (treats as string)', async () => {
-      const request = new Request('http://localhost/api/streams?day=3');
-      const response = await GET(request);
-      const data = await response.json();
-
-      // Implementation treats any non-'1' or '2' as inactive for all except nodvast
-      expect(response.status).toBe(200);
-      expect(data.streams).toHaveLength(4);
-    });
-
     it('handles non-numeric day parameter', async () => {
       const request = new Request('http://localhost/api/streams?day=invalid');
       const response = await GET(request);
@@ -165,10 +193,10 @@ describe('/api/streams', () => {
       const response = await GET(request);
       const data = await response.json();
 
-      expect(data.streams[0].youtubeId).toBe('test-nodvast-id');
-      expect(data.streams[1].youtubeId).toBe('test-nodsyd-id');
-      expect(data.streams[2].youtubeId).toBe('test-nodost-id');
-      expect(data.streams[3].youtubeId).toBe('test-nodmidd-id');
+      expect(data.streams[0].youtubeId).toBe('video-nodvast');
+      expect(data.streams[1].youtubeId).toBe('video-nodsyd');
+      expect(data.streams[2].youtubeId).toBe('video-nodost');
+      expect(data.streams[3].youtubeId).toBe('video-nodmidd');
     });
   });
 
@@ -221,21 +249,6 @@ describe('/api/streams', () => {
       const ids2 = data2.streams.map((s: Stream) => s.id);
 
       expect(ids1).toEqual(ids2);
-    });
-  });
-
-  describe('Environment variable handling', () => {
-    it('handles missing environment variables', async () => {
-      process.env.NODVAST_YOUTUBE_ID = undefined;
-      
-      const request = new Request('http://localhost/api/streams?day=1');
-      
-      // The implementation uses non-null assertion, so it will return undefined
-      // This test documents the current behavior
-      const response = await GET(request);
-      const data = await response.json();
-      
-      expect(data.streams[0].youtubeId).toBeUndefined();
     });
   });
 });

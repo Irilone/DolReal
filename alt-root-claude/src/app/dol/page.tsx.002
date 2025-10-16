@@ -1,0 +1,10 @@
+export default function DagarOmLagar2025() {
+  const { t, i18n } = useTranslation();
+  const [activeStream, setActiveStream] = useState<number>(0);
+  const [activeNode, setActiveNode] = useState<string | null>(null);
+  const [darkMode, setDarkMode] = useState<boolean>(true);
+  const [graphEmbed, setGraphEmbed] = useState<string>("");
+
+  const streams = ["dQw4w9WgXcQ", "kJQP7kiw5Fk", "5NV6Rdv1a3I", "3JZ_D3ELwOQ"];
+
+  const nodes = [

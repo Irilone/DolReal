@@ -1,0 +1,14 @@
+- **se** (Swedish) - Primary language
+- **en** (English) - International audience
+- **ar** (Arabic) - RTL layout required
+- **fa** (Farsi/Persian) - RTL layout required
+- **zh** (Chinese Simplified) - CJK font requirements
+- **es** (Spanish) - International audience
+
+### Your Deep Thinking Assessment:
+1. **RTL Implementation**
+   - Does `[dir="rtl"]` actually work correctly?
+   - Are all components RTL-aware?
+   - Does the carousel work in RTL mode?
+   - Knowledge graph direction handling?
+

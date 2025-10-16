@@ -1,0 +1,30 @@
+## Security Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Security Layers                          │
+│                                                              │
+│  Layer 1: Input Validation                                  │
+│  ├─ API key format checking (regex)                         │
+│  ├─ Input sanitization (XSS prevention)                     │
+│  └─ Parameter type validation                               │
+│                                                              │
+│  Layer 2: Storage Security                                  │
+│  ├─ .env for server-side (not committed)                    │
+│  ├─ localStorage for browser (dev only)                     │
+│  ├─ window.ENV for SSR production                           │
+│  └─ Password field masking in UI                            │
+│                                                              │
+│  Layer 3: Network Security                                  │
+│  ├─ HTTPS enforcement (recommended)                         │
+│  ├─ CORS considerations                                     │
+│  ├─ Timeout protection                                      │
+│  └─ Error message sanitization                              │
+│                                                              │
+│  Layer 4: Code Security                                     │
+│  ├─ No hardcoded secrets                                    │
+│  ├─ .gitignore protection                                   │
+│  ├─ Module encapsulation (IIFE)                             │
+│  └─ Read-only config exposure                               │
+└─────────────────────────────────────────────────────────────┘
+```

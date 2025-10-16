@@ -1,0 +1,11 @@
+# ✓ GEMINI_API_KEY configured
+# ✓ OPENAI_API_KEY configured
+# ✓ ANTHROPIC_API_KEY configured
+```
+
+### Build Failures
+
+```bash
+# Check TypeScript errors
+bun run typecheck
+# or

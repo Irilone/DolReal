@@ -1,0 +1,11 @@
+// src/components/ui/card.tsx
+'use client';
+
+import { ReactNode } from 'react';
+
+interface CardProps {
+  children: ReactNode;
+  className?: string;
+  role?: string;
+  ['aria-label']?: string;
+}

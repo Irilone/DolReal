@@ -1,0 +1,14 @@
+// ============================================================================
+// Configuration
+// ============================================================================
+
+interface AgentConfig {
+  id: string;
+  name: string;
+  command: string;
+  inputArtifacts: string[];
+  outputArtifact: string;
+  promptFile: string;
+  canRunInParallel: boolean;
+  parallelGroup?: number;
+}

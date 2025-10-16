@@ -1,0 +1,14 @@
+### 3. MCP Server Setup
+
+#### A. MCP Configuration
+```json
+// .mcp/config.json
+{
+  "servers": {
+    "infranodus": {
+      "enabled": true,
+      "url": "https://infranodus.com/mcp",
+      "auth": {
+        "type": "bearer",
+        "token": "${INFRANODUS_API_KEY}"
+      }

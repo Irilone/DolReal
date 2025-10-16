@@ -1,0 +1,14 @@
+### Step 2: Architecture (GPT-5 Codex)
+```bash
+make gpt5-codex
+```
+**Output**: `artifacts/2_gpt5_codex_architecture.json`
+
+### Step 3: Parallel Implementation (Both Claudes)
+```bash
+make claude-parallel
+```
+**Output**:
+- `artifacts/3a_claude_frontend_output.json`
+- `artifacts/3b_claude_backend_output.json`
+

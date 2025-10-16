@@ -1,0 +1,10 @@
+
+  log(`${COLORS.green}✓ API call successful${COLORS.reset}`);
+  log(`  Response length: ${text.length} characters`, 'blue');
+  log(`  Elapsed time: ${elapsedTime}s`, 'blue');
+
+  return text;
+}
+
+async function main() {
+  const args = parseArgs();

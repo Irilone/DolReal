@@ -1,0 +1,10 @@
+
+**4-Agent Orchestration Pipeline:**
+- **Agent 1 (Gemini Ultra):** Research & requirements → `artifacts/1_gemini_ultra_research.json`
+- **Agent 2 (GPT-5 Codex):** Architecture design → `artifacts/2_gpt5_codex_architecture.json`
+- **Agent 3a (Claude Sonnet 4.5):** Frontend implementation → `artifacts/3a_claude_frontend_output.json`
+- **Agent 3b (Claude Sonnet 4.5):** Backend implementation → `artifacts/3b_claude_backend_output.json`
+- **Agent 4 (YOU - Gemini 2.5 Pro):** Integration, optimization, production readiness
+
+---
+

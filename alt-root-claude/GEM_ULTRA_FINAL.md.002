@@ -1,0 +1,11 @@
+**That's it!** The script will:
+1. ✅ Verify gem CLI is installed
+2. ✅ Check GEMINI_API_KEY is set
+3. ✅ Let you choose analysis depth (quick/deep)
+4. ✅ Run Gemini 2.5 Pro Ultra with deep thinking mode
+5. ✅ Save comprehensive report with timestamp
+6. ✅ Parse for critical findings
+7. ✅ Provide next steps
+
+---
+

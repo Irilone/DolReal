@@ -1,0 +1,13 @@
+  "event": {
+    "title": "Days about Laws 2025",
+    "dates": "November 6-7, 2025",
+    "description": "A legal symposium exploring laws and society",
+    "day1": "Day 1 - November 6, 2025",
+    "day2": "Day 2 - November 7, 2025"
+  },
+  "health": {
+    "good": "Excellent",
+    "ok": "Good",
+    "bad": "Poor",
+    "offline": "Offline"
+  },

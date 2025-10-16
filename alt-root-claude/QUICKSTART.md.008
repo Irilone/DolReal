@@ -1,0 +1,10 @@
+### Step 4: Integration (Gemini CLI)
+```bash
+make gemini-cli
+```
+**Output**:
+- `artifacts/4_gemini_cli_final.json`
+- `releases/dol-2025-v2.0.0.zip`
+
+---
+

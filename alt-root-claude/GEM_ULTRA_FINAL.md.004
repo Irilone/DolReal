@@ -1,0 +1,11 @@
+---
+
+## 🎨 ANALYSIS DEPTH OPTIONS
+
+### Option 1: Quick Analysis (~15 minutes)
+- Uses `GEM_ULTRA_PROMPT_v1.md`
+- Focuses on critical issues only
+- StreamCarousel fix + immediate blockers
+- Basic production readiness check
+- **Best for:** Emergency fixes
+

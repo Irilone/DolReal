@@ -1,0 +1,10 @@
+
+  if (!allRequired) {
+    console.error('❌ Missing required environment variables!\n');
+    console.error('Set them in your shell or .env file:');
+    console.error('  export GEMINI_API_KEY="your-key"');
+    console.error('  export OPENAI_API_KEY="your-key"');
+    console.error('  export ANTHROPIC_API_KEY="your-key"\n');
+    process.exit(1);
+  }
+

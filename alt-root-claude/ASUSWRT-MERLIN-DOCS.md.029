@@ -1,0 +1,10 @@
+**Q: How do I factory reset?**
+A:
+- **Quick**: Press Reset button for 5+ seconds
+- **WPS Method**: Power off, hold WPS button, power on while holding, release after 3-5 seconds
+- **Web Interface**: Administration > Restore/Save/Upload > Factory Default
+
+**Q: Should I reset after flashing?**
+A: **Yes**, especially for major version jumps. Factory reset prevents configuration conflicts.
+
+### Updates & Features

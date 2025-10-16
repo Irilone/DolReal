@@ -1,0 +1,11 @@
+**Method 3: Reset Button Method**
+- Press and hold Reset button for 5+ seconds
+- Power LED will blink
+- Release button
+
+#### 5. Initial Configuration
+
+- Access router at: `http://192.168.1.1` or `http://router.asus.com`
+- Complete setup wizard
+- Configure basic settings (SSID, password, WAN)
+

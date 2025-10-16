@@ -1,0 +1,12 @@
+---
+
+## Why This Architecture?
+
+### Multi-Agent Benefits
+- **Specialization**: Each agent optimized for specific task (research, architecture, frontend, backend, integration)
+- **Parallelization**: Claude agents work simultaneously (saves 15-20 min)
+- **File-based**: No complex message queues, just JSON handoffs
+- **Traceable**: Every artifact has metadata (timestamp, execution time, status)
+- **Re-runnable**: Agents can be executed independently (`make claude-frontend`)
+- **Debuggable**: Human review possible between stages
+

@@ -1,0 +1,13 @@
+```
+
+Components needed:
+1. **Header** (assigned_to: claude-frontend)
+   - Language switcher
+   - Dark mode toggle
+   - Logo
+
+2. **StreamCarousel** (assigned_to: claude-frontend)
+   - 4 YouTube iframes
+   - Stream selection logic
+   - Day 2 disable logic
+

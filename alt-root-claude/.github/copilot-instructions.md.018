@@ -1,0 +1,12 @@
+### Environment Variables
+```bash
+# Required for orchestration
+GEMINI_API_KEY=your-gemini-key      # Agent 1 & 4
+OPENAI_API_KEY=your-openai-key      # Agent 2
+ANTHROPIC_API_KEY=your-anthropic-key # Agent 3a & 3b
+
+# Optional for production
+NEXT_PUBLIC_YOUTUBE_API_KEY=your-youtube-key
+INFRANODUS_API_KEY=your-infranodus-key
+```
+

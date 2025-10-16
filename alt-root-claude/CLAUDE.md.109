@@ -1,0 +1,10 @@
+3. Use `NextRequest` and `NextResponse` types
+
+4. Add corresponding test file: `route.test.ts`
+
+### Adding a New Page
+
+1. Create page in `src/app/[lang]/{page}/page.tsx`
+
+2. Component receives `params: { lang: Locale }` prop
+

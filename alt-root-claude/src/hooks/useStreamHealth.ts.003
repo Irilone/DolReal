@@ -1,0 +1,11 @@
+        setHealth(data);
+        setError(null);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Unknown error');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchHealth();
+    const interval = setInterval(fetchHealth, refreshInterval);

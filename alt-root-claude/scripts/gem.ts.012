@@ -1,0 +1,12 @@
+
+async function main() {
+  const args = parseArgs();
+  const overallStart = Date.now();
+
+  log('═══════════════════════════════════════════════════════', 'magenta');
+  log('  Gemini API Wrapper v2.0', 'magenta');
+  log('═══════════════════════════════════════════════════════', 'magenta');
+  log(`\nModel: ${args.model}`, 'cyan');
+  log(`Input: ${args.input}`, 'cyan');
+  log(`Output: ${args.output}`, 'cyan');
+

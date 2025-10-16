@@ -1,0 +1,15 @@
+- ASUS RT-AX86U Pro router
+- Fiber internet (minimum 100 Mbps upload for 4x 1080p streams)
+- PC for OBS (recommended: 16GB RAM, 8-core CPU)
+
+## Router Configuration (Asuswrt-Merlin)
+
+### QoS Settings
+1. Enable QoS: Adaptive QoS > Enable
+2. Prioritize streaming traffic:
+   - Port 1935 (RTMP) → Highest
+   - Port 443 (HTTPS) → High
+3. Bandwidth allocation:
+   - Upload: Reserve 80 Mbps for streaming
+   - Download: Reserve 20 Mbps for control
+
