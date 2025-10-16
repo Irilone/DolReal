@@ -51,7 +51,7 @@ export default function DagarOmLagarDolPage() {
   useEffect(() => {
     document.documentElement.lang = i18n.language || "se";
     document.documentElement.dir = i18n.dir();
-  }, [i18n, i18n.language]);
+  }, [i18n.language]);
 
   const graphNodes = useMemo(
     () =>
