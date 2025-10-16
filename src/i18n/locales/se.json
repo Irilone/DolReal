@@ -37,11 +37,15 @@
     "nodost": "Nordöst",
     "nodmidd": "Nordmidd",
     "inactive": "Ej aktiv idag",
+    "inactive_day2": "Denna nod är endast aktiv på Dag 1. Byt till huvudströmmen (Nordväst).",
+    "inactive_general": "Denna nod är för närvarande inte aktiv",
+    "switchToMain": "Byt till Huvudström",
     "live": "LIVE",
     "viewers": "tittare",
     "play": "Spela",
     "pause": "Pausa",
-    "watch": "Titta"
+    "watch": "Titta",
+    "liveStreams": "Direktsändningar"
   },
   "event": {
     "title": "Dagar om Lagar 2025",
@@ -61,5 +65,14 @@
     "loading": "Laddar...",
     "error": "Ett fel uppstod",
     "retry": "Försök igen"
+  },
+  "footer": {
+    "copyright": "© 2025 Dagar om Lagar – Alla rättigheter förbehållna",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "welcome": "Välkommen till Dagar om Lagar 2025",
+    "subtitle": "Ett juridiskt symposium som utforskar lagar och samhälle",
+    "watchLive": "Se Live"
   }
 }

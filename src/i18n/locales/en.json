@@ -37,11 +37,15 @@
     "nodost": "East Node",
     "nodmidd": "Central Node",
     "inactive": "Not active today",
+    "inactive_day2": "This node is only active on Day 1. Please switch to the main stream (Nordväst).",
+    "inactive_general": "This node is not currently active",
+    "switchToMain": "Switch to Main Stream",
     "live": "LIVE",
     "viewers": "viewers",
     "play": "Play",
     "pause": "Pause",
-    "watch": "Watch"
+    "watch": "Watch",
+    "liveStreams": "Live Streams"
   },
   "event": {
     "title": "Days about Laws 2025",
@@ -61,5 +65,14 @@
     "loading": "Loading...",
     "error": "An error occurred",
     "retry": "Try again"
+  },
+  "footer": {
+    "copyright": "© 2025 Days about Laws – All Rights Reserved",
+    "contact": "Contact"
+  },
+  "hero": {
+    "welcome": "Welcome to Days about Laws 2025",
+    "subtitle": "A legal symposium exploring laws and society",
+    "watchLive": "Watch Live"
   }
 }
