@@ -7,6 +7,7 @@ import ar from "./locales/ar.json";
 import fa from "./locales/fa.json";
 import zh from "./locales/zh.json";
 import es from "./locales/es.json";
+import it from "./locales/it.json";
 
 const resources = {
   se: { translation: se },
@@ -15,6 +16,7 @@ const resources = {
   fa: { translation: fa },
   zh: { translation: zh },
   es: { translation: es },
+  it: { translation: it },
 };
 
 const initOptions = {

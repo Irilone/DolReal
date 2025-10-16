@@ -1,4 +1,4 @@
-export type Locale = 'se' | 'en' | 'ar' | 'fa' | 'zh' | 'es';
+export type Locale = 'se' | 'en' | 'ar' | 'fa' | 'zh' | 'es' | 'it';
 
 export type Direction = 'ltr' | 'rtl';
 
@@ -17,4 +17,5 @@ export const LOCALE_CONFIGS: Record<Locale, LocaleConfig> = {
   fa: { code: 'fa', name: 'Farsi', nativeName: 'فارسی', direction: 'rtl', flag: '🇮🇷' },
   zh: { code: 'zh', name: 'Chinese', nativeName: '中文', direction: 'ltr', flag: '🇨🇳' },
   es: { code: 'es', name: 'Spanish', nativeName: 'Español', direction: 'ltr', flag: '🇪🇸' },
+  it: { code: 'it', name: 'Italian', nativeName: 'Italiano', direction: 'ltr', flag: '🇮🇹' },
 };

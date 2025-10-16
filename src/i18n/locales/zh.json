@@ -15,11 +15,15 @@
     "nodost": "东方节点",
     "nodmidd": "中央节点",
     "inactive": "今天不活跃",
+    "inactive_day2": "此节点仅在第1天活跃。请切换到主流（Nordväst）。",
+    "inactive_general": "此节点当前不活跃",
+    "switchToMain": "切换到主流",
     "live": "直播",
     "viewers": "观众",
     "play": "播放",
     "pause": "暂停",
-    "watch": "观看"
+    "watch": "观看",
+    "liveStreams": "直播流"
   },
   "event": {
     "title": "2025年法律日",
@@ -33,5 +37,20 @@
     "ok": "良好",
     "bad": "较差",
     "offline": "离线"
+  },
+  "common": {
+    "close": "关闭",
+    "loading": "加载中...",
+    "error": "发生错误",
+    "retry": "重试"
+  },
+  "footer": {
+    "copyright": "© 2025 法律日 – 版权所有",
+    "contact": "联系方式"
+  },
+  "hero": {
+    "welcome": "欢迎来到2025年法律日",
+    "subtitle": "探索法律与社会的法律研讨会",
+    "watchLive": "观看直播"
   }
 }
