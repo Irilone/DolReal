@@ -31,6 +31,7 @@ yarn-error.log*
 
 # TypeScript
 *.tsbuildinfo
+*.tsbuildinfo.*
 next-env.d.ts
 
 # Vercel
@@ -48,10 +49,14 @@ next-env.d.ts
 Thumbs.db
 
 # Artifacts and releases (DoL-specific)
-artifacts/
+artifacts/*.json
+artifacts/*.md
+!artifacts/.gitkeep
 releases/
-logs/
-plans/
+logs/*.log
+!logs/.gitkeep
+plans/*.md
+!plans/.gitkeep
 
 # Actions runner (DoL-specific)
 actions-runner/
@@ -60,8 +65,18 @@ actions-runner-*.tar.gz
 # Backups & Archives
 \#Backups/
 archived/
+alt-root-claude/
 *.backup
 *.bak
+*.001
+*.002
+*.003
+*.004
+*.005
+*.006
+*.007
+*.008
+*.009
 
 # Gemini Analysis Output
 gemini-analysis-output/
