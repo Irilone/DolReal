@@ -1,6 +1,5 @@
 {
   "header": {
-    "title": "Giorni sulle Leggi 2025",
     "title": "Giornate sulle Leggi 2025",
     "logo_alt": "Logo DoL"
   },
@@ -8,9 +7,6 @@
     "home": "Home",
     "schedule": "Programma",
     "streams": "Streaming",
-    "graph": "Grafo della Conoscenza",
-    "archive": "Archivio",
-    "about": "Informazioni"
     "graph": "Grafo di Conoscenza",
     "archive": "Archivio",
     "about": "Chi Siamo"
@@ -19,7 +15,6 @@
     "previous": "Precedente",
     "next": "Successivo",
     "goto": "Vai allo streaming",
-    "label": "Carosello streaming"
     "label": "Carosello degli streaming"
   },
   "graph": {
@@ -27,7 +22,6 @@
     "zoomOut": "Riduci",
     "reset": "Ripristina vista",
     "legend": "Legenda",
-    "connections": "connessioni"
     "connections": "connessioni",
     "title": "Navigatore del Grafo di Conoscenza",
     "view": "Visualizza",
@@ -39,7 +33,6 @@
     "day1": "Giorno 1",
     "day2": "Giorno 2",
     "speakers": "Relatori",
-    "streams": "Streaming"
     "streams": "Streaming",
     "schedule": "Programma degli Eventi",
     "day1.opening": "Cerimonia di Apertura",
@@ -79,16 +72,13 @@
     "watch": "Guarda"
   },
   "event": {
-    "title": "Giorni sulle Leggi 2025",
-    "watch": "Guarda",
-    "liveStreams": "Streaming in Diretta"
-  },
-  "event": {
     "title": "Giornate sulle Leggi 2025",
     "dates": "6-7 novembre 2025",
     "description": "Un simposio legale che esplora leggi e società",
     "day1": "Giorno 1 - 6 novembre 2025",
-    "day2": "Giorno 2 - 7 novembre 2025"
+    "day2": "Giorno 2 - 7 novembre 2025",
+    "watch": "Guarda",
+    "liveStreams": "Streaming in Diretta"
   },
   "health": {
     "good": "Eccellente",
