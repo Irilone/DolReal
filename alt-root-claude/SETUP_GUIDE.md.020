@@ -1,0 +1,12 @@
+make gemini-ultra
+
+# Agent 2: GPT-5 Codex (Architecture)
+make gpt5-codex
+
+# Agents 3a & 3b: Claude (Frontend & Backend)
+make claude-parallel
+
+# Agent 4: Gemini CLI (Integration)
+make gemini-cli
+```
+

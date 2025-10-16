@@ -1,0 +1,10 @@
+
+// ============================================================================
+// Parallel Execution
+// ============================================================================
+
+async function executeParallelGroup(agents: AgentConfig[]): Promise<void> {
+  log(`Executing ${agents.length} agents in parallel...`);
+  await Promise.all(agents.map((agent) => executeAgent(agent)));
+}
+

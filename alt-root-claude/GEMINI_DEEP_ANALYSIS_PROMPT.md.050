@@ -1,0 +1,10 @@
+If comprehensive fixes are needed, consider:
+
+### Full Stack Port Options
+
+**Option A: Keep Next.js 15, Full Rewrite**
+- Rebuild components from scratch using artifacts as spec
+- Implement proper testing from day 1
+- Use shadcn/ui components for consistency
+- Estimated time: 3-4 days
+

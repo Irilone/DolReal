@@ -1,0 +1,10 @@
+
+  afterAll(() => {
+    process.env = ORIGINAL_ENV;
+  });
+
+  it('returns all streams for day 1 with valid configuration', async () => {
+    const request = new Request('http://localhost/api/streams?day=1');
+    const response = await GET(request);
+    const data = await response.json();
+

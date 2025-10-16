@@ -1,0 +1,10 @@
+3. **Configure Priority Rules**
+   - Add High Priority: UDP ports 1935 (RTMP)
+   - Add High Priority: Streaming applications
+   - Set OBS computer MAC address to highest priority
+
+4. **Monitor Bandwidth**
+   - Use Traffic Analyzer to monitor real-time usage
+   - Adjust QoS rules based on performance
+
+## OBS Studio Configuration

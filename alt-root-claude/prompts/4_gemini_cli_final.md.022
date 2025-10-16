@@ -1,0 +1,11 @@
+#### B. Deployment Preview
+- Deploy to staging environment
+- Run automated Playwright tests
+- Generate Lighthouse report
+
+---
+
+## OUTPUT FORMAT
+
+Return valid JSON:
+

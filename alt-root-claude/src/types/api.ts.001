@@ -1,0 +1,11 @@
+import { Stream, StreamHealth, ViewerCount, EventDay } from './stream';
+
+// GET /api/streams
+export interface StreamsResponse {
+  streams: Stream[];
+  currentDay: EventDay;
+}
+
+// GET /api/stream-health/[streamId]
+export interface StreamHealthResponse extends StreamHealth {}
+

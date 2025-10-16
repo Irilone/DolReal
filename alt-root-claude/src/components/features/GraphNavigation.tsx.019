@@ -1,0 +1,15 @@
+                  {/* Node circle */}
+                  <circle
+                    cx={pos.x}
+                    cy={pos.y}
+                    r={radius}
+                    fill={nodeColors[node.type]}
+                    stroke="rgba(255, 255, 255, 0.5)"
+                    strokeWidth={isSelected ? 3 : 2}
+                    className="cursor-pointer hover:opacity-80 transition-all duration-300"
+                    onClick={() => handleNodeClick(node)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`${node.type}: ${node.label}`}
+                  />
+

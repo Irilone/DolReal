@@ -1,0 +1,10 @@
+#### 9. create_knowledge_graph  
+**Purpose**: Create persistent graph in InfraNodus
+**Usage**: "Create a permanent graph for DoL 2025 planning"
+**Output**: Graph created with shareable link
+
+#### 10. generate_overlap_graph
+**Purpose**: Find similarities between multiple texts
+**Usage**: "Compare abstracts from different conference tracks"
+**Output**: Overlapping concepts and themes
+

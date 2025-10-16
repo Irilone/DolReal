@@ -1,0 +1,12 @@
+**Analysis Needed:**
+1. Verify JSX multiline string syntax compatibility with Next.js 15 compiler
+2. Check for hidden characters or encoding issues
+3. Consider using template literals or className composition
+4. Verify styled-jsx/emotion/twin.macro isn't interfering
+
+**Potential Fixes:**
+- Option A: Use `cn()` utility to compose classes
+- Option B: Use template literal with proper escaping
+- Option C: Break into multiple className assignments
+- Option D: Check for BOM or special characters in file
+

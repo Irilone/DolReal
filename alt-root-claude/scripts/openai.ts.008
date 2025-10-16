@@ -1,0 +1,13 @@
+  const apiUrl = 'https://api.openai.com/v1/chat/completions';
+
+  log(`\n${COLORS.cyan}→ Calling OpenAI API: ${apiModel}${COLORS.reset}`);
+  log(`  Prompt length: ${prompt.length} characters`, 'blue');
+
+  const startTime = Date.now();
+
+  const response = await fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`,
+    },

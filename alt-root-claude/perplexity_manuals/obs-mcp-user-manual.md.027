@@ -1,0 +1,10 @@
+### Automated Stream Management
+
+Using the MCP server for centralized control:
+
+```python
+# Example automation script for conference day 2
+# (Nodväst only - disable other streams)
+
+def configure_day_2_streaming():
+    # Disable secondary nodes

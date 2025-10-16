@@ -1,0 +1,15 @@
+  "i18n_check": {
+    "locales_complete": ["se", "en", "ar", "fa", "zh", "es"],
+    "missing_keys": [],
+    "rtl_verified": true
+  },
+  "smoke_tests": {
+    "app_starts": true,
+    "streams_load": true,
+    "language_switcher": true,
+    "dark_mode": true,
+    "graph_modal": true,
+    "day2_logic": true,
+    "keyboard_nav": true,
+    "mobile_responsive": true
+  },

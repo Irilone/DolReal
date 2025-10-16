@@ -1,0 +1,7 @@
+  "common": {
+    "close": "Stäng",
+    "loading": "Laddar...",
+    "error": "Ett fel uppstod",
+    "retry": "Försök igen"
+  }
+}

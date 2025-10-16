@@ -1,0 +1,10 @@
+echo -e "${BLUE}🚀 Starting Gemini 2.5 Pro Ultra Analysis...${NC}"
+echo -e "${YELLOW}⏰ This will take 15-35 minutes with deep thinking mode enabled${NC}"
+echo -e "${YELLOW}📂 Output: $OUTPUT_FILE${NC}\n"
+
+# Run gem analysis with deep thinking enabled
+echo -e "${BLUE}Command: gem analyze --model gemini-2.5-pro-002 --deep-thinking --context ./src${NC}\n"
+
+# Attempt different gem CLI syntaxes (different tools have different commands)
+if gem help | grep -q "analyze"; then
+    # If gem has analyze command

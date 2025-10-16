@@ -1,0 +1,10 @@
+**Module Loading Errors**
+- Verify browser supports ES6 modules
+- Check file paths are correct
+- Ensure running via HTTP server (not file://)
+
+**Environment Variables Not Found**
+- Check `.env` file exists and is in correct location
+- Verify environment variables are exported
+- Run `make check-env` to validate
+

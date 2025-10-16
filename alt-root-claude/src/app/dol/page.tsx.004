@@ -1,0 +1,30 @@
+  const openNode = (node: string, graphId: string) => {
+    setActiveNode(node);
+    setGraphEmbed(`https://infranodus.com/embed/${graphId}`);
+  };
+
+  return (
+    <div
+      className={`${darkMode ? "bg-black text-white" : "bg-white text-black"} min-h-screen transition-colors`}
+    >
+      <header className="glass sticky top-0 z-50 flex justify-between items-center px-6 py-4 border-b border-white/20">
+        <h1 className="text-2xl font-bold tracking-wide">
+          {t("title", { defaultValue: "Dagar om Lagar 2025" })}
+        </h1>
+        <nav className="flex gap-4" aria-label="Main Navigation">
+          <a href="#streams" className="hover:underline focus:underline">
+            Streams
+          </a>
+          <a href="#program" className="hover:underline focus:underline">
+            Program
+          </a>
+          <a href="#kontakt" className="hover:underline focus:underline">
+            Kontakt
+          </a>
+        </nav>
+        <div className="flex gap-2">
+          <Button variant="outline" size="sm" onClick={toggleLanguage}>
+            {i18n.language?.toUpperCase() || "SE"}
+          </Button>
+          <Button variant="secondary" size="sm" onClick={toggleDarkMode}>
+            {darkMode ? "☀️" : "🌙"}

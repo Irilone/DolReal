@@ -1,0 +1,10 @@
+            )}
+          </g>
+
+          {/* Nodes */}
+          <g className="nodes">
+            {nodes.map((node) => {
+              const pos = nodePositions.get(node.id);
+              if (!pos) return null;
+
+              const isSelected = selectedNode === node.id;

@@ -1,0 +1,19 @@
+                  {/* Node label */}
+                  <text
+                    x={pos.x}
+                    y={pos.y + radius + 20}
+                    textAnchor="middle"
+                    fill="white"
+                    fontSize={isSelected ? 14 : 12}
+                    fontWeight={isSelected ? 600 : 400}
+                    className="pointer-events-none select-none"
+                  >
+                    {node.label}
+                  </text>
+                </g>
+              );
+            })}
+          </g>
+        </g>
+      </svg>
+

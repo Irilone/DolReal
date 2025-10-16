@@ -1,0 +1,10 @@
+bun add <package>
+bun add -d <package>  # Dev dependency
+
+# Remove package
+bun remove <package>
+
+# Update packages
+bun update
+
+# Run scripts

@@ -1,0 +1,13 @@
+
+- **LCP** (Largest Contentful Paint): <2.5s
+- **CLS** (Cumulative Layout Shift): <0.1
+- **JS Bundle**: <250KB
+- **Test Coverage**: >80%
+
+### YouTube Integration Policy
+
+- **No autoplay**: User gesture required (WCAG + policy compliance)
+- **Single active player**: Only one stream plays at a time
+- **Concurrency limit**: ≤12 events per channel (DoL uses 4)
+- **Day 2 behavior**: Only Nodväst active, others disabled (UI unchanged)
+

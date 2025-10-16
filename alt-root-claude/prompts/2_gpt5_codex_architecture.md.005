@@ -1,0 +1,13 @@
+#### C. Component Tree
+Define all components with responsibilities:
+
+```typescript
+// Example structure
+interface ComponentSpec {
+  name: string;
+  path: string;
+  dependencies: string[];
+  assigned_to: 'claude-frontend' | 'claude-backend' | 'shared';
+  props: Record<string, string>; // prop name -> type
+  description: string;
+}

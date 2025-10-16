@@ -1,0 +1,10 @@
+#### 13. generate_search_queries_graph
+**Purpose**: Analyze Google suggested searches
+**Usage**: "What are people searching for related to 'AI conferences'?"
+**Output**: Demand-side information analysis
+
+#### 14. generate_search_results_vs_queries_graph
+**Purpose**: Find gaps between search demand and supply
+**Usage**: "What conference topics do people search for but don't find?"
+**Output**: Market opportunity analysis
+

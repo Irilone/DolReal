@@ -1,0 +1,10 @@
+
+logger "Script started: example-script"
+
+# Your custom logic here
+
+logger "Script completed: example-script"
+```
+
+#### 2. Make Executable
+

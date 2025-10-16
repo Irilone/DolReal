@@ -1,0 +1,12 @@
+        "description": "Main header with navigation and controls"
+      }
+      // ... all components
+    ]
+  },
+  "api_contracts": [
+    {
+      "endpoint": "/api/streams",
+      "method": "GET",
+      "request_schema": {},
+      "response_schema": { /* JSON schema */ }
+    }

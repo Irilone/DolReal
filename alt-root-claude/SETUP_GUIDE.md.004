@@ -1,0 +1,10 @@
+## Initial Setup
+
+### Step 1: Clone Repository
+
+```bash
+git clone https://github.com/Irilone/DolReal.git
+cd DolReal
+```
+
+### Step 2: Install Dependencies

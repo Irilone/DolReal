@@ -1,0 +1,10 @@
+**Key Features**: 4 concurrent YouTube streams, knowledge graph integration, WCAG 2.2 AA accessibility, RTL support (Arabic/Farsi), dark mode
+
+**Important**: The `october/` directory contains deprecated browser-based prototypes and legacy documentation. All active development happens in `src/`. Do not modify `october/` unless explicitly instructed.
+
+## Build & Development Commands
+
+### Orchestration Pipeline (Multi-Agent)
+
+```bash
+# Full pipeline - all 4 agents sequentially (50-70 min)

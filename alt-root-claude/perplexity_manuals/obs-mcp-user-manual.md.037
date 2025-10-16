@@ -1,0 +1,13 @@
+## Troubleshooting
+
+### Common Issues and Solutions
+
+#### MCP Server Connection Issues
+
+**Problem**: Claude can't connect to OBS MCP server
+**Solutions**:
+1. Verify OBS WebSocket server is enabled
+2. Check password matches in configuration
+3. Ensure OBS is running before starting MCP client
+4. Restart Claude Desktop after configuration changes
+

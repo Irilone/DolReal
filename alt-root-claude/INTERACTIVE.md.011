@@ -1,0 +1,10 @@
+jq . artifacts/1_gemini_ultra_research.json
+```
+
+### Agent response incomplete
+1. Wait longer for model to finish
+2. Check if response was cut off (look for incomplete JSON)
+3. Try "Continue" or "Regenerate" in web interface
+4. Copy the full combined response
+
+### Skip completed agents

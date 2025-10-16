@@ -1,0 +1,10 @@
+```html
+<!-- Correct -->
+<script type="module" src="./scripts.js"></script>
+
+<!-- Incorrect -->
+<script src="./scripts.js"></script>
+```
+
+### Issue 4: LocalStorage Not Available
+

@@ -1,0 +1,14 @@
+ANTHROPIC_API_KEY=sk-ant-your-anthropic-key
+
+# Optional: For final build
+NEXT_PUBLIC_YOUTUBE_API_KEY=your-youtube-key
+INFRANODUS_API_KEY=your-infranodus-key
+```
+
+**Getting API Keys:**
+
+1. **Gemini**: https://aistudio.google.com/apikey
+   - Sign in with Google account
+   - Click "Create API Key"
+   - Copy the key (starts with `AIza`)
+

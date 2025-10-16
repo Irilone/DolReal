@@ -1,0 +1,11 @@
+  "api_routes": [
+    {
+      "file_path": "src/app/api/streams/route.ts",
+      "endpoint": "/api/streams",
+      "code": "// Full route code"
+    },
+    {
+      "file_path": "src/app/api/graph/route.ts",
+      "endpoint": "/api/graph",
+      "code": "// Full route code"
+    }

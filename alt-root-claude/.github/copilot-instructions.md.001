@@ -1,0 +1,14 @@
+# GitHub Copilot Instructions for DolReal
+
+This file provides instructions to GitHub Copilot when working with code in this repository.
+
+## Project Overview
+
+**DolReal** - "Dagar om Lagar 2025" streaming event platform. A multi-agent orchestration suite that builds a production-ready Next.js 15 application through coordinated AI agents with file-based async communication.
+
+### Event Details
+- **Name**: Dagar om Lagar 2025
+- **Dates**: November 6-7, 2025
+- **Streams**: 4 simultaneous (Nodväst, Nodsyd, Nodöst, Nodmidd)
+- **Day 2 Policy**: Only Nodväst active; UI remains unchanged
+

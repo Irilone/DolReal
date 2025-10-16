@@ -1,0 +1,11 @@
+3. **Claude Sonnet 4.5** - Frontend & Backend (15-20 min parallel)
+   - 3a: Frontend components, Tailwind, i18n, accessibility
+   - 3b: API routes, YouTube client, InfraNodus integration, 3 manuals
+   - Prompts: `prompts/3a_claude_frontend.md`, `prompts/3b_claude_backend.md`
+
+4. **Gemini 2.5 Pro CLI** - Final Integration (5-10 min)
+   - Merges frontend + backend
+   - Runs build + tests
+   - Performance & accessibility audits
+   - Prompts: `prompts/4_gemini_cli_final.md`
+

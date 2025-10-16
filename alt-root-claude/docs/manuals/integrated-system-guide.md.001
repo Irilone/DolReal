@@ -1,0 +1,10 @@
+# Integrated System Guide: Dagar om Lagar 2025
+
+## Overview
+
+This guide covers the complete setup and operation of the DoL 2025 streaming platform, including OBS Studio configuration, YouTube Live integration, router QoS settings, and the Next.js web application.
+
+## System Architecture
+
+### Components
+

@@ -1,0 +1,11 @@
+#### Day 1: Multi-Node Streaming
+
+**Network Architecture:**
+```
+Internet → Main Router → Switch
+                       ├── Node Väst (Primary)
+                       ├── Node Syd
+                       ├── Node Öst  
+                       └── Node Midd
+```
+

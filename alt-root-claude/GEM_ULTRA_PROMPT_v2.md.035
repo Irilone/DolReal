@@ -1,0 +1,11 @@
+### Code Splitting:
+- Effective: [YES/NO]
+- Lazy-loaded components: [count]
+- Route-based splits: [count]
+
+### Animation Performance:
+- Star background: [X fps]
+- Shooting stars: [X fps]
+- Nebula drift: [X fps]
+- Carousel scrolling: [X fps]
+

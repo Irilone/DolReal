@@ -1,0 +1,10 @@
+# Agent 4: Gemini CLI (Integration)
+run_agent \
+    "4" \
+    "Gemini 2.5 Pro CLI - Final Integration" \
+    "$PROMPTS_DIR/4_gemini_cli_final.md" \
+    "$ARTIFACTS_DIR/4_gemini_cli_final.json" \
+    "gemini.google.com/app" \
+    "$ARTIFACTS_DIR/3a_claude_frontend_output.json $ARTIFACTS_DIR/3b_claude_backend_output.json"
+
+# ============================================================================

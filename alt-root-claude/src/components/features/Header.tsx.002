@@ -1,0 +1,13 @@
+
+export function Header({ locale }: HeaderProps) {
+  const { t } = useTranslation();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: `/${locale}`, label: t('nav.home') },
+    { href: `/${locale}/schedule`, label: t('nav.schedule') },
+    { href: `/${locale}/streams`, label: t('nav.streams') },
+    { href: `/${locale}/graph`, label: t('nav.graph') },
+    { href: `/${locale}/about`, label: t('nav.about') },
+  ];
+

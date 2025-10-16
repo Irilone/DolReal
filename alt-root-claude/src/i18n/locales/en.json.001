@@ -1,0 +1,13 @@
+{
+  "header": {
+    "title": "Days about Laws 2025",
+    "logo_alt": "DoL Logo"
+  },
+  "nav": {
+    "home": "Home",
+    "schedule": "Schedule",
+    "streams": "Streams",
+    "graph": "Knowledge Graph",
+    "archive": "Archive",
+    "about": "About"
+  },

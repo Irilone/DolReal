@@ -1,0 +1,13 @@
+/* @jest-environment node */
+// src/app/api/streams/route.test.ts
+import { GET } from './route';
+import { NextRequest } from 'next/server';
+
+const ORIGINAL_ENV = process.env;
+
+const VALID_STREAM_ENV = {
+  NODVAST_YOUTUBE_ID: 'video-nodvast',
+  NODSYD_YOUTUBE_ID: 'video-nodsyd',
+  NODOST_YOUTUBE_ID: 'video-nodost',
+  NODMIDD_YOUTUBE_ID: 'video-nodmidd',
+};

@@ -1,0 +1,10 @@
+
+  console.log(`\n🤖 Running ${agent.name}...\n`);
+
+  // Check API key
+  const apiKey = process.env[agent.envKey];
+  if (!apiKey) {
+    console.error(`❌ ${agent.envKey} not set`);
+    process.exit(1);
+  }
+

@@ -1,0 +1,16 @@
+## Automated Testing Recommendations
+- Playwright E2E tests for: [specific scenarios]
+- Lighthouse CI for: [performance thresholds]
+```
+
+---
+
+## 💡 HOW TO USE YOUR DEEP THINKING MODE
+
+**Extended Reasoning Triggers:**
+- "Think step-by-step about..."
+- "Consider all edge cases for..."
+- "What are the second-order effects of..."
+- "Analyze the trade-offs between..."
+- "What could go wrong if..."
+

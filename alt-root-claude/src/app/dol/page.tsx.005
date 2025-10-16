@@ -1,0 +1,30 @@
+          </Button>
+        </div>
+      </header>
+
+      <section
+        id="graph"
+        className="py-12 px-4 text-center"
+        aria-labelledby="graph-title"
+      >
+        <h2 id="graph-title" className="text-xl font-semibold mb-4">
+          Knowledge Graph Navigator
+        </h2>
+        <div className="mx-auto max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-4">
+          {nodes.map((node) => (
+            <Card
+              key={node.name}
+              className="bg-white/5 backdrop-blur-sm border border-white/10"
+              role="group"
+              aria-label={`Node ${node.name}`}
+            >
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg">{node.name}</h3>
+                <div className="flex justify-center gap-2 mt-3">
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    onClick={() => openNode(node.name, node.graphId)}
+                  >
+                    View
+                  </Button>

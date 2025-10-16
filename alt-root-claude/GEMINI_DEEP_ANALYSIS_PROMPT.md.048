@@ -1,0 +1,12 @@
+# OR with environment variable:
+export GEMINI_API_KEY="${GEMINI_API_KEY}"
+gemini-cli analyze-codebase --model gemini-2.5-pro-002 --path ./src --instructions GEMINI_DEEP_ANALYSIS_PROMPT.md
+```
+
+**Note:** Gemini 2.5 Pro with "Deep Thinking" mode (part of Ultra subscription) provides:
+- Extended reasoning time for complex analysis
+- Multi-step problem solving
+- Comprehensive code review capabilities
+- Architectural pattern recognition
+- Security vulnerability detection
+

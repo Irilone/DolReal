@@ -1,0 +1,18 @@
+### Next.js Development
+
+```bash
+<<<<<<< Updated upstream
+bun dev                   # Start dev server (http://localhost:3000)
+bun run build             # Production build
+bun start                 # Start production server
+bun run lint              # Run Next.js linting
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+# Run Trunk linter (markdownlint, prettier, trufflehog, git-diff-check)

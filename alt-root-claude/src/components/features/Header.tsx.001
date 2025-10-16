@@ -1,0 +1,11 @@
+'use client';
+
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import type { Locale } from '@/types/i18n';
+import { LanguageSelector } from './LanguageSelector';
+import { ThemeToggle } from './ThemeToggle';
+
+interface HeaderProps {
+  locale: Locale;
+}

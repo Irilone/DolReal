@@ -1,0 +1,6 @@
+    return { nodes: data.nodes, links: data.links };
+  } catch (error) {
+    console.error('Error fetching graph from InfraNodus:', error);
+    throw error;
+  }
+}

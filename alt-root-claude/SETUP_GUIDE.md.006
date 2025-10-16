@@ -1,0 +1,10 @@
+### Step 3: Copy Environment Template
+
+```bash
+cp .env.example .env
+```
+
+## API Key Configuration
+
+### Option 1: For Orchestration (Required)
+

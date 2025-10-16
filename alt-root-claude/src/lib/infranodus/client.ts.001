@@ -1,0 +1,14 @@
+import type { GraphNode, GraphLink } from '@/types/api';
+import { getCachedData, setCachedData } from './cache';
+import { checkRateLimit } from './rate-limiter';
+
+const INFRANODUS_API_BASE = 'https://infranodus.com/api';
+
+interface InfraNodusAnalyzeResponse {
+  context_id: string;
+  nodes: GraphNode[];
+  links: GraphLink[];
+  stats: {
+    node_count: number;
+    link_count: number;
+  };

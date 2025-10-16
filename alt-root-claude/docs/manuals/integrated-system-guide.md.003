@@ -1,0 +1,13 @@
+## Network Setup
+
+### Router Configuration (ASUS RT-AX86U Pro)
+
+1. **Access Router Admin**
+   - Navigate to `http://router.asus.com`
+   - Login with admin credentials
+
+2. **Enable QoS**
+   - Go to QoS → QoS Settings
+   - Enable Traditional QoS
+   - Set Upload/Download bandwidth to 90% of measured speeds
+

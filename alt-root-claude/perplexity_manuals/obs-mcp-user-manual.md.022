@@ -1,0 +1,10 @@
+#### Method 2: Stream Key Method
+1. In YouTube Studio, click **Go Live**
+2. Select **Streaming software** option
+3. Copy the **Stream Key**
+4. In OBS: **Settings > Stream**
+5. Select **YouTube - RTMPS**
+6. Choose **Use Stream Key**
+7. Paste the stream key
+
+### Creating Multiple YouTube Streams

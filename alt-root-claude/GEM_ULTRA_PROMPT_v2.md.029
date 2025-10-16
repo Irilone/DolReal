@@ -1,0 +1,16 @@
+### 4. November 6-7 Event Day Scenarios
+**War game the launch:**
+- 1000 viewers join simultaneously - what breaks?
+- WiFi is slow/unstable - user experience?
+- Mobile users on 4G - load time?
+- Screen readers - do they work?
+- Browser back button - does routing work?
+
+### 5. Long-term Maintenance
+**Think beyond launch:**
+- Who maintains this after the event?
+- How easy is it to fix bugs?
+- Can non-React developers understand the code?
+- Is the documentation sufficient?
+- What's the technical debt burden?
+

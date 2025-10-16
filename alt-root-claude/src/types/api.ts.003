@@ -1,0 +1,13 @@
+
+export interface InfraNodusAnalyzeResponse {
+  success: boolean;
+  contextId: string;
+  statementId: string;
+}
+
+// GET /api/infranodus/graph/[contextId]
+export interface GraphNode {
+  id: string;
+  label: string;
+  val: number;
+}

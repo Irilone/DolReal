@@ -1,0 +1,14 @@
+#!/usr/bin/env bun
+/**
+ * OpenAI API Wrapper for DoL 2025 Multi-Agent Orchestration
+ *
+ * Usage:
+ *   bun run scripts/openai.ts --model <model> --input <file> --output <file>
+ *
+ * Example:
+ *   bun run scripts/openai.ts \
+ *     --model gpt-5-codex \
+ *     --input /tmp/gpt5-input.md \
+ *     --output artifacts/2_gpt5_codex_architecture.json
+ */
+

@@ -1,0 +1,10 @@
+const analysis = await GeminiAPI.generateContent(
+  'Analyze bus schedule efficiency',
+  { temperature: 0.5 }
+);
+```
+
+## Security Considerations
+
+### Implemented Measures
+

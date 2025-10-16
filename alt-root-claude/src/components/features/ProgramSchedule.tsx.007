@@ -1,0 +1,14 @@
+    ],
+  },
+  2: {
+    date: '2025-11-07',
+    sessions: [
+      {
+        id: 'd2-1',
+        time: '09:00 - 09:30',
+        title: 'Dag 2 - Välkommen Tillbaka',
+        description: 'Sammanfattning av dag 1 och förberedelser',
+        speakers: ['Moderator'],
+        streams: ['nodvast'],
+        type: 'keynote',
+      },

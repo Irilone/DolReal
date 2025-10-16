@@ -1,0 +1,10 @@
+  if (!apiKey) throw new Error("OPENAI_API_KEY not set");
+
+  log(`  Calling OpenAI API (gpt-5-codex-high-reasoning)...`);
+
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },

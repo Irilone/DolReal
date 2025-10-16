@@ -1,0 +1,10 @@
+### Option 2: Use with Gemini CLI (Recommended for Deep Thinking)
+```bash
+# If gemini-cli is installed
+cd /Users/air/DoL-2025/DolReal
+gemini-cli chat --model gemini-2.5-pro-002 < GEMINI_DEEP_ANALYSIS_PROMPT.md
+
+# OR if using the 'gem' coding partner CLI with Ultra subscription:
+cd /Users/air/DoL-2025/DolReal
+gem analyze --deep-thinking --context ./src "$(cat GEMINI_DEEP_ANALYSIS_PROMPT.md)"
+

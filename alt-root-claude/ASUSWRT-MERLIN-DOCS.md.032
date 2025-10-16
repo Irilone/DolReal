@@ -1,0 +1,10 @@
+### Customization
+
+- **JFFS Partition**: Persistent storage for scripts and configs
+- **SSH Access**: Full command-line access
+- **Custom Scripts**: Extensive hook system
+- **Iptables Control**: Advanced firewall customization
+- **NVRAM Access**: Low-level router configuration
+
+### Monitoring
+

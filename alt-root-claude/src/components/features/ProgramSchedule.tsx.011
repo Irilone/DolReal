@@ -1,0 +1,30 @@
+
+  const streamBadgeColors = {
+    nodvast: 'bg-purple-600/80',
+    nodsyd: 'bg-blue-600/80',
+    nodost: 'bg-cyan-600/80',
+    nodmidd: 'bg-indigo-600/80',
+  };
+
+  return (
+    <div className={`space-y-6 ${className}`}>
+      {/* Day Switcher */}
+      <div className="flex justify-center gap-4">
+        <button
+          onClick={() => setSelectedDay(1)}
+          className={`px-8 py-3 rounded-glass font-semibold transition-all duration-300
+                     ${
+                       selectedDay === 1
+                         ? 'glass-strong scale-105 shadow-glow'
+                         : 'glass hover:scale-105'
+                     }`}
+          aria-pressed={selectedDay === 1}
+        >
+          <div className="text-white">
+            <div className="text-lg">Dag 1</div>
+            <div className="text-sm text-white/60">6 November 2025</div>
+          </div>
+        </button>
+        <button
+          onClick={() => setSelectedDay(2)}
+          className={`px-8 py-3 rounded-glass font-semibold transition-all duration-300

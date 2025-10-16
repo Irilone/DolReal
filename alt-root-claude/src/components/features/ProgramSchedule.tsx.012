@@ -1,0 +1,14 @@
+                     ${
+                       selectedDay === 2
+                         ? 'glass-strong scale-105 shadow-glow'
+                         : 'glass hover:scale-105'
+                     }`}
+          aria-pressed={selectedDay === 2}
+        >
+          <div className="text-white">
+            <div className="text-lg">Dag 2</div>
+            <div className="text-sm text-white/60">7 November 2025</div>
+          </div>
+        </button>
+      </div>
+

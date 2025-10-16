@@ -1,0 +1,14 @@
+
+  log(`  Calling Gemini API (${model})...`);
+
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: [{ role: "user", parts: [{ text: prompt }] }],
+      generationConfig: {
+        temperature: 0.2,
+        topP: 0.95,
+        topK: 40,
+        maxOutputTokens: 32000,
+      },

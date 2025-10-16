@@ -1,0 +1,11 @@
+          },
+          "plans": {
+            "type": "object",
+            "properties": {
+              "router_plan_path": { "type": "string" },
+              "obs_plan_path": { "type": "string" },
+              "yt_plan_path": { "type": "string" },
+              "infranodus_plan_path": { "type": "string" },
+              "site_spec_path": { "type": "string" },
+              "manuals_outline_path": { "type": "string" }
+            }

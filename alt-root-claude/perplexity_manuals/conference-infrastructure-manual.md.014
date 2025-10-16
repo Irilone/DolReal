@@ -1,0 +1,13 @@
+  "role": "primary_hub",
+  "backup_enabled": true
+}
+
+// Secondary Nodes (Nodsyd, Nodöst, Nodmidd)
+{
+  "stream_settings": {
+    "service": "YouTube - RTMPS", 
+    "key": "[Node-specific Stream Key]",
+    "bitrate": 5000,
+    "resolution": "1920x1080",
+    "fps": 30
+  },

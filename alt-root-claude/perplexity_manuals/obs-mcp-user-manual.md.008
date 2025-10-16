@@ -1,0 +1,10 @@
+#### Option B: From Source
+```bash
+# Clone the repository
+git clone https://github.com/royshil/obs-mcp.git
+cd obs-mcp
+
+# Install dependencies
+npm install
+
+# Build the project

@@ -1,0 +1,16 @@
+  "tests": {
+    "total": 57,
+    "passed": 57,
+    "failed": 0,
+    "coverage": 87.3,
+    "duration_ms": 8920
+  },
+  "performance_metrics": {
+    "lcp": 2.1,
+    "cls": 0.08,
+    "fcp": 1.5,
+    "tti": 3.2,
+    "js_bundle_size_kb": 245,
+    "css_bundle_size_kb": 34,
+    "total_bundle_size_kb": 279
+  },

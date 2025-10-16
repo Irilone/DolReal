@@ -1,0 +1,13 @@
+├── package.json            # Dependencies
+└── README.md               # This file
+```
+
+## Features
+
+### Orchestration Suite
+- 🤖 4-agent coordinated pipeline
+- 📦 File-based async communication
+- ⚡ Parallel execution for Claude agents
+- 🔍 Status monitoring and validation
+- 📊 Artifact generation and tracking
+

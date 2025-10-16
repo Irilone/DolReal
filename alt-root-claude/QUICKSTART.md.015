@@ -1,0 +1,15 @@
+---
+
+## What Gets Built?
+
+✅ **Next.js 15** app with App Router
+✅ **TypeScript** (strict mode)
+✅ **Tailwind CSS v4** + dark mode
+✅ **6 languages** (se, en, ar, fa, zh, es) with RTL support
+✅ **4 YouTube streams** (concurrent, one active player)
+✅ **InfraNodus knowledge graph** (modal embed)
+✅ **WCAG 2.2 AA** accessibility
+✅ **Performance optimized** (LCP <2.5s, CLS <0.1, JS <250KB)
+✅ **3 comprehensive manuals** (Router + OBS + Webapp)
+✅ **Full test suite** (Jest + coverage)
+

@@ -1,0 +1,11 @@
+  it('returns only Nodväst as active for day 2', async () => {
+    const request = new Request('http://localhost/api/streams?day=2');
+    const response = await GET(request);
+    const data = await response.json();
+
+    const activeStreams = data.streams.filter((stream: any) => stream.active);
+    expect(response.status).toBe(200);
+    expect(activeStreams).toHaveLength(1);
+    expect(activeStreams[0].id).toBe('nodvast');
+    expect(activeStreams[0].day).toBe(2);
+  });

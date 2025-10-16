@@ -1,0 +1,11 @@
+    lng: 'se',
+    fallbackLng: 'en',
+    interpolation: { escapeValue: false },
+  });
+```
+
+#### B. Translation Files
+Create JSON files for all 6 locales:
+
+```json
+// src/i18n/locales/se.json

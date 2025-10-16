@@ -1,0 +1,30 @@
+### Validation Flow
+
+```
+User clicks "Validera allt"
+         │
+         ▼
+handleValidation(CHECK_ALL)
+         │
+         ├─→ Show loading indicator
+         │
+         └─→ Validation.checkAll()
+                  │
+                  ├─→ checkGeminiAPI()
+                  │        │
+                  │        ├─→ Validate format
+                  │        ├─→ Test connectivity
+                  │        └─→ Return status
+                  │
+                  ├─→ checkEnvironment()
+                  │        │
+                  │        ├─→ Check GEMINI_API_KEY
+                  │        ├─→ Check optional keys
+                  │        └─→ Return status
+                  │
+                  ├─→ checkBrowser()
+                  │        │
+                  │        ├─→ Check Fetch API
+                  │        ├─→ Check ES6 Modules
+                  │        ├─→ Check LocalStorage
+                  │        ├─→ Check HTTPS

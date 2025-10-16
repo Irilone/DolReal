@@ -1,0 +1,11 @@
+## Testing
+
+### Orchestration Testing
+```bash
+# Run full orchestration (takes 50-70 minutes)
+make all
+
+# Check generated artifacts
+ls -la artifacts/
+```
+

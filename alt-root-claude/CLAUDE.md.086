@@ -1,0 +1,10 @@
+### Build Errors
+
+```bash
+# Type check for errors
+bun run typecheck
+
+# Clean node_modules and reinstall
+rm -rf node_modules bun.lock
+bun install
+

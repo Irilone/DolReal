@@ -1,0 +1,16 @@
+          "performance_metrics": {
+            "type": "object",
+            "properties": {
+              "lcp": { "type": "number" },
+              "cls": { "type": "number" },
+              "js_bundle_size_kb": { "type": "number" }
+            }
+          },
+          "release": {
+            "type": "object",
+            "properties": {
+              "version": { "type": "string" },
+              "tag": { "type": "string" },
+              "artifact_path": { "type": "string" },
+              "checksum": { "type": "string" }
+            }

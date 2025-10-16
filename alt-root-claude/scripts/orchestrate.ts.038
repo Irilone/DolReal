@@ -1,0 +1,12 @@
+        if (
+          nextSequentialIndex < sequentialAgents.length &&
+          AGENTS.indexOf(sequentialAgents[nextSequentialIndex]) >
+            AGENTS.indexOf(parallelAgents[0])
+        ) {
+          await executeAgent(agent);
+          // Run parallel group
+          const group = parallelGroups.get(nextParallelGroup);
+          if (group) {
+            await executeParallelGroup(group);
+            parallelGroups.delete(nextParallelGroup);
+          }

@@ -1,0 +1,11 @@
+    `https://infranodus.com/api/graph/${nodeId}`,
+    {
+      headers: {
+        'Authorization': `Bearer ${process.env.INFRANODUS_API_KEY}`,
+      },
+    }
+  );
+  return response.json();
+}
+```
+

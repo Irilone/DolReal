@@ -1,0 +1,11 @@
+
+**Error:** `Module parse failed: Unterminated string constant (105:58)` in `StreamCarousel.tsx`
+
+**Location:** Line 132-135, multiline className attribute
+```tsx
+className="absolute left-4 top-1/2 -translate-y-1/2 z-10 glass-strong rounded-full p-3
+           opacity-0 group-hover:opacity-100 transition-opacity duration-300
+           hover:scale-110 hover:shadow-glow focus:outline-none focus:ring-2
+           focus:ring-primary/50"
+```
+

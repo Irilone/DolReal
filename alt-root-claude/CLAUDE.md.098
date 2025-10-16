@@ -1,0 +1,13 @@
+### Model Selection Rationale
+- **Gemini 2.5 Pro Ultra**: Best for deep research + manual gathering (cites sources)
+- **GPT-5 Codex**: Strongest code architecture + system design reasoning
+- **Claude Sonnet 4.5**: Excellent balance of speed + code quality (2x instances)
+- **Gemini CLI**: Fast final integration + build orchestration
+
+### Async Communication Benefits
+- ✅ Clear handoff contracts (JSON schema validation)
+- ✅ No network latency between agents
+- ✅ Independent testing of each stage
+- ✅ Artifact inspection for debugging
+- ✅ Human intervention possible at any stage
+

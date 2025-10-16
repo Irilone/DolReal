@@ -1,0 +1,12 @@
+## VALIDATION CHECKLIST
+
+Before submitting:
+- [ ] Build succeeds with exit code 0
+- [ ] All tests pass (57/57)
+- [ ] Performance metrics meet targets
+- [ ] Accessibility audit passes WCAG 2.2 AA
+- [ ] All 6 locales complete
+- [ ] Smoke tests pass (8/8)
+- [ ] Release artifacts generated
+- [ ] Documentation complete
+

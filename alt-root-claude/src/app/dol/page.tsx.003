@@ -1,0 +1,10 @@
+    { name: "Nodväst", graphId: "graph1" },
+    { name: "Nodsyd", graphId: "graph2" },
+    { name: "Nodöst", graphId: "graph3" },
+    { name: "Nodmidd", graphId: "graph4" },
+  ];
+
+  const toggleLanguage = () =>
+    i18n.changeLanguage(i18n.language === "se" ? "en" : "se");
+  const toggleDarkMode = () => setDarkMode(!darkMode);
+

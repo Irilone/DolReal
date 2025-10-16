@@ -1,0 +1,14 @@
+2. **Architectural Assessment:**
+   - Evaluate component hierarchy and data flow
+   - Review API route design and error handling
+   - Assess state management patterns (Zustand)
+   - Validate i18n implementation (6 languages + RTL)
+   - Check accessibility (WCAG 2.2 AA)
+
+3. **Performance Analysis:**
+   - Review CSS animations (stars, nebulas, shooting stars)
+   - Check bundle size and code splitting
+   - Analyze API call patterns and caching strategy
+   - Verify image optimization (Next.js Image component)
+   - Assess rendering strategy (SSR vs CSR vs ISR)
+

@@ -1,0 +1,10 @@
+    }),
+  });
+
+  const elapsedTime = ((Date.now() - startTime) / 1000).toFixed(2);
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    log(`✗ API Error (${response.status}): ${errorText}`, 'red');
+    throw new Error(`Gemini API returned ${response.status}: ${errorText}`);
+  }

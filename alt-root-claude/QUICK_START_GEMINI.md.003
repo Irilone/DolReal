@@ -1,0 +1,14 @@
+This script will:
+1. Verify GEMINI_API_KEY is set
+2. Check for gemini-cli or gem CLI tool
+3. Send comprehensive analysis prompt to Gemini 2.5 Pro
+4. Enable deep thinking mode (5-15 minute analysis)
+5. Save report to `gemini-analysis-output/analysis_TIMESTAMP.md`
+
+### Option 2: Manual Gemini CLI
+```bash
+cd /Users/air/DoL-2025/DolReal
+export GEMINI_API_KEY="${GEMINI_API_KEY}"
+gemini-cli chat --model gemini-2.5-pro-002 < GEMINI_DEEP_ANALYSIS_PROMPT.md > analysis.md
+```
+

@@ -1,0 +1,10 @@
+### Core Scripts
+- `npm run gem:research` - Produces research_bundle.json and plan docs with Gemini 2.5 Pro Ultra
+- `npm run gem:flash` - Scaffolds Next.js skeleton
+- `npm run gem:pro` - Integrates and hardens outputs
+- `npm run orchestrate` - Chains entire A→B→C flow
+
+**Important**: Before running, export `GEMINI_API_KEY` and ensure prompts reference the current bundle. Use `trunk check` for linting and inspect outputs in `artifacts/` before committing.
+
+## Coding Style & Naming Conventions
+

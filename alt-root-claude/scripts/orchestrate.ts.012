@@ -1,0 +1,10 @@
+  const codeBlockMatch = text.match(/```\s*([\s\S]*?)\s*```/);
+  if (codeBlockMatch) {
+    try {
+      return JSON.parse(codeBlockMatch[1]);
+    } catch (e: unknown) {
+      log(`Failed to parse JSON from generic code block: ${e}`);
+    }
+  }
+
+  // Try to parse the entire text as JSON

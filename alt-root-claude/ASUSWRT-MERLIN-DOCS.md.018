@@ -1,0 +1,16 @@
+### Available Script Hooks
+
+| Hook Name | Trigger Event | Use Case |
+|-----------|---------------|----------|
+| `services-start` | After system services start | Start custom daemons, mount shares |
+| `services-stop` | Before system services stop | Clean shutdown procedures |
+| `wan-event` | WAN interface changes | Dynamic DNS updates, VPN triggers |
+| `firewall-start` | After firewall rules applied | Custom iptables rules |
+| `nat-start` | After NAT rules configured | Port forwarding customization |
+| `init-start` | Earliest boot process | Early initialization tasks |
+| `pre-mount` | Before partition mounting | Filesystem checks |
+| `post-mount` | After partition mounting | Start services on USB drives |
+| `dhcpc-event` | DHCP client events | Dynamic configuration |
+| `openvpn-event` | OpenVPN state changes | VPN routing adjustments |
+| `ddns-start` | After DDNS update attempt | Custom DDNS providers |
+

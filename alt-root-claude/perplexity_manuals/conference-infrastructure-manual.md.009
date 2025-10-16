@@ -1,0 +1,14 @@
+
+### 2.1 OBS Studio Installation and Configuration
+
+#### Base Installation Per Node
+```bash
+# Download and install OBS Studio 31.0+
+# Enable WebSocket server
+Tools > WebSocket Server Settings
+- Enable WebSocket server: ✓
+- Server Port: 4455  
+- Password: [Generate secure password per node]
+- Authentication: Required
+```
+

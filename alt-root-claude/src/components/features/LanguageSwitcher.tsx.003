@@ -1,0 +1,13 @@
+        window.location.href = newPath
+      }}
+      className="px-3 py-2 rounded-md border bg-background"
+      aria-label="Välj språk"
+    >
+      {Object.entries(languages).map(([code, name]) => (
+        <option key={code} value={code}>
+          {name}
+        </option>
+      ))}
+    </select>
+  )
+}

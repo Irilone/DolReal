@@ -1,0 +1,12 @@
+  let allRequired = true;
+
+  console.log('Required for Orchestration:');
+  for (const env of requiredEnvVars) {
+    const value = process.env[env.name];
+    const status = value ? '✅' : '❌';
+    const maskedValue = value ? `${value.slice(0, 8)}...` : 'NOT SET';
+
+    console.log(`  ${status} ${env.name}`);
+    console.log(`     ${env.description}`);
+    console.log(`     Value: ${maskedValue}\n`);
+

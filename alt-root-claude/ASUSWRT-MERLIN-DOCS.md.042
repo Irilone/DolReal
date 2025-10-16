@@ -1,0 +1,10 @@
+# Copy custom scripts
+tar czf "$BACKUP_DIR/scripts-backup-$DATE.tar.gz" /jffs/scripts/
+
+logger "Router configuration backed up to $BACKUP_DIR"
+```
+
+#### 7. Scheduled Tasks
+
+```bash
+# /jffs/scripts/services-start

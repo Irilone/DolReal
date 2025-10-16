@@ -1,0 +1,13 @@
+    echo -e "\n${YELLOW}💡 Next steps:${NC}"
+    echo -e "   1. Review: ${BLUE}cat $OUTPUT_FILE | less${NC}"
+    echo -e "   2. Implement fixes from report"
+    echo -e "   3. Test build: ${BLUE}bun run build${NC}"
+    echo -e "   4. Deploy: ${BLUE}vercel --prod${NC}\n"
+
+    # Offer to open in editor
+    read -p "Open report in editor? (y/n) " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        ${EDITOR:-code} "$OUTPUT_FILE"
+    fi
+

@@ -1,0 +1,11 @@
+2. **Optimize WiFi**:
+   - Use separate SSIDs for 2.4GHz and 5GHz
+   - Set optimal channel width (40MHz for 2.4GHz, 80MHz for 5GHz)
+   - Enable Beamforming
+   - Use WPA3 if all devices support it
+
+3. **Wired Connections**:
+   - Use ethernet for streaming devices (OBS computers)
+   - Enable Jumbo Frames if network supports it
+   - Disable WAN aggregation unless needed
+

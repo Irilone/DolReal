@@ -1,0 +1,11 @@
+### Browser Development
+
+```bash
+# Serve locally
+cd october
+python3 -m http.server 8000
+
+# Open in browser
+# Navigate to http://localhost:8000
+```
+

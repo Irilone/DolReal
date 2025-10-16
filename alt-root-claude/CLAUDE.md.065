@@ -1,0 +1,10 @@
+### Accessibility (WCAG 2.2 AA)
+
+- ARIA labels on all interactive elements (`aria-label`, `aria-describedby`)
+- Keyboard navigation (Tab, Enter, Space, Arrow keys)
+- Focus management with visible focus indicators (`:focus-visible`)
+- Color contrast ratios ≥4.5:1 (text), ≥3:1 (UI components)
+- Screen reader support via semantic HTML and ARIA
+- Semantic HTML landmarks (`<main>`, `<nav>`, `<aside>`)
+- Skip-to-content link for keyboard users
+

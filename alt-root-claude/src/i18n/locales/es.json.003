@@ -1,0 +1,13 @@
+  "event": {
+    "title": "Días sobre Leyes 2025",
+    "dates": "6-7 de noviembre de 2025",
+    "description": "Un simposio legal explorando leyes y sociedad",
+    "day1": "Día 1 - 6 de noviembre de 2025",
+    "day2": "Día 2 - 7 de noviembre de 2025"
+  },
+  "health": {
+    "good": "Excelente",
+    "ok": "Bueno",
+    "bad": "Pobre",
+    "offline": "Desconectado"
+  }

@@ -1,0 +1,10 @@
+                -`good first issue`: A task suitable for a newcomer.
+
+            This semantic map will serve as your classification criteria.
+
+            ## Step 3: Triage Issues
+
+            Iterate through each issue object you parsed in Step 2. For each issue:
+
+            1. Analyze its `title` and `body` to understand its core intent, context, and urgency.
+

@@ -1,0 +1,11 @@
+            }
+          },
+          "tests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "file_path": { "type": "string" },
+                "test_suite": { "type": "string" },
+                "code": { "type": "string" }
+              }

@@ -1,0 +1,11 @@
+            **Output File Path**:
+            ```
+            ${{ env.GITHUB_ENV }}
+            ```
+
+            ## Steps
+
+            1. Review the issue title, issue body, and available labels provided above.
+
+            2. Based on the issue title and issue body, classify the issue and choose all appropriate labels from the list of available labels.
+

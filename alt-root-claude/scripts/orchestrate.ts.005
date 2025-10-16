@@ -1,0 +1,13 @@
+  {
+    id: "claude-backend",
+    name: "Claude Sonnet 4.5 #2 (Backend)",
+    command: "claude",
+    inputArtifacts: [
+      "artifacts/1_gemini_ultra_research.json",
+      "artifacts/2_gpt5_codex_architecture.json",
+    ],
+    outputArtifact: "artifacts/3b_claude_backend_output.json",
+    promptFile: "prompts/3b_claude_backend.md",
+    canRunInParallel: true,
+    parallelGroup: 1,
+  },

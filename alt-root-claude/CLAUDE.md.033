@@ -1,0 +1,14 @@
+export GEMINI_API_KEY="your-gemini-key"
+export OPENAI_API_KEY="your-openai-key"
+export ANTHROPIC_API_KEY="your-anthropic-key"
+
+# Required for Next.js build
+export NEXT_PUBLIC_YOUTUBE_API_KEY="your-youtube-key"
+export INFRANODUS_API_KEY="your-infranodus-key"
+
+# YouTube stream IDs
+export NODVAST_YOUTUBE_ID="stream-id-1"
+export NODSYD_YOUTUBE_ID="stream-id-2"
+export NODOST_YOUTUBE_ID="stream-id-3"
+export NODMIDD_YOUTUBE_ID="stream-id-4"
+

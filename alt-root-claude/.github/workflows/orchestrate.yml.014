@@ -1,0 +1,23 @@
+      - name: Upload Release Package
+        uses: actions/upload-artifact@v4
+        with:
+          name: dol-2025-release
+          path: releases/*.zip
+          retention-days: 90
+
+      - name: Generate Release Notes
+        run: |
+          echo "# DoL 2025 Multi-Agent Build Complete" > release-notes.md
+          echo "" >> release-notes.md
+          echo "## Build Info" >> release-notes.md
+          echo "- Workflow: ${{ github.workflow }}" >> release-notes.md
+          echo "- Run ID: ${{ github.run_id }}" >> release-notes.md
+          echo "- Commit: ${{ github.sha }}" >> release-notes.md
+          echo "" >> release-notes.md
+          echo "## Agents Executed" >> release-notes.md
+          echo "1. ✅ Gemini 2.5 Pro Ultra: Research & Planning" >> release-notes.md
+          echo "2. ✅ GPT-5 Codex: System Architecture" >> release-notes.md
+          echo "3. ✅ Claude Sonnet 4.5 #1: Frontend Implementation" >> release-notes.md
+          echo "4. ✅ Claude Sonnet 4.5 #2: Backend & Documentation" >> release-notes.md
+          echo "5. ✅ Gemini 2.5 Pro CLI: Final Integration" >> release-notes.md
+

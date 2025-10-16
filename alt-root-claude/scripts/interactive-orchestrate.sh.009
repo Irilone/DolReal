@@ -1,0 +1,13 @@
+    # Validate JSON
+    if command -v jq &> /dev/null; then
+        if jq empty "$output_file" 2>/dev/null; then
+            echo -e "${GREEN}✓ Valid JSON saved to: ${output_file}${NC}"
+        else
+            echo -e "${YELLOW}⚠️  Response saved but may not be valid JSON${NC}"
+            echo -e "${BLUE}   File: ${output_file}${NC}"
+        fi
+    else
+        echo -e "${GREEN}✓ Response saved to: ${output_file}${NC}"
+        echo -e "${YELLOW}   (Install 'jq' for JSON validation)${NC}"
+    fi
+

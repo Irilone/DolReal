@@ -1,0 +1,14 @@
+gem --help
+gem help analyze
+gem help chat
+
+# Then adjust command in run-gem-analysis.sh
+```
+
+### Ultra subscription not active
+Deep thinking mode requires Gemini Ultra subscription:
+- Visit https://one.google.com/
+- Upgrade to Google One AI Premium
+- Includes Gemini Advanced + deep thinking
+- Cost: ~$20/month
+

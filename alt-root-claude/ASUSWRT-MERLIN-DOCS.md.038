@@ -1,0 +1,10 @@
+#### 3. Port Forwarding for OBS
+
+- **RTMP**: TCP 1935
+- **RTMPS**: TCP 443
+- **Custom Ports**: As configured in OBS
+
+#### 4. DNS Configuration
+
+```bash
+# Use Cloudflare DNS for low latency

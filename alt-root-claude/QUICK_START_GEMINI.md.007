@@ -1,0 +1,12 @@
+## 📁 Key Files to Review
+
+**Analysis Prompt:**
+- `GEMINI_DEEP_ANALYSIS_PROMPT.md` - Comprehensive 600+ line prompt for Gemini
+
+**Orchestration Artifacts:**
+- `artifacts/1_gemini_ultra_research.json` - Research phase
+- `artifacts/2_gpt5_codex_architecture.json` - Architecture design
+- `artifacts/3a_claude_frontend_output.json` - Frontend specs
+- `artifacts/3b_claude_backend_output.json` - Backend specs
+- `artifacts/3_claude_implementation_summary.json` - Implementation summary
+

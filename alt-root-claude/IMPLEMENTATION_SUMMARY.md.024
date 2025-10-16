@@ -1,0 +1,11 @@
+1. **API Key Protection**
+   - Never hardcoded in source
+   - Stored in .gitignore-protected .env
+   - Masked in UI (password field)
+   - Can use localStorage for dev
+
+2. **Input Validation**
+   - XSS prevention via sanitization
+   - API key format validation
+   - Parameter type checking
+

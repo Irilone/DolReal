@@ -1,0 +1,15 @@
+'use client';
+
+import { useState, useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+
+interface Stream {
+  id: string;
+  title: string;
+  youtubeId: string;
+  node: 'nodvast' | 'nodsyd' | 'nodost' | 'nodmidd';
+  thumbnail?: string;
+  isLive?: boolean;
+  active?: boolean;
+  day?: number;
+}

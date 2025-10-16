@@ -1,0 +1,15 @@
+#### B. Component Styles
+All components must use:
+- Tailwind utility classes
+- Dark mode variants (`dark:`)
+- RTL variants (`rtl:`) for Arabic/Farsi
+- Focus-visible styles
+- Hover/active states
+
+#### C. Accessibility
+- WCAG 2.2 AA compliance
+- Contrast ratios ≥4.5:1 (text), ≥3:1 (UI)
+- Keyboard navigation
+- Screen reader support
+- Focus indicators
+

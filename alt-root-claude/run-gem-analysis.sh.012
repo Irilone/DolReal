@@ -1,0 +1,7 @@
+else
+    echo -e "\n${RED}❌ Error: Analysis failed or output empty${NC}"
+    echo -e "${YELLOW}💡 Check your API key and network${NC}"
+    exit 1
+fi
+
+echo -e "${GREEN}🎉 Done! Happy optimizing! 🚀${NC}"

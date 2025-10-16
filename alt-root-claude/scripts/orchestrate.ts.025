@@ -1,0 +1,13 @@
+  if (!text) {
+    throw new Error("Gemini API returned empty response");
+  }
+
+  log(`  Received ${text.length} characters from Gemini`);
+  return text;
+}
+
+async function executeOpenAI(
+  prompt: string,
+  agentId: string,
+): Promise<string> {
+  const apiKey = process.env.OPENAI_API_KEY;

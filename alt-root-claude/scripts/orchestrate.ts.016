@@ -1,0 +1,11 @@
+    }
+
+    // Load prompt
+    const promptContent = await fs.readFile(agent.promptFile, "utf-8");
+
+    // Load input artifacts and inject into prompt
+    let fullPrompt = promptContent;
+    for (const artifactPath of agent.inputArtifacts) {
+      const artifact = await loadArtifact(artifactPath);
+      fullPrompt += `\n\n## Input from ${path.basename(artifactPath)}\n\`\`\`json\n${JSON.stringify(artifact, null, 2)}\n\`\`\`\n`;
+    }

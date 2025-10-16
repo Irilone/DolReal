@@ -1,0 +1,10 @@
+const requestTimestamps: number[] = [];
+
+export function checkRateLimit(config: RateLimitConfig = DEFAULT_CONFIG): boolean {
+  const now = Date.now();
+  const windowStart = now - config.windowMs;
+
+  // Remove old timestamps outside the current window
+  while (requestTimestamps.length > 0 && requestTimestamps[0] < windowStart) {
+    requestTimestamps.shift();
+  }

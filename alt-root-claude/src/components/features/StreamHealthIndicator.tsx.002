@@ -1,0 +1,16 @@
+
+export function StreamHealthIndicator({ 
+  streamId, 
+  refreshInterval = 30000 
+}: StreamHealthIndicatorProps) {
+  const { t } = useTranslation();
+  const { health, loading } = useStreamHealth(streamId, refreshInterval);
+
+  if (loading) {
+    return (
+      <div className="flex items-center gap-2 text-sm text-slate-500">
+        <div className="h-3 w-3 animate-pulse rounded-full bg-slate-300"></div>
+        <span>Loading...</span>
+      </div>
+    );
+  }

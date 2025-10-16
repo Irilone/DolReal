@@ -1,0 +1,10 @@
+    },
+    "obs": {
+      "enabled": true,
+      "url": "ws://localhost:4455",
+      "protocol": "obs-websocket-5.0"
+    }
+  }
+}
+```
+

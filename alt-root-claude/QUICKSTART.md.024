@@ -1,0 +1,13 @@
+## Support
+
+- 📖 Full docs: [README.md](./october/README.md)
+- 🔧 Troubleshooting: See main README
+- 🐛 Issues: [GitHub Issues](https://github.com/...)
+
+---
+
+**Ready to build?**
+```bash
+make all
+```
+

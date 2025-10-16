@@ -1,0 +1,13 @@
+      <footer
+        id="kontakt"
+        className="py-8 text-center border-t border-white/10"
+        aria-label="Footer"
+      >
+        <p className="opacity-70">
+          © 2025 Dagar om Lagar – All Rights Reserved.
+        </p>
+        <p className="opacity-60 text-sm mt-2">Contact: info@dagaromlagar.se</p>
+      </footer>
+    </div>
+  );
+}

@@ -1,0 +1,10 @@
+# Build the project
+npm run build
+```
+
+#### Step 2: Configure API Key
+Create a `.env` file in the project root:
+```
+INFRANODUS_API_KEY=your-api-key-here
+```
+

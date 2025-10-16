@@ -1,0 +1,11 @@
+---
+
+## After Orchestration
+
+### Extract Release
+```bash
+cd releases
+unzip dol-2025-v2.0.0.zip
+cd dol-2025-v2.0.0
+```
+

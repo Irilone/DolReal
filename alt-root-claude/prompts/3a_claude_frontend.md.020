@@ -1,0 +1,10 @@
+    // Ensure only one player active at a time
+  }, [videoId]);
+
+  return { player: playerRef.current, isReady };
+}
+```
+
+#### B. Player State Management
+```typescript
+// src/hooks/useStreamPlayer.ts

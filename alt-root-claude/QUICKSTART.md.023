@@ -1,0 +1,10 @@
+## Next Steps
+
+1. ✅ Run `make all` to build
+2. ✅ Unzip release package
+3. ✅ Configure `.env` with YouTube/InfraNodus keys
+4. ✅ Run `bun dev` to start
+5. ✅ Deploy to Vercel/Netlify/Docker
+
+---
+

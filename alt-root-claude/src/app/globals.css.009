@@ -1,0 +1,12 @@
+
+  .shooting-star:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+  }
+
+  .shooting-star:nth-child(2) {
+    top: 30%;
+    left: 60%;
+    animation-delay: 1.5s;
+  }

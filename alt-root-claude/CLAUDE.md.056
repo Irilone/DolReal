@@ -1,0 +1,30 @@
+src/components/
+├── features/
+│   ├── Header.tsx           // Logo, nav, language switcher, dark mode
+│   ├── StreamCarousel.tsx   // 4 YouTube streams, day 2 logic
+│   ├── GraphNavModal.tsx    // InfraNodus embed modal
+│   ├── ProgramSection.tsx   // Event schedule
+│   └── LanguageSwitcher.tsx // 6-language dropdown
+├── ui/                       // shadcn/ui base components
+│   ├── button.tsx
+│   ├── modal.tsx
+│   └── dropdown.tsx
+└── shared/                   // Reusable components
+    ├── ThemeToggle.tsx
+    └── LoadingSpinner.tsx
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+```
+src/app/api/
+<<<<<<< Updated upstream

@@ -1,0 +1,15 @@
+import type { Metadata } from 'next';
+import './globals.css';
+
+export const metadata: Metadata = {
+  title: 'Dagar om Lagar 2025',
+  description: 'Ett juridiskt symposium som utforskar lagar och samhälle',
+  keywords: ['juridik', 'lagar', 'symposium', 'streaming', 'live'],
+  authors: [{ name: 'DoL 2025 Team' }],
+  openGraph: {
+    title: 'Dagar om Lagar 2025',
+    description: 'Ett juridiskt symposium som utforskar lagar och samhälle',
+    type: 'website',
+    locale: 'sv_SE',
+    siteName: 'Dagar om Lagar',
+  },

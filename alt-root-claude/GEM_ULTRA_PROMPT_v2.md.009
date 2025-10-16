@@ -1,0 +1,10 @@
+3. **Compiler Configuration**
+   - Next.js 15 with Bun - known issues?
+   - TypeScript strict mode causing issues?
+   - JSX transform configuration?
+
+4. **Pattern Analysis**
+   - Do other components use similar multiline classNames?
+   - If so, why don't they fail?
+   - Is StreamCarousel.tsx encoded differently?
+

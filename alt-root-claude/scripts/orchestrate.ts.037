@@ -1,0 +1,11 @@
+
+  try {
+    // Execute sequential agents in order
+    for (const agent of sequentialAgents) {
+      // Check if this agent comes before parallel group
+      const nextParallelGroup = Math.min(...Array.from(parallelGroups.keys()));
+      const currentIndex = AGENTS.indexOf(agent);
+
+      // If there's a parallel group between this and next sequential, run it
+      if (parallelGroups.size > 0) {
+        const nextSequentialIndex = sequentialAgents.indexOf(agent) + 1;

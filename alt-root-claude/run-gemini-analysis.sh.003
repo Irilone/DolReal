@@ -1,0 +1,16 @@
+echo -e "${GREEN}✅ GEMINI_API_KEY found${NC}\n"
+
+# Check if gemini-cli is installed
+if command -v gemini-cli &> /dev/null; then
+    CLI_TOOL="gemini-cli"
+    echo -e "${GREEN}✅ gemini-cli detected${NC}"
+elif command -v gem &> /dev/null; then
+    CLI_TOOL="gem"
+    echo -e "${GREEN}✅ gem CLI detected${NC}"
+else
+    echo -e "${RED}❌ Error: No Gemini CLI tool found${NC}"
+    echo -e "${YELLOW}💡 Install gemini-cli: npm install -g @google/generative-ai-cli${NC}"
+    echo -e "${YELLOW}💡 Or install gem: brew install gemini-cli${NC}"
+    exit 1
+fi
+

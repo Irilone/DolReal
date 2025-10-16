@@ -1,0 +1,10 @@
+            - `🟢`: Low - the issue is minor or stylistic (e.g., typos, documentation improvements, code formatting). It can be addressed at the author's discretion.
+
+            #### Severity Rules
+
+            Apply these severities consistently:
+
+            - Comments on typos: `🟢` (Low).
+
+            - Comments on adding or improving comments, docstrings, or Javadocs: `🟢` (Low).
+

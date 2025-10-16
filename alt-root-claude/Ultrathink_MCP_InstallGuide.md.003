@@ -1,0 +1,14 @@
+---
+
+### 2. perfmonk
+- **Purpose:** Profiling build time, memory usage, HMR delay, cold starts.
+- **Prompt example:**
+```json
+"task": "Benchmark hot reload speed and memory usage between Webpack and Vite using large monorepo."
+```
+- **CLI Example:**
+```bash
+vite build --debug
+webpack --profile --json > stats.json
+```
+

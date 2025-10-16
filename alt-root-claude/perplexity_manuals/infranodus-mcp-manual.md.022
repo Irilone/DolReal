@@ -1,0 +1,10 @@
+#### 15. search
+**Purpose**: Search through existing InfraNodus graphs
+**Usage**: "Find graphs related to 'digital infrastructure'"
+**Output**: Relevant graphs from your account or public graphs
+
+#### 16. fetch
+**Purpose**: Retrieve specific graph data
+**Usage**: "Fetch details for graph ID 12345"
+**Output**: Complete graph data and analysis
+

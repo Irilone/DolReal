@@ -1,0 +1,15 @@
+1. [Critical fixes]
+2. [Important improvements]
+```
+
+### 6. Deployment Playbook
+```markdown
+## November 6, 2025 Deployment Playbook
+
+### Pre-Deployment (Nov 1-5)
+Day 1:
+- [ ] Final code freeze
+- [ ] Run full test suite
+- [ ] Performance testing
+- [ ] Accessibility audit
+

@@ -1,0 +1,12 @@
+
+const requiredEnvVars: EnvCheck[] = [
+  {
+    name: 'GEMINI_API_KEY',
+    required: true,
+    description: 'Gemini 2.5 Pro Ultra & CLI (Agents 1 & 4)',
+  },
+  {
+    name: 'OPENAI_API_KEY',
+    required: true,
+    description: 'GPT-5 Codex (Agent 2)',
+  },

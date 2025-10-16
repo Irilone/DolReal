@@ -1,0 +1,13 @@
+
+interface GraphLink {
+  source: string;
+  target: string;
+  strength: number;
+}
+
+interface GraphNavigationProps {
+  nodes?: GraphNode[];
+  links?: GraphLink[];
+  className?: string;
+  onNodeClick?: (node: GraphNode) => void;
+}

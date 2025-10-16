@@ -1,0 +1,10 @@
+npm install -g @google/generative-ai-cli
+
+# Option 3: Check if already installed
+which gem
+gem --version
+```
+
+### GEMINI_API_KEY not set
+```bash
+# Option 1: Export directly

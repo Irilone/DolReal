@@ -1,0 +1,10 @@
+
+export function Card({ children, className, role, 'aria-label': ariaLabel }: CardProps) {
+  return <div className={className} role={role} aria-label={ariaLabel}>{children}</div>;
+}
+
+interface CardContentProps {
+  children: ReactNode;
+  className?: string;
+}
+

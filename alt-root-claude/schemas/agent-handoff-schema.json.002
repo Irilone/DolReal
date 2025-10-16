@@ -1,0 +1,11 @@
+        "timestamp": { "type": "string", "format": "date-time" },
+        "execution_time_ms": { "type": "number" },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "in_progress", "completed", "failed", "blocked"]
+        },
+        "next_agent": { "type": "string" },
+        "dependencies": {
+          "type": "array",
+          "items": { "type": "string" }
+        }

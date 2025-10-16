@@ -1,0 +1,11 @@
+# Check for GEMINI_API_KEY
+if [[ -z "${GEMINI_API_KEY:-}" ]]; then
+    echo -e "${RED}❌ Error: GEMINI_API_KEY not set${NC}"
+    echo -e "${YELLOW}💡 Set with: export GEMINI_API_KEY='your-key'${NC}"
+    echo -e "${YELLOW}💡 Or load from .env: source .env${NC}"
+    exit 1
+fi
+
+echo -e "${GREEN}✅ gem CLI found${NC}"
+echo -e "${GREEN}✅ GEMINI_API_KEY set${NC}\n"
+

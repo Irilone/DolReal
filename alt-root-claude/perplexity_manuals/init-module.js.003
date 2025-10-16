@@ -1,0 +1,10 @@
+          
+          if (!window.OtherScripts) {
+              console.error('OtherScripts module not loaded');
+              return;
+          }
+          
+          // Initialize other scripts first (styles, JSON-LD)
+          window.OtherScripts.initializeOtherScripts();
+          
+          // Initialize MapUpdater (loads external schedule data)

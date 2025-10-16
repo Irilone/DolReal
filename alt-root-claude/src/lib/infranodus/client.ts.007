@@ -1,0 +1,10 @@
+  if (!apiKey) {
+    throw new Error('INFRANODUS_API_KEY is not configured');
+  }
+
+  try {
+    const response = await fetch(`${INFRANODUS_API_BASE}/graph/${contextId}`, {
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+      },
+    });

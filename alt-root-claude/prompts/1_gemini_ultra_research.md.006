@@ -1,0 +1,14 @@
+**Q4**: ASUS RT-AX86U Pro QoS for 4x 1080p streams
+- Bandwidth allocation strategies: [cite Merlin wiki]
+- Fiber uplink requirements: [minimum mbps]
+
+### 4. Detailed Plans (Markdown Files)
+
+Generate complete content for these files:
+
+#### `router_plan.md`
+- QoS configuration for 4 streams
+- Port forwarding for OBS/streaming
+- Bandwidth allocation rules
+- Failover strategies
+

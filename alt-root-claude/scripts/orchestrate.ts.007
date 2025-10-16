@@ -1,0 +1,11 @@
+];
+
+// ============================================================================
+// Utility Functions
+// ============================================================================
+
+async function ensureDirectories() {
+  await fs.mkdir("artifacts", { recursive: true });
+  await fs.mkdir("prompts", { recursive: true });
+  await fs.mkdir("logs", { recursive: true });
+}

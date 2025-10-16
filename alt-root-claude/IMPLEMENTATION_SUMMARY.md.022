@@ -1,0 +1,10 @@
+### Example Agent Integration
+
+```javascript
+// Agent 1: Research
+const research = await GeminiAPI.generateContent(
+  'Research Swedish healthcare policies',
+  { temperature: 0.2 }
+);
+
+// Agent 2: Analysis

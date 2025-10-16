@@ -1,0 +1,16 @@
+## Security Reminders
+
+⚠️ **NEVER:**
+- Commit `.env` files
+- Share API keys publicly
+- Hardcode secrets in code
+- Use production keys in development
+- Expose keys in client-side code
+
+✅ **ALWAYS:**
+- Use `.gitignore` for sensitive files
+- Rotate keys regularly
+- Monitor API usage
+- Implement rate limiting
+- Use HTTPS in production
+

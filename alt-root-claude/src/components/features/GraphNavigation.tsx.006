@@ -1,0 +1,10 @@
+
+  // Initialize node positions
+  useEffect(() => {
+    const positions = new Map<string, { x: number; y: number }>();
+    const centerX = dimensions.width / 2;
+    const centerY = dimensions.height / 2;
+    const radius = Math.min(dimensions.width, dimensions.height) / 3;
+
+    nodes.forEach((node, index) => {
+      const angle = (index / nodes.length) * 2 * Math.PI;

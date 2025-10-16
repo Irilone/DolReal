@@ -1,0 +1,13 @@
+#### 🔌 API Routes (5 routes)
+- ✅ `src/app/api/streams/route.ts` - GET all 4 streams with day-based logic
+- ✅ `src/app/api/stream-health/[streamId]/route.ts` - GET stream health
+- ✅ `src/app/api/viewer-count/route.ts` - GET viewer counts (YouTube Data API v3)
+- ✅ `src/app/api/infranodus/analyze/route.ts` - POST text analysis → knowledge graph
+- ✅ `src/app/api/infranodus/graph/[contextId]/route.ts` - GET knowledge graph
+
+#### 🔧 Integration Clients
+- ✅ `src/lib/youtube/client.ts` - YouTube Data API v3 wrapper (googleapis)
+- ✅ `src/lib/infranodus/client.ts` - InfraNodus REST API client
+- ✅ `src/lib/infranodus/cache.ts` - 5-minute caching system
+- ✅ `src/lib/infranodus/rate-limiter.ts` - 10 req/min sliding window
+

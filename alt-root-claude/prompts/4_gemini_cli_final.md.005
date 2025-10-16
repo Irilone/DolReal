@@ -1,0 +1,15 @@
+### 2. Build Process
+
+#### A. Install Dependencies
+```bash
+bun install
+```
+
+#### B. Type Check
+```bash
+tsc --noEmit
+```
+- Report any TypeScript errors
+- Categorize by severity (error/warning)
+- Suggest fixes if possible
+

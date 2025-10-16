@@ -1,0 +1,10 @@
+```bash
+<<<<<<< Updated upstream
+bun install               # Install dependencies (7-100x faster than npm)
+bun add <package>         # Add dependency
+bun remove <package>      # Remove dependency
+=======
+# Install dependencies
+bun install
+
+# Add package

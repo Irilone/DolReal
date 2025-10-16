@@ -1,0 +1,10 @@
+### 🎨 Design Requirements (CRITICAL)
+1. **Star-filled universe background** with shooting stars and nebula animations ✅ IMPLEMENTED
+2. **Netflix/AppleTV-style carousel** for stream switching ⚠️ NEEDS FIX
+3. **InfraNodus-inspired knowledge graph** navigation ✅ IMPLEMENTED
+4. **Liquid glass aesthetic** (Apple-inspired frosted glass morphism) ✅ IMPLEMENTED
+5. **6-language support** (Swedish primary + English, Arabic, Farsi, Chinese, Spanish) ✅ IMPLEMENTED
+6. **WCAG 2.2 AA accessibility** compliance 🔍 NEEDS VERIFICATION
+7. **Low-resource animations** optimized for performance ✅ IMPLEMENTED
+
+### 🏗️ Architecture Overview

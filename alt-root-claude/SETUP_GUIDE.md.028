@@ -1,0 +1,13 @@
+### Issue 3: Module Loading Errors
+
+**Symptoms:**
+- "Failed to load module"
+- "Unexpected token 'export'"
+- Module import errors
+
+**Solutions:**
+1. Verify browser supports ES6 modules
+2. Check script tags use `type="module"`
+3. Ensure correct file paths
+4. Use HTTP server (not direct file access)
+

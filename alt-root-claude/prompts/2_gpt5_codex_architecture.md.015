@@ -1,0 +1,10 @@
+
+// src/types/i18n.ts
+export type Locale = 'se' | 'en' | 'ar' | 'fa' | 'zh' | 'es';
+export type Direction = 'ltr' | 'rtl';
+
+// ... (all domain types)
+```
+
+### 5. Task Allocation for Claude Agents
+

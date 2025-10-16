@@ -1,0 +1,12 @@
+**Spacing:**
+- Container: max-w-7xl mx-auto px-4
+- Grid: gap-6 (24px)
+- Card padding: p-6 (24px)
+
+**Animations:**
+- Duration: 300ms (fast), 500ms (medium), 1s (slow)
+- Easing: ease-in-out (default), ease-out (exits), ease-in (entrances)
+- Star twinkle: 8s ease-in-out infinite
+- Nebula drift: 40s linear infinite
+- Shooting stars: 3s linear infinite (staggered delays)
+

@@ -1,0 +1,17 @@
+
+  /* Individual shooting stars using pseudo-elements */
+  .shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 1),
+      transparent
+    );
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1),
+      0 0 8px 1px rgba(255, 255, 255, 0.1),
+      0 0 12px 2px rgba(173, 216, 230, 0.5);
+    animation: shoot 3s linear infinite;
+  }

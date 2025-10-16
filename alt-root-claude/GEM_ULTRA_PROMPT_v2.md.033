@@ -1,0 +1,11 @@
+### Results:
+- Compilation: [SUCCESS/FAILED]
+- Bundle size: [X MB]
+- Chunks: [count and sizes]
+- Warnings: [list any warnings]
+- Errors: [list any errors]
+
+### Analysis:
+[Your assessment of build health]
+```
+

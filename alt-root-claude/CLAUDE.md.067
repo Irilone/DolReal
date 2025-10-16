@@ -1,0 +1,10 @@
+### InfraNodus Integration
+
+- **Primary**: MCP server connection (if available)
+- **Fallback**: iframe embed (`https://infranodus.com/...`)
+- **Modal display**: Focus trap on open, Escape to close
+- **4 graph nodes**: Nodväst, Nodsyd, Nodöst, Nodmidd
+- **Error handling**: Graceful degradation if MCP unavailable
+
+### Router Configuration (ASUS RT-AX86U Pro)
+

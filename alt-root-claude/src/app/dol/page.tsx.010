@@ -1,0 +1,25 @@
+      <section
+        id="program"
+        className="py-12 px-4"
+        aria-labelledby="program-title"
+      >
+        <h2
+          id="program-title"
+          className="text-center text-xl font-semibold mb-6"
+        >
+          Program Schedule
+        </h2>
+        <div className="max-w-4xl mx-auto space-y-4">
+          {[1, 2, 3].map((s) => (
+            <Card key={s} className="bg-white/5 border border-white/10">
+              <CardContent className="p-4">
+                <h3 className="font-bold">Session {s}</h3>
+                <p className="text-sm opacity-80">
+                  Speaker {s} – Topic details pending.
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+

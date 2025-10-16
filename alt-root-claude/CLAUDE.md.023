@@ -1,0 +1,10 @@
+### Testing
+
+```bash
+<<<<<<< Updated upstream
+# Run all tests
+bun test
+# or
+bun run test
+
+# Watch mode

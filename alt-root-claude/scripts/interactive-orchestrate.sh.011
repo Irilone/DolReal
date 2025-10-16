@@ -1,0 +1,10 @@
+# Agent 1: Gemini 2.5 Pro Ultra (Research)
+run_agent \
+    "1" \
+    "Gemini 2.5 Pro Ultra - Research & Planning" \
+    "$PROMPTS_DIR/1_gemini_ultra_research.md" \
+    "$ARTIFACTS_DIR/1_gemini_ultra_research.json" \
+    "gemini.google.com/app" \
+    ""
+
+# Agent 2: GPT-5 Codex (Architecture)

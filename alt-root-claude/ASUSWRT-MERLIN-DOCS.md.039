@@ -1,0 +1,10 @@
+# WAN > Internet Connection > DNS Server
+Primary: 1.1.1.1
+Secondary: 1.0.0.1
+
+# Enable DNS-over-TLS
+# WAN > Internet Connection > DNS Privacy Protocol: DNS-over-TLS (DoT)
+```
+
+#### 5. Network Monitoring
+

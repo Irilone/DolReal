@@ -1,0 +1,12 @@
+    echo ""
+    echo -e "${CYAN}╭─────────────────────────────────────────────────────────╮${NC}"
+    echo -e "${CYAN}│  ACTION REQUIRED:                                       │${NC}"
+    echo -e "${CYAN}│                                                         │${NC}"
+    echo -e "${CYAN}│  1. Open ${model_interface} in your browser${NC}"
+    echo -e "${CYAN}│  2. Paste the prompt (already in clipboard)            │${NC}"
+    echo -e "${CYAN}│  3. Submit and wait for complete response              │${NC}"
+    echo -e "${CYAN}│  4. Copy the ENTIRE response (JSON output)             │${NC}"
+    echo -e "${CYAN}│  5. Return here and press ENTER                        │${NC}"
+    echo -e "${CYAN}╰─────────────────────────────────────────────────────────╯${NC}"
+    echo ""
+

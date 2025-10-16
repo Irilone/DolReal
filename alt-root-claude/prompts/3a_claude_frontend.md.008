@@ -1,0 +1,11 @@
+
+export function GraphNavModal({ embedUrl, isOpen, onClose }: GraphNavModalProps) {
+  // Implementation with:
+  // - InfraNodus iframe embed
+  // - Modal overlay
+  // - Close button (accessible)
+  // - Escape key to close
+  // - Focus trap
+}
+```
+

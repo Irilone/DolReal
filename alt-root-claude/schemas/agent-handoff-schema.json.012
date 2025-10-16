@@ -1,0 +1,10 @@
+            }
+          },
+          "styles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "file_path": { "type": "string" },
+                "content": { "type": "string" }
+              }

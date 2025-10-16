@@ -1,0 +1,11 @@
+
+export function setCachedData<T>(key: string, data: T, ttlMs: number): void {
+  cache.set(key, {
+    data,
+    expiry: Date.now() + ttlMs,
+  });
+}
+
+export function clearCache(): void {
+  cache.clear();
+}

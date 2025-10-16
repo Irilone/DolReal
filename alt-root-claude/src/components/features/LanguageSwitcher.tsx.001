@@ -1,0 +1,13 @@
+'use client'
+
+import { Locale } from '@/types'
+import { usePathname } from 'next/navigation'
+
+const languages: Record<Locale, string> = {
+  se: 'Svenska',
+  en: 'English',
+  ar: 'العربية',
+  fa: 'فارسی',
+  zh: '中文',
+  es: 'Español',
+}

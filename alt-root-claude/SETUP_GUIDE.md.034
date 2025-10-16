@@ -1,0 +1,17 @@
+```javascript
+// Add delay between requests
+await new Promise(resolve => setTimeout(resolve, 1000));
+```
+
+## Testing Your Setup
+
+### Quick Test Checklist
+
+- [ ] Environment variables loaded
+- [ ] API keys validated
+- [ ] Browser integration accessible
+- [ ] Orchestration runs successfully
+- [ ] Validation checks pass
+- [ ] Test prompt generates content
+- [ ] No console errors
+

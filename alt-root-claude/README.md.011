@@ -1,0 +1,10 @@
+❌ **DON'T:**
+- Hardcode API keys in source code
+- Commit `.env` files to git
+- Share API keys in plaintext
+- Use the same key for dev and prod
+- Expose keys in client-side code
+
+## Validation
+
+### Check Environment Variables

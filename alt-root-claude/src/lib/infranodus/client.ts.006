@@ -1,0 +1,10 @@
+  if (cached) {
+    return { nodes: cached.nodes, links: cached.links };
+  }
+
+  // Check rate limit
+  if (!checkRateLimit()) {
+    throw new Error('Rate limit exceeded. Please wait before making another request.');
+  }
+
+  const apiKey = process.env.INFRANODUS_API_KEY;

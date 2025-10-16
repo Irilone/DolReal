@@ -1,0 +1,10 @@
+## 🎯 YOUR MISSION (AGENT 4 - GEMINI 2.5 PRO ULTRA)
+
+### 📊 Phase 1: Deep Analysis & Diagnosis (USE DEEP THINKING)
+
+1. **Comprehensive Code Review:**
+   - Analyze all 42+ files in `src/` directory
+   - Identify syntax errors, type errors, logical bugs
+   - Check for unused imports, dead code, anti-patterns
+   - Verify Next.js 15 best practices compliance
+

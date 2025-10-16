@@ -1,0 +1,10 @@
+
+```bash
+# Using TypeScript script
+bun run scripts/check-env.ts
+
+# Or using Makefile
+make check-env
+```
+
+### Browser Validation

@@ -1,0 +1,10 @@
+**Symptoms:**
+- "LocalStorage inte tillgänglig"
+- Settings not persisting
+
+**Solutions:**
+1. Enable cookies/storage in browser settings
+2. Check for private browsing mode
+3. Verify browser supports localStorage
+4. Clear browser cache and try again
+

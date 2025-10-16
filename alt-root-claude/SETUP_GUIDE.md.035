@@ -1,0 +1,10 @@
+### Automated Testing
+
+```bash
+# Run environment check
+make check-env
+
+# Test browser integration
+# 1. Open http://localhost:8000
+# 2. Click "Validera allt"
+# 3. Try test generation

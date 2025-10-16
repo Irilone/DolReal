@@ -1,0 +1,17 @@
+    }
+  }
+}
+```
+
+### Cursor IDE Configuration
+
+Navigate to **Settings → Cursor Settings → Tools & MCP**:
+
+```json
+{
+  "mcpServers": {
+    "InfraNodus": {
+      "type": "http",
+      "url": "https://server.smithery.ai/@infranodus/mcp-server-infranodus/mcp?api_key=YOUR_SMITHERY_API_KEY&profile=YOUR_SMITHERY_PROFILE_NAME",
+      "headers": {}
+    }

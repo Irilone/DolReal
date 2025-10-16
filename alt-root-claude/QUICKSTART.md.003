@@ -1,0 +1,11 @@
+### 3. Set Environment Variables
+```bash
+export GEMINI_API_KEY="your-key"
+export OPENAI_API_KEY="your-key"
+export ANTHROPIC_API_KEY="your-key"
+```
+
+Or create `.env` file:
+```bash
+cp .env.example .env
+# Edit .env with your keys

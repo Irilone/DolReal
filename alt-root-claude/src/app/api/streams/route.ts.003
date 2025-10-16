@@ -1,0 +1,14 @@
+  {
+    id: 'nodost',
+    name: 'Nodöst',
+    envKey: 'NODOST_YOUTUBE_ID',
+    activeDays: [1],
+    defaultDay: 1,
+  },
+  {
+    id: 'nodmidd',
+    name: 'Nodmidd',
+    envKey: 'NODMIDD_YOUTUBE_ID',
+    activeDays: [1],
+    defaultDay: 1,
+  },

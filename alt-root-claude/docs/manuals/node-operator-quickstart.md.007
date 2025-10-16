@@ -1,0 +1,14 @@
+### During Event
+
+1. Monitor stream health indicator
+2. Keep OBS window visible
+3. Watch for dropped frames counter
+4. DO NOT close OBS or change settings
+
+### After Event
+
+1. Click "Stop Streaming"
+2. Stop local recording
+3. Upload recording to backup storage
+4. Report any technical issues to coordinator
+

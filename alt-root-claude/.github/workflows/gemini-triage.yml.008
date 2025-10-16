@@ -1,0 +1,10 @@
+            **Issue Title**:
+            ```
+            ${{ env.ISSUE_TITLE }}
+            ```
+
+            **Issue Body**:
+            ```
+            ${{ env.ISSUE_BODY }}
+            ```
+

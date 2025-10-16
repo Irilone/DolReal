@@ -1,0 +1,10 @@
+  if (data.error) {
+    throw new Error(`Gemini API error: ${JSON.stringify(data.error)}`);
+  }
+
+  const text = data.candidates?.[0]?.content?.parts?.map((p: any) => p.text).join('\n') ?? '';
+
+  if (!text) {
+    throw new Error('Gemini API returned empty response');
+  }
+

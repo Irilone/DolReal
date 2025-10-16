@@ -1,0 +1,10 @@
+### 2. Get API Keys
+
+You need 3 API keys for orchestration:
+
+| Service | Purpose | Get Key |
+|---------|---------|---------|
+| **Gemini API** | Agents 1 & 4 (Research + Integration) | [makersuite.google.com](https://makersuite.google.com/app/apikey) |
+| **OpenAI API** | Agent 2 (Architecture) | [platform.openai.com](https://platform.openai.com/api-keys) |
+| **Anthropic API** | Agents 3a & 3b (Frontend + Backend) | [console.anthropic.com](https://console.anthropic.com/) |
+

@@ -1,0 +1,15 @@
+## Architecture Overview
+
+```
+Gemini Ultra (Research)
+   ↓
+GPT-5 Codex (Architecture)
+   ↓
+   ├─→ Claude #1 (Frontend) ─┐
+   └─→ Claude #2 (Backend) ──┤ (parallel)
+                             ↓
+                       Gemini CLI (Integration)
+                             ↓
+                       Production Build
+```
+

@@ -1,0 +1,16 @@
+}
+
+// ============================================================================
+// CLI
+// ============================================================================
+
+const command = process.argv[2];
+
+switch (command) {
+  case "run":
+    orchestrate();
+    break;
+  case "status":
+    (async () => {
+      for (const agent of AGENTS) {
+        const exists = await checkArtifactsExist([agent.outputArtifact]);

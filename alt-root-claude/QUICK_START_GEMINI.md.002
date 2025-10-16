@@ -1,0 +1,10 @@
+⚠️ **Current Issue:** Build error in `StreamCarousel.tsx` preventing production build
+
+## 🎯 Next Step: Run Gemini Analysis
+
+### Option 1: Automated Script (Easiest)
+```bash
+cd /Users/air/DoL-2025/DolReal
+./run-gemini-analysis.sh
+```
+

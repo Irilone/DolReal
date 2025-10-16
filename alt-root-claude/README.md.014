@@ -1,0 +1,12 @@
+
+```bash
+# Install dependencies
+bun install
+
+# Run individual agents
+make gemini-ultra      # Research agent
+make gpt5-codex        # Architecture agent
+make claude-frontend   # Frontend agent
+make claude-backend    # Backend agent
+make gemini-cli        # Integration agent
+

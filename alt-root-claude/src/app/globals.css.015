@@ -1,0 +1,10 @@
+}
+
+/* Disable on low-performance devices */
+@media (max-width: 768px) {
+  .shooting-star {
+    display: none;
+  }
+  .space-background::after {
+    animation-duration: 60s; /* Slower on mobile */
+  }

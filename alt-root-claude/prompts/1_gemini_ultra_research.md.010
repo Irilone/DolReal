@@ -1,0 +1,14 @@
+Mark all unverified claims with **✗ Unverified** and specify verification steps.
+
+### 6. Final JSON Output
+
+Generate valid JSON matching this schema:
+
+```json
+{
+  "metadata": {
+    "agent_id": "gemini-ultra",
+    "timestamp": "2025-10-14T...",
+    "execution_time_ms": 0,
+    "status": "completed"
+  },

@@ -1,0 +1,11 @@
+### File Headers
+- Prompt files should have self-identifying version headers
+- Include JSDoc comments for complex functions
+- TypeScript files should use explicit type annotations
+
+### Swedish UI Requirements
+- All user-facing text must be in Swedish
+- Use i18next for internationalization
+- Support 6 languages: se, en, ar, fa, zh, es
+- Include RTL (right-to-left) support for ar and fa
+

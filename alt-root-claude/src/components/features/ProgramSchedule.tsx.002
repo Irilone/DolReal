@@ -1,0 +1,10 @@
+
+interface DaySchedule {
+  date: string;
+  sessions: Session[];
+}
+
+interface ProgramScheduleProps {
+  className?: string;
+}
+

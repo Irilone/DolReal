@@ -1,0 +1,13 @@
+# Application keys (required for final build)
+NEXT_PUBLIC_YOUTUBE_API_KEY=...
+INFRANODUS_API_KEY=...
+NODVAST_YOUTUBE_ID=...      # Stream 1
+NODSYD_YOUTUBE_ID=...       # Stream 2
+NODOST_YOUTUBE_ID=...       # Stream 3
+NODMIDD_YOUTUBE_ID=...      # Stream 4
+```
+
+Verify keys: `make check-env`
+=======
+```typescript
+// Backend (Agent 3b responsibility)
