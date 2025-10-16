@@ -1,7 +1,5 @@
-// jest.config.ts
-import type { Config } from 'jest';
-
-const config: Config = {
+// jest.config.js
+module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
@@ -9,5 +7,3 @@ const config: Config = {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
 };
-
-export default config;
