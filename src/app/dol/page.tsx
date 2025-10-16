@@ -36,6 +36,13 @@ const DAY_OPTIONS: { id: EventDay; labelKey: string }[] = [
 
 const nodeOrder = Object.keys(DOL_NODES) as DolNodeKey[];
 
+/**
+ * Renders the Dagar om Lagar — Digitalt nav page with a knowledge graph, live stream viewer, node stream grid, and program schedule.
+ *
+ * The component is language-aware (uses i18n) and synchronizes document language and direction. It lets users switch the active conference day and select a node via the graph or stream grid; the UI updates the displayed livestream (YouTube embed when available), node metadata, and the program list for the selected node and day.
+ *
+ * @returns The page content as a React element
+ */
 export default function DagarOmLagarDolPage() {
   const { t, i18n } = useTranslation();
   const [activeNode, setActiveNode] = useState<DolNodeKey>("nodvast");

@@ -13,6 +13,12 @@ const languages: Record<Locale, string> = {
   it: "Italiano",
 };
 
+/**
+ * Renders a language selector that updates the URL to switch locales.
+ *
+ * @param currentLocale - The currently active locale code used to set the selected option
+ * @returns The select element that navigates to the chosen locale by updating the pathname
+ */
 export default function LanguageSwitcher({
   currentLocale,
 }: {
