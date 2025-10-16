@@ -1,8 +1,39 @@
 import type { GraphNode, GraphLink } from '@/types/api';
+import { MCPClient } from '@/lib/mcp/client';
 import { getCachedData, setCachedData } from './cache';
 import { checkRateLimit } from './rate-limiter';
 
 const INFRANODUS_API_BASE = 'https://infranodus.com/api';
+
+export async function getInfraNodusEmbed(nodeId: string): Promise<string | undefined> {
+  if (process.env.INFRANODUS_MCP_ENABLED === 'true') {
+    const serverUrl = process.env.INFRANODUS_MCP_URL;
+
+    if (!serverUrl) {
+      throw new Error('INFRANODUS_MCP_URL is not configured');
+    }
+
+    const client = new MCPClient({ serverUrl });
+    const result = await client.call('getEmbed', { nodeId });
+    return result?.embedUrl;
+  }
+
+  return `https://infranodus.com/embed/${nodeId}`;
+}
+
+export async function fetchGraphData(nodeId: string) {
+  const response = await fetch(`${INFRANODUS_API_BASE}/graph/${nodeId}`, {
+    headers: {
+      Authorization: `Bearer ${process.env.INFRANODUS_API_KEY}`,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`InfraNodus API error: ${response.status} ${response.statusText}`);
+  }
+
+  return response.json();
+}
 
 interface InfraNodusAnalyzeResponse {
   context_id: string;

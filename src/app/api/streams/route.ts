@@ -65,7 +65,7 @@ function requireEnv(key: string, env: NodeJS.ProcessEnv): string {
   return value;
 }
 
-function buildStreams(day: Day, env: NodeJS.ProcessEnv = process.env): Stream[] {
+export function buildStreams(day: Day, env: NodeJS.ProcessEnv = process.env): Stream[] {
   return STREAM_DEFINITIONS.map((definition) => {
     const youtubeId = requireEnv(definition.envKey, env);
     const active = definition.activeDays.includes(day);

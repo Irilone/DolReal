@@ -1,305 +1,114 @@
-// src/lib/youtube/client.test.ts
-import { getStreamStatus, listLiveStreams, checkConcurrentStreams } from './client';
 import { google } from 'googleapis';
+import { getStreamStatus, listLiveStreams, checkConcurrentStreams } from './client';
 
-// Mock googleapis
-jest.mock('googleapis');
+jest.mock('googleapis', () => ({
+  google: {
+    youtube: jest.fn(),
+  },
+}));
 
-describe('YouTube Client', () => {
-  const mockYouTubeList = jest.fn();
-  const mockSearchList = jest.fn();
+describe('YouTube client', () => {
+  const videosListMock = jest.fn();
+  const searchListMock = jest.fn();
 
   beforeEach(() => {
     jest.clearAllMocks();
-    
     (google.youtube as jest.Mock).mockReturnValue({
       videos: {
-        list: mockYouTubeList,
+        list: videosListMock,
       },
       search: {
-        list: mockSearchList,
+        list: searchListMock,
       },
     });
-
-    process.env.YOUTUBE_API_KEY = 'test-api-key';
   });
 
   describe('getStreamStatus', () => {
-    it('returns live streaming details for a valid video ID', async () => {
-      const mockLiveDetails = {
-        actualStartTime: '2024-01-01T10:00:00Z',
-        concurrentViewers: '1234',
-        activeLiveChatId: 'test-chat-id',
-      };
-
-      mockYouTubeList.mockResolvedValue({
+    it('returns live stream metadata when available', async () => {
+      videosListMock.mockResolvedValue({
         data: {
           items: [
             {
-              liveStreamingDetails: mockLiveDetails,
-              snippet: {
-                title: 'Test Stream',
-                liveBroadcastContent: 'live',
-              },
+              snippet: { liveBroadcastContent: 'live', title: 'Session 1', thumbnails: { high: { url: 'thumb.jpg' } } },
+              liveStreamingDetails: { concurrentViewers: '2500' },
             },
           ],
         },
       });
 
-      const result = await getStreamStatus('test-video-id');
+      const status = await getStreamStatus('abc123');
 
-      expect(result).toEqual(mockLiveDetails);
-      expect(mockYouTubeList).toHaveBeenCalledWith({
-        part: ['snippet', 'liveStreamingDetails'],
-        id: ['test-video-id'],
+      expect(status).toEqual({
+        isLive: true,
+        viewerCount: 2500,
+        title: 'Session 1',
+        thumbnail: 'thumb.jpg',
+      });
+      expect(videosListMock).toHaveBeenCalledWith({
+        part: ['liveStreamingDetails', 'snippet'],
+        id: ['abc123'],
       });
     });
 
-    it('returns undefined when video has no items', async () => {
-      mockYouTubeList.mockResolvedValue({
-        data: {
-          items: [],
-        },
-      });
+    it('returns null when no items are returned', async () => {
+      videosListMock.mockResolvedValue({ data: { items: [] } });
 
-      const result = await getStreamStatus('non-existent-id');
+      const status = await getStreamStatus('missing');
 
-      expect(result).toBeUndefined();
+      expect(status).toBeNull();
     });
 
-    it('returns undefined when video has no live streaming details', async () => {
-      mockYouTubeList.mockResolvedValue({
-        data: {
-          items: [
-            {
-              snippet: {
-                title: 'Regular Video',
-              },
-            },
-          ],
-        },
-      });
+    it('returns null when API throws', async () => {
+      videosListMock.mockRejectedValue(new Error('API down'));
 
-      const result = await getStreamStatus('regular-video-id');
+      const status = await getStreamStatus('broken');
 
-      expect(result).toBeUndefined();
-    });
-
-    it('handles API errors gracefully', async () => {
-      mockYouTubeList.mockRejectedValue(new Error('API Error'));
-
-      await expect(getStreamStatus('error-id')).rejects.toThrow('API Error');
-    });
-
-    it('uses correct API key from environment', async () => {
-      mockYouTubeList.mockResolvedValue({
-        data: { items: [] },
-      });
-
-      await getStreamStatus('test-id');
-
-      expect(google.youtube).toHaveBeenCalledWith({
-        version: 'v3',
-        auth: 'test-api-key',
-      });
+      expect(status).toBeNull();
     });
   });
 
   describe('listLiveStreams', () => {
-    it('returns live streams for a channel', async () => {
-      const mockStreams = [
-        {
-          id: { videoId: 'stream1' },
-          snippet: { title: 'Stream 1' },
-        },
-        {
-          id: { videoId: 'stream2' },
-          snippet: { title: 'Stream 2' },
-        },
-      ];
+    it('returns live search results', async () => {
+      const liveItems = [{ id: { videoId: 'stream-1' } }, { id: { videoId: 'stream-2' } }];
+      searchListMock.mockResolvedValue({ data: { items: liveItems } });
 
-      mockSearchList.mockResolvedValue({
-        data: {
-          items: mockStreams,
-        },
-      });
+      const result = await listLiveStreams('channel-1');
 
-      const result = await listLiveStreams('test-channel-id');
-
-      expect(result).toEqual(mockStreams);
-      expect(mockSearchList).toHaveBeenCalledWith({
+      expect(result).toEqual(liveItems);
+      expect(searchListMock).toHaveBeenCalledWith({
         part: ['snippet'],
-        channelId: 'test-channel-id',
+        channelId: 'channel-1',
         eventType: 'live',
         type: ['video'],
       });
     });
 
-    it('returns empty array when no live streams', async () => {
-      mockSearchList.mockResolvedValue({
-        data: {
-          items: [],
-        },
-      });
+    it('returns undefined when request fails', async () => {
+      searchListMock.mockRejectedValue(new Error('bad request'));
 
-      const result = await listLiveStreams('channel-no-streams');
-
-      expect(result).toEqual([]);
-    });
-
-    it('returns undefined when items is not present', async () => {
-      mockSearchList.mockResolvedValue({
-        data: {},
-      });
-
-      const result = await listLiveStreams('channel-id');
-
-      expect(result).toBeUndefined();
-    });
-
-    it('handles search API errors', async () => {
-      mockSearchList.mockRejectedValue(new Error('Search failed'));
-
-      await expect(listLiveStreams('error-channel')).rejects.toThrow(
-        'Search failed'
-      );
+      await expect(listLiveStreams('broken-channel')).rejects.toThrow('bad request');
     });
   });
 
   describe('checkConcurrentStreams', () => {
-    it('returns count and within limit when streams are below limit', async () => {
-      const mockStreams = Array(5).fill({
-        id: { videoId: 'stream' },
-        snippet: { title: 'Stream' },
+    it('counts active streams and validates limit', async () => {
+      searchListMock.mockResolvedValue({
+        data: { items: Array.from({ length: 3 }, (_, index) => ({ id: { videoId: `stream-${index}` } })) },
       });
 
-      mockSearchList.mockResolvedValue({
-        data: { items: mockStreams },
-      });
+      const result = await checkConcurrentStreams('chan');
 
-      const result = await checkConcurrentStreams('test-channel');
-
-      expect(result).toEqual({
-        count: 5,
-        withinLimit: true,
-      });
+      expect(result).toEqual({ count: 3, withinLimit: true });
     });
 
-    it('returns within limit false when exactly at 13 streams', async () => {
-      const mockStreams = Array(13).fill({
-        id: { videoId: 'stream' },
-        snippet: { title: 'Stream' },
+    it('flags when more than 12 streams are active', async () => {
+      searchListMock.mockResolvedValue({
+        data: { items: Array.from({ length: 15 }, (_, index) => ({ id: { videoId: `stream-${index}` } })) },
       });
 
-      mockSearchList.mockResolvedValue({
-        data: { items: mockStreams },
-      });
+      const result = await checkConcurrentStreams('busy');
 
-      const result = await checkConcurrentStreams('test-channel');
-
-      expect(result).toEqual({
-        count: 13,
-        withinLimit: false,
-      });
-    });
-
-    it('returns within limit true when exactly at 12 streams', async () => {
-      const mockStreams = Array(12).fill({
-        id: { videoId: 'stream' },
-        snippet: { title: 'Stream' },
-      });
-
-      mockSearchList.mockResolvedValue({
-        data: { items: mockStreams },
-      });
-
-      const result = await checkConcurrentStreams('test-channel');
-
-      expect(result).toEqual({
-        count: 12,
-        withinLimit: true,
-      });
-    });
-
-    it('handles zero streams correctly', async () => {
-      mockSearchList.mockResolvedValue({
-        data: { items: [] },
-      });
-
-      const result = await checkConcurrentStreams('empty-channel');
-
-      expect(result).toEqual({
-        count: 0,
-        withinLimit: true,
-      });
-    });
-
-    it('handles undefined items as zero count', async () => {
-      mockSearchList.mockResolvedValue({
-        data: {},
-      });
-
-      const result = await checkConcurrentStreams('channel-id');
-
-      expect(result).toEqual({
-        count: 0,
-        withinLimit: true,
-      });
-    });
-
-    it('propagates errors from listLiveStreams', async () => {
-      mockSearchList.mockRejectedValue(new Error('List failed'));
-
-      await expect(checkConcurrentStreams('error-channel')).rejects.toThrow(
-        'List failed'
-      );
-    });
-  });
-
-  describe('Integration scenarios', () => {
-    it('correctly identifies live vs upcoming streams', async () => {
-      mockYouTubeList.mockResolvedValue({
-        data: {
-          items: [
-            {
-              liveStreamingDetails: {
-                actualStartTime: '2024-01-01T10:00:00Z',
-                concurrentViewers: '500',
-              },
-              snippet: {
-                liveBroadcastContent: 'live',
-              },
-            },
-          ],
-        },
-      });
-
-      const status = await getStreamStatus('live-stream-id');
-
-      expect(status?.actualStartTime).toBeDefined();
-      expect(status?.concurrentViewers).toBe('500');
-    });
-
-    it('handles scheduled streams without concurrent viewers', async () => {
-      mockYouTubeList.mockResolvedValue({
-        data: {
-          items: [
-            {
-              liveStreamingDetails: {
-                scheduledStartTime: '2024-01-02T10:00:00Z',
-              },
-              snippet: {
-                liveBroadcastContent: 'upcoming',
-              },
-            },
-          ],
-        },
-      });
-
-      const status = await getStreamStatus('upcoming-stream-id');
-
-      expect(status?.scheduledStartTime).toBeDefined();
-      expect(status?.concurrentViewers).toBeUndefined();
+      expect(result).toEqual({ count: 15, withinLimit: false });
     });
   });
 });

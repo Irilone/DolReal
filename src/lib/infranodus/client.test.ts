@@ -5,6 +5,7 @@ import { MCPClient } from '@/lib/mcp/client';
 // Mock MCPClient
 jest.mock('@/lib/mcp/client');
 // Mock fetch globally
+// @ts-ignore
 global.fetch = jest.fn();
 
 describe('InfraNodus Client', () => {
@@ -209,11 +210,9 @@ describe('InfraNodus Client', () => {
         statusText: 'Not Found',
       });
 
-      const result = await fetchGraphData('missing-node');
-
-      // The function just returns json(), doesn't check ok status
-      // This behavior might need improvement in the actual code
-      await expect(result).rejects.toThrow();
+      await expect(fetchGraphData('missing-node')).rejects.toThrow(
+        'InfraNodus API error: 404 Not Found'
+      );
     });
 
     it('handles JSON parsing errors', async () => {
@@ -252,7 +251,6 @@ describe('InfraNodus Client', () => {
 
   describe('Integration scenarios', () => {
     it('can switch between MCP and fallback modes', async () => {
-      // First with MCP enabled
       process.env.INFRANODUS_MCP_ENABLED = 'true';
       process.env.INFRANODUS_MCP_URL = 'http://localhost:8080';
 
@@ -267,7 +265,6 @@ describe('InfraNodus Client', () => {
       let result = await getInfraNodusEmbed('node1');
       expect(result).toBe('http://mcp-url');
 
-      // Now with MCP disabled
       process.env.INFRANODUS_MCP_ENABLED = 'false';
       jest.clearAllMocks();
 
@@ -293,7 +290,6 @@ describe('InfraNodus Client', () => {
         call: jest.fn().mockRejectedValue(new Error('MCP failed')),
       }));
 
-      // Should throw, not fallback
       await expect(getInfraNodusEmbed('node-id')).rejects.toThrow(
         'MCP failed'
       );
