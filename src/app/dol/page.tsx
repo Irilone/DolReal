@@ -76,7 +76,7 @@ export default function DagarOmLagarDolPage() {
 
   const handleLanguageChange = (nextLocale: Locale) => {
     if (i18n.language !== nextLocale) {
-      void i18n.changeLanguage(nextLocale);
+      i18n.changeLanguage(nextLocale);
     }
   };
 
