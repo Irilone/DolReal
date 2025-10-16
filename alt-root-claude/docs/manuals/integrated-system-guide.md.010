@@ -1,0 +1,10 @@
+### Common Issues
+
+1. **High Latency**: Reduce bitrate or check router QoS
+2. **Connection Drops**: Enable backup RTMP servers in OBS
+3. **Audio Desync**: Check audio buffering settings
+4. **Low Quality**: Increase bitrate or resolution
+
+## Event Day Checklist
+
+### Pre-Event (1 hour before)

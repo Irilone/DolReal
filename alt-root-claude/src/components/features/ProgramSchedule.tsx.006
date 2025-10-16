@@ -1,0 +1,18 @@
+      {
+        id: 'd1-6',
+        time: '11:30 - 13:00',
+        title: 'Miljörätt och Hållbarhet',
+        description: 'Klimatkrisen ur ett juridiskt perspektiv',
+        speakers: ['Prof. Lisa Holm'],
+        streams: ['nodsyd', 'nodost'],
+        type: 'panel',
+      },
+      {
+        id: 'd1-7',
+        time: '13:00 - 14:00',
+        title: 'Lunch',
+        description: 'Gemensam lunch och networking',
+        speakers: [],
+        streams: [],
+        type: 'break',
+      },

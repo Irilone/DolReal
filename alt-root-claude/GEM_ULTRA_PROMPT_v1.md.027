@@ -1,0 +1,12 @@
+**Technical Constraints:**
+- YouTube: 1 stream per channel (need 4 separate channels)
+- YouTube API: 10,000 quota units/day (free tier)
+- InfraNodus: 10 requests/minute rate limit
+- Browser support: Modern browsers only (Chrome 90+, Firefox 88+, Safari 14+)
+
+**Design Philosophy:**
+- Inspired by Apple's design language (liquid glass, smooth animations)
+- Inspired by Netflix/AppleTV (carousel interface)
+- Inspired by InfraNodus (knowledge graph visualization)
+- Low-resource animations (60fps on mid-range hardware)
+

@@ -1,0 +1,10 @@
+## System Requirements
+
+### Hardware Requirements
+- **CPU**: Intel i5-6000 series or AMD Ryzen 5 2600 equivalent (minimum)
+- **RAM**: 8GB minimum, 16GB recommended for multiple streams
+- **GPU**: Dedicated graphics card recommended for encoding
+- **Storage**: 500MB available space for OBS Studio and MCP server
+- **Network**: Stable internet connection with upload speeds matching stream requirements
+
+### Software Requirements

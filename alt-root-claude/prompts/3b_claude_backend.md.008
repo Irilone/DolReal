@@ -1,0 +1,11 @@
+  } catch (error) {
+    return NextResponse.json({ error: 'Failed to load graph' }, { status: 500 });
+  }
+}
+```
+
+### 2. Third-Party Integrations
+
+#### A. YouTube API Client
+```typescript
+// src/lib/youtube/client.ts

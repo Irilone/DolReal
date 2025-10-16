@@ -1,0 +1,12 @@
+---
+
+## VALIDATION CHECKLIST
+
+Before outputting, verify:
+- [ ] All 6 manuals indexed with real URLs
+- [ ] All 4 critical questions answered with citations
+- [ ] All 6 plan files have complete content
+- [ ] Risk matrix identifies top 5 risks
+- [ ] JSON validates against schema
+- [ ] All policy claims are sourced
+

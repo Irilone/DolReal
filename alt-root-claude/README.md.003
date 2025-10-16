@@ -1,0 +1,10 @@
+
+```bash
+# Install dependencies
+bun install
+
+# Set up environment variables
+export GEMINI_API_KEY="your-key"
+export OPENAI_API_KEY="your-key"
+export ANTHROPIC_API_KEY="your-key"
+

@@ -1,0 +1,10 @@
+#### Option 2: Node.js HTTP Server
+
+```bash
+cd october
+npx http-server -p 8000
+```
+
+Open: http://localhost:8000
+
+#### Option 3: PHP Server

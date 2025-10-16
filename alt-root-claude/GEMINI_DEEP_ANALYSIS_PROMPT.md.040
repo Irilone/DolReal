@@ -1,0 +1,12 @@
+---
+
+## 🔬 DEEP THINKING PROMPTS FOR YOU
+
+Use your Ultra subscription's deep thinking mode to answer:
+
+1. **Architectural Deep Dive:**
+   - Is the Zustand store structure optimal for this use case?
+   - Should we use React Server Components more extensively?
+   - Is the API route architecture scalable?
+   - Are there better patterns for i18n in Next.js 15?
+

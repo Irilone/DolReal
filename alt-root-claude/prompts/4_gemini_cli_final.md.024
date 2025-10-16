@@ -1,0 +1,13 @@
+  "build_output": {
+    "exit_code": 0,
+    "build_time_ms": 45230,
+    "warnings": [
+      "Unused export 'debugMode' in src/lib/debug.ts"
+    ],
+    "errors": []
+  },
+  "type_check": {
+    "passed": true,
+    "errors": [],
+    "warnings": 3
+  },

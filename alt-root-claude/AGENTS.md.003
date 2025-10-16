@@ -1,0 +1,5 @@
+Use short, imperative commit titles (`Add orchestrator Makefile`). Separate regenerated artifacts from manual changes and call out updated prompts or bundles. PRs should link planning tickets, summarize intent, attach output from `npm run orchestrate` or `trunk check`, and include screenshots for UI changes. Note any follow-up work so automation stays aligned.
+
+## Security & Configuration Tips
+
+Never commit secrets; source `GEMINI_API_KEY` from `.env.local` or CI secrets. Keep concurrency aligned with README guidance and document exceptions in plan markdowns. Review generated manuals for sensitive routing or streaming details before copying to `artifacts/`.

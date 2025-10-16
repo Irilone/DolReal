@@ -1,0 +1,10 @@
+# Example: Allow custom port
+iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+
+logger "Custom firewall rules applied"
+```
+
+#### Startup Service
+
+```bash
+#!/bin/sh

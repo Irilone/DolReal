@@ -1,0 +1,60 @@
+name: Initiate Multi-Agent Orchestration
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_all_agents:
+        description: 'Run all agents sequentially'
+        required: false
+        default: true
+        type: boolean
+      specific_agent:
+        description: 'Override to run a single agent'
+        required: false
+        default: none
+        type: choice
+        options:
+          - none
+          - gemini-ultra
+          - gpt5-codex
+          - claude-frontend
+          - claude-backend
+          - claude-parallel
+          - gemini-cli
+      ref:
+        description: 'Git ref to dispatch orchestrate workflow against'
+        required: false
+        type: string
+jobs:
+  dispatch:
+    name: Dispatch Multi-Agent Workflow
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Trigger Orchestrate Workflow
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const runAllAgentsRaw = core.getInput('run_all_agents');
+            const runAllAgents = runAllAgentsRaw ? String(runAllAgentsRaw) : 'true';
+            const specificAgent = core.getInput('specific_agent') || 'none';
+            let ref = core.getInput('ref');
+
+            if (!ref) {
+              ref = context.ref;
+            }
+
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'orchestrate.yml',
+              ref,
+              inputs: {
+                run_all_agents: runAllAgents,
+                specific_agent: specificAgent,
+              },
+            });
+
+            core.notice(`Dispatched orchestrate.yml on ${ref} with run_all_agents=${runAllAgents} and specific_agent=${specificAgent}`);

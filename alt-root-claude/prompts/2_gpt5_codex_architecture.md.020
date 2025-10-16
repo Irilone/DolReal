@@ -1,0 +1,18 @@
+  "system_architecture": {
+    "tech_stack": {
+      "framework": "Next.js 15",
+      "language": "TypeScript 5.3",
+      "styling": "Tailwind CSS v4",
+      "i18n": "i18next",
+      "state_management": "React Context"
+    },
+    "directory_structure": { /* nested object */ },
+    "component_tree": [
+      {
+        "name": "Header",
+        "path": "src/components/features/Header.tsx",
+        "dependencies": ["LanguageSwitcher", "DarkModeToggle"],
+        "assigned_to": "claude-frontend",
+        "props": {
+          "currentLocale": "Locale"
+        },

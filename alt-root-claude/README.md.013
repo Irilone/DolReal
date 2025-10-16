@@ -1,0 +1,10 @@
+
+Open the browser integration UI and click "Validera allt" (Validate All) to check:
+- ✓ Gemini API configuration
+- ✓ Environment setup
+- ✓ Browser compatibility
+- ✓ Network connectivity
+
+## Development
+
+### TypeScript/Node.js Development

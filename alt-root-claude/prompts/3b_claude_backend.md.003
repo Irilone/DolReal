@@ -1,0 +1,10 @@
+Implement these Next.js API routes:
+
+#### A. GET /api/streams
+```typescript
+// src/app/api/streams/route.ts
+import { NextResponse } from 'next/server';
+import type { Stream } from '@/types/stream';
+
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);

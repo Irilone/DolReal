@@ -1,0 +1,10 @@
+**Pros:**
+- Best performance
+- Simplest architecture
+- Smaller bundle
+
+**Cons:**
+- Almost complete rewrite
+- High risk near launch date
+- Lose Next.js features (SSR, routing)
+

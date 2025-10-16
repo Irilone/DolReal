@@ -1,0 +1,15 @@
+      - name: Generate Tag
+        id: tag
+        run: |
+          VERSION="v2.0.0-build.${{ github.run_number }}"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.tag.outputs.version }}
+          name: DoL 2025 Build ${{ github.run_number }}
+          body_path: release-notes.md
+          files: releases/*.zip
+          draft: false
+          prerelease: false

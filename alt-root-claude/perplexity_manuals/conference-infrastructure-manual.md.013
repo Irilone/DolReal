@@ -1,0 +1,11 @@
+#### Node-Specific Configurations
+```json
+// Nodväst Configuration (Primary Hub)
+{
+  "stream_settings": {
+    "service": "YouTube - RTMPS",
+    "key": "[Nodväst Stream Key]",
+    "bitrate": 6000,
+    "resolution": "1920x1080",
+    "fps": 30
+  },

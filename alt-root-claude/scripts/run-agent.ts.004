@@ -1,0 +1,10 @@
+  'gemini-cli': {
+    name: 'Gemini 2.5 Pro CLI (Integration)',
+    promptFile: 'prompts/4_gemini_cli_final.md',
+    outputFile: 'artifacts/4_gemini_cli_final.json',
+    envKey: 'GEMINI_API_KEY',
+    model: 'gemini-2.5-pro',
+  },
+};
+
+/**

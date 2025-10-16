@@ -1,0 +1,10 @@
+          # log for what changed the labels.
+          github-token: '${{ steps.mint_identity_token.outputs.token || secrets.GITHUB_TOKEN || github.token }}'
+          script: |-
+            // Parse the available labels
+            const availableLabels = (process.env.AVAILABLE_LABELS || '').split(',')
+              .map((label) => label.trim())
+              .sort()
+
+            // Parse out the triaged issues
+            const triagedIssues = (JSON.parse(process.env.TRIAGED_ISSUES || '{}'))

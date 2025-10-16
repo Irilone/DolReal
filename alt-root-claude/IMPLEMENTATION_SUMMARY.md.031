@@ -1,0 +1,17 @@
+
+- [Gemini API Documentation](https://ai.google.dev/docs)
+- [Google AI Studio](https://aistudio.google.com/apikey)
+- [MDN Web Docs](https://developer.mozilla.org)
+- [WCAG Guidelines](https://www.w3.org/WAI/WCAG22/quickref/)
+
+### Getting Help
+
+1. Check documentation
+2. Review troubleshooting guides
+3. Search GitHub issues
+4. Open new issue with:
+   - Error messages (redact API keys!)
+   - Browser/environment info
+   - Steps to reproduce
+   - Console logs
+

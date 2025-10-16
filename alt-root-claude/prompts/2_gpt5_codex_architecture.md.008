@@ -1,0 +1,10 @@
+6. **InfraNodusClient** (assigned_to: claude-backend)
+   - API/MCP integration
+   - Fallback iframe logic
+
+### 2. API Contracts
+
+Define interfaces between frontend and backend:
+
+```typescript
+// YouTube Stream API

@@ -1,0 +1,10 @@
+### Missing API Keys
+```bash
+make check-env  # Verify keys are set
+```
+
+### Agent Fails
+```bash
+# Check logs
+cat logs/gemini-ultra.log
+

@@ -1,0 +1,18 @@
+```json
+{
+  "metadata": {
+    "agent_id": "gemini-cli",
+    "timestamp": "2025-10-14T...",
+    "execution_time_ms": 0,
+    "status": "completed"
+  },
+  "merge_status": {
+    "frontend_integrated": true,
+    "backend_integrated": true,
+    "conflicts_resolved": [
+      "Resolved package.json dependency conflict: react@18.3.1",
+      "Aligned TypeScript types between frontend/backend"
+    ],
+    "files_written": 87,
+    "total_lines": 12453
+  },

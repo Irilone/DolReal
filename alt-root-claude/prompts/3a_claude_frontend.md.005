@@ -1,0 +1,10 @@
+#### B. StreamCarousel Component
+```typescript
+// src/components/features/StreamCarousel.tsx
+'use client';
+import { YouTubePlayer } from './YouTubePlayer';
+
+interface StreamCarouselProps {
+  streams: Stream[];
+  currentDay: 1 | 2;
+}

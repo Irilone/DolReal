@@ -1,0 +1,10 @@
+3. Go to **Settings → Video**
+   - Base Resolution: 1920x1080
+   - Output Resolution: 1280x720
+   - FPS: 30
+
+4. Go to **Settings → Audio**
+   - Sample Rate: 48kHz
+   - Channels: Stereo
+
+### Step 2: Add Stream Output

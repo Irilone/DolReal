@@ -1,0 +1,10 @@
+trunk check
+trunk check --all
+
+# Auto-fix issues
+trunk fmt
+
+# Next.js ESLint
+bun run lint
+
+# Format check

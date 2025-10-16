@@ -1,0 +1,16 @@
+
+    // Execute agent-specific command
+    let output: string;
+    switch (agent.command) {
+      case "gemini":
+        output = await executeGemini(fullPrompt, agent.id);
+        break;
+      case "openai":
+        output = await executeOpenAI(fullPrompt, agent.id);
+        break;
+      case "claude":
+        output = await executeClaude(fullPrompt, agent.id);
+        break;
+      default:
+        throw new Error(`Unknown command: ${agent.command}`);
+    }

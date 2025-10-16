@@ -1,0 +1,10 @@
+#!/usr/bin/env bun
+/**
+ * Single Agent Runner
+ * Execute individual agents from the orchestration pipeline
+ */
+
+import fs from 'fs/promises';
+import path from 'path';
+
+const AGENTS = {

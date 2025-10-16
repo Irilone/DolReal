@@ -1,0 +1,10 @@
+Edit `.env` file in the root directory:
+
+```bash
+# Gemini API (Agents 1 & 4)
+GEMINI_API_KEY=AIzaSyDP3wr_5BsxXDIOxvx0X1vIjBDnVgH8yhE
+
+# OpenAI API (Agent 2)
+OPENAI_API_KEY=sk-your-openai-key
+
+# Anthropic API (Agents 3a & 3b)

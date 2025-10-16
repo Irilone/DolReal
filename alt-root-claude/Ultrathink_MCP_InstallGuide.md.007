@@ -1,0 +1,6 @@
+---
+
+## 🧪 Full Example CLI Run
+```bash
+claude --model sonnet-4.5   --ultrathink   --mcp context7,desktopcommander,buildoracle,perfmonk,stackhistorian,joyloop,devsavant,metricslayer   --input hybrid_bundler_eval.json
+```

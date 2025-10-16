@@ -1,0 +1,17 @@
+      - name: Upload Research Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: research-bundle
+          path: |
+            artifacts/1_gemini_ultra_research.json
+            plans/*.md
+          retention-days: 30
+
+  agent-2-architecture:
+    name: 'Agent 2: GPT-5 Codex (Architecture)'
+    runs-on: ubuntu-latest
+    needs: agent-1-research
+    if: ${{ github.event.inputs.run_all_agents == 'true' || github.event.inputs.specific_agent == 'gpt5-codex' || github.event_name == 'push' }}
+    steps:
+      - uses: actions/checkout@v4
+

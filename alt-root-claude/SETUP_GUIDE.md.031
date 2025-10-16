@@ -1,0 +1,11 @@
+### Issue 5: Environment Variables Not Found
+
+**Symptoms:**
+- "GEMINI_API_KEY not set"
+- Environment check failures
+
+**Solutions:**
+1. Ensure `.env` file exists in root
+2. Verify correct format (no quotes unless needed)
+3. Export variables for current shell:
+

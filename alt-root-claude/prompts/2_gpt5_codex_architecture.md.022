@@ -1,0 +1,12 @@
+  ],
+  "scaffolding": {
+    "package_json": "{ /* full content */ }",
+    "tsconfig_json": "{ /* full content */ }",
+    "next_config_js": "export default { /* full content */ }",
+    "tailwind_config_js": "export default { /* full content */ }",
+    "env_example": "# Full content"
+  },
+  "type_definitions": {
+    "src/types/stream.ts": "// Full TypeScript code",
+    "src/types/i18n.ts": "// Full TypeScript code"
+    // ... all type files

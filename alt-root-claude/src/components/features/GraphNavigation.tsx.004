@@ -1,0 +1,10 @@
+export default function GraphNavigation({
+  nodes = defaultNodes,
+  links = [],
+  className = '',
+  onNodeClick,
+}: GraphNavigationProps) {
+  const { t } = useTranslation();
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [dimensions, setDimensions] = useState({ width: 800, height: 600 });
+  const [zoom, setZoom] = useState(1);

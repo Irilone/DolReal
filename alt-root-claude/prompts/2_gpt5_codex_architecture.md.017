@@ -1,0 +1,10 @@
+#### Claude Backend (3b)
+- All API routes in `src/app/api/`
+- YouTube API client
+- InfraNodus integration
+- MCP server setup
+- Documentation in `docs/`
+- Testing setup
+- Router/OBS/YouTube manuals
+
+### 6. Build & Development Strategy

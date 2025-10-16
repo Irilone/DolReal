@@ -1,0 +1,13 @@
+  100% {
+    transform: translateX(300px) translateY(300px);
+    opacity: 0;
+  }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .space-background::before,
+  .space-background::after,
+  .shooting-star {
+    animation: none;
+  }

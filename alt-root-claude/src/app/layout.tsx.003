@@ -1,0 +1,14 @@
+        {/* Shooting stars */}
+        <div className="shooting-stars" aria-hidden="true">
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+          <div className="shooting-star" />
+        </div>
+
+        {children}
+      </body>
+    </html>
+  );
+}

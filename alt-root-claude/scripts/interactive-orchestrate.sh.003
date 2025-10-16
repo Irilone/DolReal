@@ -1,0 +1,15 @@
+# Function to handle each agent
+run_agent() {
+    local agent_num=$1
+    local agent_name=$2
+    local prompt_file=$3
+    local output_file=$4
+    local model_interface=$5
+    local prev_artifacts=$6
+
+    echo -e "${MAGENTA}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo -e "${MAGENTA}  Agent ${agent_num}: ${agent_name}${NC}"
+    echo -e "${MAGENTA}  Interface: ${model_interface}${NC}"
+    echo -e "${MAGENTA}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo ""
+

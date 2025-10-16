@@ -1,0 +1,10 @@
+          if [ "${{ needs.agent-4-integration.result }}" == "success" ]; then
+            echo "## ✅ Build Complete" >> $GITHUB_STEP_SUMMARY
+            echo "Production-ready artifacts generated successfully!" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Download release package from artifacts." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ❌ Build Failed" >> $GITHUB_STEP_SUMMARY
+            echo "Check individual agent logs for details." >> $GITHUB_STEP_SUMMARY
+          fi
+

@@ -1,0 +1,30 @@
+│   ├── stores/            # Zustand state stores
+│   │   ├── streamStore.ts
+│   │   └── uiStore.ts
+│   ├── types/             # TypeScript type definitions
+│   │   ├── stream.ts
+│   │   ├── i18n.ts
+│   │   ├── api.ts
+│   │   └── index.ts
+│   └── i18n/              # Internationalization
+│       ├── config.ts      # i18next configuration
+│       └── locales/       # Translation files (se, en, ar, fa, zh, es)
+├── docs/manuals/          # Generated documentation (3 comprehensive guides)
+├── october/               # LEGACY: deprecated prototypes - DO NOT MODIFY
+│   ├── README.md          # Orchestration documentation
+│   └── INTEGRATION_README.md  # Browser integration docs
+├── logs/                  # Agent execution logs (gitignored)
+├── releases/              # Release artifacts (gitignored)
+├── Makefile               # Orchestration commands
+├── package.json           # Dependencies + npm scripts
+├── tsconfig.json          # TypeScript configuration
+├── next.config.js         # Next.js configuration
+├── tailwind.config.js     # Tailwind CSS configuration
+├── jest.config.ts         # Jest testing configuration
+└── eslint.config.mjs      # ESLint configuration
+=======
+├── artifacts/              # Agent communication artifacts (JSON)
+├── plans/                  # Research plans (Markdown)
+├── releases/               # Production builds (ZIP)
+├── prompts/                # Agent prompt files
+│   ├── 1_gemini_ultra_research.md

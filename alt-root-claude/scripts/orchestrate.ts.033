@@ -1,0 +1,10 @@
+
+  const text = data.content?.[0]?.text ?? "";
+
+  if (!text) {
+    throw new Error("Claude API returned empty response");
+  }
+
+  log(`  Received ${text.length} characters from Claude`);
+  return text;
+}

@@ -1,0 +1,26 @@
+```
+/
+├── src/
+│   ├── app/                    # Next.js 15 App Router
+│   │   ├── [locale]/          # i18n routing
+│   │   ├── api/               # API routes
+│   │   └── layout.tsx
+│   ├── components/
+│   │   ├── ui/                # shadcn/ui components
+│   │   ├── features/          # Feature-specific components
+│   │   └── shared/            # Shared components
+│   ├── lib/
+│   │   ├── youtube/           # YouTube API client
+│   │   ├── infranodus/        # InfraNodus integration
+│   │   └── utils/
+│   ├── hooks/
+│   ├── types/
+│   └── i18n/
+│       └── locales/           # se, en, ar, fa, zh, es
+├── public/
+├── docs/
+│   └── manuals/
+├── scripts/
+└── tests/
+```
+

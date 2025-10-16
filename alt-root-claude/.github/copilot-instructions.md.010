@@ -1,0 +1,11 @@
+trunk check
+
+# Run tests (when available)
+npm test
+# OR
+bun test
+
+# Run tests in watch mode
+npm run test:watch
+```
+

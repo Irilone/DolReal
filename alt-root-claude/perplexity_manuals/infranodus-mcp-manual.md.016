@@ -1,0 +1,10 @@
+#### 3. generate_content_gaps
+**Purpose**: Detect missing connections in discourse  
+**Usage**: "Find content gaps in this research proposal"
+**Output**: Identified gaps and improvement suggestions
+
+#### 4. generate_topical_clusters
+**Purpose**: Generate topics and clusters of keywords from text
+**Usage**: "Show me the main topical clusters in these speaker abstracts"
+**Output**: Organized clusters with topic naming
+

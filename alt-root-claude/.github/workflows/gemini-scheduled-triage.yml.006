@@ -1,0 +1,14 @@
+              "model": {
+                "maxSessionTurns": 25
+              },
+              "telemetry": {
+                "enabled": ${{ vars.GOOGLE_CLOUD_PROJECT != '' }},
+                "target": "gcp"
+              },
+              "tools": {
+                "core": [
+                  "run_shell_command(echo)",
+                  "run_shell_command(jq)",
+                  "run_shell_command(printenv)"
+                ]
+              }

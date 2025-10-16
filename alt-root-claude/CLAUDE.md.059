@@ -1,0 +1,10 @@
+**Testing API routes**: `bun test src/app/api/streams/route.test.ts`
+
+<<<<<<< Updated upstream
+### State Management
+
+Uses **Zustand** for lightweight, performant state:
+
+- **streamStore.ts**: Active stream selection, day selection, player states
+- **uiStore.ts**: Theme (light/dark), language preference, modal visibility
+

@@ -1,0 +1,65 @@
+{
+  "header": {
+    "title": "Dagar om Lagar 2025",
+    "logo_alt": "DoL Logotyp"
+  },
+  "nav": {
+    "home": "Hem",
+    "schedule": "Schema",
+    "streams": "Strömmar",
+    "graph": "Kunskapsgraf",
+    "archive": "Arkiv",
+    "about": "Om"
+  },
+  "carousel": {
+    "previous": "Föregående",
+    "next": "Nästa",
+    "goto": "Gå till ström",
+    "label": "Strömkarusell"
+  },
+  "graph": {
+    "zoomIn": "Zooma in",
+    "zoomOut": "Zooma ut",
+    "reset": "Återställ vy",
+    "legend": "Teckenförklaring",
+    "connections": "kopplingar"
+  },
+  "program": {
+    "title": "Program",
+    "day1": "Dag 1",
+    "day2": "Dag 2",
+    "speakers": "Talare",
+    "streams": "Strömmar"
+  },
+  "streams": {
+    "nodvast": "Nordväst",
+    "nodsyd": "Nordsyd",
+    "nodost": "Nordöst",
+    "nodmidd": "Nordmidd",
+    "inactive": "Ej aktiv idag",
+    "live": "LIVE",
+    "viewers": "tittare",
+    "play": "Spela",
+    "pause": "Pausa",
+    "watch": "Titta"
+  },
+  "event": {
+    "title": "Dagar om Lagar 2025",
+    "dates": "6-7 november 2025",
+    "description": "Ett juridiskt symposium som utforskar lagar och samhälle",
+    "day1": "Dag 1 - 6 November 2025",
+    "day2": "Dag 2 - 7 November 2025"
+  },
+  "health": {
+    "good": "Utmärkt",
+    "ok": "Bra",
+    "bad": "Dålig",
+    "offline": "Offline"
+  },
+  "common": {
+    "close": "Stäng",
+    "loading": "Laddar...",
+    "error": "Ett fel uppstod",
+    "retry": "Försök igen"
+  }
+}

@@ -1,0 +1,23 @@
+          }
+        },
+        "required": ["metadata", "components", "i18n"]
+      }
+    },
+
+    "3b_backend": {
+      "filename": "artifacts/3b_claude_backend_output.json",
+      "producer": "claude-backend",
+      "consumers": ["gemini-cli"],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "metadata": { "$ref": "#/definitions/agentMetadata" },
+          "api_routes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "file_path": { "type": "string" },
+                "endpoint": { "type": "string" },
+                "code": { "type": "string" }
+              }

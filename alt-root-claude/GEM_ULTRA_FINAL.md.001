@@ -1,0 +1,14 @@
+# 🎯 FINAL: Gemini 2.5 Pro Ultra - Production Analysis Command
+
+**ITERATION 3: Ready-to-Execute Analysis for DoL 2025**
+
+---
+
+## 🚀 QUICK START (3 Commands)
+
+```bash
+cd /Users/air/DoL-2025/DolReal
+export GEMINI_API_KEY="your-gemini-api-key-here"
+./run-gem-analysis.sh
+```
+

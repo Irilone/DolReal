@@ -1,0 +1,10 @@
+# Backup router configuration daily
+
+DATE=$(date +%Y%m%d)
+BACKUP_DIR="/mnt/usb/router-backups"
+
+mkdir -p $BACKUP_DIR
+
+# Export settings
+nvram show > "$BACKUP_DIR/nvram-backup-$DATE.txt"
+

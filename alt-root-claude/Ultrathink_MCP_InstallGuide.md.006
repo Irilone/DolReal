@@ -1,0 +1,12 @@
+---
+
+### 5. devsavant
+- **Purpose:** Refactor-friendly code suggestions, simplifies transitions across large codebases.
+- **Prompt:** "Show code-level implications of migrating from Webpack to Vite in monorepo."
+
+---
+
+### 6. metricslayer
+- **Purpose:** Graphs build size, cache efficiency, lazy-load tree analysis.
+- **Prompt:** "Show before/after metrics for tree shaking with Vite in production."
+

@@ -1,0 +1,12 @@
+### Technical Constraints
+
+1. **YouTube API Limits:**
+   - 10,000 quota units/day (standard free tier)
+   - Each viewer count query = 1 unit
+   - Each stream health check = 1 unit
+   - Solution: 5-minute caching to reduce calls
+
+2. **InfraNodus API Limits:**
+   - 10 requests/minute
+   - Solution: Rate limiter + caching
+

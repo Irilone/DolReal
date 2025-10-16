@@ -1,0 +1,12 @@
+
+  if (data.error) {
+    log(`✗ API Error: ${data.error.message}`, 'red');
+    throw new Error(`Anthropic API error: ${data.error.message}`);
+  }
+
+  const text = data.content?.map((c) => c.text).join('\n') ?? '';
+
+  if (!text) {
+    log('✗ No response text generated', 'red');
+    throw new Error('Anthropic API returned no text');
+  }

@@ -1,0 +1,10 @@
+│                                                              │
+│  Shared Configuration:                                       │
+│  ├─ Single API key for all agents                           │
+│  ├─ Shared validation system                                │
+│  ├─ Common error handling                                   │
+│  └─ Unified logging                                          │
+└─────────────────────────────────────────────────────────────┘
+```
+
+## Performance Characteristics

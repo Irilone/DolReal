@@ -1,0 +1,12 @@
+### Manual Testing:
+- Keyboard navigation: [PASS/FAIL]
+- Screen reader (VoiceOver): [PASS/FAIL]
+- Color contrast: [PASS/FAIL]
+- Focus indicators: [PASS/FAIL]
+- RTL layout: [PASS/FAIL]
+
+### Issues to Fix:
+1. [Issue 1 with severity]
+2. [Issue 2 with severity]
+[...]
+

@@ -1,0 +1,11 @@
+                  className="w-full h-full"
+                  src={`https://www.youtube.com/embed/${id}`}
+                  title={`Stream ${i + 1}`}
+                  allowFullScreen
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+

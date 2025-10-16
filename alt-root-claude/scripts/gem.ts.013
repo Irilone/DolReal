@@ -1,0 +1,10 @@
+  try {
+    // Read input prompt
+    log('\n→ Reading input file...', 'yellow');
+    const prompt = await readFile(args.input, 'utf-8');
+    log(`✓ Read ${prompt.length} characters`, 'green');
+
+    // Call Gemini API
+    const responseText = await callGeminiAPI(args.model, prompt);
+
+    // Ensure output directory exists

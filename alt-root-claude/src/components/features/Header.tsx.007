@@ -1,0 +1,24 @@
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden glass-strong rounded-lg mt-2 mb-4 overflow-hidden">
+            <nav className="flex flex-col" role="navigation">
+              {navLinks.map((link, index) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`px-4 py-3 text-sm font-medium text-white/80 hover:text-white
+                             hover:bg-white/5 transition-colors ${
+                               index !== navLinks.length - 1 ? 'border-b border-white/10' : ''
+                             }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+}

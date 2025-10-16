@@ -1,0 +1,16 @@
+
+```
+Operation                    Time        Notes
+─────────────────────────────────────────────────────────────
+Module Load                  <500ms      Initial page load
+API Initialization           1-2s        Includes connectivity test
+API Key Validation          <100ms      Local regex check
+Environment Check           <50ms       Local checks only
+Browser Compatibility       <50ms       Feature detection
+Full Validation             2-3s        Includes network test
+Content Generation          2-10s       Depends on prompt
+Network Retry               1s, 2s, 4s  Exponential backoff
+Timeout                     30s         Configurable
+UI Update                   <100ms      DOM manipulation
+```
+

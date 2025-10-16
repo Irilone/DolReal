@@ -1,0 +1,14 @@
+## Deployment Architecture
+
+```
+Development:
+    october/
+    └─→ Local HTTP Server (Python/Node/PHP)
+        └─→ http://localhost:8000
+
+Staging:
+    october/
+    └─→ Nginx/Apache
+        ├─→ SSL Certificate
+        └─→ https://staging.dolreal.se
+

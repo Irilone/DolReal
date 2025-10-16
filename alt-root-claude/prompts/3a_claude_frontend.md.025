@@ -1,0 +1,15 @@
+  "components": [
+    {
+      "file_path": "src/components/features/Header.tsx",
+      "component_name": "Header",
+      "code": "// Full component code",
+      "dependencies": ["LanguageSwitcher", "DarkModeToggle"],
+      "props_interface": "interface HeaderProps { currentLocale: Locale; }"
+    }
+    // ... all components
+  ],
+  "styles": [
+    {
+      "file_path": "src/app/globals.css",
+      "content": "/* Tailwind base + custom styles */"
+    }

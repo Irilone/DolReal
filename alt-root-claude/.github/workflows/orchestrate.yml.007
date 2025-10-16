@@ -1,0 +1,19 @@
+  agent-3-parallel:
+    name: 'Agent 3: Claude Parallel (Frontend + Backend)'
+    runs-on: ubuntu-latest
+    needs: agent-2-architecture
+    if: ${{ github.event.inputs.run_all_agents == 'true' || github.event.inputs.specific_agent == 'claude-parallel' || github.event_name == 'push' }}
+    strategy:
+      matrix:
+        agent:
+          - name: claude-frontend
+            id: '3a'
+            target: claude-frontend
+          - name: claude-backend
+            id: '3b'
+            target: claude-backend
+      fail-fast: false
+      max-parallel: 2
+    steps:
+      - uses: actions/checkout@v4
+

@@ -1,0 +1,12 @@
+---
+
+## SUCCESS CRITERIA
+
+This integration is considered successful if:
+1. ✅ Production build completes without errors
+2. ✅ LCP <2.5s, CLS <0.1, JS <250KB
+3. ✅ WCAG 2.2 AA compliance
+4. ✅ All 8 smoke tests pass
+5. ✅ Release package generated with checksums
+6. ✅ Documentation complete (README + DEPLOYMENT + 3 manuals)
+

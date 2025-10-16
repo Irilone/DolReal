@@ -1,0 +1,14 @@
+# Start the production server
+npm run start
+```
+
+**TODO:** Verify these commands and update this section if necessary.
+
+## Development Conventions
+
+*   The code is written in TypeScript and uses React functional components with hooks.
+*   The code is well-structured and uses ARIA attributes for accessibility.
+*   The project uses Tailwind CSS for styling, with a dark mode feature.
+*   The project uses `i18next` for internationalization, with support for English and Swedish.
+*   The project uses functional components and hooks.
+*   Components are defined in `.tsx` files.

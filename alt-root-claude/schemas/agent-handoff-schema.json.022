@@ -1,0 +1,19 @@
+        "required": ["metadata", "integrations", "documentation", "manuals"]
+      }
+    },
+
+    "4_final_build": {
+      "filename": "artifacts/4_gemini_cli_final.json",
+      "producer": "gemini-cli",
+      "consumers": [],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "metadata": { "$ref": "#/definitions/agentMetadata" },
+          "merge_status": {
+            "type": "object",
+            "properties": {
+              "frontend_integrated": { "type": "boolean" },
+              "backend_integrated": { "type": "boolean" },
+              "conflicts_resolved": { "type": "array", "items": { "type": "string" } }
+            }

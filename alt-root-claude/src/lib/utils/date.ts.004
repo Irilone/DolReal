@@ -1,0 +1,10 @@
+
+export function formatEventDate(date: Date, locale: string = 'se'): string {
+  const localeMap: Record<string, string> = {
+    se: 'sv-SE',
+    en: 'en-US',
+    ar: 'ar-SA',
+    fa: 'fa-IR',
+    zh: 'zh-CN',
+    es: 'es-ES',
+  };

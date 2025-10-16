@@ -1,0 +1,12 @@
+);
+
+// Test connection
+await GeminiAPI.testConnection();
+
+// List models
+await GeminiAPI.listModels();
+
+// Get status
+GeminiAPI.getStatus();
+```
+

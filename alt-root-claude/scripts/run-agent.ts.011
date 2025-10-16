@@ -1,0 +1,16 @@
+  console.log('⏳ Executing agent (this may take several minutes)...\n');
+
+  const startTime = Date.now();
+
+  try {
+    // Execute agent based on type
+    let output: string;
+    if (agentId.startsWith('gemini')) {
+      output = await executeGemini(promptContent, agent.model, apiKey);
+    } else if (agentId.startsWith('gpt')) {
+      output = await executeOpenAI(promptContent, agent.model, apiKey);
+    } else if (agentId.startsWith('claude')) {
+      output = await executeClaude(promptContent, agent.model, apiKey);
+    } else {
+      throw new Error('Unknown agent type');
+    }

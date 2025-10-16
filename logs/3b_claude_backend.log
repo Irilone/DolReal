@@ -1,0 +1,18 @@
+[35m═══════════════════════════════════════════════════════[0m
+[35m  Anthropic API Wrapper v2.0[0m
+[35m═══════════════════════════════════════════════════════[0m
+[36m
+Model: claude-sonnet-4-5[0m
+[36mInput: /tmp/claude-backend-input.md[0m
+[36mOutput: artifacts/3b_claude_backend_output.json[0m
+[33m
+→ Reading input file...[0m
+[32m✓ Read 72506 characters[0m
+[0m
+[36m→ Calling Anthropic API: claude-sonnet-4-20250514[0m[0m
+[34m  Prompt length: 72506 characters[0m
+[31m✗ API Error (400): {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CU6tej8EXo79oS4cHpfY9"}[0m
+[0m
+[31m✗ Error: Anthropic API returned 400: {"type":"error","error":{"type":"invalid_request_error","message":"Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits."},"request_id":"req_011CU6tej8EXo79oS4cHpfY9"}[0m[0m
+[35m═══════════════════════════════════════════════════════
+[0m

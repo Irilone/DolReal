@@ -1,0 +1,13 @@
+  "carousel": {
+    "previous": "Föregående",
+    "next": "Nästa",
+    "goto": "Gå till ström",
+    "label": "Strömkarusell"
+  },
+  "graph": {
+    "zoomIn": "Zooma in",
+    "zoomOut": "Zooma ut",
+    "reset": "Återställ vy",
+    "legend": "Teckenförklaring",
+    "connections": "kopplingar"
+  },

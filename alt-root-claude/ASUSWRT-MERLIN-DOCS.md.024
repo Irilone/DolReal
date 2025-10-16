@@ -1,0 +1,10 @@
+logger "Custom services started"
+```
+
+### Debugging Tips
+
+1. **Manual Testing**: Always run scripts manually first
+   ```bash
+   /jffs/scripts/my-script
+   ```
+

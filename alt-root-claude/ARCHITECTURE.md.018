@@ -1,0 +1,26 @@
+## Scalability Considerations
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                  Scalability Design                          │
+│                                                              │
+│  Client-Side:                                                │
+│  ├─ No state stored on server                               │
+│  ├─ All processing in browser                               │
+│  ├─ Stateless architecture                                  │
+│  └─ No session management needed                            │
+│                                                              │
+│  API Layer:                                                  │
+│  ├─ Direct connection to Gemini                             │
+│  ├─ No middleware bottleneck                                │
+│  ├─ Rate limiting by Google                                 │
+│  └─ Scalable to millions of users                           │
+│                                                              │
+│  Production Enhancement:                                     │
+│  ├─ Add backend proxy for key management                    │
+│  ├─ Implement request queuing                               │
+│  ├─ Add caching layer                                       │
+│  └─ Use CDN for static assets                               │
+└─────────────────────────────────────────────────────────────┘
+```
+

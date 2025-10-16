@@ -1,0 +1,13 @@
+          },
+          "streams": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 4
+          },
+          "policies": {
+            "type": "object",
+            "properties": {
+              "wcag": { "type": "string" },
+              "autoplay": { "type": "string" },
+              "youtube_concurrency": { "type": "string" }
+            }

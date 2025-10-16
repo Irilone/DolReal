@@ -1,0 +1,10 @@
+1. **Enable JFFS**:
+   - Administration > System > Enable JFFS custom scripts and configs: **YES**
+   - Format JFFS partition at next boot: **YES** (first time only)
+   - Reboot router
+
+2. **Enable SSH**:
+   - Administration > System > Enable SSH: **LAN only** or **LAN + WAN**
+
+### Script Location
+

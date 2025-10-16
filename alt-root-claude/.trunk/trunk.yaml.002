@@ -1,0 +1,19 @@
+runtimes:
+  enabled:
+    - node@22.16.0
+    - python@3.10.8
+# This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
+lint:
+  enabled:
+    - git-diff-check
+    - markdownlint@0.45.0
+    - prettier@3.6.2
+    - trufflehog@3.90.8
+actions:
+  disabled:
+    - git-lfs
+    - trunk-announce
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
+  enabled:
+    - trunk-upgrade-available

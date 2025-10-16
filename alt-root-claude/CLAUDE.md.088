@@ -1,0 +1,10 @@
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+# Check .env.local exists
+ls -la .env.local
+```
+
+## Important Notes

@@ -1,0 +1,12 @@
+### Option 2: For Browser Integration (Alternative)
+
+For the browser-based system, you can configure the API key via:
+
+**Method A: LocalStorage (Development)**
+1. Open `october/index.html` in browser
+2. Enter API key in the form
+3. Click "Spara API-nyckel" (Save API Key)
+
+**Method B: Environment Variables (Production)**
+Set `window.ENV` in your server-side rendering:
+

@@ -1,0 +1,11 @@
+```bash
+# Test API key
+curl "https://generativelanguage.googleapis.com/v1beta/models?key=YOUR_KEY"
+```
+
+### Issue 2: CORS Errors in Browser
+
+**Symptoms:**
+- "Access to fetch has been blocked by CORS policy"
+- Network errors in browser console
+

@@ -1,0 +1,11 @@
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+      },
+    ],
+  },
+
+  // Performance optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },

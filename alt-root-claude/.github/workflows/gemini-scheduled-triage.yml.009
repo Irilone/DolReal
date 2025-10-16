@@ -1,0 +1,13 @@
+            4. **Variable Handling:** Reference all shell variables as `"${VAR}"` (with quotes and braces) to prevent word splitting and globbing issues.
+
+            5. **Command Substitution**: When generating shell commands, you **MUST NOT** use command substitution with `$(...)`, `<(...)`, or `>(...)`. This is a security measure to prevent unintended command execution.
+
+            ## Input Data
+
+            The following data is provided for your analysis:
+
+            **Available Labels** (single, comma-separated string of all available label names):
+            ```
+            ${{ env.AVAILABLE_LABELS }}
+            ```
+

@@ -1,0 +1,19 @@
+### Communication Protocol
+- All agents write to `artifacts/` directory
+- JSON artifacts follow `schemas/agent-handoff-schema.json`
+- Plan files written to `plans/` directory
+- Validate all JSON before committing
+
+## Additional Documentation
+
+For more detailed information, refer to:
+- **Repository Guidelines**: `AGENTS.md` (comprehensive guidelines for all agents)
+- **Main Documentation**: `README.md` (quick start and project overview)
+- **Orchestration Suite**: `october/README.md` (detailed orchestration documentation)
+- **Browser Integration**: `october/INTEGRATION_README.md` (browser-based Gemini API)
+- **Setup Guide**: `SETUP_GUIDE.md` (complete setup instructions)
+- **Claude Instructions**: `CLAUDE.md` (instructions for Claude Code)
+- **Gemini Instructions**: `GEMINI.md` (instructions for Gemini)
+- **Architecture**: `ARCHITECTURE.md` (system architecture details)
+- **Router Docs**: `ASUSWRT-MERLIN-DOCS.md` (networking setup)
+

@@ -1,0 +1,10 @@
+### Security Best Practices
+- Cap outbound concurrency as described in README's policy table
+- Document any deviations inside the corresponding plan markdown
+- Treat generated manuals as reviewable artifacts
+- Verify policy citations and redact sensitive router or streaming details before publishing
+- Use HTTPS for production deployments
+- Implement rate limiting for API calls
+
+## Multi-Agent Orchestration Architecture
+

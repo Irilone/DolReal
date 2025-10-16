@@ -1,0 +1,11 @@
+#### `.env.example`
+```
+NEXT_PUBLIC_YOUTUBE_API_KEY=
+INFRANODUS_API_KEY=
+YOUTUBE_STREAM_IDS=comma,separated,ids
+```
+
+### 4. Type Definitions
+
+Create comprehensive TypeScript types:
+

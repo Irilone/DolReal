@@ -1,0 +1,10 @@
+
+              core.debug(`Setting labels on issue #${issueNumber} to ${labelsToSet.join(', ')} (${issue.explanation || 'no explanation'})`)
+
+              await github.rest.issues.setLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                labels: labelsToSet,
+              });
+            }

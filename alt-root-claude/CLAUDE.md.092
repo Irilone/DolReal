@@ -1,0 +1,10 @@
+### Test Failures
+
+```bash
+# Run tests with verbose output
+bun test --verbose
+
+# Run specific failing test
+bun test src/app/api/streams/route.test.ts --verbose
+
+# Check test setup

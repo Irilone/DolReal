@@ -1,0 +1,14 @@
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [selectedNode, setSelectedNode] = useState<string | null>(null);
+  const [nodePositions, setNodePositions] = useState<Map<string, { x: number; y: number }>>(
+    new Map()
+  );
+
+  const nodeColors = {
+    topic: '#8b5cf6', // purple
+    stream: '#06b6d4', // cyan
+    speaker: '#f59e0b', // amber
+    keyword: '#a78bfa', // light purple
+  };

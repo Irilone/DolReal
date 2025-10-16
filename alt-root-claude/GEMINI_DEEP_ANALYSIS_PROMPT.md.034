@@ -1,0 +1,15 @@
+## 🎓 CONTEXT FOR YOUR ANALYSIS
+
+### Event Day Logic (November 6-7, 2025)
+
+**Day 1 (November 6th):**
+- All 4 streams active: Nodväst, Nodsyd, Nodöst, Nodmidd
+- Full carousel navigation
+- Knowledge graph shows all 4 nodes
+
+**Day 2 (November 7th):**
+- Only Nodväst stream active
+- Carousel shows Nodväst prominently
+- Knowledge graph highlights single active node
+- Other nodes shown as "offline" or "completed"
+

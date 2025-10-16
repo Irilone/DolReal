@@ -1,0 +1,14 @@
+## System Requirements
+
+### Hardware Requirements
+- **CPU**: Modern multi-core processor (Intel i5 or AMD Ryzen 5 equivalent)
+- **RAM**: 4GB minimum, 8GB recommended
+- **Storage**: 100MB for local installation
+- **Network**: Stable internet connection for API access
+
+### Software Requirements
+- **Node.js**: Version 16.0 or later (for local installation)
+- **AI Client**: Claude Desktop, Cursor IDE, or compatible MCP client
+- **Browser**: Modern browser for web-based configuration
+- **InfraNodus Account**: Free or premium account for API access
+

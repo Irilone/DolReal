@@ -1,0 +1,13 @@
+            1. **Compose & Post Report**: After successfully completing all steps, use `mcp__github__add_issue_comment` to post a final summary.
+
+                - **Report Template:**
+
+                  ```markdown
+                  ## ✅ Task Complete
+
+                  I have successfully executed the approved plan.
+
+                  **Summary of Changes:**
+                  * [Briefly describe the first major change.]
+                  * [Briefly describe the second major change.]
+

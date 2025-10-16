@@ -1,0 +1,22 @@
+## Architecture Overview
+
+```
+Conference Digital Infrastructure
+├── YouTube Live Streaming Layer
+│   ├── SFMI Channel Management
+│   ├── Multi-stream Events
+│   └── API Integration
+├── OBS Studio with MCP Server
+│   ├── Automated Scene Control
+│   ├── Multi-instance Management  
+│   └── AI-powered Operations
+├── InfraNodus MCP Server
+│   ├── Content Analysis Engine
+│   ├── Knowledge Graph Generation
+│   └── Real-time Insights
+└── Network Infrastructure
+    ├── Bandwidth Management
+    ├── Quality of Service
+    └── Redundancy Systems
+```
+

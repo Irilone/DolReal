@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DoL 2025 Multi-Agent Handoff Schema",
+  "version": "2.0.0",
+  "description": "File-based communication protocol for GPT-5 Codex, Gemini 2.5 Pro Ultra, and 2x Claude Sonnet 4.5 agents",
+
+  "definitions": {
+    "agentMetadata": {
+      "type": "object",
+      "properties": {
+        "agent_id": {
+          "type": "string",
+          "enum": ["gemini-ultra", "gpt5-codex", "claude-frontend", "claude-backend", "gemini-cli"]
+        },

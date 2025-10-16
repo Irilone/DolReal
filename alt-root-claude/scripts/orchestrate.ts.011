@@ -1,0 +1,10 @@
+  const jsonBlockMatch = text.match(/```json\s*([\s\S]*?)\s*```/);
+  if (jsonBlockMatch) {
+    try {
+      return JSON.parse(jsonBlockMatch[1]);
+    } catch (e: unknown) {
+      log(`Failed to parse JSON from code block: ${e}`);
+    }
+  }
+
+  // Try to find any code block

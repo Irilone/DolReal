@@ -1,0 +1,13 @@
+## Key Principles
+
+1. **Minimal Changes**: Make the smallest possible changes to achieve the goal
+2. **Preserve Working Code**: Never delete/remove working files unless absolutely necessary
+3. **Follow Patterns**: Mirror existing code patterns and conventions
+4. **Documentation**: Keep documentation in sync with code changes
+5. **Testing**: Add tests for new functionality
+6. **Security**: Never commit secrets or API keys
+7. **Accessibility**: Maintain WCAG 2.2 AA compliance
+8. **Performance**: Meet performance budgets (LCP <2.5s, CLS <0.1, JS <250KB)
+9. **Internationalization**: Support all 6 languages with proper RTL handling
+10. **Agent Boundaries**: Respect the multi-agent architecture and communication protocols
+

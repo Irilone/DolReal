@@ -1,0 +1,10 @@
+  try {
+    return JSON.parse(text);
+  } catch (e: unknown) {
+    // If all else fails, return a structured error
+    log(`Warning: Could not parse JSON from response. Returning raw text.`);
+    return {
+      raw_output: text,
+      parse_error: true,
+      error_message: `Failed to extract JSON: ${e}`,
+    };

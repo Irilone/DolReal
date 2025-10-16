@@ -1,0 +1,11 @@
+### Quick Start
+
+1. **Configure API Key**
+   ```bash
+   # Copy template
+   cp .env.example .env
+   
+   # Edit .env
+   GEMINI_API_KEY=AIzaSyDP3wr_5BsxXDIOxvx0X1vIjBDnVgH8yhE
+   ```
+

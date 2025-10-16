@@ -1,0 +1,13 @@
+# Install dependencies
+bun install
+
+# Run full orchestration
+make all
+```
+
+**That's it!** The orchestration will:
+1. ✅ Agent 1: Research & planning (~10-15 min)
+2. ✅ Agent 2: System architecture (~5-10 min)
+3. ✅ Agent 3a & 3b: Frontend + Backend **in parallel** (~15-20 min)
+4. ✅ Agent 4: Integration + build (~5-10 min)
+

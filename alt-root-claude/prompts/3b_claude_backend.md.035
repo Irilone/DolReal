@@ -1,0 +1,10 @@
+    const data = await response.json();
+
+    const activeStreams = data.streams.filter((s: any) => s.active);
+    expect(activeStreams).toHaveLength(1);
+    expect(activeStreams[0].id).toBe('nodvast');
+  });
+});
+```
+
+#### C. Integration Tests

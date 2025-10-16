@@ -1,0 +1,10 @@
+ls -la artifacts/
+
+# Check status of completed agents
+make status
+```
+
+## Common Issues
+
+### Issue 1: API Key Not Working
+

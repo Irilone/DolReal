@@ -1,0 +1,9 @@
+echo -e "${CYAN}Next Steps:${NC}"
+echo -e "  1. Review artifacts in ${ARTIFACTS_DIR}/"
+echo -e "  2. Extract and implement code from agent outputs"
+echo -e "  3. Build the Next.js application"
+echo ""
+
+echo -e "${BLUE}Check status:${NC}  make status"
+echo -e "${BLUE}View artifacts:${NC}  cat artifacts/*.json | jq"
+echo ""

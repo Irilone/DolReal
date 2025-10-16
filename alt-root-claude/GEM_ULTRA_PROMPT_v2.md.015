@@ -1,0 +1,11 @@
+### Your Deep Thinking Analysis:
+1. **Is this truly GPU-accelerated?**
+   - Check for `will-change` properties
+   - Verify `transform3d` usage for GPU layers
+   - Are animations causing repaints?
+
+2. **Performance on low-end devices?**
+   - Test on 2018 MacBook Air
+   - Test on mid-range Android phone
+   - Shooting stars disabled < 768px (is this enough?)
+

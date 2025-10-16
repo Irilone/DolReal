@@ -1,0 +1,11 @@
+#### A. Technology Stack Analysis
+Review and validate:
+- Framework: Next.js 15 (App Router vs Pages Router decision)
+- Language: TypeScript (strict mode configuration)
+- Styling: Tailwind CSS v4 (design system structure)
+- i18n: i18next (locale routing strategy)
+- State: React Context vs Zustand vs Jotai (recommendation)
+
+#### B. Directory Structure
+Design complete folder hierarchy:
+

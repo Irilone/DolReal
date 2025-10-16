@@ -1,0 +1,11 @@
+### Recommended Configuration
+
+#### 1. QoS Setup for Streaming
+
+```bash
+# /jffs/scripts/firewall-start
+# Priority: YouTube RTMP traffic
+
+# Mark YouTube streaming traffic
+iptables -t mangle -A PREROUTING -p tcp --dport 1935 -j MARK --set-mark 1
+

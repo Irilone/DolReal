@@ -1,0 +1,10 @@
+### 1.2 Technical Infrastructure Setup
+
+#### Network Requirements Calculation
+```
+Bandwidth Requirements:
+- Per HD Stream (1080p30): 6-8 Mbps upload
+- Four simultaneous streams: 32 Mbps total
+- Recommended capacity: 50 Mbps upload
+- Backup connection: Additional 25 Mbps
+

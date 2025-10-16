@@ -1,0 +1,30 @@
+      <section
+        id="streams"
+        className="py-12 bg-black/40"
+        aria-labelledby="streams-title"
+      >
+        <h2
+          id="streams-title"
+          className="text-center text-xl font-semibold mb-6"
+        >
+          Live Streams
+        </h2>
+        <div className="max-w-5xl mx-auto">
+          <div className="aspect-video mb-6 border border-white/10 rounded-xl overflow-hidden">
+            <iframe
+              className="w-full h-full"
+              src={`https://www.youtube.com/embed/${streams[activeStream]}`}
+              title={`Active Stream ${activeStream + 1}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {streams.map((id, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveStream(i)}
+                className={`aspect-video border border-white/20 rounded-lg overflow-hidden ${activeStream === i ? "ring-2 ring-blue-400" : ""}`}
+                aria-label={`Switch to stream ${i + 1}`}
+              >
+                <iframe

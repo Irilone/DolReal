@@ -1,0 +1,13 @@
+# QuickStart Guide - DoL 2025 Multi-Agent Orchestration
+
+**Build a production-ready streaming platform in 60 minutes using 4 AI agents.**
+
+---
+
+## Prerequisites (5 minutes)
+
+### 1. Install Bun
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+

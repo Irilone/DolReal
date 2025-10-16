@@ -1,0 +1,13 @@
+const scheduleData: Record<number, DaySchedule> = {
+  1: {
+    date: '2025-11-06',
+    sessions: [
+      {
+        id: 'd1-1',
+        time: '09:00 - 09:30',
+        title: 'Öppningsceremoni',
+        description: 'Välkommen till Dagar om Lagar 2025',
+        speakers: ['Moderator'],
+        streams: ['nodvast', 'nodsyd', 'nodost', 'nodmidd'],
+        type: 'keynote',
+      },

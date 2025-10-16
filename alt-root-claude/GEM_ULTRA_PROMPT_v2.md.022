@@ -1,0 +1,11 @@
+### Option B: Selective Component Rebuild
+**Timeline:** 10-14 days
+**Risk:** MEDIUM
+**Effort:** HIGH
+
+**Rebuild These:**
+1. StreamCarousel (rewrite from scratch) - 2 days
+2. GraphNavigation (simplify logic) - 2 days
+3. Header (optimize animations) - 1 day
+4. **Keep everything else as-is**
+

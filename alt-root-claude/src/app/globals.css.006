@@ -1,0 +1,27 @@
+
+  /* Nebula clouds - subtle color shifts */
+  .space-background::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        ellipse at 30% 40%,
+        rgba(138, 43, 226, 0.05) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 70% 60%,
+        rgba(75, 0, 130, 0.08) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 50% 80%,
+        rgba(65, 105, 225, 0.06) 0%,
+        transparent 50%
+      );
+    animation: drift 40s linear infinite;
+    opacity: 0.7;
+  }

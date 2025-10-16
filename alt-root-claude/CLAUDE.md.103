@@ -1,0 +1,10 @@
+### Agent Boundaries
+
+- **Gemini Ultra (Agent 1)**: Research, policy verification, manuals (WCAG, YouTube ToS, streaming best practices)
+- **GPT-5 Codex (Agent 2)**: System architecture, component tree, API contracts, scaffolding
+- **Claude Frontend (Agent 3a)**: React components, Tailwind styles, i18n, accessibility (ARIA, keyboard nav)
+- **Claude Backend (Agent 3b)**: API routes, YouTube/InfraNodus clients, tests, documentation
+- **Gemini CLI (Agent 4)**: Merge outputs, build/test execution, performance audits, release creation
+- **Do not mix** frontend and backend responsibilities in single agent
+
+### Interactive Orchestration Script

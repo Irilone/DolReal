@@ -1,0 +1,10 @@
+### Debugging Tools
+
+#### Log Analysis
+Check logs for common issues:
+- Connection timeout errors
+- Authentication failures
+- Rate limiting warnings
+- Processing errors
+
+#### Testing Commands

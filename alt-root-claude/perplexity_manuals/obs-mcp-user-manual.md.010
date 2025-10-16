@@ -1,0 +1,11 @@
+**macOS/Linux:**
+```bash
+export OBS_WEBSOCKET_PASSWORD="your_password_here"
+```
+
+## Configuration
+
+### Claude Desktop Configuration
+
+Edit the Claude Desktop configuration file:
+

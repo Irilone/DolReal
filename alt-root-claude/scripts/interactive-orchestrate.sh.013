@@ -1,0 +1,17 @@
+run_agent \
+    "3a" \
+    "Claude Sonnet 4.5 #1 - Frontend" \
+    "$PROMPTS_DIR/3a_claude_frontend.md" \
+    "$ARTIFACTS_DIR/3a_claude_frontend_output.json" \
+    "claude.ai (Session 1)" \
+    "$ARTIFACTS_DIR/1_gemini_ultra_research.json $ARTIFACTS_DIR/2_gpt5_codex_architecture.json"
+
+# Agent 3b: Claude Backend
+run_agent \
+    "3b" \
+    "Claude Sonnet 4.5 #2 - Backend & Docs" \
+    "$PROMPTS_DIR/3b_claude_backend.md" \
+    "$ARTIFACTS_DIR/3b_claude_backend_output.json" \
+    "claude.ai (Session 2)" \
+    "$ARTIFACTS_DIR/1_gemini_ultra_research.json $ARTIFACTS_DIR/2_gpt5_codex_architecture.json"
+

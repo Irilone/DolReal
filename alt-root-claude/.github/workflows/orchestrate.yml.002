@@ -1,0 +1,12 @@
+env:
+  BUN_VERSION: '1.2.23'
+
+jobs:
+
+  agent-1-research:
+    name: 'Agent 1: Gemini Ultra (Research)'
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.run_all_agents == 'true' || github.event.inputs.specific_agent == 'gemini-ultra' || github.event_name == 'push' }}
+    steps:
+      - uses: actions/checkout@v4
+

@@ -1,0 +1,14 @@
+# Directories
+PROMPTS_DIR="prompts"
+ARTIFACTS_DIR="artifacts"
+PLANS_DIR="plans"
+
+# Create directories
+mkdir -p "$ARTIFACTS_DIR" "$PLANS_DIR"
+
+echo -e "${CYAN}╔══════════════════════════════════════════════════════════╗${NC}"
+echo -e "${CYAN}║  DoL 2025 Interactive Multi-Agent Orchestration         ║${NC}"
+echo -e "${CYAN}║  No API keys needed - uses your authenticated sessions  ║${NC}"
+echo -e "${CYAN}╚══════════════════════════════════════════════════════════╝${NC}"
+echo ""
+

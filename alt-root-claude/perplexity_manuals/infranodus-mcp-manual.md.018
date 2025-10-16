@@ -1,0 +1,10 @@
+#### 7. generate_responses_from_graph
+**Purpose**: Generate responses based on existing graph
+**Usage**: "Generate speaker recommendations from this topic graph"
+**Output**: AI-generated responses using graph context
+
+#### 8. generate_text_overview
+**Purpose**: Generate topical overview and insights
+**Usage**: "Provide an overview of this conference program"
+**Output**: High-level summary with key themes
+

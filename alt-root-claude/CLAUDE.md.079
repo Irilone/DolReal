@@ -1,0 +1,11 @@
+### Accessibility (WCAG 2.2 AA - Mandatory)
+
+- ARIA labels on all interactive elements
+- Keyboard navigation (Tab, Enter, Space, Arrow keys)
+- Focus indicators (visible outlines)
+- Color contrast: ≥4.5:1 (text), ≥3:1 (UI)
+- RTL support for Arabic/Farsi
+- Screen reader compatibility
+
+<<<<<<< Updated upstream
+### Performance Targets

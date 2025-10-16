@@ -1,0 +1,13 @@
+  "carousel": {
+    "previous": "Previous",
+    "next": "Next",
+    "goto": "Go to stream",
+    "label": "Stream carousel"
+  },
+  "graph": {
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "reset": "Reset view",
+    "legend": "Legend",
+    "connections": "connections"
+  },

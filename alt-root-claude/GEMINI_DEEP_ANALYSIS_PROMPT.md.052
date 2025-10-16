@@ -1,0 +1,18 @@
+**Option D: Vite + React** (Fastest build, simplest)
+- Remove Next.js overhead for this use case
+- Vite dev server (instant hot reload)
+- Manual routing (simple 2-page app)
+- Estimated time: 2-3 days
+
+### Optimization-Only Approach
+
+If current code is salvageable:
+1. Fix StreamCarousel syntax error
+2. Add comprehensive error boundaries
+3. Implement loading states
+4. Add unit tests for critical paths
+5. Performance tune animations
+6. Bundle size optimization
+7. Accessibility fixes
+8. Estimated time: 1-2 days
+

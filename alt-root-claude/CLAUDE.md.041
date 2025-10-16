@@ -1,0 +1,17 @@
+### TypeScript
+
+```bash
+bun run typecheck         # Check TypeScript errors (tsc --noEmit)
+```
+
+### Orchestration Scripts
+
+```bash
+bun run scripts/gem.ts --model gemini-2.5-pro-ultra --input <prompt> --output <artifact>
+bun run scripts/anthropic.ts --model claude-sonnet-4-5 --input <prompt> --output <artifact>
+bun run scripts/openai.ts --model gpt-5-codex --input <prompt> --output <artifact>
+bun run scripts/orchestrate.ts run     # Full orchestration
+bun run scripts/orchestrate.ts status  # Check status
+bun run scripts/orchestrate.ts clean   # Clean artifacts
+```
+

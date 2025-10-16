@@ -1,0 +1,10 @@
+
+Create `TESTING_STRATEGY.md` with:
+- Unit testing recommendations (Jest/Vitest)
+- Integration testing approach
+- E2E testing with Playwright
+- Accessibility testing tools
+- Performance testing methodology
+
+---
+

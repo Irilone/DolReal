@@ -1,0 +1,26 @@
+            }
+          }
+        },
+        "required": ["metadata", "bundle_version", "project", "dates", "streams", "policies", "plans"]
+      }
+    },
+
+    "2_architecture": {
+      "filename": "artifacts/2_gpt5_codex_architecture.json",
+      "producer": "gpt5-codex",
+      "consumers": ["claude-frontend", "claude-backend"],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "metadata": { "$ref": "#/definitions/agentMetadata" },
+          "system_architecture": {
+            "type": "object",
+            "properties": {
+              "tech_stack": {
+                "type": "object",
+                "properties": {
+                  "framework": { "type": "string" },
+                  "language": { "type": "string" },
+                  "styling": { "type": "string" },
+                  "i18n": { "type": "string" }
+                }

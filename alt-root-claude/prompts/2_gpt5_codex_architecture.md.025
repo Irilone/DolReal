@@ -1,0 +1,3 @@
+---
+
+**CRITICAL**: Your output must enable Claude agents to work in parallel without conflicts. Clear API contracts and component boundaries are essential.

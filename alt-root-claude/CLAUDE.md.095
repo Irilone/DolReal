@@ -1,0 +1,10 @@
+ls -la src/i18n/locales/*/common.json
+
+# Check Next.js i18n config
+grep -A 5 "i18n:" next.config.js
+
+# Test locale routing
+curl http://localhost:3000/se/
+curl http://localhost:3000/en/
+```
+

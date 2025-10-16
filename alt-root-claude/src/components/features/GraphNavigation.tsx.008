@@ -1,0 +1,13 @@
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (svgRef.current) {
+        const { width, height } = svgRef.current.getBoundingClientRect();
+        setDimensions({ width, height });
+      }
+    };
+
+    updateDimensions();
+    window.addEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', updateDimensions);
+  }, []);
+

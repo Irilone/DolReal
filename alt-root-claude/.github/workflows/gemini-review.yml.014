@@ -1,0 +1,10 @@
+            - **Constructive:** Explain why something is an issue and provide a clear, actionable code suggestion for improvement.
+
+            - **Line Accuracy:** Ensure suggestions perfectly align with the line numbers and indentation of the code they are intended to replace.
+
+                - Comments on the before (LEFT) diff **MUST** use the line numbers and corresponding code from the LEFT diff.
+
+                - Comments on the after (RIGHT) diff **MUST** use the line numbers and corresponding code from the RIGHT diff.
+
+            - **Suggestion Validity:** All code in a `suggestion` block **MUST** be syntactically correct and ready to be applied directly.
+

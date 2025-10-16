@@ -1,0 +1,11 @@
+**Q: What's the development philosophy?**
+A: **Stability > Performance > Features** - The firmware prioritizes rock-solid operation over bleeding-edge features.
+
+### Installation & Recovery
+
+**Q: Can I brick my router?**
+A: "It is very hard to brick an Asus router." Most issues can be recovered via Recovery Mode.
+
+**Q: How do I enter Recovery Mode?**
+A: Turn router OFF, press and HOLD Reset button, turn ON while holding, wait for blinking LED, release button. Access via `192.168.1.1` or `192.168.50.1`.
+

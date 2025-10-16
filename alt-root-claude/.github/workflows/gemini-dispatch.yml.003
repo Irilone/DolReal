@@ -1,0 +1,30 @@
+  dispatch:
+    # For PRs: only if not from a fork
+    # For comments: only if user types @gemini-cli and is OWNER/MEMBER/COLLABORATOR
+    # For issues: only on open/reopen
+    if: |-
+      (
+        github.event_name == 'pull_request' &&
+        github.event.pull_request.head.repo.fork == false
+      ) || (
+        github.event.sender.type == 'User' &&
+        startsWith(github.event.comment.body || github.event.review.body || github.event.issue.body, '@gemini-cli') &&
+        contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR"]'), github.event.comment.author_association || github.event.review.author_association || github.event.issue.author_association)
+      ) || (
+        github.event_name == 'issues' &&
+        contains(fromJSON('["opened", "reopened"]'), github.event.action)
+      )
+    runs-on: 'ubuntu-latest'
+    permissions:
+      contents: 'read'
+      issues: 'write'
+      pull-requests: 'write'
+    outputs:
+      command: '${{ steps.extract_command.outputs.command }}'
+      request: '${{ steps.extract_command.outputs.request }}'
+      additional_context: '${{ steps.extract_command.outputs.additional_context }}'
+      issue_number: '${{ github.event.pull_request.number || github.event.issue.number }}'
+    steps:
+      - name: 'Mint identity token'
+        id: 'mint_identity_token'
+        if: |-

@@ -1,0 +1,10 @@
+                - Use the shell command to write: `echo 'TRIAGED_ISSUES=...' > "$GITHUB_ENV"` (Replace `...` with the final, minified JSON array string).
+
+            ## Output Specification
+
+            The output **MUST** be a JSON array of objects. Each object represents a triaged issue and **MUST** contain the following three keys:
+
+                - `issue_number` (Integer): The issue's unique identifier.
+
+                - `labels_to_set` (Array of Strings): The list of labels to be applied.
+

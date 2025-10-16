@@ -1,0 +1,10 @@
+# Create output directory
+OUTPUT_DIR="gemini-analysis-output"
+mkdir -p "$OUTPUT_DIR"
+TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+OUTPUT_FILE="${OUTPUT_DIR}/analysis_${TIMESTAMP}.md"
+
+echo -e "${BLUE}📊 Starting Gemini 2.5 Pro Ultra analysis...${NC}"
+echo -e "${YELLOW}⏰ This may take 5-15 minutes for deep thinking mode${NC}\n"
+
+# Run analysis based on detected CLI tool

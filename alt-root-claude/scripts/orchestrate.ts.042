@@ -1,0 +1,11 @@
+Commands:
+  run     - Execute full orchestration pipeline
+  status  - Check completion status of all agents
+  clean   - Remove all artifacts
+
+Environment variables required:
+  GEMINI_API_KEY     - For Gemini 2.5 Pro Ultra/CLI
+  OPENAI_API_KEY     - For GPT-5 Codex
+  ANTHROPIC_API_KEY  - For Claude Sonnet 4.5 (both instances)
+    `);
+}

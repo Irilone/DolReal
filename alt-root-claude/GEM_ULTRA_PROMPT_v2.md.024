@@ -1,0 +1,11 @@
+### Option C: Port to Vite + React (Alternative)
+**Timeline:** 12-16 days
+**Risk:** HIGH
+**Effort:** VERY HIGH
+
+**Complete rewrite to:**
+- Remove Next.js overhead
+- Vite dev server (instant HMR)
+- Smaller bundle size (30-40% reduction)
+- Simpler deployment
+

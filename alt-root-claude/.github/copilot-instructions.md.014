@@ -1,0 +1,10 @@
+## Testing Guidelines
+
+### Current State
+No comprehensive automated test suite exists yet. Prioritize smoke coverage around the CLI.
+
+### Testing Strategy
+1. **CLI Tests**: Add `node --test` or Vitest specs under `scripts/__tests__/`
+   - Mock the Gemini API
+   - Assert request payloads, file writes, and error handling
+   

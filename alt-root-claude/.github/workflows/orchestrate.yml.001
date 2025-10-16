@@ -1,0 +1,30 @@
+name: Multi-Agent Orchestration Pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_all_agents:
+        description: 'Run all 4 agents sequentially'
+        required: false
+        default: 'true'
+        type: boolean
+      specific_agent:
+        description: 'Run specific agent only (gemini-ultra, gpt5-codex, claude-frontend, claude-backend, gemini-cli)'
+        required: false
+        type: choice
+        options:
+          - none
+          - gemini-ultra
+          - gpt5-codex
+          - claude-frontend
+          - claude-backend
+          - claude-parallel
+          - gemini-cli
+  push:
+    branches:
+      - main
+    paths:
+      - 'prompts/**'
+      - 'scripts/**'
+      - '.github/workflows/**'
+

@@ -1,0 +1,11 @@
+'use client';
+
+import { useTranslation } from 'react-i18next';
+import type { Stream } from '@/types/stream';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+
+interface StreamCardProps {
+  stream: Stream;
+  onSelect: () => void;
+}

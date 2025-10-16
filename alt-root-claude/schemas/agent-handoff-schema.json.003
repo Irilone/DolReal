@@ -1,0 +1,23 @@
+      },
+      "required": ["agent_id", "timestamp", "status"]
+    }
+  },
+
+  "artifacts": {
+
+    "1_research_bundle": {
+      "filename": "artifacts/1_gemini_ultra_research.json",
+      "producer": "gemini-ultra",
+      "consumers": ["gpt5-codex", "claude-frontend", "claude-backend"],
+      "schema": {
+        "type": "object",
+        "properties": {
+          "metadata": { "$ref": "#/definitions/agentMetadata" },
+          "bundle_version": { "type": "string", "const": "2.0" },
+          "project": { "type": "string" },
+          "dates": {
+            "type": "object",
+            "properties": {
+              "day1": { "type": "string", "format": "date" },
+              "day2": { "type": "string", "format": "date" }
+            }

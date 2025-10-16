@@ -1,0 +1,15 @@
+  activeStreamId: null,
+  isPlaying: false,
+  setActiveStream: (id) => set({ activeStreamId: id }),
+  pause: () => set({ isPlaying: false }),
+}));
+```
+
+### 5. Performance Optimization
+
+- Code splitting (dynamic imports for modals)
+- Image optimization (next/image)
+- Font optimization (next/font)
+- Lazy load YouTube iframes
+- Minimize JavaScript bundle (<250KB)
+

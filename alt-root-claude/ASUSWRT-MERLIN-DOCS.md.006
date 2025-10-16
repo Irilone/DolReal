@@ -1,0 +1,10 @@
+### Installation Steps
+
+#### 1. Prepare Router
+
+```bash
+# Reboot router before flashing (frees up memory)
+# Access via web interface: Administration > Reboot
+```
+
+#### 2. Enable Downgrade (if coming from stock firmware 3.0.0.6.102_37000)

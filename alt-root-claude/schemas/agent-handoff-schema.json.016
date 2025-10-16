@@ -1,0 +1,11 @@
+            }
+          },
+          "integrations": {
+            "type": "object",
+            "properties": {
+              "infranodus": {
+                "type": "object",
+                "properties": {
+                  "mcp_config": { "type": "string" },
+                  "embed_urls": { "type": "array", "items": { "type": "string" } }
+                }

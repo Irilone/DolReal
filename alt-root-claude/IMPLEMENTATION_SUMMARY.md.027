@@ -1,0 +1,13 @@
+
+- Initial page load: <1s
+- Module loading: <500ms
+- API initialization: <2s
+- Content generation: 2-10s (depends on prompt)
+
+### Browser Support
+
+- Chrome 90+ ✅
+- Firefox 88+ ✅
+- Safari 14+ ✅
+- Edge 90+ ✅
+

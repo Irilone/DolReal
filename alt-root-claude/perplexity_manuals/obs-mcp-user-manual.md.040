@@ -1,0 +1,16 @@
+**Problem**: Streams interfering with each other
+**Solutions**:
+1. Ensure each OBS instance uses unique configurations
+2. Verify adequate bandwidth allocation
+3. Check for hardware resource conflicts
+4. Implement proper stream scheduling
+
+### Diagnostic Commands
+
+Use these AI commands to troubleshoot:
+- "Get OBS version and system information"
+- "Show current stream statistics"
+- "List all active sources and scenes"
+- "Check WebSocket connection status"
+- "Display encoder settings and performance"
+

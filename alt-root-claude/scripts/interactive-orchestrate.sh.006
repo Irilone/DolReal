@@ -1,0 +1,19 @@
+    echo -e "${CYAN}📄 Prompt prepared: ${input_file}${NC}"
+    echo -e "${BLUE}   Preview:${NC}"
+    head -n 5 "$input_file" | sed 's/^/   /'
+    echo -e "   ${YELLOW}...${NC}"
+    echo ""
+
+    # Copy to clipboard
+    echo -e "${YELLOW}Copying prompt to clipboard...${NC}"
+    if command -v pbcopy &> /dev/null; then
+        cat "$input_file" | pbcopy
+        echo -e "${GREEN}✓ Prompt copied to clipboard (pbcopy)${NC}"
+    elif command -v xclip &> /dev/null; then
+        cat "$input_file" | xclip -selection clipboard
+        echo -e "${GREEN}✓ Prompt copied to clipboard (xclip)${NC}"
+    else
+        echo -e "${YELLOW}⚠️  Could not find clipboard tool${NC}"
+        echo -e "${BLUE}   Read prompt from: ${input_file}${NC}"
+    fi
+

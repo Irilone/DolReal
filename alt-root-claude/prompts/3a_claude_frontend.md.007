@@ -1,0 +1,14 @@
+}
+```
+
+#### C. GraphNavModal Component
+```typescript
+// src/components/features/GraphNavModal.tsx
+'use client';
+import { Dialog } from '@/components/ui/dialog';
+
+interface GraphNavModalProps {
+  embedUrl: string;
+  isOpen: boolean;
+  onClose: () => void;
+}

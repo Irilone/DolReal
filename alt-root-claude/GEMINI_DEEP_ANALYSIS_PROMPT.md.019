@@ -1,0 +1,15 @@
+4. **Performance Optimizations:**
+   - Implement React.memo() for expensive components
+   - Add loading states for all async operations
+   - Optimize font loading (next/font)
+   - Implement error boundaries
+   - Add Suspense boundaries for code splitting
+   - Optimize Tailwind CSS purging
+
+5. **Error Handling & UX:**
+   - Add comprehensive error messages (user-friendly)
+   - Implement retry logic for failed API calls
+   - Show loading skeletons during data fetches
+   - Handle offline scenarios gracefully
+   - Add toast notifications for user actions
+

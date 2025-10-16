@@ -1,0 +1,13 @@
+## License
+MIT
+```
+
+#### B. DEPLOYMENT.md
+```markdown
+# Deployment Guide
+
+## Vercel (Recommended)
+1. Connect GitHub repo to Vercel
+2. Add environment variables
+3. Deploy
+

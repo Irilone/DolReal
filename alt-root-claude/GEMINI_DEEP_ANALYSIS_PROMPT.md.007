@@ -1,0 +1,10 @@
+#### 🗂️ State Management (Zustand)
+- ✅ `src/stores/streamStore.ts` - Stream state (setStreams, selectNode, updateStreamStatus)
+- ✅ `src/stores/uiStore.ts` - UI state with LocalStorage persistence
+
+#### 🌐 Internationalization (i18n)
+- ✅ `src/i18n/config.ts` - react-i18next configuration
+- ✅ 6 translation files: se.json, en.json, ar.json, fa.json, zh.json, es.json
+- ✅ RTL support for Arabic and Farsi
+- ✅ Translation keys: header, nav, streams, event, health
+

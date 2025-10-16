@@ -1,0 +1,13 @@
+The script will guide you through each agent step-by-step.
+
+---
+
+## How It Works
+
+1. **Script copies prompt to clipboard**
+2. **You paste into your authenticated web interface** (Gemini, ChatGPT, Claude)
+3. **Wait for complete response**
+4. **Copy response to clipboard**
+5. **Press ENTER in terminal**
+6. **Script saves response and moves to next agent**
+

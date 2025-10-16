@@ -1,0 +1,10 @@
+  "release": {
+    "version": "2.0.0",
+    "tag": "v2.0.0",
+    "artifact_path": "releases/dol-2025-v2.0.0.zip",
+    "checksum": "sha256:abc123def456...",
+    "size_mb": 3.2,
+    "changelog": "// Full changelog content",
+    "readme": "// Full README content",
+    "deployment_guide": "// Full DEPLOYMENT.md content"
+  },

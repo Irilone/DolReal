@@ -1,0 +1,10 @@
+
+  return null;
+}
+
+function requireEnv(key: string, env: NodeJS.ProcessEnv): string {
+  const value = env[key];
+
+  if (!value || !value.trim()) {
+    throw new Error(`Missing environment variable: ${key}`);
+  }

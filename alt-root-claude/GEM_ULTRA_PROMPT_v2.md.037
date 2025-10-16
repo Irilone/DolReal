@@ -1,0 +1,10 @@
+```markdown
+## WCAG 2.2 Level AA Compliance Check
+
+### Automated Testing:
+- Tool used: [axe-core / Lighthouse / Wave]
+- Issues found: [count]
+- Critical: [count]
+- Serious: [count]
+- Moderate: [count]
+

@@ -1,0 +1,10 @@
+make all                  # or: bun run orchestrate
+
+# Individual agents
+make gemini-ultra         # Agent 1: Research & Planning (10-15 min)
+make gpt5-codex           # Agent 2: System Architecture (5-10 min)
+make claude-parallel      # Agents 3a & 3b in parallel (15-20 min)
+make gemini-cli           # Agent 4: Final Integration (5-10 min)
+
+<<<<<<< Updated upstream
+# Or run Claudes separately

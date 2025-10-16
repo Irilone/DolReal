@@ -1,0 +1,10 @@
+**Interactive Mode** (recommended for development):
+
+```bash
+./scripts/interactive-orchestrate.sh    # Step-by-step execution with approval gates
+```
+
+### Next.js Development (After Orchestration)
+
+```bash
+# Start dev server

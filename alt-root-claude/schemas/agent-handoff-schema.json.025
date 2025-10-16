@@ -1,0 +1,7 @@
+          }
+        },
+        "required": ["metadata", "merge_status", "build_output", "release"]
+      }
+    }
+  }
+}

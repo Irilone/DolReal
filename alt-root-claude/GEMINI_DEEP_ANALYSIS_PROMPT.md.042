@@ -1,0 +1,12 @@
+4. **Accessibility Deep Check:**
+   - Does the knowledge graph work with keyboard-only navigation?
+   - Can screen readers understand the stream carousel?
+   - Is the color contrast sufficient for all text?
+   - Does the RTL layout actually work for Arabic speakers?
+
+5. **Production Readiness:**
+   - What happens if YouTube API goes down?
+   - How does the app handle slow networks?
+   - What's missing from the error handling strategy?
+   - Are there edge cases we haven't considered?
+

@@ -1,0 +1,10 @@
+sudo apt-get install xclip
+echo "test" | xclip -selection clipboard && xclip -selection clipboard -o
+```
+
+### JSON validation error
+```bash
+# Check if output is valid JSON
+jq empty artifacts/1_gemini_ultra_research.json
+
+# Pretty-print to see structure

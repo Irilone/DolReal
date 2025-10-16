@@ -1,0 +1,12 @@
+
+export default config;
+```
+
+#### B. API Route Tests
+```typescript
+// src/app/api/streams/route.test.ts
+import { GET } from './route';
+
+describe('/api/streams', () => {
+  it('returns all streams for day 1', async () => {
+    const request = new Request('http://localhost/api/streams?day=1');

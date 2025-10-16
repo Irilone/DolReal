@@ -1,98 +1,148 @@
-# Integrated System Guide: Router + OBS + YouTube
+# Integrated System Guide: Dagar om Lagar 2025
 
 ## Overview
-This guide provides a complete walkthrough for setting up the streaming infrastructure for the Dagar om Lagar 2025 event. This includes configuring the network router, setting up OBS Studio for multi-platform streaming, and creating the necessary YouTube Live events.
 
-## Hardware Requirements
+This guide covers the complete setup and operation of the DoL 2025 streaming platform, including OBS Studio configuration, YouTube Live integration, router QoS settings, and the Next.js web application.
 
-*   **Router:** ASUS RT-AX86U Pro
-*   **Internet:** Fiber connection with a minimum of 100 Mbps upload speed to support 4x 1080p streams.
-*   **OBS PC:** A dedicated computer for running OBS Studio is recommended, with at least 16GB of RAM and an 8-core CPU.
+## System Architecture
 
-## Router Configuration (Asuswrt-Merlin)
+### Components
 
-### Quality of Service (QoS) Settings
+1. **OBS Studio** - Video capture and streaming software
+2. **YouTube Live** - 4 separate channels for simultaneous streams
+3. **ASUS RT-AX86U Pro Router** - Network QoS and bandwidth management
+4. **Next.js 15 Web Application** - Live stream viewer with 6-language support
+5. **InfraNodus API** - Knowledge graph visualization
 
-To ensure a stable stream, it is crucial to prioritize streaming traffic on your network. This can be done using the QoS settings on your ASUS router.
+### Data Flow
 
-1.  Log in to your router's web interface.
-2.  Navigate to the **Adaptive QoS** section.
-3.  Enable **Adaptive QoS**.
-4.  Prioritize the following traffic:
-    *   **RTMP (Port 1935):** Set to **Highest** priority.
-    *   **HTTPS (Port 443):** Set to **High** priority.
-5.  Set bandwidth allocation:
-    *   **Upload:** Reserve at least 80 Mbps for streaming.
-    *   **Download:** Reserve at least 20 Mbps for control and other network activities.
+```
+OBS Studio (4 instances) 
+  → Multiple RTMP Outputs Plugin 
+  → YouTube Live (4 channels)
+  → YouTube Data API v3
+  → Next.js API Routes
+  → React Frontend
+```
 
-### Port Forwarding
+## Network Setup
 
-To allow OBS to send the stream to the public internet, you need to configure port forwarding on your router.
+### Router Configuration (ASUS RT-AX86U Pro)
 
-| Service | Port | Protocol | Internal IP Address |
-| --- | --- | --- | --- |
-| RTMP | 1935 | TCP | *IP address of your OBS PC* |
+1. **Access Router Admin**
+   - Navigate to `http://router.asus.com`
+   - Login with admin credentials
 
-## OBS Configuration
+2. **Enable QoS**
+   - Go to QoS → QoS Settings
+   - Enable Traditional QoS
+   - Set Upload/Download bandwidth to 90% of measured speeds
 
-### Multi-RTMP Setup
+3. **Configure Priority Rules**
+   - Add High Priority: UDP ports 1935 (RTMP)
+   - Add High Priority: Streaming applications
+   - Set OBS computer MAC address to highest priority
 
-To stream to four YouTube channels simultaneously, you will need to use the OBS Multi-RTMP plugin.
+4. **Monitor Bandwidth**
+   - Use Traffic Analyzer to monitor real-time usage
+   - Adjust QoS rules based on performance
 
-1.  **Download the plugin:** Download the latest release of the OBS Multi-RTMP plugin from its GitHub page.
-2.  **Install the plugin:**
-    *   **Windows:** Use the provided installer.
-    *   **macOS/Linux:** Extract the downloaded archive and copy the `obs-plugins` and `data` folders to your OBS Studio installation directory.
-3.  **Configure the outputs:**
-    *   In OBS Studio, go to **Docks > Multiple Output**.
-    *   Click **Add new target** for each of the four streams.
-    *   For each target, enter the following information:
-        *   **Name:** A descriptive name for the stream (e.g., "Nodväst").
-        *   **RTMP Server:** `rtmps://a.rtmp.youtube.com/live2`
-        *   **RTMP Key:** The stream key for the corresponding YouTube channel.
+## OBS Studio Configuration
 
-### Performance Settings
+### Installation
 
-To ensure a high-quality stream without overloading your computer, use the following settings in OBS Studio:
+1. Download OBS Studio 30+ from obsproject.com
+2. Install Multiple RTMP Outputs Plugin by SoraYuki
+3. Restart OBS Studio
 
-*   **Encoder:**
-    *   If you have a modern NVIDIA GPU, use **NVENC H.264**.
-    *   Otherwise, use **x264**.
-*   **Rate Control:** CBR (Constant Bitrate)
-*   **Bitrate:** 6000 Kbps per stream (for 1080p at 30fps). Adjust as needed based on your internet connection and the requirements of the streaming platform.
-*   **Keyframe Interval:** 2 seconds
-*   **Preset:** Quality
+### Streaming Settings
 
-### MCP Server (Remote Control)
+**Video Settings:**
+- Base Resolution: 1920x1080
+- Output Resolution: 1280x720
+- FPS: 30
+- Encoder: VideoToolbox (hardware encoding on macOS)
+- Bitrate: 2500-4000 Kbps per stream
 
-To control OBS remotely, you can use an MCP (Multi-Control Panel) server. This is done by enabling the OBS WebSocket server.
+**Audio Settings:**
+- Sample Rate: 48kHz
+- Channels: Stereo
+- Bitrate: 128 Kbps
 
-1.  In OBS Studio, go to **Tools > WebSocket Server Settings**.
-2.  Enable the WebSocket server.
-3.  Set a password for the server to secure the connection.
-4.  You can now use any MCP client that supports the OBS WebSocket protocol to control OBS remotely. This is useful for automating scene switches, starting/stopping streams, and other tasks.
+### YouTube Integration
 
-## YouTube Live Events
+1. Create 4 YouTube channels (one per node)
+2. Enable YouTube Live on each channel
+3. Copy Stream Key for each channel
+4. Configure RTMP outputs in OBS:
+   - Nodväst: rtmp://a.rtmp.youtube.com/live2/{stream_key_1}
+   - Nodsyd: rtmp://a.rtmp.youtube.com/live2/{stream_key_2}
+   - Nodöst: rtmp://a.rtmp.youtube.com/live2/{stream_key_3}
+   - Nodmidd: rtmp://a.rtmp.youtube.com/live2/{stream_key_4}
 
-### Event Creation
+## Web Application Deployment
 
-Before the event, you need to create the four scheduled live streams on YouTube.
+### Environment Variables
 
-1.  Go to the **YouTube Studio** for each of the four channels.
-2.  Click **Go Live**.
-3.  Create a new **Scheduled stream** for each channel, with the correct date and time (November 6, 2025).
-4.  For each stream, copy the **stream key**. You will need this for the OBS Multi-RTMP plugin.
-5.  Enable the following options for each stream:
-    *   **Enable DVR:** This allows viewers to pause and rewind the stream.
-    *   **Live chat:** This enables viewers to interact with each other.
-    *   **Auto-start:** This will automatically start the stream when OBS starts sending data.
+Create `.env.local`:
 
-### Concurrent Stream Policy
+```bash
+NEXT_PUBLIC_YOUTUBE_API_KEY=your-youtube-api-key
+INFRANODUS_API_KEY=your-infranodus-api-key
+NODVAST_YOUTUBE_ID=stream-id-1
+NODSYD_YOUTUBE_ID=stream-id-2
+NODOST_YOUTUBE_ID=stream-id-3
+NODMIDD_YOUTUBE_ID=stream-id-4
+```
 
-YouTube's terms of service allow for up to 12 concurrent live streams per channel. Since this project only uses four streams, it is well within the limit.
+### Deployment Steps
 
-## Troubleshooting
+```bash
+# Install dependencies
+bun install
 
-*   **Dropped frames:** If you are experiencing dropped frames in OBS, try lowering the bitrate or the resolution of your stream. You can also try using a different encoder.
-*   **Connection issues:** If you are having trouble connecting to the RTMP server, double-check your stream key and the server URL. Also, make sure that your firewall is not blocking the connection.
-*   **High CPU usage:** If your CPU usage is too high, try using a more efficient encoder (like NVENC) or lowering the quality preset.
+# Build production bundle
+bun run build
+
+# Start production server
+bun run start
+```
+
+## Monitoring and Troubleshooting
+
+### Stream Health Monitoring
+
+- Check YouTube Live Dashboard for bitrate/connection issues
+- Monitor API `/api/stream-health/{streamId}` for automated checks
+- View aggregate viewer count at `/api/viewer-count`
+
+### Common Issues
+
+1. **High Latency**: Reduce bitrate or check router QoS
+2. **Connection Drops**: Enable backup RTMP servers in OBS
+3. **Audio Desync**: Check audio buffering settings
+4. **Low Quality**: Increase bitrate or resolution
+
+## Event Day Checklist
+
+### Pre-Event (1 hour before)
+
+- [ ] Test all 4 OBS instances
+- [ ] Verify YouTube Live streams are online
+- [ ] Check router bandwidth availability
+- [ ] Test web application in all 6 languages
+- [ ] Enable local OBS recording as backup
+
+### During Event
+
+- [ ] Monitor stream health dashboard
+- [ ] Check viewer count metrics
+- [ ] Watch for connection issues
+- [ ] Record locally as backup
+
+### Post-Event
+
+- [ ] Stop all streams
+- [ ] Download local recordings
+- [ ] Export viewer analytics
+- [ ] Archive stream metadata

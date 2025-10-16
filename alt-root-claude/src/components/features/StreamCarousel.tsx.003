@@ -1,0 +1,18 @@
+  {
+    id: '2',
+    node: 'nodsyd',
+    title: 'Nordsyd',
+    youtubeId: process.env.NEXT_PUBLIC_NODSYD_YOUTUBE_ID || '',
+    active: true,
+    day: 1,
+    isLive: true,
+  },
+  {
+    id: '3',
+    node: 'nodost',
+    title: 'Nordöst',
+    youtubeId: process.env.NEXT_PUBLIC_NODOST_YOUTUBE_ID || '',
+    active: true,
+    day: 1,
+    isLive: true,
+  },

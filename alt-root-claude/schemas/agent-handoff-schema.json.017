@@ -1,0 +1,10 @@
+              },
+              "youtube": {
+                "type": "object",
+                "properties": {
+                  "api_client": { "type": "string" },
+                  "stream_ids": { "type": "array", "items": { "type": "string" } }
+                }
+              }
+            }
+          },

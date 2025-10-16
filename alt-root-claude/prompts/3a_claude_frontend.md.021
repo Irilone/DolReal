@@ -1,0 +1,10 @@
+import { create } from 'zustand';
+
+interface StreamPlayerState {
+  activeStreamId: string | null;
+  isPlaying: boolean;
+  setActiveStream: (id: string) => void;
+  pause: () => void;
+}
+
+export const useStreamPlayer = create<StreamPlayerState>((set) => ({

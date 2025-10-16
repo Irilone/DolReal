@@ -1,0 +1,11 @@
+      - name: Download Release Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dol-2025-release
+          path: releases
+
+      - name: Download Release Notes
+        uses: actions/download-artifact@v4
+        with:
+          name: release-notes
+

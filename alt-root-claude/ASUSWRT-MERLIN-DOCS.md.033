@@ -1,0 +1,12 @@
+- **Traffic Analyzer**: Detailed bandwidth monitoring
+- **Per-Device Statistics**: Track individual device usage
+- **Real-time Monitoring**: Live traffic graphs
+- **Historical Data**: Long-term usage trends
+
+### External Software
+
+- **Entware**: Package manager for additional software
+- **Media Servers**: Plex, Transmission, Deluge
+- **Chroot Debian**: Full Linux environment
+- **Custom Packages**: Install almost any Linux software
+

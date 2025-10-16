@@ -1,0 +1,13 @@
+## Documentation
+- Integrated System Guide
+- Node Operator Quick Start
+- Webapp User Guide (Swedish)
+
+## Multi-Agent Build Process
+Built using coordinated AI agents:
+- Research: Gemini 2.5 Pro Ultra
+- Architecture: GPT-5 Codex
+- Frontend: Claude Sonnet 4.5 #1
+- Backend/Docs: Claude Sonnet 4.5 #2
+- Integration: Gemini 2.5 Pro CLI
+

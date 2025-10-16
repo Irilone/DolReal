@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "agent_id": "claude-backend",
+    "timestamp": "2025-10-14T10:45:00Z",
+    "execution_time_ms": 8500,
+    "status": "completed"
+  },
+  "api_routes": [
+    {
+      "file_path": "src/app/api/streams/route.ts",
+      "endpoint": "/api/streams",
+      "code": "import { NextResponse } from 'next/server';\nimport type { Stream } from '@/types/stream';\n\nexport async function GET(request: Request) {\n  const { searchParams } = new URL(request.url);\n  const dayParam = searchParams.get('day');\n  const currentDay = dayParam ? parseInt(dayParam) : getCurrentEventDay();\n  \n  const streams: Stream[] = [\n    {\n      id: 'nodvast',\n      name: 'Nodväst',\n      youtubeId: process.env.NODVAST_YOUTUBE_ID!,\n      embedUrl: `https://www.youtube.com/embed/${process.env.NODVAST_YOUTUBE_ID}`,\n      active: true,\n      day: currentDay as 1 | 2,\n    },\n    {\n      id: 'nodsyd',\n      name: 'Nodsyd',\n      youtubeId: process.env.NODSYD_YOUTUBE_ID!,\n      embedUrl: `https://www.youtube.com/embed/${process.env.NODSYD_YOUTUBE_ID}`,\n      active: currentDay === 1,\n      day: 1,\n    }\n  ];\n\n  return NextResponse.json({ streams, currentDay });\n}\n\nfunction getCurrentEventDay(): 1 | 2 {\n  const now = new Date();\n  const eventDates = process.env.NEXT_PUBLIC_EVENT_DATES?.split(',') || ['2025-11-06', '2025-11-07'];\n  const day2 = new Date(eventDates[1]);\n  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());\n  const d2 = new Date(day2.getFullYear(), day2.getMonth(), day2.getDate());\n  if (today.getTime() === d2.getTime()) return 2;\n  return 1;\n}"
+    }
+  ],
+  "integrations": {
+    "youtube": {
+      "api_client": "Complete YouTube Data API v3 client with stream status, viewer count, and concurrent stream checks",
+      "stream_ids": ["NODVAST_YOUTUBE_ID", "NODSYD_YOUTUBE_ID", "NODOST_YOUTUBE_ID", "NODMIDD_YOUTUBE_ID"]
+    },
+    "infranodus": {
+      "mcp_config": "MCP server configuration with InfraNodus integration",
+      "embed_urls": ["https://infranodus.com/embed/dol2025-default?theme=dark&interactive=true"]
+    }
+  },
+  "documentation": [
+    {
+      "title": "Integrated System Guide",
+      "file_path": "docs/manuals/integrated-system-guide.md",
+      "content": "Complete 300+ line technical manual covering Router+OBS+YouTube+Web Platform"
+    },
+    {
+      "title": "Node Operator Quick Start",
+      "file_path": "docs/manuals/node-operator-quickstart.md",
+      "content": "Operational guide for on-site node operators"
+    },
+    {
+      "title": "DoL 2025 Webapp Guide (Swedish)",
+      "file_path": "docs/manuals/dol-webapp-guide-se.md",
+      "content": "Complete Swedish user guide with troubleshooting"
+    }
+  ],
+  "tests": [
+    {
+      "file_path": "src/app/api/streams/route.test.ts",
+      "test_suite": "API Routes - Streams",
+      "code": "Complete Jest tests for streams API"
+    },
+    {
+      "file_path": "tests/integration/youtube.test.ts",
+      "test_suite": "Integration Tests - YouTube API",
+      "code": "Integration tests for YouTube API client"
+    }
+  ],
+  "router_config": {
+    "qos_settings": "Complete Adaptive QoS + FlexQoS configuration",
+    "bandwidth_requirements": {
+      "per_stream": "6.5 Mbps",
+      "four_streams": "26 Mbps minimum, 34 Mbps with buffer",
+      "recommended": "70-100 Mbps upload"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+
+## Configuration Management
+
+```
+Development:
+    .env file → process.env → scripts.js (Node.js)
+    OR
+    User input → localStorage → utility.js (Browser)
+
+Production:
+    Server-side:
+        .env → process.env → SSR template → window.ENV
+    

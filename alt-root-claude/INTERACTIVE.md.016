@@ -1,0 +1,11 @@
+| Agent | Interface | Time |
+|-------|-----------|------|
+| 1. Research | Gemini Ultra | 10-15 min |
+| 2. Architecture | GPT-5 Codex | 5-10 min |
+| 3a. Frontend | Claude #1 | 15-20 min |
+| 3b. Backend | Claude #2 | 15-20 min (parallel) |
+| 4. Integration | Gemini CLI | 5-10 min |
+| **Total** | | **50-70 min** |
+
+*(Parallel Claude execution saves 15-20 min)*
+
