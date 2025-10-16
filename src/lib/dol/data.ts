@@ -81,7 +81,7 @@ export const dolStreams: DolStream[] = [
   {
     id: 'stream-nodvast-day1',
     nodeId: 'nodvast',
-    youtubeId: 'dQw4w9WgXcQ',
+    youtubeId: '', // TODO: Add actual YouTube stream ID for Nodväst - Day 1 before production
     title: 'Nodväst - Day 1',
     isLive: true,
     scheduledStart: '2025-11-06T09:00:00Z',
