@@ -44,7 +44,7 @@ export const dolNodes: DolNode[] = [
     id: "nodvast",
     name: "Nordväst",
     nameKey: "streams.nodvast",
-    youtubeId: "dQw4w9WgXcQ", // Replace with actual YouTube video ID
+    youtubeId: "", // TODO: Replace with actual YouTube video ID before production
     graphId: "nodvast-graph",
     activeDays: [1, 2], // Active both days
     color: "#3B82F6", // Blue
@@ -54,7 +54,7 @@ export const dolNodes: DolNode[] = [
     id: "nodsyd",
     name: "Nordsyd",
     nameKey: "streams.nodsyd",
-    youtubeId: "kJQP7kiw5Fk", // Replace with actual YouTube video ID
+    youtubeId: "", // TODO: Replace with actual YouTube video ID before production
     graphId: "nodsyd-graph",
     activeDays: [1], // Active only day 1
     color: "#10B981", // Green
@@ -64,7 +64,7 @@ export const dolNodes: DolNode[] = [
     id: "nodost",
     name: "Nordöst",
     nameKey: "streams.nodost",
-    youtubeId: "5NV6Rdv1a3I", // Replace with actual YouTube video ID
+    youtubeId: "", // TODO: Replace with actual YouTube video ID before production
     graphId: "nodost-graph",
     activeDays: [1], // Active only day 1
     color: "#F59E0B", // Amber
@@ -74,7 +74,7 @@ export const dolNodes: DolNode[] = [
     id: "nodmidd",
     name: "Nordmidd",
     nameKey: "streams.nodmidd",
-    youtubeId: "3JZ_D3ELwOQ", // Replace with actual YouTube video ID
+    youtubeId: "", // TODO: Replace with actual YouTube video ID before production
     graphId: "nodmidd-graph",
     activeDays: [1], // Active only day 1
     color: "#8B5CF6", // Purple

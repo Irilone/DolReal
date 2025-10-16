@@ -69,15 +69,16 @@
     "viewers": "spettatori",
     "play": "Riproduci",
     "pause": "Pausa",
-    "watch": "Guarda",
-    "liveStreams": "Streaming in Diretta"
+    "watch": "Guarda"
   },
   "event": {
     "title": "Giornate sulle Leggi 2025",
     "dates": "6-7 novembre 2025",
     "description": "Un simposio legale che esplora leggi e società",
     "day1": "Giorno 1 - 6 novembre 2025",
-    "day2": "Giorno 2 - 7 novembre 2025"
+    "day2": "Giorno 2 - 7 novembre 2025",
+    "watch": "Guarda",
+    "liveStreams": "Streaming in Diretta"
   },
   "health": {
     "good": "Eccellente",
