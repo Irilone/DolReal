@@ -8,6 +8,5 @@ bun test src/app/api/streams/route.test.ts
 
 # Run tests matching pattern
 bun test --testPathPattern=components
->>>>>>> Stashed changes
 ```
 

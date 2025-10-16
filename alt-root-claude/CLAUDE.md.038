@@ -8,6 +8,5 @@ make logs
 cat logs/1_gemini_ultra.log
 cat logs/3a_claude_frontend.log
 tail -f logs/4_gemini_cli.log
->>>>>>> Stashed changes
 ```
 

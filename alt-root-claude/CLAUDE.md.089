@@ -1,4 +1,3 @@
-
 ### Legacy Code
 
 - `/october/` contains deprecated prototypes (dol.tsx, alt-dol.tsx, dol-2.tsx) and browser-based Gemini API integration
@@ -7,13 +6,3 @@
 - `/october/README.md` and `/october/INTEGRATION_README.md` contain useful orchestration documentation
 
 ### Schema Validation
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-# Expected output:

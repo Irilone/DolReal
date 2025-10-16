@@ -1,7 +1,6 @@
 ### Testing
 
 ```bash
-<<<<<<< Updated upstream
 # Run all tests
 bun test
 # or

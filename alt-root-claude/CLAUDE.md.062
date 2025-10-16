@@ -8,6 +8,3 @@ NODMIDD_YOUTUBE_ID=...      # Stream 4
 ```
 
 Verify keys: `make check-env`
-=======
-```typescript
-// Backend (Agent 3b responsibility)

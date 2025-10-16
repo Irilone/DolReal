@@ -1,13 +1,1 @@
-src/lib/
-├── youtube/
-│   └── client.ts            // YouTube Data API v3 client
-│                            // - List streams
-│                            // - Get stream details
-│                            // - Verify stream status
-├── infranodus/
-│   └── client.ts            // InfraNodus MCP + fallback
-│                            // - MCP connection (primary)
-│                            // - iframe embed (fallback)
-└── mcp/
-    └── client.ts            // Generic MCP client
-                             // - Protocol implementation
+
